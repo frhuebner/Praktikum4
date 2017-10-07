@@ -1,1 +1,7 @@
 *.log
+*.aux
+*.blg
+*.dvi
+*.pdf
+*.xml
+*blx.bib	

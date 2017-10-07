@@ -1,0 +1,52 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}   %for german letters ä,ö...
+\usepackage[ngerman]{babel}   %german settings
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{caption}
+\usepackage[left=3cm,right=3cm,top=2cm,bottom=3cm]{geometry}
+\usepackage{siunitx}
+\usepackage{esdiff}
+\usepackage{braket}
+
+\sisetup{locale = DE}
+
+\newcommand{\RM}[1]{\MakeUppercase{\romannumeral #1}}
+
+\newcommand{\coord}[2]{%
+  
+  \draw [->] (#1,#2)--(#1+2,#2);
+  \draw [->] (#1,#2)--(#1,2+#2);
+  \draw [->] (#1,#2)--(#1-0.8,#2-0.8);
+  \draw (#1+0.2,#2+1.9) node {$z$};
+  \draw (#1+2.2,#2) node {$y$};
+  \draw (#1-0.9,#2-0.9) node {$x$};
+}
+
+\usepackage[backend=bibtex8,sorting=none]{biblatex}
+\addbibresource{refs.bib}
+
+\begin{document}
+\setlength{\parindent}{0em}   %Einrücken verhindern
+\title{Physikalisches Praktikum \RM{4}\\Versuch 443\\Kernmagnetische Relaxation}
+\author{Friedrich Hübner \qquad s6frhueb@uni-bonn.de \qquad 2897111\\
+  Kilian Bönisch \ \ \ \qquad s6kiboen@uni-bonn.de \qquad 2897138}
+\date{23.10.17}
+
+\maketitle
+
+\thispagestyle{empty}
+
+\newpage
+
+\input{einleitung.tex}
+
+\input{theorie.tex}
+
+\input{durchfuehrung.tex}
+
+\printbibliography
+
+\end{document}

@@ -1,0 +1,103 @@
+\section{Versuchsdurchführung}
+
+\subsection{Photoeffekt}
+Der Aufbau für den Photoeffekt ist in Abbildung \ref{aufbau1} zu sehen. Mit der Blende kann die Intensität des Lichtes variiert werden. Die Linse wird so positioniert, dass der Lichtfleck scharf auf die Kathode abgebildet wird, die Ringanode darf nicht beleuchtet werden. Die Irisblende des Filterrads wird vollständig geöffnet, die an der Hg-Lampe so weit, dass der Lichtfleck auf der Kathode einen Durchmesser von ca. \si{5 \ \milli \metre} - \si{10 \ \milli \metre} hat. Über die Photozelle wird eine Schutzkappe gestülpt um die Hintergrundbeleuchtung abzuschatten. Zwischen Schutzkappe und Filterrad wird ein Rohr zur Begrenzung von Streulicht angebracht. Mit Hilfe einer Spannungsquelle und verschiedenen Widerständen wird ein Spannungsteiler aufgebaut mit dem die notwendige Gegenspannung eingestellt werden kann.  
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \draw (-1,0) circle (0.3);
+    \draw (-0.21-1,-0.21) -- (0.21-1,0.21);
+    \draw (-0.21-1,0.21) -- (0.21-1,-0.21);
+    \draw (1.5,-0.5) -- (1.5,-0.1);
+    \draw (1.5,0.5) -- (1.5,0.1);
+    \draw (4,0) arc (0:30:1);
+    \draw (4,0) arc (0:-30:1);
+    \draw (3.74,0) arc (180:150:1);
+    \draw (3.74,0) arc (180:210:1);
+    \draw (6,-0.5) -- (6,0.5);
+    \draw [->] (6,0.8) arc (270:-30:0.2);
+    \draw (11,0) arc (0:40:1.5);
+    \draw (11,0) arc (0:-40:1.5);
+    \draw (8,0) ellipse (0.2cm and 1cm);
+    \draw [thick, dash dot] (0.3-1,0) -- (3.7,0);
+    \draw [thick, dash dot] (4,0) -- (11,0);
+    \draw [->] (11,0.16) -- (8.2,0.4);
+    \draw (10,0.5) node {$\mathrm{e^-}$};
+    \draw (-1,-1) node {Hg-Lampe};
+    \draw (1.5,-1) node {Blende};
+    \draw (3.88,-1) node {Linse};
+    \draw (3.88,-1.4) node {$f=100 \ \mathrm{mm}$};
+    \draw (6,-1) node {Filterrad};
+    \draw (11,0) -- (11,-1.5);
+    \draw (11,-1.7) circle (0.2);
+    \draw [->] (10.75,-1.95) -- (11.25,-1.45);
+    \draw (11,-1.9) -- (11,-2.7);
+    \draw (8,-1) -- (8,-2.7);
+    \draw (8,-2.7) -- (9.2,-2.7);
+    \draw (11,-2.7) -- (10,-2.7);
+    \draw (9.3,-2.7) circle (0.1);
+    \draw (9.9,-2.7) circle (0.1);
+    \draw (9.9,-3) node {$+$};
+    \draw (9.3,-3) node {$-$};
+    \draw (11.8,-1.75) node {$U_I \propto I$};
+  \end{tikzpicture}
+  \caption{Aufbau für den Photoeffekt}
+  \label{aufbau1}
+\end{figure}
+
+Um einen sinnvollen Spannungsbereich zu erhalten werden für den Spannungsteiler die Widerstände \textbf{???} benutzt. Für jeden Filter wird zunächst der Strom $I_0$ bei maximaler Gegenspannung gemessen, dieser entsteht durch den Elektronenfluss von Anode zu Kathode. Danach wird die Gegenspannung variiert um so Werte für die $U$-$I$-Kennlinie zu messen. Dieses Verfahren wird zwei mal wiederholt da die Intensität der Lampe schwankt. \\ \\
+
+In einer zusätzlichen Messung für die Wellenlänge $\lambda=\si{365 \ \nano \metre}$ wird die Intensität so verringert (durch erste Irisblende), dass der Photostrom bei $U=\si{0 \ \volt}$ deutlich steigt. Erneut werden Werte für die $U$-$I$-Kennlinie gemessen.
+
+\subsection{Balmer-Serie}
+
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \draw (-1.5,0) circle (0.3);
+    \draw (-0.21-1.5,-0.21) -- (0.21-1.5,0.21);
+    \draw (-0.21-1.5,0.21) -- (0.21-1.5,-0.21);
+    \draw (4,-0.5) -- (4,-0.1);
+    \draw (4,0.5) -- (4,0.1);
+    \draw (1.5,0) arc (0:30:1);
+    \draw (1.5,0) arc (0:-30:1);
+    \draw (1.24,0) arc (180:150:1);
+    \draw (1.24,0) arc (180:210:1);
+    \draw (6.5,0) arc (0:30:1);
+    \draw (6.5,0) arc (0:-30:1);
+    \draw (6.24,0) arc (180:150:1);
+    \draw (6.24,0) arc (180:210:1);
+    \draw [pattern=north west lines, rotate around={-45:(10,0)}] (9.9,0.5) rectangle (10.1,-0.5);
+    \draw [rotate around={-45:(10,0)}] (7.5,0) arc (0:30:1);
+    \draw [rotate around={-45:(10,0)}] (7.5,0) arc (0:-30:1);
+    \draw [rotate around={-45:(10,0)}] (7.24,0) arc (180:150:1);
+    \draw [rotate around={-45:(10,0)}] (7.24,0) arc (180:210:1);
+    \draw [rotate around={-45:(10,0)}] (4.9,0.5) rectangle (5.1,-0.5);
+    \draw (-1.5,-1) node {Hg-/Balmer-};
+    \draw (-1.5,-1.4) node {Lampe};
+    \draw (1.4,-1) node {Linse};
+    \draw (1.4,-1.4) node {$f=50 \ \mathrm{mm}$};
+    \draw (4,-1) node {Spalt};
+    \draw (6.4,-1) node {Objektiv};
+    \draw (6.4,-1.4) node {$f=150 \ \mathrm{mm}$};
+    \draw (10,-1) node {Gitter};
+    \draw [thick, dash dot] (-1.2,0) -- (1.25,0);
+    \draw [thick, dash dot] (1.5,0) -- (6.2,0);
+    \draw [thick, dash dot] (6.5,0) -- (10,0);
+    \draw [thick, dash dot] (10,0) -- (8.25,1.75);
+    \draw [thick, dash dot] (8,2) -- (6.6,3.4);
+    \draw (10,2.5) node {Linse};
+    \draw (10,2.1) node {$f=300 \ \mathrm{mm}$};
+    \draw (8.6,4) node {Okular/Kamera};
+    \draw [thick, dotted] (10,0) -- (13,0);
+    \draw [thick, dotted] (10,0) -- (12,-2);
+    \draw (12,0) arc (0:-45:2);
+    \draw (11.5,0) arc (0:135:1.5);
+    \draw (11.2,-0.6) node {$\omega_\mathrm{G}$};
+    \draw (10.6,0.8) node {$\omega_\mathrm{B}$};
+  \end{tikzpicture}
+  \caption{Aufbau zur Untersuchung der Balmer-Serie}
+  \label{aufbau2}
+\end{figure}

@@ -4,4 +4,6 @@
 *.dvi
 *.pdf
 *.xml
-*blx.bib	
+*blx.bib
+*.bbl
+	

@@ -1,7 +1,2 @@
 hallo
 test
-<<<<<<< Updated upstream
-P4
-=======
-Praktikum4
->>>>>>> Stashed changes

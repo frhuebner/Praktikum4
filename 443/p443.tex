@@ -15,15 +15,7 @@
 
 \newcommand{\RM}[1]{\MakeUppercase{\romannumeral #1}}
 
-\newcommand{\coord}[2]{%
-  
-  \draw [->] (#1,#2)--(#1+2,#2);
-  \draw [->] (#1,#2)--(#1,2+#2);
-  \draw [->] (#1,#2)--(#1-0.8,#2-0.8);
-  \draw (#1+0.2,#2+1.9) node {$z$};
-  \draw (#1+2.2,#2) node {$y$};
-  \draw (#1-0.9,#2-0.9) node {$x$};
-}
+\input{preamble_kilian.tex}
 
 \usepackage[backend=bibtex8,sorting=none]{biblatex}
 \addbibresource{refs.bib}

@@ -1,8 +1,2 @@
 Hallo mein Freund
-<<<<<<< Updated upstream
-moin
-moin2
-=======
->>>>>>> Stashed changes
-test
-test2
+hä?

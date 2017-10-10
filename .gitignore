@@ -7,4 +7,5 @@
 *blx.bib
 *.bbl
 *.gz
-*.exe	
+*.exe
+~$*.xlsx	

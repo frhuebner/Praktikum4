@@ -39,3 +39,19 @@ fit f(x) "blue1.txt" using 1:2 via a1,a2,b1,b2,s1,s2,d
 plot \
  "blue1.txt" using "beta":"I" title "I({/Symbol g})" pointtype 1 lt rgb "black",\
  f(x) title "Fit"  lt rgb "black"
+ 
+ 
+ 
+ set output "out_blue2.png"
+
+f(x) = a*exp(-(x-b)**2/2/s**2)+d
+
+a=3
+b=2
+s=0.03
+d=14
+fit f(x) "blue2.txt" using 1:2 via a,b,s,d
+
+plot \
+ "blue2.txt" using "beta":"I" title "I({/Symbol g})" pointtype 1 lt rgb "black",\
+ f(x) title "Fit"  lt rgb "black"

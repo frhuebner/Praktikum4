@@ -1,13 +1,14 @@
 \subsection{Vermessung der Spektralinien}
-\label{sec:auswertung_spektrallinien}
-\subsection{Reflexionsgitter}
-Um die Wellenlänge der Emissionslinien zu bestimmen, wird ein Reflexionsgitter verwendet. Untersucht wird dabei die Lage der Interferenzmaxima des reflektierten Lichtes. Eine wichtige Größe, die das Gitter charakterisiert, ist dabei die Gitterkonstante $d$, die die Periode des Gitters angibt. Mit Hilfe von Abbildung \ref{Gangunterschied} lässt sich leicht der Gangunterschied $g$ zweier benachbarter Strahlen berechnen. Werden die Winkel in mathematisch positiver Richtung zum Lot gemessen erhält man
+\label{subsec:auswertung_spektrallinien}
+\subsubsection{Reflexionsgitter}
+Um die Wellenlänge der Emissionslinien zu bestimmen, wird ein Reflexionsgitter verwendet. Untersucht wird dabei die Lage der Interferenzmaxima des reflektierten Lichtes. Eine wichtige Größe, die das Gitter charakterisiert, ist dabei die Gitterkonstante $g$, die die Periode des Gitters angibt. Mit Hilfe von Abbildung \ref{Gangunterschied} lässt sich leicht der Gangunterschied $s$ zweier benachbarter Strahlen berechnen. Werden die Winkel in mathematisch positiver Richtung zum Lot gemessen erhält man
 \begin{align*}
-  g=d \cdot (\sin(\alpha)+\sin(\beta)).
+  s=g \cdot (\sin(\alpha)+\sin(\beta)).
 \end{align*} 
 Für Licht der Wellenlänge $\lambda$ gilt bei den Interferenzmaxima also (mit $n \in \mathbb{Z}$)
 \begin{align}
-  d \cdot (\sin(\alpha)+\sin(\beta)) = n\lambda.
+  g \cdot (\sin(\alpha)+\sin(\beta)) = n\lambda.
+  \label{equ:gitter}
 \end{align}
 \begin{figure}[h]
   \centering
@@ -33,7 +34,7 @@ Für Licht der Wellenlänge $\lambda$ gilt bei den Interferenzmaxima also (mit $
     \draw [dash dot](0.5,0)--(0.5+2.4*6/5,2.4);
     \draw [dash dot](0.5,0)--(0.5+1.5*3,1.5);
     \draw [<->] (0.5,-0.5)--(5.5,-0.5);
-    \draw (3,-0.7) node {$d$};
+    \draw (3,-0.7) node {$g$};
     \draw (0.5+2.2*6/5,2.2) arc (220:325:0.3);
     \draw (3.4,2.25) node {$.$};
     \draw (0.5+1.4*3,1.4) arc (200:290:0.3);
@@ -43,12 +44,157 @@ Für Licht der Wellenlänge $\lambda$ gilt bei den Interferenzmaxima also (mit $
   \label{Gangunterschied}
 \end{figure}
 
-Im Experiment kann man allerdings die Winkel $\alpha$ und $\beta$ nicht direkt messen, sondern man misst die Winkel $\omega\ind{G}$ und $\omega\ind{B}$ (siehe Abb. \ref{aufbau2}). Daraus ergibt sich: $\alpha = \omega\ind{G}, \beta = \omega\ind{G}+\omega\ind{B}-180^\circ$. Während des gesamten Versuches war $\omega\ind{B}=150^\circ \pm 0,5^\circ$.
+Im Experiment kann man allerdings die Winkel $\alpha$ und $\beta$ nicht direkt messen, sondern man misst die Winkel $\omega\ind{G}$ und $\omega\ind{B}$ (siehe Abb. \ref{aufbau2}). Daraus ergibt sich:
+\begin{align}
+\alpha = \omega\ind{G}, \beta = \omega\ind{G}+\omega\ind{B}-180^\circ.
+\label{equ:angle}
+\end{align}
+Während des gesamten Versuches war $\omega\ind{B}=150^\circ \pm 0,5^\circ$.
 
-\subsection{Bestimmung der Gitterkonstanten}
+\subsubsection{Bestimmung der Gitterkonstanten}
 \begin{figure}[h]
   \centering
-  \includegraphics[width=\linewidth]{data/Balmer/out.eps}
+  \includegraphics[width=0.75\linewidth]{data/Balmer/out_hg_raw.png}
   \caption{Gemessene Winkel $\omega\ind{G}$ der Spektralinien der Hg-Lampe}
   \label{fig:hg_raw}
 \end{figure}
+
+Da man die beiden gelben Linien nicht unterscheiden konnte, haben wir für die Wellenlänge der gelben Linie (roter Punkt, siehe Abb. \ref{fig:hg_raw}) den Mittelwert beider Linien angesetzt: $\lambda = \si{(578,013 \pm 1,053) \nano \metre}$. Nach Gl. \ref{equ:angle} werden $\alpha$ und $\beta$ berechnet. In Abb. \ref{fig:hg} ist $\lambda$ über $\sin{\alpha} + \sin{\beta}$ aufgetragen \footnote{$\Delta \sin{\alpha} = |\cos{\alpha} \cdot \Delta \alpha|$, $\Delta beta$ analog}. Zusätzlich ist in das Diagramm ein linearer Fit $y = a\cdot x + b$ an diese Daten eingezeichnet.
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.75\linewidth]{data/Balmer/out_hg.png}
+  \caption{Bestimmung der Gitterkonstante}
+  \label{fig:hg}
+\end{figure}
+
+Der Fit ergibt $a = \si{(653 \pm 36) \nano\metre}, b = \si{(-249 \pm 43) \nano\metre}$. Die Gitterkonstante beträgt also $g = a = \si{(653 \pm 36) \nano\metre}$. Nach Gl. \ref{equ:gitter} sollte $b \approx 0$ sein. Dies könnte aufgrund eines kleinen systematischen Fehlers auftreten (z.B. ein kleiner Offset bei der Winkelmessung). Extrapoliert man die Funktion bis $x = 0$, so liegt $\lambda = 0$ im Fehlerbereich. Führt man einen Fit ohne Achsenabschnitt $y = a\cdot x$ durch, so ergibt sich: $\si{(444 \pm 11) \nano\metre}$. Allerdings passt sich ein Fit mit Achsenabschnitt besser den Daten an, weswegen wir  entschieden haben, mit der Relation
+\begin{align}
+\lambda = g (\sin{\alpha} + \sin{\beta}) + b
+\label{equ:gitter_neu}
+\end{align}
+weiterzuarbeiten.
+
+\subsubsection{Untersuchung der Balmerlinien mit Okular}
+
+\begin{table}
+\centering
+\caption{Messung mit dem Okular}
+\begin{tabular}{c>{$}c<{$}>{$}c<{$}}
+\toprule
+Linie & \omega\ind{G}/^\circ & d/\si{\milli \metre}\\
+\midrule
+H$_\alpha$ & 60,5 \pm 0,5 &0,1\pm 0,05\\
+H$_\beta$ & 53	\pm 0,5 &0,3\pm 0,05\\ 
+H$_\gamma$ & 48,5 \pm 0,5\\
+H$_\delta$ & 48\pm 0,5\\
+H$_\epsilon$ & 46\pm 0,5\\
+\bottomrule
+\end{tabular}
+\label{tab:okular}
+\end{table}
+
+In Tab. \ref{tab:okular} sind die gemessenen Winkel und die Aufspaltung der einzelnen Linien eingetragen. Die Aufspaltung konnte nur für die H$_\alpha$- und H$_\beta$-Linie bestimmt werden. Die Wellenlängen der Linien wurden über Gl. \ref{equ:angle} und Gl. \ref{equ:gitter_neu} berechnet. Um die Isotopieaufspaltung $\delta \lambda$ zu berechnen, linearisiert man Gl. \ref{equ:gitter_neu}: $\delta \lambda = g\cos{\beta} \delta\beta$. $\delta \beta$ ergibt sich aufgrund des nahezu parallelen Lichtes durch: $\delta\beta = \arctan{\frac{d}{f}} \overset{d \ll f}{=} \frac{d}{f}$, wobei $f$ die Brennweite des Objektives ist. Da wir keine Angabe über den Fehler von $f$ haben, haben wir den Fehler auf \si{10\milli \metre} geschätzt: $f = \si{(300\pm 10)\milli \metre}$.\\
+
+In \ref{tab:okular_res} sind die berechneten Wellenlängen, die Isotopieaufspaltung sowie die theoretisch Werte\cite{wiki_balmer} angeben. Die wirklichen Wellenlängen liegen alle im Fehlerbereich der berechneten Werte.
+
+\begin{table}
+\centering
+\caption{Ergebnisse der Messung mit dem Okular}
+\begin{tabular}{c>{$}c<{$}>{$}c<{$}>{$}c<{$}}
+\toprule
+Linie & \lambda/\si{\nano\metre} & \lambda/\si{\nano\metre}\text{(Literatur \cite{wiki_balmer})} & \delta\lambda/\si{\nano \metre}\\
+\midrule
+H$_\alpha$ & 651\pm 56 & 656,278 & 0,19\pm 0,09\\
+H$_\beta$ & 527 \pm	53 & 486,132 & 0,6\pm 0,1\\ 
+H$_\gamma$ & 447 \pm 50 & 434,045\\
+H$_\delta$ & 438 \pm 50 & 410,1735\\
+H$_\epsilon$ & 400 \pm 49 & 397,0074\\
+\bottomrule
+\end{tabular}
+\label{tab:okular}
+\end{table}
+
+\subsubsection{Untersuchung der Balmerlinien mit CCD-Kamera}
+Die Programm berechnet eigenständig aus der Pixelkoordinate den dazugehörigen Winkel $\gamma$. Da wir keine Angaben zu den Fehlern der Kamera haben (sowohl für $\gamma$, als auch für die Intensität $I$), sind keine Fehler in den Diagrammen eingezeichnet. Für das weitere Vorgehen ist dies nicht relevant, da, wenn der Fehler für alle Werte gleich ist, das Ergebnis des Fitalgorithmus nicht beeinflusst wird. 
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.75\linewidth]{data/Balmer/out_red_raw.png}
+  \caption{Intensitätsverteilung der H$_\alpha$-Linie}
+  \label{fig:red_raw}
+\end{figure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.75\linewidth]{data/Balmer/out_lightblue_raw.png}
+  \caption{Intensitätsverteilung der H$_\beta$-Linie}
+  \label{fig:lightblue_raw}
+\end{figure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.75\linewidth]{data/Balmer/out_blue_raw.png}
+  \caption{Intensitätsverteilung der (v.l.n.r.) H$_\gamma$-,H$_\delta$- und H$_\epsilon$-Linie}
+  \label{fig:blue_raw}
+\end{figure}
+
+In den Abbildungen \ref{fig:red_raw}-\ref{fig:blue_raw} sind die von der Kamera gemittelten Werte aufgetragen. Nun wird um jede Linie ein möglichst kleiner Ausschnitt genommen (siehe Abb. \ref{fig:red} - \ref{fig:blue2}). Kann man in diesem Ausschnitt 2 getrennte Linien erkennen (H$_\alpha$, H$_\beta$, H$_\delta$), wird an ihn die Summe zweier Gaussfunktionen angefittet:
+\begin{align*}
+I(\gamma) = a_1\exp{-\frac{(\gamma-b_1)^2}{2s_1^2}} + a_2\exp{-\frac{(\gamma-b_2)^2}{2s_2^2}} + d
+\end{align*}
+Leider war die Intensität der H$_\gamma$- und H$_\epsilon$-Linie nicht groß genug, um zwei Linien erkennen zu können. Deswegen wird nur eine Gaussfunktion an den Ausschnitt gefittet:
+\begin{align*}
+I(\gamma) = a_1\exp{-\frac{(\gamma-b_1)^2}{2s_1^2}} + d
+\end{align*}
+Das d haben wir aufgrund eines nicht vernachlässigbaren Untergrundes hinzugefügt. Die Ergebnisse der Fits sind in Tab. \ref{tab:ccd_fit} dargestellt.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.75\linewidth]{data/Balmer/out_red.png}
+  \caption{Fit an die H$_\alpha$-Linie}
+  \label{fig:red}
+\end{figure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.75\linewidth]{data/Balmer/out_lightblue.png}
+  \caption{Fit an die H$_\beta$-Linie}
+  \label{fig:lightblu}
+\end{figure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.75\linewidth]{data/Balmer/out_blue0.png}
+  \caption{Fit an die H$_\gamma$-Linie}
+  \label{fig:blue0}
+\end{figure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.75\linewidth]{data/Balmer/out_blue1.png}
+  \caption{Fit an die H$_\delta$-Linie}
+  \label{fig:blue1}
+\end{figure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.75\linewidth]{data/Balmer/out_blue2.png}
+  \caption{Fit an die H$_\epsilon$-Linie}
+  \label{fig:blue2}
+\end{figure}
+
+
+\begin{table}[h]
+\centering
+\caption{Ergebnisse der Fits an die Linien}
+\begin{tabular}{c>{$}c<{$}>{$}c<{$}>{$}c<{$}>{$}c<{$}>{$}c<{$}>{$}c<{$}>{$}c<{$}}
+\toprule
+Linie & a_1 & a_2 & b_1 & b_2 & s_1 & s_2 & d\\
+\midrule
+H$_\alpha$ & 85 \pm 1 & 47 \pm 2 & -0,3357 \pm 5\cdot 10^{-4} & -0,3024 \pm 0,0005& 0,0164 \pm 0,0005 & 0,0078 \pm 0,0005 & 11,7 \pm 0,6\\
+
+H$_\beta$ & 40,4 \pm 0,5 & 3,8\pm 0,6 & 0,30481\pm 8\cdot 10^{-5} & 0,3244\pm 0,0007 & 0,00508\pm 0,00008 & 0,0037\pm 0,0007 & 11,3 \pm 0,2\\ 
+
+H$_\gamma$ & 3,01 \pm 0,03& & -1,5352\pm 2\cdot 10^{-4}& & 0,0223\pm 0,0003& & 6,36\pm 0,02\\
+
+H$_\delta$ & 26,3 \pm 0,1 & 1,7 \pm 0,1 & -1,1607 \pm 1\cdot 10^{-4} & -1,258 \pm 0,001 & 0,0243 \pm 0,0001 & 0,024\pm 0,002& 6,91  \pm 0,04\\
+
+H$_\epsilon$ & 2,79\pm 0,02& & 2,0022 \pm 2\cdot 10^{-4}& &0,0276\pm 0,0003& & 14,49\pm 0,01\\
+\bottomrule
+\end{tabular}
+\label{tab:okular}
+\end{table}

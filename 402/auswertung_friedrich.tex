@@ -1,6 +1,7 @@
 \subsection{Vermessung der Spektralinien}
+\label{sec:auswertung_spektrallinien}
 \subsection{Reflexionsgitter}
-Mit Hilfe eines Reflexionsgitters werden im Versuch die Wellenlängen von emittiertem Licht bestimmt. Untersucht wird dabei die Lage der Interferenzmaxima des reflektierten Lichtes. Eine wichtige Größe, die das Gitter charakterisiert, ist dabei die Gitterkonstante $d$, die die Periode des Gitters angibt. Mit Hilfe von Abbildung \ref{Gangunterschied} lässt sich leicht der Gangunterschied $g$ zweier benachbarter Strahlen berechnen. Werden die Winkel in mathematisch positiver Richtung zum Lot gemessen erhält man
+Um die Wellenlänge der Emissionslinien zu bestimmen, wird ein Reflexionsgitter verwendet. Untersucht wird dabei die Lage der Interferenzmaxima des reflektierten Lichtes. Eine wichtige Größe, die das Gitter charakterisiert, ist dabei die Gitterkonstante $d$, die die Periode des Gitters angibt. Mit Hilfe von Abbildung \ref{Gangunterschied} lässt sich leicht der Gangunterschied $g$ zweier benachbarter Strahlen berechnen. Werden die Winkel in mathematisch positiver Richtung zum Lot gemessen erhält man
 \begin{align*}
   g=d \cdot (\sin(\alpha)+\sin(\beta)).
 \end{align*} 
@@ -40,4 +41,14 @@ Für Licht der Wellenlänge $\lambda$ gilt bei den Interferenzmaxima also (mit $
   \end{tikzpicture}
   \caption{Gangunterschied (fett eingezeichnet) für benachbarte Strahlen}
   \label{Gangunterschied}
+\end{figure}
+
+Im Experiment kann man allerdings die Winkel $\alpha$ und $\beta$ nicht direkt messen, sondern man misst die Winkel $\omega\ind{G}$ und $\omega\ind{B}$ (siehe Abb. \ref{aufbau2}). Daraus ergibt sich: $\alpha = \omega\ind{G}, \beta = \omega\ind{G}+\omega\ind{B}-180^\circ$. Während des gesamten Versuches war $\omega\ind{B}=150^\circ \pm 0,5^\circ$.
+
+\subsection{Bestimmung der Gitterkonstanten}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\linewidth]{data/Balmer/out.eps}
+  \caption{Gemessene Winkel $\omega\ind{G}$ der Spektralinien der Hg-Lampe}
+  \label{fig:hg_raw}
 \end{figure}

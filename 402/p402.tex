@@ -9,10 +9,12 @@
 \usepackage[left=3cm,right=3cm,top=2cm,bottom=3cm]{geometry}
 \usepackage{siunitx}
 \usepackage{booktabs}
+\usepackage[outdir=./]{epstopdf}
 
 \usetikzlibrary{patterns}
 \sisetup{locale = DE}
 
+\newcommand{\ind}[1]{_\mathrm{#1}}
 \newcommand{\RM}[1]{\MakeUppercase{\romannumeral #1}}
 
 \usepackage[backend=bibtex8,sorting=none]{biblatex}
@@ -35,7 +37,9 @@
 
 \input{theorie.tex}
 
+\section{Durchführung}
 \input{durchfuehrung.tex}
+\input{durchfuehrung_friedrich.tex}
 
 \section{Auswertung}
 \input{auswertung_kilian.tex}

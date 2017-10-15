@@ -95,14 +95,14 @@ H$_\epsilon$ & 46\pm 0,5\\
 
 In Tab. \ref{tab:okular} sind die gemessenen Winkel und die Aufspaltung der einzelnen Linien eingetragen. Die Aufspaltung konnte nur für die H$_\alpha$- und H$_\beta$-Linie bestimmt werden. Die Wellenlängen der Linien wurden über Gl. \ref{equ:angle} und Gl. \ref{equ:gitter_neu} berechnet. Um die Isotopieaufspaltung $\delta \lambda$ zu berechnen, linearisiert man Gl. \ref{equ:gitter_neu}: $\delta \lambda = g\cos{\beta} \delta\beta$. $\delta \beta$ ergibt sich aufgrund des nahezu parallelen Lichtes durch: $\delta\beta = \arctan{\frac{d}{f}} \overset{d \ll f}{=} \frac{d}{f}$, wobei $f$ die Brennweite des Objektives ist. Da wir keine Angabe über den Fehler von $f$ haben, haben wir den Fehler auf \si{10\milli \metre} geschätzt: $f = \si{(300\pm 10)\milli \metre}$.\\
 
-In \ref{tab:okular_res} sind die berechneten Wellenlängen, die Isotopieaufspaltung sowie die theoretisch Werte\cite{wiki_balmer} angeben. Die wirklichen Wellenlängen liegen alle im Fehlerbereich der berechneten Werte.
+In \ref{tab:okular_res} sind die berechneten Wellenlängen, die Isotopieaufspaltung sowie die theoretischen Werte angeben. Die wirklichen Wellenlängen liegen alle im Fehlerbereich der berechneten Werte.\\
 
 \begin{table}
 \centering
 \caption{Ergebnisse der Messung mit dem Okular}
 \begin{tabular}{c>{$}c<{$}>{$}c<{$}>{$}c<{$}}
 \toprule
-Linie & \lambda/\si{\nano\metre} & \lambda/\si{\nano\metre}\text{(Literatur \cite{wiki_balmer})} & \delta\lambda/\si{\nano \metre}\\
+Linie & \lambda/\si{\nano\metre} & \lambda\upd{theo}/\si{\nano\metre} & \delta\lambda/\si{\nano \metre}\\
 \midrule
 H$_\alpha$ & 651\pm 56 & 656,278 & 0,19\pm 0,09\\
 H$_\beta$ & 527 \pm	53 & 486,132 & 0,6\pm 0,1\\ 
@@ -111,11 +111,22 @@ H$_\delta$ & 438 \pm 50 & 410,1735\\
 H$_\epsilon$ & 400 \pm 49 & 397,0074\\
 \bottomrule
 \end{tabular}
-\label{tab:okular}
+\label{tab:okular_res}
 \end{table}
 
+Aus den Daten wird die Rydbergkonstante $R_\infty$ nach Gl. \ref{equ:rydberg} bestimmt, indem man $\frac{1}{\lambda}$ über $\frac{1}{2^2}-\frac{1}{n^2}$ ($n = 3,4,5,6,7$) aufträgt und einen linearen Fit $y = R \cdot x$ durchführt. (siehe Abb. \ref{fig:rydberg}).
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.75\linewidth]{data/Balmer/out_rydberg.png}
+  \caption{Bestimmung der Rydbergkonstanten}
+  \label{fig:ryberg}
+\end{figure}
+
+Der Fit ergibt: $R = (10,6 \pm 0,2)\cdot 10^6\frac{1}{\si{\metre}}$. $R_\infty$ ergibt sich nun durch $R_\infty = (1+\frac{m\ind{e}}{m\ind{p}}) R = (10,6 \pm 0,2)\cdot 10^6\frac{1}{\si{\metre}}$ (Massen der Teilchen aus \cite{wiki_konst}). Der Literaturwert \cite{wiki_konst} ist $10,97 \cdot 10^6\frac{1}{\si{\metre}}$. Unser Wert liegt also in der gleichen Größenordnung, wie der wahre Wert. Allerdings liegt dieser knapp nicht im Fehlerintervall. Für das Wirkungsquantum $h = \sqrt[3]{\cfrac{m\ind{e}\mathrm{e}^4}{8\epsilon_0^2R_\infty c}}$ ergibt sich (Konstanten \cite{wiki_konst}): $h = (6,8 \pm 0,1) \cdot 10^{-34} \si{\joule \second}$. Wie bei der Rydbergkonstante liegt der Literaturwert: $h = 6,63 \cdot 10^{-34} \si{\joule \second}$ recht nah an dem gemessenem Wert, allerdings knapp nicht im Fehlerintervall.
+
 \subsubsection{Untersuchung der Balmerlinien mit CCD-Kamera}
-Die Programm berechnet eigenständig aus der Pixelkoordinate den dazugehörigen Winkel $\gamma$. Da wir keine Angaben zu den Fehlern der Kamera haben (sowohl für $\gamma$, als auch für die Intensität $I$), sind keine Fehler in den Diagrammen eingezeichnet. Für das weitere Vorgehen ist dies nicht relevant, da, wenn der Fehler für alle Werte gleich ist, das Ergebnis des Fitalgorithmus nicht beeinflusst wird. 
+Die Programm berechnet eigenständig aus der Pixelkoordinate den dazugehörigen Winkel $\delta  \beta = \gamma$. 
 
 \begin{figure}[h]
   \centering
@@ -136,7 +147,9 @@ Die Programm berechnet eigenständig aus der Pixelkoordinate den dazugehörigen 
   \label{fig:blue_raw}
 \end{figure}
 
-In den Abbildungen \ref{fig:red_raw}-\ref{fig:blue_raw} sind die von der Kamera gemittelten Werte aufgetragen. Nun wird um jede Linie ein möglichst kleiner Ausschnitt genommen (siehe Abb. \ref{fig:red} - \ref{fig:blue2}). Kann man in diesem Ausschnitt 2 getrennte Linien erkennen (H$_\alpha$, H$_\beta$, H$_\delta$), wird an ihn die Summe zweier Gaussfunktionen angefittet:
+In den Abbildungen \ref{fig:red_raw}-\ref{fig:blue_raw} sind die von der Kamera gemittelten Werte aufgetragen. Da wir keine Angaben zu den Fehlern der Kamera haben (sowohl für $\gamma$, als auch für die Intensität $I$), sind keine Fehler in den Diagrammen eingezeichnet. Für das weitere Vorgehen ist dies nicht relevant, da, wenn der Fehler für alle Werte gleich ist, das Ergebnis des Fitalgorithmus nicht beeinflusst wird. In Abb. \ref{fig:blue_raw} sind die drei blauen Balmer-Linien zu sehen. Vergleicht man die Abstände der Linien mit den Messungen des vorherigen Teils, so kann man erkennen, dass größere $\gamma$ kleineren Wellenlängen entsprechen.\\
+
+Nun wird um jede Linie ein möglichst kleiner Ausschnitt genommen (siehe Abb. \ref{fig:red} - \ref{fig:blue2}). Kann man in diesem Ausschnitt 2 getrennte Linien erkennen (H$_\alpha$, H$_\beta$, H$_\delta$), wird an ihn die Summe zweier Gaussfunktionen angefittet:
 \begin{align*}
 I(\gamma) = a_1\exp{-\frac{(\gamma-b_1)^2}{2s_1^2}} + a_2\exp{-\frac{(\gamma-b_2)^2}{2s_2^2}} + d
 \end{align*}
@@ -178,20 +191,43 @@ Das d haben wir aufgrund eines nicht vernachlässigbaren Untergrundes hinzugefü
 \end{figure}
 
 \begin{table}[h]
-\centering
+%\centering
 \caption{Ergebnisse der Fits an die Linien}
-\begin{tabular}{>{$}c<{$}>{$}c<{$}>{$}c<{$}>{$}c<{$}>{$}c<{$}>{$}c<{$}>{$}c<{$}}
+\begin{tabular}{>{$}c<{$}>{$}c<{$}>{$}c<{$}>{$}c<{$}>{$}c<{$}>{$}c<{$}}
 \toprule
 & H_\alpha & H_\beta & H_\gamma & H_\delta & H_\epsilon\\
 \midrule
-a_1 & 85 \pm 1 	& 40,4 \pm 0,5 	& 3,01 \pm 0,03	& 26,3 \pm 0,1 	& 2,79\pm 0,02\\
-a_2 & 47 \pm 2 	& 3,8\pm 0,6 	& 	& 1,7 \pm 0,1 \\ 		
-b_1 & -0,3357 \pm 5\cdot 10^{-4} & 0,30481\pm 8\cdot 10^{-5} & -1,5352\pm 2\cdot 10^{-4} & -1,1607 \pm 1\cdot 10^{-4} & 2,0022 \pm 2\cdot 10^{-4}\\
-b_2 & -0,3024 \pm 5 \cdot 10^{-4}	& 0,3244\pm 7\cdot 10^{-4} 	& 	& -1,258 \pm 1\cdot 10^{-3} 	&\\
-s_1 & 0,0164 \pm 5\cdot 10^{-4} & 0,00508\pm 8\cdot 10^{-5} 	& 0,0223\pm 3\cdot 10^{-4} & 0,0243 \pm 1\cdot 10^{-4} 	&  0,0276\pm 3\cdot 10^{-4}\\
-s_2 & 0,0078 \pm 5\cdot 10^{-4} 	& 0,0037\pm 7\cdot 10^{-4} & & 0,024\pm 2\cdot 10^{-3}	\\
-d & 11,7 \pm 0,6	& 11,3 \pm 0,2	& 6,36\pm 0,02 & 6,91  \pm 0,04 & 14,49\pm 0,01\\
+a_1/\% & 85 \pm 1 	& 40,4 \pm 0,5 	& 3,01 \pm 0,03	& 26,3 \pm 0,1 	& 2,79\pm 0,02\\
+a_2/\% & 47 \pm 2 	& 3,8\pm 0,6 	& 	& 1,7 \pm 0,1 \\ 		
+b_1/^\circ & -0,3357 \pm 5\cdot 10^{-4} & 0,30481\pm 8\cdot 10^{-5} & -1,5352\pm 2\cdot 10^{-4} & -1,1607 \pm 1\cdot 10^{-4} & 2,0022 \pm 2\cdot 10^{-4}\\
+b_2/^\circ & -0,3024 \pm 5 \cdot 10^{-4}	& 0,3244\pm 7\cdot 10^{-4} 	& 	& -1,258 \pm 1\cdot 10^{-3} 	&\\
+s_1/^\circ & 0,0164 \pm 5\cdot 10^{-4} & 0,00508\pm 8\cdot 10^{-5} 	& 0,0223\pm 3\cdot 10^{-4} & 0,0243 \pm 1\cdot 10^{-4} 	&  0,0276\pm 3\cdot 10^{-4}\\
+s_2/^\circ & 0,0078 \pm 5\cdot 10^{-4} 	& 0,0037\pm 7\cdot 10^{-4} & & 0,024\pm 2\cdot 10^{-3}	\\
+d/\% & 11,7 \pm 0,6	& 11,3 \pm 0,2	& 6,36\pm 0,02 & 6,91  \pm 0,04 & 14,49\pm 0,01\\
+\midrule
+\delta\beta/^\circ & (5,8\pm 0,1)\cdot 10^{-4}  & (3,4\pm 0,1) \cdot 10^{-4}& & (-17,0\pm 0,3)\cdot 10^{-4}\\
+\delta\lambda/\si{\nano\metre} & 0,33\pm 0,02 & 0,21\pm	0,01& & -1.05\pm 0,06\\
 \bottomrule
 \end{tabular}
-\label{tab:okular}
+\label{tab:ccd_fit}
 \end{table}
+
+Aus den Parametern kann man nun $\delta \beta = b_2-b_1$ berechnen ($b_1$ ist immer der höhere Peak). Der kleinere Peak entspricht der Deuteriumslinie, da das Gas weniger Deuterium enthält. Bei der H$_\alpha$- und H$_\beta$-Linie ist dieser rechts vom größeren Peak. Das ist auch zu erwarten, da die Linien des Deuteriums kleinere Wellenlängen haben, als die vom Wasserstoff. Nur bei der H$_\delta$-Linie liegt der kleinere Peak links vom größeren Peak (Deswegen sind $\delta\beta$ und $\delta \lambda$ negativ). Nach der Theorie sollten außerdem die Abstände der Linien mit abnehmender Wellenlänge kleiner werden. Der Abstand der Linie betrug aber etwa das dreifache des Abstandes der H$_\alpha$-Linie. Vermutlich handelt es sich also bei dem zweitem Gauss-Peak nicht um die Deuteriumslinie. Es könnte z.B. eine andere Spektrallinie im Hintergrund sein, oder, da der Peak sehr schwach ist, einfach Teil des Untergrundes. Wir betrachten deswegen diesen Wert nicht weiter.\\
+
+\begin{table}
+\centering
+\caption{Berechnete Isotopieaufspaltungen mit Okular, mit CCD und der theoretische Wert}
+\begin{tabular}{c>{$}c<{$}>{$}c<{$}>{$}c<{$}}
+\toprule
+Linie & \delta\lambda\upd{oku}/\si{\nano \metre} & \delta\lambda\upd{ccd}/\si{\nano \metre} & \delta\lambda\upd{theo}/\si{\nano \metre}\\
+\midrule
+H$_\alpha$ & 0,19\pm 0,09 & 0,33\pm 0,02 & 0,178\\
+H$_\beta$ & (0,6\pm 0,1) & 0,21\pm 0,01 & 0,132\\
+H$_\delta$ & 			 & (-1.05\pm 0,06) & 0,111\\
+\bottomrule
+\end{tabular}
+\label{tab:ccd_res}
+\end{table}
+
+Stellt man alle Werte gegenüber, so kann man erkennen (siehe Tab. \ref{tab:ccd_res}), dass nur die Aufspaltung der H$_\alpha$-Linie bei der Messung mit dem Okular einen Wert liefert, der in der Nähe des theoretischen Wertes ist. Beide Werte der CCD-Messung liegen zwar in der gleichen Größenordnung, sind aber etwa doppelt so groß. Eine mögliche Fehlerquelle hierfür könnte die Berechnung von $\gamma$ sein. Diese basiert darauf, dass der Abstand zwischen Objektiv und Kamera der Brennweite entspricht. Geht man von einem Fehler von $1\si{\centi\metre}$ aus, so ergibt sich allerdings nur ein relativer Fehler von $\frac{\Delta f}{f} = \frac{\si{1\centi\metre}}{\si{30 \centi\metre}} = 3.3\%$. Somit muss es noch weitere größere Fehler geben.
+

@@ -1,5 +1,3 @@
-\section{Theoretische Grundlagen}
-
 \subsection{Photoeffekt}
 Beim Photoeffekt treffen Photonen auf eine Photozelle. In der Photozelle befinden sich (getrennt voneinander) eine Anode und eine Kathode, diese sind an eine äußere Spannung $U_\mathrm{G}>0$ angeschlossen. Betrachtet man die Elektronen im Bändermodell, so führt die Verbindung mit der Spannungsquelle dazu, dass die Fermie-Niveaus von Anode ($E_\mathrm{FA}$) und Kathode ($E_\mathrm{FK}$) nun eine Potentialdifferenz von $e U_\mathrm{G}$ haben, wobei $e$ die Elementarladung ist. Bei unterschiedlichen Austrittsarbeiten $W_\mathrm{A}$ und $W_\mathrm{K}$ von Anode und Kathode entsteht eine Potentialdifferenz von $eU_\mathrm{AK}=W_\mathrm{A}-W_\mathrm{K}$, das so genannte Kontaktpotential (siehe Abbildung \ref{Photozelle}). 
 
@@ -44,38 +42,3 @@ Aus \cite{kennlinie} folgt (mit $h\nu>eU_\mathrm{G}+w_\mathrm{A}$), dass bei kle
   I \propto N \propto \left(  h\nu-W_\mathrm{A}-eU_\mathrm{G}\right)^2
 \end{align} 
 gilt. 
-
-\newpage
-
-\subsection{Balmer-Serie}
-Die Energie-Eigenzustände des Wasserstoffatoms werden durch die Quantenzahlen $n,l$ und $m$ beschrieben. Ein Zustand mit der Hauptquantenzahl $n$ hat dabei den Energie-Eigenwert $E_n=-Ry/n^2$, wobei $Ry$ die Rydberg-Energie ist. Wechselt das Wasserstoffatom von einem Zustand mit Hauptquantenzahl $n$ zu einem energetisch niedrigeren Zustand mit Hauptquantenzahl $n'$ wird ein Photon der Energie 
-\begin{align}
-  E_{n \rightarrow n'}=Ry \left( \frac{1}{n'^2} - \frac{1}{n^2}\right)
-\end{align}
-emittiert. Die Balmer-Serie enthält alle Frequenzen des Emissionsspektrums, die aus dem Übergang von einem Niveau $n>2$ auf das Niveau $n'=2$ entstehen.
-
-\subsection{Linienbreite}
-In der Praxis werden die mit dem Reflexionsgitter beobachtbaren Balmer-Linien eine gewisse Ausdehnung haben, mögliche Ursachen dafür sind:
-\begin{itemize}
-\item
-Im Versuch wird das Spektrum von einem Gemisch aus Deuterium und normalem Wasser in einer Gasentladungsröhre untersucht. Durch die abweichende reduzierte Masse von Deuterium und Wasserstoff ändert sich auch das Emissionsspektrum leicht, so, dass es zu einer Aufspaltung der Linien kommt, der Isotopieaufspaltung.
-\item    
-Durch die thermische Bewegung der Atome kommt es zur Dopplerverschiebung der Wellenlänge des emittierten Lichtes. Bewegt sich das Atom mit der Geschwindigkeit $v$ auf den Empfänger zu und emittiert ein Photon der Wellenlänge $\lambda$, so misst dieser die Wellenlänge 
-\begin{align*}
-  \lambda'=\lambda \cdot \left(  1+ \frac{v}{c} \right),
-\end{align*} 
-wobei $c$ die Lichtgeschwindigkeit ist. Nimmt man an, dass es sich bei dem Gas der Gasentladungsröhre um ein ideales Gas handelt gilt für die Geschwindigkeit $v$ jedes Atoms (mit Masse $m$ und Boltzmann-Konstante $k_\mathrm{B}$)
-\begin{align*}
-  \frac{1}{2} m v^2=\frac{3}{2} k_\mathrm{B} T.
-\end{align*}
-Durch die Dopplerverschiebung schwankt die Wellenlänge also im Bereich
-\begin{align}
-  \lambda'=\lambda\left(1 \pm \frac{1}{c}\sqrt{\frac{3k_\mathrm{B}T}{m}} \right).
-\end{align}
-\item
-Nach \cite{unschaerfe} gilt, dass wenn ein angeregter Zustand des Atoms die mittlere Lebensdauer $\tau$ hat, die Spektrallinie dieses Zustandes die Form einer Lorentz-Kurve mit Breite 
-\begin{align}
-  \Delta E=\frac{\hbar}{\tau}
-\end{align}
-hat.
-\end{itemize}

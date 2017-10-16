@@ -1,32 +1,39 @@
 \subsection{Balmer-Serie}
-Die Energie-Eigenzustände des Wasserstoffatoms werden durch die Quantenzahlen $n,l$ und $m$ beschrieben. Ein Zustand mit der Hauptquantenzahl $n$ hat dabei den Energie-Eigenwert $E_n=-Ry/n^2$, wobei $Ry$ die Rydberg-Energie ist. Wechselt das Wasserstoffatom von einem Zustand mit Hauptquantenzahl $n$ zu einem energetisch niedrigeren Zustand mit Hauptquantenzahl $n'$ wird ein Photon der Energie 
+Die Energie-Eigenzustände des Wasserstoffatoms werden durch die Quantenzahlen $n,l$ und $m$ beschrieben. Ein Zustand mit der Hauptquantenzahl $n$ hat dabei den Energie-Eigenwert $E_n=-R\ind{y}/n^2$, wobei $R\ind{y} = hc\cdot \cfrac{R_\infty}{1+\frac{m\ind{e}}{m\ind{K}}}$ die Rydberg-Energie ist ($m\ind{K}$ Kernmasse). Wechselt das Wasserstoffatom von einem Zustand mit Hauptquantenzahl $n$ zu einem energetisch niedrigeren Zustand mit Hauptquantenzahl $n'$ wird ein Photon der Energie 
+\begin{align*}
+  E_{n \rightarrow n'}&=R\ind{y} \left( \frac{1}{n'^2} - \frac{1}{n^2}\right)
+\end{align*}
+emittiert. Die Balmer-Serie enthält alle Frequenzen des Emissionsspektrums, die aus dem Übergang von einem Niveau $n>2$ auf das Niveau $n'=2$ entstehen. Daraus ergeben sich folgender Zusammenhang für die Wellenlängen:
 \begin{align}
-  E_{n \rightarrow n'}=Ry \left( \frac{1}{n'^2} - \frac{1}{n^2}\right)
+  \cfrac{1}{\lambda} = \cfrac{R_\infty}{1+\frac{m\ind{e}}{m\ind{K}}} \left( \frac{1}{2^2} - \frac{1}{n^2}\right)
+  \label{equ:rydberg}
 \end{align}
-emittiert. Die Balmer-Serie enthält alle Frequenzen des Emissionsspektrums, die aus dem Übergang von einem Niveau $n>2$ auf das Niveau $n'=2$ entstehen.
+
+Daran kann man auch die Isotopieaufspaltung erkennen: Für unterschiedliche Kernmassen $m\ind{K}$ ergeben sich leicht unterschiedliche Wellenlängen. 
 
 \subsection{Linienbreite}
-In der Praxis werden die mit dem Reflexionsgitter beobachtbaren Balmer-Linien eine gewisse Ausdehnung haben, mögliche Ursachen dafür sind:
+In der Praxis haben die beobachtbaren Balmer-Linien eine gewisse Ausdehnung, mögliche Ursachen dafür sind:
 \begin{itemize}
-\item
-Im Versuch wird das Spektrum von einem Gemisch aus Deuterium und normalem Wasser in einer Gasentladungsröhre untersucht. Durch die abweichende reduzierte Masse von Deuterium und Wasserstoff ändert sich auch das Emissionsspektrum leicht, so, dass es zu einer Aufspaltung der Linien kommt, der Isotopieaufspaltung.
 \item    
 Durch die thermische Bewegung der Atome kommt es zur Dopplerverschiebung der Wellenlänge des emittierten Lichtes. Bewegt sich das Atom mit der Geschwindigkeit $v$ auf den Empfänger zu und emittiert ein Photon der Wellenlänge $\lambda$, so misst dieser die Wellenlänge 
 \begin{align*}
   \lambda'=\lambda \cdot \left(  1+ \frac{v}{c} \right),
 \end{align*} 
-wobei $c$ die Lichtgeschwindigkeit ist. Nimmt man an, dass es sich bei dem Gas der Gasentladungsröhre um ein ideales Gas handelt gilt für die Geschwindigkeit $v$ jedes Atoms (mit Masse $m$ und Boltzmann-Konstante $k_\mathrm{B}$)
+wobei $c$ die Lichtgeschwindigkeit ist. Nimmt man an, dass es sich bei dem Gas der Gasentladungsröhre um ein ideales Gas handelt, gilt für die Geschwindigkeit $v$ jedes Atoms (mit Masse $m$ und Boltzmann-Konstante $k_\mathrm{B}$)
 \begin{align*}
   \frac{1}{2} m v^2=\frac{3}{2} k_\mathrm{B} T.
 \end{align*}
 Durch die Dopplerverschiebung schwankt die Wellenlänge also im Bereich
 \begin{align}
-  \lambda'=\lambda\left(1 \pm \frac{1}{c}\sqrt{\frac{3k_\mathrm{B}T}{m}} \right).
+  \sigma[\lambda]\ind{Doppler}=\frac{\lambda}{c}\sqrt{\frac{3k\ind{B}T}{m\ind{K}}}.
+  \label{equ:doppler}
 \end{align}
 \item
 Nach \cite{unschaerfe} gilt, dass wenn ein angeregter Zustand des Atoms die mittlere Lebensdauer $\tau$ hat, die Spektrallinie dieses Zustandes die Form einer Lorentz-Kurve mit Breite 
 \begin{align}
-  \Delta E=\frac{\hbar}{\tau}
+  \sigma[E]\ind{n}&=\frac{\hbar}{\tau}\\
+  \sigma[\lambda]\ind{n} &= \frac{\lambda^2}{2\pi c \tau}
+  \label{equ:natbreite}
 \end{align}
 hat.
 \end{itemize}

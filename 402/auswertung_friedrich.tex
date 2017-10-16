@@ -114,16 +114,16 @@ H$_\epsilon$ & 400 \pm 49 & 397,0074\\
 \label{tab:okular_res}
 \end{table}
 
-Aus den Daten wird die Rydbergkonstante $R_\infty$ nach Gl. \ref{equ:rydberg} bestimmt, indem man $\frac{1}{\lambda}$ über $\frac{1}{2^2}-\frac{1}{n^2}$ ($n = 3,4,5,6,7$) aufträgt und einen linearen Fit $y = R \cdot x$ durchführt. (siehe Abb. \ref{fig:rydberg}).
+Aus den Daten wird die Rydbergkonstante $R_\infty$ nach Gl. \ref{equ:rydberg} bestimmt, indem man $\frac{1}{\lambda}$ über $\frac{1}{2^2}-\frac{1}{n^2}$ ($n = 3,4,5,6,7$) aufträgt und einen linearen Fit $y = R \cdot x$ durchführt (siehe Abb. \ref{fig:rydberg}).\\
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.75\linewidth]{data/Balmer/out_rydberg.png}
   \caption{Bestimmung der Rydbergkonstanten}
-  \label{fig:ryberg}
+  \label{fig:rydberg}
 \end{figure}
 
-Der Fit ergibt: $R = (10,6 \pm 0,2)\cdot 10^6\frac{1}{\si{\metre}}$. $R_\infty$ ergibt sich nun durch $R_\infty = (1+\frac{m\ind{e}}{m\ind{p}}) R = (10,6 \pm 0,2)\cdot 10^6\frac{1}{\si{\metre}}$ (Massen der Teilchen aus \cite{wiki_konst}). Der Literaturwert \cite{wiki_konst} ist $10,97 \cdot 10^6\frac{1}{\si{\metre}}$. Unser Wert liegt also in der gleichen Größenordnung, wie der wahre Wert. Allerdings liegt dieser knapp nicht im Fehlerintervall. Für das Wirkungsquantum $h = \sqrt[3]{\cfrac{m\ind{e}\mathrm{e}^4}{8\epsilon_0^2R_\infty c}}$ ergibt sich (Konstanten \cite{wiki_konst}): $h = (6,8 \pm 0,1) \cdot 10^{-34} \si{\joule \second}$. Wie bei der Rydbergkonstante liegt der Literaturwert: $h = 6,63 \cdot 10^{-34} \si{\joule \second}$ recht nah an dem gemessenem Wert, allerdings knapp nicht im Fehlerintervall.
+Der Fit ergibt: $R = (10,6 \pm 0,2)\cdot 10^6\frac{1}{\si{\metre}}$. $R_\infty$ berechnet sich nun durch $R_\infty = (1+\frac{m\ind{e}}{m\ind{p}}) R = (10,6 \pm 0,2)\cdot 10^6\frac{1}{\si{\metre}}$ (Massen der Teilchen aus \cite{wiki_konst}). Der Literaturwert \cite{wiki_konst} ist $10,97 \cdot 10^6\frac{1}{\si{\metre}}$. Unser Wert liegt also in der gleichen Größenordnung, wie der wahre Wert. Allerdings liegt dieser knapp nicht im Fehlerintervall. Für das Wirkungsquantum $h = \sqrt[3]{\cfrac{m\ind{e}\mathrm{e}^4}{8\epsilon_0^2R_\infty c}}$ ergibt sich (Konstanten \cite{wiki_konst}): $h = (6,8 \pm 0,1) \cdot 10^{-34} \si{\joule \second}$. Wie bei der Rydbergkonstante liegt der Literaturwert: $h = 6,63 \cdot 10^{-34} \si{\joule \second}$ recht nah an dem gemessenem Wert, allerdings knapp nicht im Fehlerintervall.
 
 \subsubsection{Untersuchung der Balmerlinien mit CCD-Kamera}
 Die Programm berechnet eigenständig aus der Pixelkoordinate den dazugehörigen Winkel $\delta  \beta = \gamma$. 
@@ -232,3 +232,31 @@ H$_\delta$ & 			 & (-1.05\pm 0,06) & 0,111\\
 Stellt man alle Werte gegenüber, so kann man erkennen (siehe Tab. \ref{tab:ccd_res}), dass nur die Aufspaltung der H$_\alpha$-Linie bei der Messung mit dem Okular einen Wert liefert, der in der Nähe des theoretischen Wertes ist. Beide Werte der CCD-Messung liegen zwar in der gleichen Größenordnung, sind aber etwa doppelt so groß. Eine mögliche Fehlerquelle hierfür könnte die Berechnung von $\gamma$ sein. Diese basiert darauf, dass der Abstand zwischen Objektiv und Kamera der Brennweite entspricht. Geht man von einem Fehler von $1\si{\centi\metre}$ aus, so ergibt sich allerdings nur ein relativer Fehler von $\frac{\Delta f}{f} = \frac{\si{1\centi\metre}}{\si{30 \centi\metre}} = 3.3\%$. Somit muss es noch weitere größere Fehler geben.
 
 \subsubsection{Dopplerverbreiterung}
+In Tab. \ref{tab:breite} sind die nach Gl. \ref{equ:doppler} bestimmten Breiten der Linien $\sigma[\lambda] = \frac{\mathrm{d}\lambda}{\mathrm{d}\beta}\sigma[\beta] = g\cos{\beta}\cdot s_i$ ($i=1,2$ siehe Tab. \ref{tab:ccd_fit}), die nach Gl. \ref{equ:doppler} berechneten Dopplerverbreiterungen $\sigma[\lambda]\ind{Doppler}$ und das Auflösungsvermögen des Gitters $\sigma[\lambda]\ind{Gitter} = \frac{\lambda}{N} = \frac{\lambda\cdot g}{\si{25 \milli\metre}}$\cite{wiki_gitter} dargestellt.\\
+Die Werte der Linien H$_\gamma$-H$_\epsilon$ sind eingeklammert, da wir bei diesen Linien die Isotopieaufspaltung nicht auflösen konnten, und somit die Breite von zwei Linien anstatt von einer gemessen wurde. Die Werte für diese Linien sind auch deutlich größer als für die anderen Linien.\\
+Die Breite der übrigen Linien liegt in der Größenordnung des Auflösungsvermögens des Gitters und etwa eine Größenordnung über der Dopplerverbreiterung. Man kann also die Dopplerverbreiterung nicht beobachten, da die Auflösung des Gitters nicht ausreicht.\\
+
+Für die natürliche Linienbreite haben wir eine typische Lebensdauer von $\tau = 10^{-8}\si{\second}$ angenommen. Für die größte betrachtete Wellenlänge (H$_\alpha$) ergibt sich eine natürliche Linienbreite von $\sigma[\lambda]\ind{n} = 2.2 \cdot 10^{-5} \si{\nano\metre}$, also drei Größenordnungen kleiner als die Dopplerverbreiterung. Die natürliche Linienbreite ist somit vernachlässigbar.
+
+\begin{table}
+\centering
+\caption{Bestimmte Linienbreite $\sigma[\lambda]$, theoretische Dopplerverbreiterung $\sigma[\lambda]\ind{Doppler}$ und Auflösungsvermögen des Gitters $\sigma[\lambda]\ind{Gitter}$}
+\begin{tabular}{c>{$}c<{$}>{$}c<{$}>{$}c<{$}}
+\toprule
+Linie & \sigma[\lambda]/\si{\nano \metre} &\sigma[\lambda]\ind{Doppler}/\si{\nano \metre} & \sigma[\lambda]\ind{Gitter}/\si{\nano \metre} \\
+\midrule
+H$_\alpha$ & 0,16 \pm 0,01 & 0,0108 \pm	0,0009 & 0,017 \pm 0,002\\
+H$_\alpha\upd{D}$ & 0,077	\pm 0,007 & 0,0076 \pm	0,0007  & 0,017 \pm 0,002\\
+\midrule
+H$_\beta$ & 0,053\pm	0,003 & 0,0088\pm	0,0009 & 0,014 \pm	0,002\\
+H$_\beta\upd{D}$ & 0,039\pm	0,008 & 0,0062\pm	0,0006 & 0,014 \pm	0,002\\
+\midrule
+H$_\gamma$ & (0,24\pm	0,01)	& 0,0074\pm	0,0008 & 0,012 \pm	0,001\\
+\midrule
+H$_\delta$ & (0,26\pm	0,01)	& 0,0073\pm	0,000 & 0,011 \pm	0,001\\
+\midrule
+H$_\epsilon$ & (0,30\pm	0,02)	& 0,0066\pm	0,0008 & 0,010 \pm	0,001\\
+\bottomrule
+\end{tabular}
+\label{tab:breite}
+\end{table}

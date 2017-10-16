@@ -5,12 +5,13 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{tikz}
-\usepackage{caption}
+\usepackage[justification=centering]{caption}
 \usepackage[left=3cm,right=3cm,top=2cm,bottom=3cm]{geometry}
 \usepackage{siunitx}
 \usepackage{booktabs}
 \usepackage[outdir=./]{epstopdf}
 \usepackage{subcaption}
+\usepackage{placeins}
 
 \usetikzlibrary{patterns}
 \sisetup{locale = DE}
@@ -49,6 +50,7 @@
 \input{auswertung_kilian.tex}
 \input{auswertung_friedrich.tex}
 
+\FloatBarrier
 \printbibliography
 
 \end{document}

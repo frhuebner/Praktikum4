@@ -1,4 +1,4 @@
-\subsection{Vermessung der Spektralinien}
+\subsection{Balmer-Serie}
 \label{subsec:auswertung_spektrallinien}
 \subsubsection{Reflexionsgitter}
 Um die Wellenlänge der Emissionslinien zu bestimmen, wird ein Reflexionsgitter verwendet. Untersucht wird dabei die Lage der Interferenzmaxima des reflektierten Lichtes. Eine wichtige Größe, die das Gitter charakterisiert, ist dabei die Gitterkonstante $g$, die die Periode des Gitters angibt. Mit Hilfe von Abbildung \ref{Gangunterschied} lässt sich leicht der Gangunterschied $s$ zweier benachbarter Strahlen berechnen. Werden die Winkel in mathematisch positiver Richtung zum Lot gemessen erhält man
@@ -95,7 +95,7 @@ H$_\epsilon$ & 46\pm 0,5\\
 
 In Tab. \ref{tab:okular} sind die gemessenen Winkel und die Aufspaltung der einzelnen Linien eingetragen. Die Aufspaltung konnte nur für die H$_\alpha$- und H$_\beta$-Linie bestimmt werden. Die Wellenlängen der Linien wurden über Gl. \ref{equ:angle} und Gl. \ref{equ:gitter_neu} berechnet. Um die Isotopieaufspaltung $\delta \lambda$ zu berechnen, linearisiert man Gl. \ref{equ:gitter_neu}: $\delta \lambda = g\cos{\beta} \delta\beta$. $\delta \beta$ ergibt sich aufgrund des nahezu parallelen Lichtes durch: $\delta\beta = \arctan{\frac{d}{f}} \overset{d \ll f}{=} \frac{d}{f}$, wobei $f$ die Brennweite des Objektives ist. Da wir keine Angabe über den Fehler von $f$ haben, haben wir den Fehler auf \si{10\milli \metre} geschätzt: $f = \si{(300\pm 10)\milli \metre}$.\\
 
-In \ref{tab:okular_res} sind die berechneten Wellenlängen, die Isotopieaufspaltung sowie die theoretischen Werte angeben. Die wirklichen Wellenlängen liegen alle im Fehlerbereich der berechneten Werte.\\
+In Tab. \ref{tab:okular_res} sind die berechneten Wellenlängen, die Isotopieaufspaltung sowie die theoretischen Werte angeben. Die wirklichen Wellenlängen liegen alle im Fehlerbereich der berechneten Werte.\\
 
 \begin{table}
 \centering
@@ -114,8 +114,6 @@ H$_\epsilon$ & 400 \pm 49 & 397,0074\\
 \label{tab:okular_res}
 \end{table}
 
-Aus den Daten wird die Rydbergkonstante $R_\infty$ nach Gl. \ref{equ:rydberg} bestimmt, indem man $\frac{1}{\lambda}$ über $\frac{1}{2^2}-\frac{1}{n^2}$ ($n = 3,4,5,6,7$) aufträgt und einen linearen Fit $y = R \cdot x$ durchführt (siehe Abb. \ref{fig:rydberg}).\\
-
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.75\linewidth]{data/Balmer/out_rydberg.png}
@@ -123,33 +121,34 @@ Aus den Daten wird die Rydbergkonstante $R_\infty$ nach Gl. \ref{equ:rydberg} be
   \label{fig:rydberg}
 \end{figure}
 
-Der Fit ergibt: $R = (10,6 \pm 0,2)\cdot 10^6\frac{1}{\si{\metre}}$. $R_\infty$ berechnet sich nun durch $R_\infty = (1+\frac{m\ind{e}}{m\ind{p}}) R = (10,6 \pm 0,2)\cdot 10^6\frac{1}{\si{\metre}}$ (Massen der Teilchen aus \cite{wiki_konst}). Der Literaturwert \cite{wiki_konst} ist $10,97 \cdot 10^6\frac{1}{\si{\metre}}$. Unser Wert liegt also in der gleichen Größenordnung, wie der wahre Wert. Allerdings liegt dieser knapp nicht im Fehlerintervall. Für das Wirkungsquantum $h = \sqrt[3]{\cfrac{m\ind{e}\mathrm{e}^4}{8\epsilon_0^2R_\infty c}}$ ergibt sich (Konstanten \cite{wiki_konst}): $h = (6,8 \pm 0,1) \cdot 10^{-34} \si{\joule \second}$. Wie bei der Rydbergkonstante liegt der Literaturwert: $h = 6,63 \cdot 10^{-34} \si{\joule \second}$ recht nah an dem gemessenem Wert, allerdings knapp nicht im Fehlerintervall.
+Aus den Daten wird die Rydbergkonstante $R_\infty$ nach Gl. \ref{equ:rydberg} bestimmt, indem man $\frac{1}{\lambda}$ über $\frac{1}{2^2}-\frac{1}{n^2}$ ($n = 3,4,5,6,7$) aufträgt und einen linearen Fit $y = R \cdot x$ durchführt (siehe Abb. \ref{fig:rydberg}). Der Fit ergibt: $R = (10,6 \pm 0,2)\cdot 10^6\frac{1}{\si{\metre}}$. $R_\infty$ berechnet sich nun durch \[R_\infty = (1+\frac{m\ind{e}}{m\ind{p}}) R = (10,6 \pm 0,2)\cdot 10^6\frac{1}{\si{\metre}}\] (Massen der Teilchen aus \cite{wiki_konst}). Der Literaturwert ist $10,97 \cdot 10^6\frac{1}{\si{\metre}}$\cite{wiki_konst}. Unser Wert liegt also in der gleichen Größenordnung, wie der wahre Wert. Allerdings liegt dieser knapp nicht im Fehlerintervall. Für das Wirkungsquantum $h = \sqrt[3]{\cfrac{m\ind{e}\mathrm{e}^4}{8\epsilon_0^2R_\infty c}}$ ergibt sich (Konstanten \cite{wiki_konst}): $h = (6,8 \pm 0,1) \cdot 10^{-34} \si{\joule \second}$. Wie bei der Rydbergkonstante liegt der Literaturwert: $h = 6,63 \cdot 10^{-34} \si{\joule \second}$ recht nah an dem gemessenem Wert, allerdings knapp nicht im Fehlerintervall.
 
 \subsubsection{Untersuchung der Balmerlinien mit CCD-Kamera}
 Die Programm berechnet eigenständig aus der Pixelkoordinate den dazugehörigen Winkel $\delta  \beta = \gamma$. 
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.75\linewidth]{data/Balmer/out_red_raw.png}
-  \caption{Intensitätsverteilung der H$_\alpha$-Linie}
-  \label{fig:red_raw}
-\end{figure}
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.75\linewidth]{data/Balmer/out_lightblue_raw.png}
-  \caption{Intensitätsverteilung der H$_\beta$-Linie}
-  \label{fig:lightblue_raw}
-\end{figure}
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.75\linewidth]{data/Balmer/out_blue_raw.png}
-  \caption{Intensitätsverteilung der (v.l.n.r.) H$_\gamma$-,H$_\delta$- und H$_\epsilon$-Linie}
-  \label{fig:blue_raw}
+  \begin{subfigure}[c]{0.49\linewidth}
+  	\includegraphics[width=1\linewidth]{data/Balmer/out_red_raw.png}
+ 	 \subcaption{H$_\alpha$-Linie}
+  	\label{fig:red_raw}
+  \end{subfigure}
+  \begin{subfigure}[c]{0.49\linewidth}
+  	\includegraphics[width=1\linewidth]{data/Balmer/out_lightblue_raw.png}
+  	\subcaption{H$_\beta$-Linie}
+  	\label{fig:lightblue_raw}
+  \end{subfigure}
+  \begin{subfigure}[c]{0.49\linewidth}
+  	\includegraphics[width=1\linewidth]{data/Balmer/out_blue_raw.png}
+  	\caption{H$_\gamma$-,H$_\delta$- und H$_\epsilon$-Linie (v.l.n.r.)}
+  	\label{fig:blue_raw}
+  \end{subfigure}
+  \caption{Gemessene Intensitätsverteilungen}
 \end{figure}
 
 In den Abbildungen \ref{fig:red_raw}-\ref{fig:blue_raw} sind die von der Kamera gemittelten Werte aufgetragen. Da wir keine Angaben zu den Fehlern der Kamera haben (sowohl für $\gamma$, als auch für die Intensität $I$), sind keine Fehler in den Diagrammen eingezeichnet. Für das weitere Vorgehen ist dies nicht relevant, da, wenn der Fehler für alle Werte gleich ist, das Ergebnis des Fitalgorithmus nicht beeinflusst wird. In Abb. \ref{fig:blue_raw} sind die drei blauen Balmer-Linien zu sehen. Vergleicht man die Abstände der Linien mit den Messungen des vorherigen Teils, so kann man erkennen, dass größere $\gamma$ kleineren Wellenlängen entsprechen.\\
 
-Nun wird um jede Linie ein möglichst kleiner Ausschnitt genommen (siehe Abb. \ref{fig:red} - \ref{fig:blue2}). Kann man in diesem Ausschnitt 2 getrennte Linien erkennen (H$_\alpha$, H$_\beta$, H$_\delta$), wird an ihn die Summe zweier Gaussfunktionen angefittet:
+Nun wird um jede Linie ein möglichst kleiner Ausschnitt genommen (siehe Abb. \ref{fig:red} - \ref{fig:blue2}). Kann man in diesem Ausschnitt zwei getrennte Linien erkennen (H$_\alpha$, H$_\beta$, H$_\delta$), wird an ihn die Summe zweier Gaussfunktionen angefittet:
 \begin{align*}
 I(\gamma) = a_1\exp{-\frac{(\gamma-b_1)^2}{2s_1^2}} + a_2\exp{-\frac{(\gamma-b_2)^2}{2s_2^2}} + d
 \end{align*}
@@ -161,38 +160,43 @@ Das d haben wir aufgrund eines nicht vernachlässigbaren Untergrundes hinzugefü
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.75\linewidth]{data/Balmer/out_red.png}
-  \caption{Fit an die H$_\alpha$-Linie}
-  \label{fig:red}
-\end{figure}
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.75\linewidth]{data/Balmer/out_lightblue.png}
-  \caption{Fit an die H$_\beta$-Linie}
-  \label{fig:lightblu}
-\end{figure}
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.75\linewidth]{data/Balmer/out_blue0.png}
-  \caption{Fit an die H$_\gamma$-Linie}
-  \label{fig:blue0}
-\end{figure}
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.75\linewidth]{data/Balmer/out_blue1.png}
-  \caption{Fit an die H$_\delta$-Linie}
-  \label{fig:blue1}
-\end{figure}
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.75\linewidth]{data/Balmer/out_blue2.png}
-  \caption{Fit an die H$_\epsilon$-Linie}
-  \label{fig:blue2}
+  \begin{subfigure}[c]{0.49\linewidth}
+  	\centering
+  	\includegraphics[width=\linewidth]{data/Balmer/out_red.png}
+  	\subcaption{H$_\alpha$-Linie}
+  	\label{fig:red}
+  \end{subfigure}
+  \begin{subfigure}[c]{0.49\linewidth}
+  	\centering
+  	\includegraphics[width=\linewidth]{data/Balmer/out_lightblue.png}
+  	\subcaption{H$_\beta$-Linie}
+  	\label{fig:lightblu}
+  \end{subfigure}
+  \begin{subfigure}[c]{0.49\linewidth}
+  	\centering
+  	\includegraphics[width=\linewidth]{data/Balmer/out_blue0.png}
+  	\subcaption{H$_\gamma$-Linie}
+  	\label{fig:blue0}
+  \end{subfigure}
+  \begin{subfigure}[c]{0.49\linewidth}
+  	\centering
+  	\includegraphics[width=\linewidth]{data/Balmer/out_blue1.png}
+  	\subcaption{H$_\delta$-Linie}
+  	\label{fig:blue1}
+  \end{subfigure}
+  \begin{subfigure}[c]{0.49\linewidth}
+  	\centering
+  	\includegraphics[width=\linewidth]{data/Balmer/out_blue2.png}
+  	\subcaption{H$_\epsilon$-Linie}
+  	\label{fig:blue2}
+  \end{subfigure}
+  \caption{Ergebnisse der Fits an die Linien}
 \end{figure}
 
 \begin{table}[h]
-%\centering
-\caption{Ergebnisse der Fits an die Linien}
+\centering
+\footnotesize
+\caption{Fitparameter und berechnete Isotopieaufspaltung $\delta\lambda$}
 \begin{tabular}{>{$}c<{$}>{$}c<{$}>{$}c<{$}>{$}c<{$}>{$}c<{$}>{$}c<{$}}
 \toprule
 & H_\alpha & H_\beta & H_\gamma & H_\delta & H_\epsilon\\
@@ -232,15 +236,9 @@ H$_\delta$ & 			 & (-1.05\pm 0,06) & 0,111\\
 Stellt man alle Werte gegenüber, so kann man erkennen (siehe Tab. \ref{tab:ccd_res}), dass nur die Aufspaltung der H$_\alpha$-Linie bei der Messung mit dem Okular einen Wert liefert, der in der Nähe des theoretischen Wertes ist. Beide Werte der CCD-Messung liegen zwar in der gleichen Größenordnung, sind aber etwa doppelt so groß. Eine mögliche Fehlerquelle hierfür könnte die Berechnung von $\gamma$ sein. Diese basiert darauf, dass der Abstand zwischen Objektiv und Kamera der Brennweite entspricht. Geht man von einem Fehler von $1\si{\centi\metre}$ aus, so ergibt sich allerdings nur ein relativer Fehler von $\frac{\Delta f}{f} = \frac{\si{1\centi\metre}}{\si{30 \centi\metre}} = 3.3\%$. Somit muss es noch weitere größere Fehler geben.
 
 \subsubsection{Dopplerverbreiterung}
-In Tab. \ref{tab:breite} sind die nach Gl. \ref{equ:doppler} bestimmten Breiten der Linien $\sigma[\lambda] = \frac{\mathrm{d}\lambda}{\mathrm{d}\beta}\sigma[\beta] = g\cos{\beta}\cdot s_i$ ($i=1,2$ siehe Tab. \ref{tab:ccd_fit}), die nach Gl. \ref{equ:doppler} berechneten Dopplerverbreiterungen $\sigma[\lambda]\ind{Doppler}$ und das Auflösungsvermögen des Gitters $\sigma[\lambda]\ind{Gitter} = \frac{\lambda}{N} = \frac{\lambda\cdot g}{\si{25 \milli\metre}}$\cite{wiki_gitter} dargestellt.\\
-Die Werte der Linien H$_\gamma$-H$_\epsilon$ sind eingeklammert, da wir bei diesen Linien die Isotopieaufspaltung nicht auflösen konnten, und somit die Breite von zwei Linien anstatt von einer gemessen wurde. Die Werte für diese Linien sind auch deutlich größer als für die anderen Linien.\\
-Die Breite der übrigen Linien liegt in der Größenordnung des Auflösungsvermögens des Gitters und etwa eine Größenordnung über der Dopplerverbreiterung. Man kann also die Dopplerverbreiterung nicht beobachten, da die Auflösung des Gitters nicht ausreicht.\\
-
-Für die natürliche Linienbreite haben wir eine typische Lebensdauer von $\tau = 10^{-8}\si{\second}$ angenommen. Für die größte betrachtete Wellenlänge (H$_\alpha$) ergibt sich eine natürliche Linienbreite von $\sigma[\lambda]\ind{n} = 2.2 \cdot 10^{-5} \si{\nano\metre}$, also drei Größenordnungen kleiner als die Dopplerverbreiterung. Die natürliche Linienbreite ist somit vernachlässigbar.
-
-\begin{table}
+\begin{table}[h]
 \centering
-\caption{Bestimmte Linienbreite $\sigma[\lambda]$, theoretische Dopplerverbreiterung $\sigma[\lambda]\ind{Doppler}$ und Auflösungsvermögen des Gitters $\sigma[\lambda]\ind{Gitter}$}
+\caption{Linienbreite $\sigma[\lambda]$, theoretische Dopplerverbreiterung $\sigma[\lambda]\ind{Doppler}$ und Auflösungsvermögen des Gitters $\sigma[\lambda]\ind{Gitter}$}
 \begin{tabular}{c>{$}c<{$}>{$}c<{$}>{$}c<{$}}
 \toprule
 Linie & \sigma[\lambda]/\si{\nano \metre} &\sigma[\lambda]\ind{Doppler}/\si{\nano \metre} & \sigma[\lambda]\ind{Gitter}/\si{\nano \metre} \\
@@ -260,3 +258,8 @@ H$_\epsilon$ & (0,30\pm	0,02)	& 0,0066\pm	0,0008 & 0,010 \pm	0,001\\
 \end{tabular}
 \label{tab:breite}
 \end{table}
+
+In Tab. \ref{tab:breite} sind die nach Gl. \ref{equ:doppler} bestimmten Breiten der Linien $\sigma[\lambda] = \frac{\mathrm{d}\lambda}{\mathrm{d}\beta}\sigma[\beta] = g\cos{\beta}\cdot s_i$ ($i=1,2$ siehe Tab. \ref{tab:ccd_fit}), die nach Gl. \ref{equ:doppler} berechneten Dopplerverbreiterungen $\sigma[\lambda]\ind{Doppler}$ und das Auflösungsvermögen des Gitters $\sigma[\lambda]\ind{Gitter} = \frac{\lambda}{N} = \frac{\lambda\cdot g}{\si{25 \milli\metre}}$\cite{wiki_gitter} dargestellt.\\
+Die Werte der Linien H$_\gamma$-H$_\epsilon$ sind eingeklammert, da wir bei diesen Linien die Isotopieaufspaltung nicht auflösen konnten, und somit die Breite von zwei Linien anstatt von einer gemessen wurde. Die Werte für diese Linien sind auch deutlich größer als für die anderen Linien.\\
+Die Breite der übrigen Linien liegt in der Größenordnung des Auflösungsvermögens des Gitters und etwa eine Größenordnung über der Dopplerverbreiterung. Man kann also die Dopplerverbreiterung nicht beobachten, da die Auflösung des Gitters nicht ausreicht.\\
+Für die natürliche Linienbreite haben wir eine typische Lebensdauer von $\tau = 10^{-8}\si{\second}$ angenommen. Für die größte betrachtete Wellenlänge (H$_\alpha$) ergibt sich eine natürliche Linienbreite von $\sigma[\lambda]\ind{n} = 2.2 \cdot 10^{-5} \si{\nano\metre}$, also drei Größenordnungen kleiner als die Dopplerverbreiterung. Die natürliche Linienbreite ist somit vernachlässigbar.

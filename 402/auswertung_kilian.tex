@@ -1,4 +1,4 @@
-\subsection{Photoeffekt}
+\subsection{Auswertung}
 Für alle Messungen der $U$-$I$-Kennlinie wird $\sqrt{I-I_0}$ gegen die Gegenspannung $U_\mathrm{G}$ aufgetragen. An die Daten wird eine Anpassungsgerade $\sqrt{I-I_0}(U_\mathrm{G})=aU_\mathrm{G}+b$ angepasst.Für ein kleine Werte von $I-I_0$ wird der aus der linearen Fehlerfortpflanzung resultierende Fehler deutlich größer als die absoluten Fehlerschranken, für diese Werte wurden die Fehlerschranken seperat berechnet. Die Anpassungsgeraden ändern sich dadurch nicht, da ohnehin nur Werte im linearen Bereich beachtet werden. Der Index an der Wellenlänge steht für den Messdurchlauf. Die aus der Anpassung folgenden Werte sind in Tabelle \ref{tab:photoeffekt} zu sehen. Aus den Parametern wird die Grenzspannung über $U_0=b/a$ berechnet.
 
 \begin{table}[h]
@@ -78,12 +78,6 @@ Für jede Wellenlänge wird der varianzgewichtete Mittelwert der Grenzspannung $
   b&=(-1,5 \pm 0,2) \mathrm{V}
 \end{align*}
 
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=10cm]{data/Messung_photoeffekt/f_u.eps}
-  \caption{Grenzspannung und Austrittsarbeit beim Photoeffekt}
-  \label{planck}
-\end{figure}
 
 Mit Gleichung \ref{eqn:grenzspannung} lassen sich nun das Plancksche Wirkungsquantum und die Austrittsarbeit berechnen:
 \begin{align*}
@@ -100,7 +94,16 @@ Die $U$-$I$-Kennlinie bei $365$nm und verringerter Intensität ist in Abbildung 
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=10cm]{data/Messung_photoeffekt/365nm_low_intensity.eps}
+  \includegraphics[width=8cm]{data/Messung_photoeffekt/f_u.eps}
+  \caption{Grenzspannung und Austrittsarbeit beim Photoeffekt}
+  \label{planck}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=8cm]{data/Messung_photoeffekt/365nm_low_intensity.eps}
   \caption{Kennlinie für 365nm und verringerte Intensität}
   \label{fig:lowintensity}
 \end{figure}
+
+\newpage

@@ -8,4 +8,5 @@ set terminal postscript eps enhanced size 3in, 3in
 set output i.".eps"
 set xlabel 'U_g_e_g/V'
 set ylabel '(I-I_0)^{1/2}/(nA)^{1/2}'
-plot i.".txt" u (-($1)):6:2:7 with xyerrorbars title ii, f(x) title 'Anpassungsgerade'
+set key right bottom
+plot i.".txt" u (-($1)):6:2:7 with xyerrorbars title ii, f(x) title 'Regr.'

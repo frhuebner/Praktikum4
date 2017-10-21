@@ -32,4 +32,4 @@ plot \
  "red.txt" using "beta":"I" title "I({/Symbol g})" pointtype 1 lt rgb "black",\
  a1*exp(-(x-b1)**2/2/s1**2)+d title "" lt rgb "red",\
  a2*exp(-(x-b2)**2/2/s2**2)+d title "" lt rgb "blue",\
- f(x) title "Fit"  lt rgb "black"
+ f(x) title "Regr."  lt rgb "black"

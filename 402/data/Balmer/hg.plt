@@ -32,4 +32,4 @@ fit f(x) "hg.txt" using "x":"y":"dx":(1E-38) xyerrors via a,b
 
 plot \
  "hg.txt" using "x":"y":"dx" with xerrorbars title "" lt rgb "black",\
- f(x) title sprintf("%.3f*x+%.3f", a, b) lt rgb "black"
+ f(x) title sprintf("%.3f*x%.3f", a, b) lt rgb "black"

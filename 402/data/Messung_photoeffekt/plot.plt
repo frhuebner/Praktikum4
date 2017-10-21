@@ -1,3 +1,4 @@
+set decimalsign ','
 l=-1.2
 r=0
 
@@ -74,3 +75,11 @@ r=0
 i="578nm_2"
 ii="578nm_2"
 load "loop.plt"
+
+
+set xrange [4:9.2]
+set yrange [-0.2:1.9]
+set output 'f_u.eps'
+set xlabel '{/Symbol n}/(10^{14}Hz)'
+set ylabel 'U_0/V'
+p 'f_u.txt' u (2997.92458/($1)):2:3 w yerrorbars title 'Messwerte', 0.379079*x-1.51865 title 'Regr.'

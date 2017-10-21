@@ -10,7 +10,7 @@ set decimalsign ','
 
 
 set ylabel "nm/{/Symbol l}"
-set xlabel "0.25-1/n^2"
+set xlabel "0,25-1/n^2"
 set key right bottom
 
 set output "out_rydberg.png"
@@ -22,4 +22,4 @@ fit f(x) "rydberg.txt" using "rx":"ry":"dry" yerrors via a
 
 plot \
  "rydberg.txt" using "rx":"ry":"dry" with yerrorbars title "" lt rgb "black",\
- f(x) title "Fit" lt rgb "black"
+ f(x) title "Regr." lt rgb "black"

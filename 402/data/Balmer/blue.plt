@@ -28,7 +28,7 @@ fit f(x) "blue0.txt" using 1:2 via a,b,s,d
 
 plot \
  "blue0.txt" using "beta":"I" title "I({/Symbol g})" pointtype 1 lt rgb "black",\
- f(x) title "Fit"  lt rgb "black"
+ f(x) title "Regr."  lt rgb "black"
 
  
 set output "out_blue1.png"
@@ -49,7 +49,7 @@ plot \
  "blue1.txt" using "beta":"I" title "I({/Symbol g})" pointtype 1 lt rgb "black",\
   a1*exp(-(x-b1)**2/2/s1**2)+d title "" lt rgb "red",\
  a2*exp(-(x-b2)**2/2/s2**2)+d title "" lt rgb "blue",\
- f(x) title "Fit"  lt rgb "black"
+ f(x) title "Regr."  lt rgb "black"
  
  
  
@@ -65,4 +65,4 @@ fit f(x) "blue2.txt" using 1:2 via a,b,s,d
 
 plot \
  "blue2.txt" using "beta":"I" title "I({/Symbol g})" pointtype 1 lt rgb "black",\
- f(x) title "Fit"  lt rgb "black"
+ f(x) title "Regr."  lt rgb "black"

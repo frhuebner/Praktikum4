@@ -21,5 +21,5 @@ b=-250
 fit f(x) "rydberg.txt" using "rx":"ry":"dry" yerrors via a
 
 plot \
- "rydberg.txt" using "rx":"ry":"dry" with yerrorbars title "" lt rgb "black",\
+ "rydberg.txt" using "rx":"ry":"dry" with yerrorbars title "Balmer-Lampe" lt rgb "black",\
  f(x) title "Regr." lt rgb "black"

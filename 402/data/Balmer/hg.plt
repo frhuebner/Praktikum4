@@ -17,7 +17,7 @@ set output "out_hg_raw.png"
 set object circle at first 578.013,58.4 radius char 0.5 \
     fillcolor rgb 'red' fillstyle solid noborder
 plot \
- "hg.txt" using "lambda":"wg":"dwg" with yerrorbars title "" lt rgb "black"
+ "hg.txt" using "lambda":"wg":"dwg" with yerrorbars title "Hg-Lampe" lt rgb "black"
 
  
 set xlabel "sin({/Symbol a})+sin({/Symbol b})"
@@ -31,5 +31,5 @@ b=-250
 fit f(x) "hg.txt" using "x":"y":"dx":(1E-38) xyerrors via a,b
 
 plot \
- "hg.txt" using "x":"y":"dx" with xerrorbars title "" lt rgb "black",\
- f(x) title sprintf("%.3f*x%.3f", a, b) lt rgb "black"
+ "hg.txt" using "x":"y":"dx" with xerrorbars title "Hg-Lampe" lt rgb "black",\
+ f(x) title "Regr." lt rgb "black"

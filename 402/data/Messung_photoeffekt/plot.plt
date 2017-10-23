@@ -18,7 +18,7 @@ r=0
 
 i="365nm_low_intensity"
 ii="365nm_l_i"
-load "loop.plt"
+load "loop_2.plt"
 
 l=-1.1
 r=0
@@ -82,4 +82,5 @@ set yrange [-0.2:1.9]
 set output 'f_u.eps'
 set xlabel '{/Symbol n}/(10^{14}Hz)'
 set ylabel 'U_0/V'
+set terminal postscript eps enhanced size 3in,2.25in
 p 'f_u.txt' u (2997.92458/($1)):2:3 w yerrorbars title 'Messwerte', 0.379079*x-1.51865 title 'Regr.'

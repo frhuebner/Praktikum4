@@ -1,0 +1,1 @@
+g++ -o extract.exe -O2 -Wall -Wextra -std=c++0x -static -D__NO_INLINE__ extract.cpp

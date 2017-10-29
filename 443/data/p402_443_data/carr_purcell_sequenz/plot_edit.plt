@@ -19,4 +19,4 @@ set key right top
 set output "plot_156.png"
 plot "edit_156.dat" using 1:2 notitle lt rgb "black"
 set output "plot_157.png"
-plot "edit_157.dat" using 1:2 notitle lt rgb "black"
+plot "edit_157.dat" using 1:2 notitle with lines lt rgb "black"

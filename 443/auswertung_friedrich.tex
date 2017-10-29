@@ -1,0 +1,123 @@
+\subsection{Messung der longitudinalen Relaxationszeit}
+Bei allen folgenden Messungen wurde der Untergrund vor dem ersten Puls (etwa 50 Werte) analysiert. Alle Werte wurden um den Mittelwert korrigiert. Für den Fehler der einzelnen Werte wurde der RMS-Wert des Untergrundes verwendet.
+\subsubsection{Sättigungszurückgewinnung}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{data/p402_443_data/saettigungszurueckgewinnung/plot_81.png}
+\caption{(Sättigungszurückgewinnung) Ausgabe für $\tau = 60\si{\milli\second}$}
+\label{fig:sat_bsp}
+\end{figure}
+Aus den Daten des Oszilloskops (siehe Abb. \ref{fig:sat_bsp}) wird das zweite Maximum bestimmt und über der Wartezeit $\tau$ aufgetragen (siehe Abb. \ref{fig:sat_data}). Während der Auswertung fiel uns auf, dass manchmal die erwartete Wartezeit $\tau$ zwischen den Pulsen nicht der im Plot erkennbaren entsprach. Vermutlich haben wir da die falsche Zeit eingestellt. Bei diesen Werten wurde die Wartezeit dann auf dem Wert aus dem Plot gesetzt. Deswegen sind die Datenpunkte nicht immer äquidistant. 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{data/p402_443_data/saettigungszurueckgewinnung/out_sat.png}
+\caption{(Sättigungszurückgewinnung) Fit an die bestimmten Amplituden (rot: nicht für den Fit verwendet)}
+\label{fig:sat_data}
+\end{figure}
+
+Der Fit $$U(\tau) = U_0\left(1-\exp{\left(-\frac{\tau}{T_1}\right)}\right)$$ ergibt: $U_0 = (8,60\pm 0,05)\si{\volt}, T_1 = (26,2\pm 0,8) \si{\milli\second}$. Für den Fit haben wir die rot eingefärbten Punkte vernachlässigt. Diese wurden in einer anderen Einstellung des Messbereiches aufgenommen und liegen deutlich unterhalb der Punkte davor. Wir schätzen, dass die Einstellung am Oszilloskop die Werte verändert hat.
+
+\subsubsection{Polarisationszurückgewinnung}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{data/p402_443_data/polarisationszurueckgewinnung/plot_110.png}
+\caption{(Polarisationszurückgewinnung) Ausgabe für $\tau = 50\si{\milli\second}$}
+\label{fig:pol_bsp}
+\end{figure}
+In diesem Versuchsteil stürzte das Oszilloskop während einer Messung ab. Auf den danach aufgenommen Datensätzen ist nur Hintergrundrauschen zu erkennen, wodurch wir sie nicht zur Auswertung verwenden konnten. Wir denken, dass es sich dabei um einen Softwarefehler des Oszilloskops handelt.\\
+ 
+Aus den Daten des Oszilloskops (siehe Abb. \ref{fig:pol_bsp}) wird das Maximum bestimmt und über der Wartezeit $\tau$ aufgetragen (siehe Abb. \ref{fig:pol_data}). Man kann erkennen, dass es nur wenige Datenpunkte im Bereich des Maximums gibt und man somit die wirkliche Amplitude des Signales nicht sehr genau bestimmen kann. Da wir diesen Fehler nicht abschätzen können, haben wir beschlossen wieder den Fehler des Hintergrundes zu verwenden. In Abb. \ref{fig:pol_data} liegt der Fit aber im Fehlerbereich aller Messwerte.
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{data/p402_443_data/polarisationszurueckgewinnung/out_pol.png}
+\caption{(Polarisationszurückgewinnung) Fit an die bestimmten Amplituden (rot: nicht für den Fit verwendet)}
+\label{fig:pol_data}
+\end{figure}
+
+Der Fit $$U(\tau) = U_0\left(1-2\exp{\left(-\frac{\tau}{T_1}\right)}\right)$$ ergibt: $U_0 = (7,4\pm 0,1)\si{\volt}, T_1 = (34,8\pm 0,8) \si{\milli\second}$. Die rot eingefärbten Daten wurden wieder mit einer anderen Messbereichseinstellung aufgenommen und aufgrund ihrer starken Abweichung nicht für den Fit verwendet. 
+
+\subsection{Messung der transversalen Relaxationszeit}
+\subsubsection{Effektive transversale Relaxationszeit}
+Um die effektive transversale Relaxationszeit zu bestimmen, wird an das FID-Signal ein exponentieller Abfall $$U(\tau) = U_0\exp{\left(-\frac{t}{T_2^*}\right)}$$ angepasst (siehe Abb. \ref{fig:hahn_fid}).
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{data/p402_443_data/hahn_sequenz/out_fid.png}
+\caption{FID mit exponentiellem Fit}
+\label{fig:hahn_fid}
+\end{figure}
+
+Der Fit ergibt: $U_0 = (10,51\pm 0,03)\si{\volt}, T_2^* = (3,75355\pm 0,02) \si{\milli\second}$ 
+
+\subsubsection{Hahn-Spinecho}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{data/p402_443_data/hahn_sequenz/plot_146.png}
+\caption{(Hahn-Spinecho) Ausgabe für $\tau = 50\si{\milli\second}$}
+\label{fig:hahn_bsp}
+\end{figure}
+
+Aus den Daten des Oszilloskops (siehe Abb. \ref{fig:hahn_bsp}) wird das zweite Maximum bestimmt und über der doppelten Wartezeit $2\tau$ aufgetragen (siehe Abb. \ref{fig:hahn_data}).
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{data/p402_443_data/hahn_sequenz/out_hahn.png}
+\caption{(Hahn-Spinecho) Fit an die bestimmten Amplituden}
+\label{fig:hahn_data}
+\end{figure}
+
+Daran wird nun ein exponentieller Fit angepasst: $$U(\tau) = U_0\exp{\left(-\frac{2\tau}{T_2}\right)}$$. Dieser ergibt: $U_0 = (8,9\pm 0,1)\si{\volt}, T_2 = (20,2\pm 0,6) \si{\milli\second}$
+
+\subsubsection{Carr-Purcell-Sequenz}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{data/p402_443_data/carr_purcell_sequenz/plot_156.png}
+\caption{(Carr-Purcell-Sequenz) Ausgabe des Oszilloskops}
+\label{fig:carr_raw}
+\end{figure}
+
+Aus den Daten des Oszilloskops (siehe Abb. \ref{fig:carr_raw}) werden die Positionen der lokalen Maxima bestimmt und über der Zeit $t$ aufgetragen (siehe Abb. \ref{fig:carr}).
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{data/p402_443_data/carr_purcell_sequenz/out_carr.png}
+\caption{(Carr-Purcell-Sequenz) Fit an die bestimmten Amplituden}
+\label{fig:carr}
+\end{figure}
+
+Daran wird nun ein exponentieller Fit angepasst: $$U(t) = U_0\exp{\left(-\frac{t}{T_2}\right)}$$. Dieser ergibt: $U_0 = (8,9\pm 0,1)\si{\volt}, T_2 = (19,2\pm 0,3) \si{\milli\second}$.\\
+
+Ändert man die Pulslänge, so wandern die Maxima weiter auseinander. Für Abb. \ref{fig:carr_b} wurden die Magnetfeldgradienten verändert. Man kann erkennen, dass die Sequenz von einer anderen periodischen Funktion überlagert wird. Dies liegt daran, dass die Länge eines $\pi$-Pulses vom Magnetfeld abhängt. Das bedeutet, dass manche Protonenspins nicht genau um $180^\circ$ um die x-Achse gedreht werden und somit eine z-Komponente erhalten. Diese z-Komponente wird aufgrund des gleichen Drehsinns zunehmend größer (und nimmt später wieder ab, nachdem der Spin vollständig in z-Richtung polarisiert war). Dadurch nehmen die gemessenen x-y-Komponenten ab und das Signal verschwindet schneller.
+ 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{data/p402_443_data/carr_purcell_sequenz/plot_157.png}
+\caption{(Carr-Purcell-Sequenz) Nach Änderung der Magnetfeldgradienten}
+\label{fig:carr_b}
+\end{figure}
+
+\subsubsection{Meiboom-Gill-Sequenz}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{data/p402_443_data/meiboom_gill_sequenz/plot_159.png}
+\caption{(Meiboom-Gill-Sequenz) Ausgabe des Oszilloskops}
+\label{fig:gill_raw}
+\end{figure}
+Die Auswertung von Abb. \ref{fig:gill_raw} erfolgt analog zur Carr-Purcell-Sequenz (siehe Abb. \ref{fig:gill}).
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{data/p402_443_data/meiboom_gill_sequenz/out_gill.png}
+\caption{(Meiboom-Gill-Sequenz) Fit an die bestimmten Amplituden}
+\label{fig:gill}
+\end{figure}
+
+Der exponentielle Fit $$U(t) = U_0\exp{\left(-\frac{t}{T_2}\right)}$$ ergibt: $U_0 = (8,6\pm 0,1)\si{\volt}, T_2 = (22,4\pm 0,6) \si{\milli\second}$.\\
+
+Ändert man bei der Meiboom-Gill-Sequenz die Magnetfeldgradienten (siehe Abb. \ref{fig:gill_b}), fällt das Signal zwischen den Pulsen zwar schneller ab, die Lage der Maxima bleibt aber gleich. Durch den umgekehrten Drehsinn bei jedem zweitem Winkel dreht sich ein möglicherweise falscher $\pi$-Puls wieder um genau den gleichen Winkel zurück. Somit liegen alle Spins dann wieder in der x-y-Ebene.
+  
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\linewidth]{data/p402_443_data/meiboom_gill_sequenz/plot_161.png}
+\caption{(Meiboom-Gill-Sequenz) Nach Änderung der Magnetfeldgradienten}
+\label{fig:gill_b}
+\end{figure}
+
+

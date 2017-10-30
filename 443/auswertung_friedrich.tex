@@ -34,7 +34,18 @@ Aus den Daten des Oszilloskops (siehe Abb. \ref{fig:pol_bsp}) wird das Maximum b
 \label{fig:pol_data}
 \end{figure}
 
-Der Fit $$U(\tau) = U_0\left(1-2\exp{\left(-\frac{\tau}{T_1}\right)}\right)$$ ergibt: $U_0 = (7,4\pm 0,1)\si{\volt}, T_1 = (34,8\pm 0,8) \si{\milli\second}$. Die rot eingefärbten Daten wurden wieder mit einer anderen Messbereichseinstellung aufgenommen und aufgrund ihrer starken Abweichung nicht für den Fit verwendet. 
+Der Fit $$U(\tau) = U_0\left(1-2\exp{\left(-\frac{\tau}{T_1}\right)}\right)$$ ergibt: $U_0 = (7,4\pm 0,1)\si{\volt}, T_1 = (34,8\pm 0,8) \si{\milli\second}$. Die rot eingefärbten Daten wurden wieder mit einer anderen Messbereichseinstellung aufgenommen und aufgrund ihrer starken Abweichung nicht für den Fit verwendet.\\
+
+Die beiden Ergebnisse für die longitudinale Relaxationszeit $(26,2\pm 0,8) \si{\milli\second}$ und $(34,8\pm 0,8) \si{\milli\second}$ liegen zwar in der gleichen Größenordnung, aber weichen dennoch außerhalb der Fehlertoleranz voneinander ab. Wie man bei den Daten aber schon sehen konnte, gab es durchaus Unterschiede bei den gemessenen Spannungen, je nachdem welche Auflösung am Oszilloskop eingestellt war. Diese betrug bei der Sättigungszurückgewinnungsmethode 20\si{\milli\second}/div und bei der Polarisationszurückgewinnungsmethode 100\si{\milli\second}/div. Somit könnten durchaus andere Spannungen gemessen wurden sein.\\
+Eine mögliche weitere Fehlerquelle für die Polarisationszugrückgewinnung könnte der unbekannte Fehler auf die Amplitude des Signals aufgrund weniger Daten im Bereich des Peaks sein.
+%In Abb. \ref{fig:pol_error} wurde ein Fit an den Daten der Polarisationsrückgewinnung mit festgelegter Relaxationszeit $T_1 = 26,2 \si{\milli\second}$ durchgeführt. Man erkennt, dass für etwa doppelte Fehler dies ein realistischer Fit wäre. Allerdings ist dann auch die Sättigungsspannung mit $U_0 = (6,7\pm 0,2)\si{\volt}$ deutlich kleiner als die bei der Sättigungsrückgewinnungsmethode ($U_0 = (8,60\pm 0,05)\si{\volt}$). 
+
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width=0.75\linewidth]{data/p402_443_data/polarisationszurueckgewinnung/out_pol_2.png}
+%\caption{(Polarisationszurückgewinnung) Fit mit $T_1 = 26,2 \si{\milli\second}$}
+%\label{fig:pol_error}
+%\end{figure}
 
 \subsection{Messung der transversalen Relaxationszeit}
 \subsubsection{Effektive transversale Relaxationszeit}
@@ -111,7 +122,7 @@ Die Auswertung von Abb. \ref{fig:gill_raw} erfolgt analog zur Carr-Purcell-Seque
 
 Der exponentielle Fit $$U(t) = U_0\exp{\left(-\frac{t}{T_2}\right)}$$ ergibt: $U_0 = (8,6\pm 0,1)\si{\volt}, T_2 = (22,4\pm 0,6) \si{\milli\second}$.\\
 
-Ändert man bei der Meiboom-Gill-Sequenz die Magnetfeldgradienten (siehe Abb. \ref{fig:gill_b}), fällt das Signal zwischen den Pulsen zwar schneller ab, die Lage der Maxima bleibt aber gleich. Durch den umgekehrten Drehsinn bei jedem zweitem Winkel dreht sich ein möglicherweise falscher $\pi$-Puls wieder um genau den gleichen Winkel zurück. Somit liegen alle Spins dann wieder in der x-y-Ebene.
+Ändert man bei der Meiboom-Gill-Sequenz die Magnetfeldgradienten (siehe Abb. \ref{fig:gill_b}), fällt das Signal zwischen den Pulsen zwar schneller ab, die Lage der Maxima bleibt aber gleich. Durch den umgekehrten Drehsinn bei jedem zweitem Winkel dreht sich ein möglicherweise falscher $\pi$-Puls wieder um genau den gleichen Winkel zurück. Somit liegen alle Spins dann wieder in der x-y-Ebene.\\
   
 \begin{figure}[h]
 \centering
@@ -120,4 +131,4 @@ Der exponentielle Fit $$U(t) = U_0\exp{\left(-\frac{t}{T_2}\right)}$$ ergibt: $U
 \label{fig:gill_b}
 \end{figure}
 
-
+Die Ergebnisse der verschiedenen Messungen von $T_2$ sind: $(20,2\pm 0,6) \si{\milli\second},  (19,2\pm 0,3) \si{\milli\second}$ und $(22,4\pm 0,6) \si{\milli\second}$. Die Werte liegen zwar knapp nicht in den Fehlerbereichen, sie liegen aber trotzdem nah zusammen. Da alle Werte mit unterschiedlichen Methoden gemessen wurde sind auch leichte Unterschiede zu erwarten. Fehlerquellen sind z.B. das Aufsummieren der Fehler in der Carr-Purcell-Sequenz, was eine schnellere Abnahme zur Folge hat (sie hat auch das kleinste gemessene $T_2$).

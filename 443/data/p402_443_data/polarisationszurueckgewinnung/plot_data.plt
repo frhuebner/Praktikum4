@@ -27,6 +27,21 @@ set object circle at first 180,8.55625 radius char 0.5 \
     fillcolor rgb 'red' fillstyle solid noborder
 
 set output "out_pol.png"
-plot "data_final.txt" using "tau":"y":"dy" with yerrorbars notitle lt rgb "black",\
+plot "data_final.txt" using "tau":"y":"dy" with yerrorbars title "Messwerte" lt rgb "black",\
 	f(x) title "Regr." lt rgb "black"
 
+set xrange [0:250]
+f(x) = m*(1-2*exp(-x/26.1556))
+#m=650
+#b=-250
+fit f(x) "data_final.txt" using ($2<165?$2:1/0):"y":"dy" yerrors via m
+
+set object circle at first 170, 8.56563 radius char 0.5 \
+    fillcolor rgb 'red' fillstyle solid noborder
+	
+set object circle at first 180,8.55625 radius char 0.5 \
+    fillcolor rgb 'red' fillstyle solid noborder
+
+set output "out_pol_2.png"
+plot "data_final.txt" using "tau":"y":"dy" with yerrorbars title "Messwerte" lt rgb "black",\
+	f(x) title "Regr." lt rgb "black"

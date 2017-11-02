@@ -16,4 +16,4 @@ d2=0.2
 fit f(x) 'maxima.txt' u 1:2:(0.3) yerr via a1,b1,c1,d1
 fit g(x) 'maxima.txt' u 1:3:(0.1) yerr via a2,b2,c2,d2
 set yrange [-2:13.5]
-plot 'maxima.txt' u 1:2:(0.3) w yerrorbars title 'Envelope-Signal', 'maxima.txt' u 1:3:(0.1) w yerrorbars title 'In-Phase-Signal', f(x) notitle, g(x) notitle
+plot 'maxima.txt' u 1:2:(0.3) w yerrorbars title 'Envelope Signal', 'maxima.txt' u 1:3:(0.1) w yerrorbars title 'In-Phase Signal', f(x) notitle, g(x) notitle

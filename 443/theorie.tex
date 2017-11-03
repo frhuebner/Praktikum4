@@ -145,3 +145,14 @@ Die Hahn-Spinecho-Sequenz erlaubt die Messung von $T_2$. Dazu wird nach einem $\
   \caption{Hahn-Spinecho-Sequenz im rotierenden Bezugssystem, die Magnetisierung (fett eingezeichnet) präzediert abhängig vom Magnetfeld schneller bzw. langsamer.}
   \label{hahn}
 \end{figure}
+
+\subsection{Carr-Purcell- und Meiboom-Gill-Sequenz}
+Mit der Carr-Purcell-Sequenz können im Gegensatz zur Hahn-Spinecho-Sequenz direkt mehrere Echos hintereinander gemessen werden. Die Puls-Sequenz liest sich
+\begin{align*}
+  \pi/2 \rightarrow \tau \rightarrow \pi \rightarrow \tau \rightarrow \pi \rightarrow ... 
+\end{align*}
+Die Echos haben also eine Periode von $2\tau$. \\ \\
+Problematisch ist die Carr-Purcell Methode wenn die Pulse nicht exakt die gewollte Länge haben. Dann summiert sich der systematische Fehler nämlich auf. Vermeiden lässt sich dies durch das verwenden der Meiboom-Gill-Sequenz, bei dieser alterniert das Vorzeichen der $\pi$-Pulse, die gesamte Sequenz liest sich also 
+\begin{align*}
+  \pi/2 \rightarrow \tau \rightarrow \pi \rightarrow \tau \rightarrow -\pi \rightarrow ... 
+\end{align*}

@@ -10,15 +10,8 @@ Der Aufbau besteht aus
 \end{itemize}
 
 Zunächst wird mit dem PS2 Controller eingestellt, dass die aktuelle Magnettemperatur gehalten wird, dies ist wichtig, da sich sonst das Megnetfeld bei Temperaturschwankungen ändern kann. \\ \\
-Für eine erste Justage wird nun die Pickup-Probe in den Magneten eingesetzt. Diese besteht aus einer einfachen Spule. An dem Mainframe wird als Puls ein Rechteckpuls (Puls A) mit Pulslänge $A_{len}=2,5\mu$s eingestellt. Die Periode (nach welcher Zeit die Pulssequenz sich wiederholt) wird auf $100$ms gestellt. Es muss immer darauf geachtet werden, dass die Periode deutlich größer als die Pulslänge ist. Auf dem Oszilloskop kann nun eine zum Strom der Spule proportionale Spannung beobachtet werden (siehe Abbildung \ref{fig:pickup}).\\ \\
-Nun wird die eigentliche Probe mit Mineralöl in den Magneten eingesetzt. Auf dem Oszilloskop kann nun nach einem $\pi/2$ Puls das FID Signal beobachtet werden. Die Dauer für einen $\pi/2$-Puls wird ermittelt indem die Amplitude des Antwortsignals maximiert wird, die so ermittelte Pulslänge liegt bei $2,46 \mu$s. Die Frequenz des RF-Pulses und der Magnetfeldgradient werden so eingestellt, dass die Amplitude und die Zerfallszeit des FID Signals maximal werden und keine Nachschwingungen zu erkennen sind. Die ermittelte Resonanzfrequenz liegt bei $21,16272$MHz. Das FID Signal ist in Abbildung \ref{fig:FID} zu sehen. 
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.75\linewidth]{data/p402_443_data/FID_1/FID_1.eps}
-  \caption{FID Signal}
-  \label{fig:FID}
-\end{figure}
+Für eine erste Justage wird nun die Pickup-Probe in den Magneten eingesetzt. Diese besteht aus einer einfachen Spule. An dem Mainframe wird als Puls ein Rechteckpuls (Puls A) mit Pulslänge $A_{len}=2,5\mu$s eingestellt. Die Periode (nach welcher Zeit die Pulssequenz sich wiederholt) wird auf $100$ms gestellt. Es muss immer darauf geachtet werden, dass die Periode deutlich größer als die Pulslänge ist. Auf dem Oszilloskop kann nun eine zum Strom der Spule proportionale Spannung beobachtet werden (siehe Abbildung \ref{fig:pickup}). Das Signal hat bereits die erwünschte Form und es sind keine Einstellungen am Magneten notwendig.\\ \\
+Nun wird die eigentliche Probe mit Mineralöl in den Magneten eingesetzt. Auf dem Oszilloskop kann nun nach einem $\pi/2$ Puls das FID Signal beobachtet werden. Die Dauer für einen $\pi/2$-Puls wird ermittelt indem die Amplitude des Antwortsignals maximiert wird, die so ermittelte Pulslänge liegt bei $2,46 \mu$s. Die Frequenz des RF-Pulses und der Magnetfeldgradient werden so eingestellt, dass die Amplitude und die Zerfallszeit des FID Signals maximal werden und keine Nachschwingungen zu erkennen sind. Die ermittelte Resonanzfrequenz liegt bei $21,16272$MHz. Das FID Signal ist in Abbildung \ref{fig:FID} zu sehen. \\ \\
 Für eine genauere Bestimmung der Zeit für einen $\pi/2$-Puls wird die Zeit für einen $\pi$-Puls bestimmt indem das Antwortsignal minimiert wird. Die ermittelte zeit für einen $\pi$-Puls ist $4,92\mu$s, welche genau zu unserer Zeit für den $\pi/2$-Puls passt.
 
 \subsection{Rabi-Oszillationen}
@@ -32,3 +25,10 @@ Die Polarisations-Zurückgewinnung unterscheidet sich das Prozedere nur dahingeh
 \subsection{Homogene Transversale Relaxationszeit}
 Die homogene transversale Relaxationszeit wird mit den drei vorgestellten Pulssequenzen ermittelt. Bei der Hahn-Spinecho-Sequenz wird dazu manuell für verschiedene Wartezeiten $\tau$ das Antwortsignal aufgenommen. Bei der Carr-Purcell und der Meiboom-Gill-Sequenz reicht eine Pulssequenz mit $N=20$ Perioden.\\ \\
 Um die Carr-Purcell und die Meiboom-Gill-Sequenz vergleichen zu können wird noch die Änderung der Signale bei variierendem Magnetfeldgradienten untersucht.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.75\linewidth]{data/p402_443_data/FID_1/FID_1.eps}
+  \caption{FID Signal}
+  \label{fig:FID}
+\end{figure}

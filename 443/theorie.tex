@@ -1,7 +1,7 @@
 \section{Theoretische Grundlagen}
 
 \subsection{Spin-$\frac{1}{2}$-Teilchen im konstanten Magnetfeld}
-Teilchen mit Spin $\vec{S}$ und gyromagnetischen Verhältnis $\gamma$ haben ein magnetisches Moment
+Teilchen mit Spin $\vec{S}$ und gyromagnetischem Verhältnis $\gamma$ haben ein magnetisches Moment
 \begin{align*}
   \vec{\mu}=\gamma\vec{S}.
 \end{align*}
@@ -47,7 +47,7 @@ Es handelt sich also wie in Abbildung \ref{aufspaltung} zu sehen um ein zwei-Niv
   \label{aufspaltung}
 \end{figure}
 
-Wird nun ein Probe aus $N$ Teilchen in das Magnetfeld gebracht so folgt beim thermischen Gleichgewicht aus der Boltzmann-Verteilung
+Wird nun eine Probe aus $N$ Teilchen in das Magnetfeld gebracht, so folgt beim thermischen Gleichgewicht aus der Boltzmann-Verteilung
 \begin{align*}
   \frac{N_2}{N_1}=\exp \left( -\frac{\Delta E}{k_\mathrm{B}T} \right),
 \end{align*}
@@ -68,9 +68,10 @@ beschrieben, wobei $T_1$ die materialabhängige longitudinale Relaxationszeit is
 \begin{align}
   M_z(t)=M_0\left( 1-e^{-t/T_1} \right).
 \end{align}
+Mit der Anfangsbedingung $M_z(0)=-M_0$ bekommt die Exponentialfunktion in der Lösung einen zusätzlichen Faktor 2.
 
 \subsection{Spin-$\frac{1}{2}$-Teilchen im magnetischen Wechselfeld}
-Nun wird die Dynamik des Spins unter Einfluss eines zeitabhängigen magnetischen Feldes untersucht, dazu wird das Feld 
+Nun wird die Dynamik des Spins unter Einfluss eines zeitabhängigen magnetischen Feldes untersucht. Dazu wird das Feld 
 \begin{align*}
   \vec{B}(t)= \left( \begin{array}{c}
                     B_1\cos\omega t\\
@@ -82,7 +83,7 @@ betrachtet. Die resultierende Schrödingergleichung
 \begin{align}
 i\hbar \diff{}{t} \ket{\psi}=H(t)\ket{\psi} \label{hamilton2}
 \end{align}
-ist nicht mehr trivial lösbar. Um (\ref{hamilton2}) zu vereinfachen wird das Problem in einem mit $\vec{B}$ rotierendem Bezugssystem betrachtet:
+ist nicht mehr trivial lösbar. Um (\ref{hamilton2}) zu vereinfachen wird das Problem in einem mit $\vec{B}$ rotierenden Bezugssystem betrachtet:
 \begin{align*}
   \ket{\psi} \rightarrow \ket{\tilde{\psi}}=\exp \left(  i\omega t \vec{S}_z/\hbar\right) \ket{\psi}.
 \end{align*}
@@ -99,19 +100,19 @@ mit dem effektiven Magnetfeld
                   \end{array} \right).
 \end{align*}
 Im rotierenden Bezugssystem präzidiert die (mittlere) Magnetisierung also um $\vec{B}_\mathrm{eff}$. \\ \\
-Für den Fall, dass $B_0=-\omega/\gamma$ gilt, rotiert die Magnetisierung im rotierenden Bezugssystem um die $x$-Achse. Wird das Magnetfeld z.B. für eine Dauer von $t=\pi/(2\gamma B_1)$ eingeschaltet kann eine anfängliche Magnetisierung in $z$-Richtung in die $x$-$y$-Ebene gedreht werden ($\pi/2$-Puls). Der $\pi/2$-Puls ist elementar für den Versuch, da mit dem Aufbau nur die Magnetisierung in der $x$-$y$-Ebene gemessen werden kann. \\ \\
-Wird ein $\pi/2$-Puls auf eine in $z$-Richtung polarisierte Probe angewendet wird die Gesamtmagnetisierung in der $x$-$y$-Ebene aufgrund von Wechselwirkungen der Teilchen untereinander exponentiell abfallen (siehe \cite{manual}). Mit der dafür charakteristischen Zeit, der transversale Relaxationszeit $T_2$, gilt also
+Für den Fall, dass $B_0=-\omega/\gamma$ gilt, rotiert die Magnetisierung im rotierenden Bezugssystem um die $x$-Achse. Wird das Magnetfeld z.B. für eine Dauer von $t=\pi/(2\gamma B_1)$ eingeschaltet, kann eine anfängliche Magnetisierung in $z$-Richtung in die $x$-$y$-Ebene gedreht werden ($\pi/2$-Puls). Der $\pi/2$-Puls ist elementar für den Versuch, da mit dem Aufbau nur die Magnetisierung in der $x$-$y$-Ebene gemessen werden kann. \\ \\
+Wird ein $\pi/2$-Puls auf eine in $z$-Richtung polarisierte Probe angewendet, wird die Gesamtmagnetisierung in der $x$-$y$-Ebene aufgrund von Wechselwirkungen der Teilchen untereinander exponentiell abfallen (siehe \cite{manual}). Mit der dafür charakteristischen Zeit, der transversalen Relaxationszeit $T_2$, gilt also
 \begin{align}
-  M_{x/y}(t)=M_{x/y}(0) e^{-t/T_2},
+  M_{x/y}(t)=M_{x/y}(0) e^{-t/T_2}.
 \end{align}
-dieses abnehmende Signal welches auf dem Oszilloskop sichtbar wird nennt sich FID (free induction decay).
+Dieses abnehmende Signal welches auf dem Oszilloskop sichtbar wird nennt sich FID (free induction decay).
 
 \subsection{Hahn-Spinecho-Sequenz}
-In der Praxis ist das Magnetfeld im Bereich der Probe nicht homogen. Das führt nach ??? dazu, dass die effektive transversale Relaxationszeit durch
+In der Praxis ist das Magnetfeld im Bereich der Probe nicht homogen. Das führt nach \cite{wikinmr} dazu, dass die effektive transversale Relaxationszeit durch
 \begin{align*}
   \frac{1}{T_2^*}=\frac{1}{T_{2,\mathrm{inhom}}}+\frac{1}{T_2}
 \end{align*}
-gegeben ist, $T_{2,\mathrm{inhom}}$ ist dabei vom Magnetfeld abhängig. \\ \\
+gegeben ist. $T_{2,\mathrm{inhom}}$ ist dabei vom Magnetfeld abhängig. \\ \\
 Die Hahn-Spinecho-Sequenz erlaubt die Messung von $T_2$. Dazu wird nach einem $\pi/2$-Puls und einer Wartezeit $\tau$ ein $\pi$-Puls auf die Probe gegeben. Nach einer weiteren Wartezeit $\tau$ erreicht die Magnetisierung ein Maximum welches unabhängig von $T_{2,\mathrm{inhom}}$ ist. Das Zustandekommen lässt sich gut an Abbildung \ref{hahn} nachvollziehen. Wenn das Magnetfeld $B_1$ örtlich schwankt präzedieren die Magnetisierungen an verschiedenen Orten etwas langsamer bzw. schneller als das rotierende Bezugssystem. Durch den $\pi$-Puls laufen die Magnetisierungsvektoren anschließend wieder zusammen und sind so an einem Zeitpunkt wieder parallel. 
 
 \begin{figure}[h]
@@ -152,7 +153,7 @@ Mit der Carr-Purcell-Sequenz können im Gegensatz zur Hahn-Spinecho-Sequenz dire
   \pi/2 \rightarrow \tau \rightarrow \pi \rightarrow \tau \rightarrow \pi \rightarrow ... 
 \end{align*}
 Die Echos haben also eine Periode von $2\tau$. \\ \\
-Problematisch ist die Carr-Purcell Methode wenn die Pulse nicht exakt die gewollte Länge haben. Dann summiert sich der systematische Fehler nämlich auf. Vermeiden lässt sich dies durch das verwenden der Meiboom-Gill-Sequenz, bei dieser alterniert das Vorzeichen der $\pi$-Pulse, die gesamte Sequenz liest sich also 
+Problematisch ist die Carr-Purcell Methode wenn die Pulse nicht exakt die gewollte Länge haben. Dann summiert sich der systematische Fehler nämlich auf. Vermeiden lässt sich dies durch das verwenden der Meiboom-Gill-Sequenz. Bei dieser alterniert das Vorzeichen der $\pi$-Pulse, die gesamte Sequenz liest sich also 
 \begin{align*}
   \pi/2 \rightarrow \tau \rightarrow \pi \rightarrow \tau \rightarrow -\pi \rightarrow ... 
 \end{align*}

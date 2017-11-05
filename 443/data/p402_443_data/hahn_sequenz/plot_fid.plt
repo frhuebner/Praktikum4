@@ -10,14 +10,14 @@ set decimalsign ','
 
 
 set ylabel "U/V"
-set xlabel "t/s"
+set xlabel "{/Symbol t}/ms"
 set key right top
 
 
 f(x) = m*exp(-x/t)
 m=9
-t=0.002
-fit f(x) "fid.txt" using 1:"y":"dy" yerrors via m,t
+t=2
+fit f(x) "fid.txt" using (1000*($1)):"y":"dy" yerrors via m,t
 
 #set object circle at first 170, 8.56563 radius char 0.5 \
 #    fillcolor rgb 'red' fillstyle solid noborder
@@ -26,6 +26,6 @@ fit f(x) "fid.txt" using 1:"y":"dy" yerrors via m,t
 #    fillcolor rgb 'red' fillstyle solid noborder
 
 set output "out_fid.png"
-plot "fid.txt" using "tau":"y":"dy" with yerrorbars notitle lt rgb "gray",\
+plot "fid.txt" using (1000*($1)):"y":"dy" with yerrorbars notitle lt rgb "gray",\
 	f(x) title "Regr." lt rgb "red"
 

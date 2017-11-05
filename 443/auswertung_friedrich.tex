@@ -56,7 +56,7 @@ Eine mögliche weitere Fehlerquelle für die Polarisationszugrückgewinnung kön
 
 \subsection{Messung der transversalen Relaxationszeit}
 \subsubsection{Effektive transversale Relaxationszeit}
-Um die effektive transversale Relaxationszeit zu bestimmen, wird an das FID-Signal ein exponentieller Abfall $$U(\tau) = U_0\exp{\left(-\frac{t}{T_2^*}\right)}$$ angepasst (siehe Abb. \ref{fig:hahn_fid}).
+Um die effektive transversale Relaxationszeit zu bestimmen, wird an das FID-Signal ein exponentieller Abfall $$U(\tau) = U_0\exp{\left(-\frac{\tau}{T_2^*}\right)}$$ angepasst (siehe Abb. \ref{fig:hahn_fid}).
 
 \begin{figure}[h]
 \centering
@@ -91,7 +91,7 @@ Daran wird nun eine exponentielle Funktion angepasst: $$U(\tau) = U_0\exp{\left(
 \subsubsection{Carr-Purcell-Sequenz}
 Aus den Daten des Oszilloskops (siehe Abb. \ref{fig:carr_raw}) werden die Positionen der lokalen Maxima bestimmt und über der Zeit $t$ aufgetragen (siehe Abb. \ref{fig:carr}).
 
-Daran wird nun die exponentielle Funktion $$U(t) = U_0\exp{\left(-\frac{t}{T_2}\right)}$$ angepasst. Die Regression ergibt $U_0 = (8,9\pm 0,1)\si{\volt}$ und $T_2 = (19,2\pm 0,3) \si{\milli\second}$.\\
+Daran wird nun die exponentielle Funktion $$U(\tau) = U_0\exp{\left(-\frac{\tau}{T_2}\right)}$$ angepasst. Die Regression ergibt $U_0 = (8,9\pm 0,1)\si{\volt}$ und $T_2 = (19,2\pm 0,3) \si{\milli\second}$.\\
 
 \begin{figure}[h]
   \begin{subfigure}[h]{0.5\textwidth}
@@ -138,7 +138,7 @@ Daran wird nun die exponentielle Funktion $$U(t) = U_0\exp{\left(-\frac{t}{T_2}\
 \end{figure}
 Die Auswertung von Abb. \ref{fig:gill_raw} erfolgt analog zur Carr-Purcell-Sequenz (siehe Abb. \ref{fig:gill}).
 
-Die Regression $$U(t) = U_0\exp{\left(-\frac{t}{T_2}\right)}$$ ergibt $U_0 = (8,6\pm 0,1)\si{\volt}$ und $T_2 = (22,4\pm 0,6) \si{\milli\second}$.\\
+Die Regression $$U(\tau) = U_0\exp{\left(-\frac{\tau}{T_2}\right)}$$ ergibt $U_0 = (8,6\pm 0,1)\si{\volt}$ und $T_2 = (22,4\pm 0,6) \si{\milli\second}$.\\
 
 Ändert man bei der Meiboom-Gill-Sequenz die Magnetfeldgradienten (siehe Abb. \ref{fig:gill_b}), fällt das Signal zwischen den Pulsen zwar schneller ab, die Lage der Maxima bleibt aber gleich. Durch den umgekehrten Drehsinn bei jedem zweitem Winkel dreht sich ein möglicherweise falscher $\pi$-Puls wieder um genau den gleichen Winkel zurück. Somit liegen alle Spins dann wieder in der x-y-Ebene.\\
   

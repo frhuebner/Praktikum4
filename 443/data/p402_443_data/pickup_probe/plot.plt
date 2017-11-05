@@ -1,5 +1,5 @@
 set datafile separator ","
-set terminal postscript eps size 3.5,2.62 enhanced color font 'Helvetica,20' linewidth 2
+set terminal postscript eps size 3.5,2.62
 set output 'pickup.eps'
 set ylabel 'U/V'
 set xlabel 't/{/Symbol m}s'

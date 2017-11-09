@@ -1,0 +1,14 @@
+\section{Theoretische Grundlagen}
+
+\subsection{Tunneleffekt}
+Bei der Rastertunnelmikroskopie tastet eine leitende Sonde mit dünner Spitze eine Probe ab. Das Vakuum (bzw. die Luft) zwischen Spitze und Probe stellt für Elektronen aus der Spitze eine Potentialbarriere dar, da sie sich in der Spitze in einem gebundenen Zustand befinden. Klassisch könnte kein strom zwischen Spitze und Probe fließen wenn die gebundenen Elektronen eine Energie $E$ kleiner als die Potentialbarriere haben. Quantenmechanisch kann durch den Tunneleffekt jedoch ein Strom fließen. Um diesen Effekt zu verstehen wird die Potentialbarriere stark vereinfacht als ein Kastenpotential mit Höhe $V$ betrachtet. Außerdem wird angenommen, dass die Elektronen in Spitze und Probe als frei betrachtet werden können. Die stationären Zustände der resultierenden Schrödingergleichung können nun leicht berechnet werden. Der Transmissionswahrscheinlichkeit $T$ für eine von der Spitze zur Probe laufende Materiewelle ist dann gegeben durch
+\begin{align*}
+  \frac{1}{T}=1+\frac{1}{4}\left( 2+\frac{E}{V-E} + \frac{V-E}{E}\right) \sinh^2\left( 2a \frac{\sqrt{2m(V-E)}}{\hbar} \right), 
+\end{align*}
+wobei $m$ die Elektronenmasse und $a$ die Ausdehnung des Potentials ist.
+Für große $Va$ gilt also
+\begin{align*}
+  T \propto e^{-4a\sqrt{2m(V-E)}/\hbar}. 
+\end{align*}  
+Der Tunnelstrom hängt also stark von dem Abstand $a$ ab. Genau diese starke Abhängigkeit wird bei der Rastertunnelmikroskopie ausgenutzt. 
+

@@ -1,14 +1,65 @@
 \section{Theoretische Grundlagen}
 
 \subsection{Tunneleffekt}
-Bei der Rastertunnelmikroskopie tastet eine leitende Sonde mit dünner Spitze eine Probe ab. Das Vakuum (bzw. die Luft) zwischen Spitze und Probe stellt für Elektronen aus der Spitze eine Potentialbarriere dar, da sie sich in der Spitze in einem gebundenen Zustand befinden. Klassisch könnte kein strom zwischen Spitze und Probe fließen wenn die gebundenen Elektronen eine Energie $E$ kleiner als die Potentialbarriere haben. Quantenmechanisch kann durch den Tunneleffekt jedoch ein Strom fließen. Um diesen Effekt zu verstehen wird die Potentialbarriere stark vereinfacht als ein Kastenpotential mit Höhe $V$ betrachtet. Außerdem wird angenommen, dass die Elektronen in Spitze und Probe als frei betrachtet werden können. Die stationären Zustände der resultierenden Schrödingergleichung können nun leicht berechnet werden. Der Transmissionswahrscheinlichkeit $T$ für eine von der Spitze zur Probe laufende Materiewelle ist dann gegeben durch
+Bei der Rastertunnelmikroskopie tastet eine leitende Sonde mit dünner Spitze eine Probe ab. Das Vakuum (bzw. die Luft) zwischen Spitze und Probe stellt für Elektronen aus der Spitze eine Potentialbarriere dar, da sie sich in der Spitze in einem gebundenen Zustand befinden. Klassisch könnte kein Strom zwischen Spitze und Probe fließen wenn die gebundenen Elektronen eine Energie $E$ kleiner als die Potentialbarriere haben. Quantenmechanisch kann durch den Tunneleffekt jedoch ein Strom fließen. Um diesen Effekt zu verstehen wird die Potentialbarriere stark vereinfacht als ein Kastenpotential mit Höhe $V$ betrachtet. Außerdem wird angenommen, dass die Elektronen in Spitze und Probe als frei betrachtet werden können. Die stationären Zustände der resultierenden Schrödingergleichung können nun leicht berechnet werden. Der Transmissionswahrscheinlichkeit $T$ für eine von der Spitze zur Probe laufende Materiewelle ist dann gegeben durch
 \begin{align*}
   \frac{1}{T}=1+\frac{1}{4}\left( 2+\frac{E}{V-E} + \frac{V-E}{E}\right) \sinh^2\left( 2a \frac{\sqrt{2m(V-E)}}{\hbar} \right), 
 \end{align*}
 wobei $m$ die Elektronenmasse und $a$ die Ausdehnung des Potentials ist.
 Für große $Va$ gilt also
-\begin{align*}
-  T \propto e^{-4a\sqrt{2m(V-E)}/\hbar}. 
-\end{align*}  
+\begin{align}
+  T \propto e^{-4a\sqrt{2m(V-E)}/\hbar}.
+  \label{eq:T}
+\end{align}  
 Der Tunnelstrom hängt also stark von dem Abstand $a$ ab. Genau diese starke Abhängigkeit wird bei der Rastertunnelmikroskopie ausgenutzt. 
+
+\subsection{Funktionsweise des RTM}
+Der grobe Aufbau eines RTM ist in Abbildung \ref{fig:RTM} zu sehen. Durch das Anlegen einer Spannung $U$ zwischen Spitze und Probe können die Fermi-Niveaus beider Materialien so gegeneinander verschoben werden, dass ein Netto-Elektronenfluss von Spitze zu Probe enstehen kann. 
+Man unterscheidet zwischen zwei Messmethoden, der \textit{constant current method} (CCM) und der \textit{scanning tunneling spectroscopy} (STS). 
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+     \draw [pattern=north west lines] (3.5,2.5) -- (3.75,1) -- (4,2.5) -- cycle;
+     \foreach \x  in {1.5,2,2.5,3,3.5,4}%
+        \draw  (1+\x,0.8) circle (0.15cm);
+     \foreach \x  in {1.5,2,2.5,3,3.5,4}%
+        \draw  (0.75+\x,0.6) circle (0.15cm);
+     \foreach \x  in {1.5,2,2.5,3,3.5,4}%
+        \draw  (0.5+\x,0.4) circle (0.15cm);
+     \foreach \x  in {1.5,2,2.5,3,3.5,4}%
+        \draw  (0.25+\x,0.2) circle (0.15cm);
+      \foreach \x  in {1.5,2,2.5,3,3.5,4}%
+        \draw  (\x,0) circle (0.15cm);
+      \draw (4,-0.15) -- (4,-0.5) -- (6,-0.5) -- (6,0);
+      \draw (6,0.2) circle (0.2cm);
+      \draw [->] (5.7,-0.1) -- (6.3,0.5);
+      \draw (6,0.4) -- (6,1) -- (5.9,1) -- (6.1,1);
+      \draw (5.8,1.2) -- (6.2,1.2) -- (6,1.2) -- (6,2) -- (3.91,2);
+      \draw (0.7,0) node {Probe};
+      \draw (2.5,2) node {Spitze};
+      \draw (6.4,0.2) node {$I$};
+      \draw (6.4,1.1) node {$U$};
+      \draw (3.25,2.5) rectangle (4.25,3);
+      \draw (2,2.75) node {Piezoelement};
+      \draw (6.6,0.2) -- (7.5,0.2);
+      \draw [->] (7.5,0.2) -- (7.5,2.5);
+      \draw (7,2.5) rectangle (8,3);
+      \draw (7.5,3.25) node {Regler};
+      \draw [->] (7,2.75) -- (4.25,2.75);
+      \draw (5.6,3) node {$x$, $y$, $z(I)$};
+      \draw [->] (8,2.75) -- (9,2.75);
+      \draw (9.5,2.75) node {Bild};
+      \draw [->] (-1.5,0) -- (-2.1,-0.6);
+      \draw [->] (-1.5,0) -- (-0.5,0);
+      \draw [->] (-1.5,0) -- (-1.5,1);
+      \draw (-1.7,1) node {$z$};
+      \draw (-2.3,-0.6) node {$x$};
+      \draw (-0.3,0) node {$y$};
+  \end{tikzpicture}
+  \caption{Schematischer Aufbau des RTM}
+  \label{fig:RTM}
+\end{figure}
+
+\subsubsection{CCM}
+Bei der CGM wird dafür gesorgt, dass die Spitze immer den gleichen Abstand zur Probe hat. Der Strom wird also konstant gehalten. Dies wird durch ein Piezoelement ermöglicht. Piezoelektrische Materialien haben die Eigenschaft, dass sie sich durch das Anlegen einer Spannung ausdehnen bzw. schrumpfen können (und andersherum auch eine Spannung durch mechanische Belsatung entsteht). 
 

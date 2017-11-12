@@ -14,8 +14,8 @@ Für große $Va$ gilt also
 Der Tunnelstrom hängt also stark von dem Abstand $a$ ab. Genau diese starke Abhängigkeit wird bei der Rastertunnelmikroskopie ausgenutzt. 
 
 \subsection{Funktionsweise des RTM}
-Der grobe Aufbau eines RTM ist in Abbildung \ref{fig:RTM} zu sehen. Durch das Anlegen einer Spannung $U$ zwischen Spitze und Probe können die Fermi-Niveaus beider Materialien so gegeneinander verschoben werden, dass ein Netto-Elektronenfluss von Spitze zu Probe enstehen kann. 
-Man unterscheidet zwischen zwei Messmethoden, der \textit{constant current method} (CCM) und der \textit{scanning tunneling spectroscopy} (STS). 
+Der grobe Aufbau eines RTM ist in Abbildung \ref{fig:RTM} zu sehen. Durch das Anlegen einer Spannung $U$ zwischen Spitze und Probe können die Fermi-Niveaus beider Materialien so gegeneinander verschoben werden, dass ein Netto-Elektronenfluss von Spitze zu Probe (oder andersherum) enstehen kann. 
+Man unterscheidet zwischen zwei Messmethoden, der \textit{constant current method} (CCM) und der \textit{constant height method} (CHM). 
 \begin{figure}[h]
   \centering
   \begin{tikzpicture}
@@ -61,5 +61,36 @@ Man unterscheidet zwischen zwei Messmethoden, der \textit{constant current metho
 \end{figure}
 
 \subsubsection{CCM}
-Bei der CGM wird dafür gesorgt, dass die Spitze immer den gleichen Abstand zur Probe hat. Der Strom wird also konstant gehalten. Dies wird durch ein Piezoelement ermöglicht. Piezoelektrische Materialien haben die Eigenschaft, dass sie sich durch das Anlegen einer Spannung ausdehnen bzw. schrumpfen können (und andersherum auch eine Spannung durch mechanische Belsatung entsteht). 
+Bei der CCM wird dafür gesorgt, dass die Spitze immer den gleichen Abstand zur Probe hat. Der Tunnelstrom wird also konstant gehalten. Dies wird durch ein Piezoelement ermöglicht. Piezoelektrische Materialien haben die Eigenschaft, dass sie sich durch das Anlegen einer Spannung ausdehnen bzw. schrumpfen können (und andersherum auch eine Spannung durch mechanische Belastung entsteht). Die Spannung die an dem Piezoelement angelegt wird hängt von dem gemessenen Tunnelstrom ab. Aus der am Piezoelement angelegten Spannung und den $x$- und $y$-Koordinaten lässt sich letztendlich das Höhenprofil der Probe erstellen.
+
+\subsubsection{CHM}
+Bei der CHM hat die Spitze immer den gleichen Abstand zur Probe. Zu jedem Rasterpunkt $(x,y)$ wird der Tunnelstrom aufgezeichnet und es kann so wieder das Höhenprofil der Probe erstellt werden. Ein Vorteil dieser Methode ist, dass die Messungen schneller gemacht werden können da die Justierung der Spitzenhöhe entfällt. Gleichzeitig ist die Auflösung im allgemeinen jedoch schlechter als bei der CCM und auch die Berührung von Spitze und Probe bei starken Höhenänderungen der Probe ist möglich.
+
+\subsubsection{Auflösungsvermögen}
+
+
+\subsubsection{PID-Regler}
+Im Folgenden soll noch kurz darauf eingegangen werden wie bei der CCM die Höhe der Spitze geregelt wird. Dazu wird ein PID-Regler verwendet. Im Falle des RTM mit CCM möchten wir die Größe $e=I-I_0$ betragsmäßig möglichst klein halten (Strom soll konstant bei $I_0$ gehalten werden). Um das zu erreichen würde ein P-Regler (Proportionalregler) eine Spannung 
+\begin{align*}
+  U_\mathrm{p}=k_\mathrm{P}e
+\end{align*} 
+an das Piezoelement ausgeben. Vorteil dieser Regelung ist die schnelle Reaktion des Reglers. Das Problem bei dieser Regelung ist aber, dass bei $e=0$ auch keine Regelspannung ausgegeben wird, auf lange Zeit kann also durch den P-Regler kein stabiler Betrieb mit $e=0$ gewährleistet werden.\\
+Letzteres Problem hat der I-Regler (Integralregler) nicht. Der I-regler gibt eine Spannung
+\begin{align*}
+  U_\mathrm{I}=k_\mathrm{I}\int_0^t e(\tau) \mathrm{d}\tau 
+\end{align*}
+an das Piezoelement. $U_I$ ändert sich also nicht mehr sobald $e=0$ gilt und somit ist ein stabiler Betrieb möglich. Nachteil dieser Schaltung ist die größere Ansprechzeit des Reglers. \\
+Die kürzeste Ansprechzeit auf Änderungen von $e$ hat der D-Regler (Differentialregler). Dieser gibt eine Spannung 
+\begin{align*}
+  U_\mathrm{D}=k_\mathrm{D} \diff{e}{t}
+\end{align*}
+an das Piezoelement. Nachteil dieser Regelung ist auch hier wieder die fehlende Möglichkeit des stabilen Betriebs. \\
+der PID-regler verknüpft nun die Eigenschaften der drei vorgstellten Typen und gibt an das Piezoelement die Spannung
+\begin{align*}
+  U_\mathrm{PID}=K_\mathrm{p}e + k_\mathrm{I}\int_0^t e(\tau) \mathrm{d}\tau + k_\mathrm{D} \diff{e}{t}.
+\end{align*}
+Für den optimalen Betrieb müssen die Parameter $K_\mathrm{P}$, $k_\mathrm{I}$ und $k_\mathrm{D}$ gut an die Verwendung angepasst sein.
+
+\subsection{Kristallstruktur von Graphit}
+Um die Bilder der Graphitstruktur deuten zu können, muss verstanden werden, wie die Kristallstruktur theoretisch aufgebaut ist.         
 

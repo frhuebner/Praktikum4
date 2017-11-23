@@ -33,7 +33,7 @@ Der Tunnelstrom hängt also stark von dem Abstand $a$ ab. Genau diese starke Abh
 \end{figure}
 
 \subsection{Funktionsweise des RTM}
-Der grobe Aufbau eines RTM ist in Abbildung \ref{fig:RTM} zu sehen. Durch das Anlegen einer Spannung $U$ zwischen Spitze und Probe können die Fermi-Niveaus beider Materialien so gegeneinander verschoben werden, dass ein Netto-Elektronenfluss von Spitze zu Probe (oder andersherum) enstehen kann. 
+Der grobe Aufbau eines RTM ist in Abbildung \ref{fig:RTM} zu sehen und wird in \cite{RWTH} detailliert erklärt. Durch das Anlegen einer Spannung $U$ zwischen Spitze und Probe können die Fermi-Niveaus beider Materialien so gegeneinander verschoben werden, dass ein Netto-Elektronenfluss von Spitze zu Probe (oder andersherum) enstehen kann. 
 Man unterscheidet zwischen zwei Messmethoden, der \textit{constant current method} (CCM) und der \textit{constant height method} (CHM). 
 \begin{figure}[h]
   \centering
@@ -138,7 +138,7 @@ der PID-regler verknüpft nun die Eigenschaften der drei vorgstellten Typen und 
 \begin{align*}
   U_\mathrm{PID}=K_\mathrm{p}e + k_\mathrm{I}\int_0^t e(\tau) \mathrm{d}\tau + k_\mathrm{D} \diff{e}{t}.
 \end{align*}
-Für den optimalen Betrieb müssen die Parameter $K_\mathrm{P}$, $k_\mathrm{I}$ und $k_\mathrm{D}$ gut an die Verwendung angepasst sein.
+Für den optimalen Betrieb müssen die Parameter $K_\mathrm{P}$, $k_\mathrm{I}$ und $k_\mathrm{D}$ gut an die Verwendung angepasst sein. Näheres zu der Funktionsweise des Reglers findet man unter \cite{PID}.
 
 \subsubsection{Auflösungsvermögen}
 Die Auflösung hängt stark von der benutzten Spitze ab. Idealerweise ist die Spitze einatomig, somit ist nach (\ref{eq:T}) der Effekt durch andere Atome der Spitze vernachlässigbar. Ist die Spitze nicht einatomig erhält man eine Überlagerung aus Bildern von einatomigen Spitzen (an verschiedenen Stellen). Weiterhin ist bei der Beobachtung mikroskopischer Strukturen allgemein wichtig, dass sich Probe und Spitze in Ruhe befinden. Durch Erschütterung ist auch eine Kollision von Spitze und Probe möglich wodruch die Spitze beschädigt werden kann.

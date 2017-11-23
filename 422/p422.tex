@@ -4,7 +4,7 @@
 \usepackage[ngerman]{babel}   %german settings
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{tikz}
+\usepackage{tikz,pgfplots}
 \usetikzlibrary{patterns}
 \usepackage[justification=centering]{caption}
 \usepackage[left=3cm,right=3cm,top=2cm,bottom=3cm]{geometry}
@@ -21,6 +21,34 @@
 \newcommand{\upd}[1]{^\mathrm{#1}}
 \newcommand{\ind}[1]{_\mathrm{#1}}
 \newcommand{\RM}[1]{\MakeUppercase{\romannumeral #1}}
+
+\newcommand{\hantel}[3]{%
+  \draw[rotate around={#3:(#1,#2)}] (#1,#2) circle (0.2cm);
+  \draw[rotate around={#3:(#1,#2)}] (#1+0.2,#2)--(#1+1.9,#2);
+}
+
+\newcommand{\lowerhantel}[3]{%
+  \draw[rotate around={#3:(#1,#2)},fill=black] (#1,#2) circle (0.1cm);
+  \draw[rotate around={#3:(#1,#2)}] (#1+0.1,#2)--(#1+2,#2);
+}
+
+\newcommand{\zelle}[2]{%
+  \hantel{#1}{#2}{0}
+  \hantel{#1+2.1}{#2}{300}
+  \hantel{#1+2.1+2.1*0.5}{#2-0.866*2.1}{240}
+  \hantel{#1+2.1}{#2-0.866*2.1*2}{180}
+  \hantel{#1-2.1*0.5}{#2-0.866*2.1}{60}
+  \hantel{#1}{#2-2*2.1*0.866}{120}
+}
+
+\newcommand{\lowerzelle}[2]{%
+  \lowerhantel{#1}{#2}{0}
+  \lowerhantel{#1+2.1}{#2}{300}
+  \lowerhantel{#1+2.1+2.1*0.5}{#2-0.866*2.1}{240}
+  \lowerhantel{#1+2.1}{#2-0.866*2.1*2}{180}
+  \lowerhantel{#1-2.1*0.5}{#2-0.866*2.1}{60}
+  \lowerhantel{#1}{#2-2*2.1*0.866}{120}
+}
 
 \usepackage[backend=bibtex8,sorting=none]{biblatex}
 \addbibresource{refs.bib}

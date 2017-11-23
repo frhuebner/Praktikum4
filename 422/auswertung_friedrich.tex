@@ -1,0 +1,126 @@
+\section{Auswertung}
+\subsection{Graphit}
+
+
+\subsubsection{Atomare Auflösung}
+Unsere Spitze war geeignet, um atomare Auflösung bei Graphit zu erreichen.
+\begin{figure}
+\centering
+\includegraphics[scale=1]{data/graphit/raw.png}
+\caption{Gemessene Graphitstruktur (Seitenlänge 4nm)}
+\label{fig:raw}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[scale=1]{data/graphit/2nm_edit2.png}
+\label{fig:edit}
+\caption{Graphitstruktur mit Fourierfilter}
+\end{figure}
+\begin{figure}
+\centering
+\includegraphics[scale=0.35]{data/graphit/graphit.png}
+\caption{Ausschnitt mit ermittelten Mittelpunkten}
+\label{fig:small}
+\end{figure}
+In Abb. \ref{fig:raw} ist das gemessene Bild (CHM-Methode) dargestellt. Da das Bild stark verrauscht ist, wurde ein Fourierfilter angewendet. Das Ergebnis ist in Abb. \ref{fig:edit} dargestellt. Man kann gut das sechseckige Gitter, dass die weißen Bereiche aufspannen, erkennen. Das sind die Punkte, in denen zwei Kohlenstoffatome übereinander liegen. Es handelt sich also nicht um die sechseckige Graphitstruktur, sondern nur um einen Teil davon. Für die Auswertung der Winkel können diese Punkte aber trotzdem verwendet werden, da die Winkel der Gitterstruktur gleich den Winkeln der Sechsecke sind.\\
+
+In einem kleinem Ausschnitt (siehe Abb. \ref{fig:small}) wird nun ein solches Sechseck vermessen. Die Mittelpunkte der weißen Bereiche relativ zum weißem Bereich in der Mitte sind in Tab.\ref{tab:points} dargestellt (Fehler $\Delta x,\Delta y=$ 0,01 nm).
+
+\begin{table}
+\centering
+\caption{Bestimmte Mittelpunkte der weißen Bereiche}
+\begin{tabular}{ccc}
+\toprule
+n & x/nm & y/nm\\
+\midrule
+1 & -0,05 &-0,41\\
+2 & 0,18&	-0,3\\
+3 & 0,24&	0,1\\
+4 & 0,06&	0,37\\
+5 & -0,17&	0,28\\
+6 & -0,23&	-0,11\\
+\bottomrule
+\end{tabular}
+\label{tab:points}
+\end{table}
+ 
+Die Punkte bilden offensichtlich kein regelmäßiges Sechseck. Das liegt daran, dass das Bild verzerrt wurde. Um es zu entzerren, drehen wir erst das Bild um den Winkel $\phi$, so dass die Verzerrungsachse in Richtung y-Achse zeigt. Dann verzerren wir das Bild in Richtung y-Achse um den Faktor $\alpha$. Die einzelnen Punkte sollten dann möglichst auf einem Kreis mit Radius $r$ liegen. Dazu sollte der Abstand aller der Punkte zum Ursprung etwa $r$ sein.\\
+
+Um ein möglichst gutes Ergebnis zu erhalten, machen wir einen Fit über die freien Parameter $\phi, \alpha, r$, um die folgende Funktion zu minimieren:
+\begin{align*}
+f(\phi,\alpha,r) &= \sum\limits_{n = 1}^6 \left(\left|
+\begin{pmatrix}
+1 & 0\\
+0 & \alpha
+\end{pmatrix}
+\begin{pmatrix}
+\cos{\phi} & \sin{\phi}\\
+-\sin{\phi} & \cos{\phi}
+\end{pmatrix}
+\begin{pmatrix}
+x_n\\
+y_n
+\end{pmatrix}
+  \right| - r\right)^2
+\end{align*}.
+Die rechte Matrix dreht das Polygon und die linke verzerrt die y-Achse. Danach wird von der Norm des Vektors $r$ abgezogen und das Quadrat dieser Abweichung aufsummiert. Somit soll sichergestellt werden, dass alle Punkte am Ende näherungsweise auf einem Kreis liegen. Dabei muss beachtet werden, dass das Original in einer Richtung gestaucht wurde. Somit muss $\alpha > 1$ (um die Stauchung rückgängig zu machen) gelten.\\
+Der Fit (siehe Tab.\ref{tab:fit}, Abb. \ref{fig:fit1}, Abb. \ref{fig:fit2}) ergab: $\phi = 91,7^\circ \pm 0,9^\circ, \alpha = 1,6 \pm 0,2, r = 0,4\si{\nano\metre} \pm 0,02\si{\nano\metre}$.\\ 
+
+\begin{table}
+\centering
+\caption{Punkte nach der Entzerrung}
+\begin{tabular}{ccc}
+\toprule
+n & x/nm & y/nm\\
+\midrule
+1&	-0,40836&	0,101854\\
+2&	-0,305142&	-0,281216\\
+3& 0,0929292&	-0,399014\\
+4&	0,368084&	-0,116354\\
+5&	0,284858&	0,265753\\
+6&	-0,103218&	0,38307\\
+\bottomrule
+\end{tabular}
+\label{tab:fit}
+\end{table}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.3]{data/graphit/out_rotate_old.png}
+\caption{Nach Drehung um Winkel $\phi = 91,7^\circ$}
+\label{fig:fit1}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.3]{data/graphit/out_rotate.png}
+\caption{Nach Drehung und Entzerrung}
+\label{fig:fit2}
+\end{figure}
+
+Wie man in Abb. \ref{fig:fit2} erkennt, liegen die Punkte jetzt fast auf einem Kreis, sie sind nur etwas verschoben. In Tab. \ref{tab:res} sind die gemessenen Kantenlängen und Innenwinkel aufgetragen. Durch Mittelung ergibt sich $l = 0,40 \pm 0,01$ und $\phi = 120^\circ \pm 2,3^\circ$. Das der Wert für $\phi = 120^\circ$ beträgt, liegt nicht an einer genauen Messung, sondern daran, dass jedes Sechseck eine Innenwinkelsumme von $720^\circ$ hat. Demzufolge ist nur der Fehler ausschlaggebend. Bei $\Delta\phi=2,3^\circ$ kann man davon ausgehen, dass es sich um gleichseitige Sechsecke handelt und somit Graphit eine Gitterstruktur aus regelmäßigen Sechsecken hat.\\
+
+\begin{table}
+\centering
+\caption{Punkte nach der Entzerrung}
+\begin{tabular}{>{$}c<{$}cc}
+\toprule
+n & l/nm & $\phi/^\circ$\\
+\midrule
+1 \to 2 & 0,397 & 117,583\\
+2 \to 3 & 0,415 & 121,565\\
+3 \to 4 & 0,394 & 117,745\\
+4 \to 5 & 0,391 & 123,483\\
+5 \to 6 & 0,405 & 119,108\\
+6 \to 1 & 0,415 & 120,516\\
+\bottomrule
+\end{tabular}
+\label{tab:res}
+\end{table}
+
+Um die Atomabstände $a$ von Graphit zu bestimmen, muss beachtet werden, dass die weißen Punkte nur die Atome darstellen, die direkt über einem anderem sind. Drei benachbarte Atome in einem Sechseck bilden ein gleichschenkliges Dreieck mit der Basis $l$ und den Atomabständen $a$ als Schenkel. Der Winkel an der Spitze beträgt $120^\circ$. Damit ergibt sich
+\begin{align*}
+a\cdot\sin{\frac{120^\circ}{2}} &= \frac{l}{2}\\
+a &= \frac{l}{\sqrt{3}}\\
+  &= 0,231 \pm 0,006
+\end{align*}. Der Abstand der Atome beträgt also $a = 0,231 \pm 0,006$.

@@ -1,41 +1,51 @@
+\newpage
+
 \section{Auswertung}
 \subsection{Graphit}
 \subsubsection{Grobe Struktur}
-\begin{figure}
-\centering
-\includegraphics[scale=1]{data/graphit/raw_big.png}
-\caption{Grobe Graphitstruktur (Seitenlänge 200nm)}
-\label{fig:raw_big}
-\end{figure}
+
 In Abb. \ref{fig:raw_big} ist eine Aufnahme mit der Seitenlänge 200nm (CCM-Methode) dargestellt. Man kann eine grobe Struktur unten links, sowie mehrere Kanten erkennen.
 
+\begin{figure}[h]
+    \centering
+    \includegraphics{data/graphit/raw_big.png}
+    \caption{Graphitstruktur (Seitenlänge 200 nm)}
+    \label{fig:raw_big}
+\end{figure}
+
 \subsubsection{Atomare Auflösung}
-Unsere Spitze war geeignet, um atomare Auflösung bei Graphit zu erreichen.
-\begin{figure}
-\centering
-\includegraphics[scale=1]{data/graphit/raw.png}
-\caption{Gemessene Graphitstruktur (Seitenlänge 4nm)}
-\label{fig:raw}
+Unsere Spitze war geeignet, um atomare Auflösung bei Graphit zu erreichen. In Abb. \ref{fig:raw} ist das gemessene Bild (CHM-Methode) dargestellt. Da das Bild stark verrauscht ist, wurde ein Fourierfilter angewendet. Das Ergebnis ist in Abb. \ref{fig:edit} dargestellt. Man kann gut das sechseckige Gitter, dass die weißen Bereiche aufspannen, erkennen. Das sind die Punkte, in denen zwei Kohlenstoffatome übereinander liegen. Es handelt sich also nicht um die sechseckige Graphitstruktur, sondern nur um einen Teil davon. Für die Auswertung der Winkel können diese Punkte aber trotzdem verwendet werden, da die Winkel der Gitterstruktur gleich den Winkeln der Sechsecke sind.\\
+
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}[h]{0.5\textwidth}
+    \centering
+    \includegraphics{data/graphit/raw.png}
+    \subcaption{Seitenlänge 200 nm}
+    \label{fig:raw}
+  \end{subfigure}%
+  \begin{subfigure}[h]{0.5\textwidth}
+    \centering
+    \includegraphics{data/graphit/2nm_edit2.png}
+    \subcaption{Mit Fourierfilter überarbeitet, Seitenlänge 2 nm}
+    \label{fig:edit}
+  \end{subfigure}
+  \caption{Graphitstruktur mit atomarer Auflösung}
 \end{figure}
+
 \begin{figure}
 \centering
-\includegraphics[scale=1]{data/graphit/2nm_edit2.png}
-\caption{Graphitstruktur mit Fourierfilter}
-\label{fig:edit}
-\end{figure}
-\begin{figure}
-\centering
-\includegraphics[scale=0.35]{data/graphit/graphit.png}
+\includegraphics[angle=90,scale=0.35]{data/graphit/graphit.png}
 \caption{Ausschnitt mit ermittelten Mittelpunkten}
 \label{fig:small}
 \end{figure}
-In Abb. \ref{fig:raw} ist das gemessene Bild (CHM-Methode) dargestellt. Da das Bild stark verrauscht ist, wurde ein Fourierfilter angewendet. Das Ergebnis ist in Abb. \ref{fig:edit} dargestellt. Man kann gut das sechseckige Gitter, dass die weißen Bereiche aufspannen, erkennen. Das sind die Punkte, in denen zwei Kohlenstoffatome übereinander liegen. Es handelt sich also nicht um die sechseckige Graphitstruktur, sondern nur um einen Teil davon. Für die Auswertung der Winkel können diese Punkte aber trotzdem verwendet werden, da die Winkel der Gitterstruktur gleich den Winkeln der Sechsecke sind.\\
 
-In einem kleinem Ausschnitt (siehe Abb. \ref{fig:small}) wird nun ein solches Sechseck vermessen. Die Mittelpunkte der weißen Bereiche relativ zum weißem Bereich in der Mitte sind in Tab.\ref{tab:points} dargestellt (Fehler etwa $\Delta x,\Delta y=$ 0,01 nm).
+In einem kleinem Ausschnitt (siehe Abb. \ref{fig:small}) wird nun ein solches Sechseck vermessen. Die Mittelpunkte der weißen Bereiche relativ zum weißem Bereich in der Mitte sind in Tab.\ref{tab:points} dargestellt (Fehler $\Delta x=\Delta y=$ 0,01 nm).
+
+\newpage
 
 \begin{table}
 \centering
-\caption{Bestimmte Mittelpunkte der weißen Bereiche}
 \begin{tabular}{ccc}
 \toprule
 n & x/nm & y/nm\\
@@ -48,12 +58,13 @@ n & x/nm & y/nm\\
 6 & -0,23&	-0,11\\
 \bottomrule
 \end{tabular}
+\caption{Bestimmte Mittelpunkte der weißen Bereiche}
 \label{tab:points}
 \end{table}
  
 Die Punkte bilden offensichtlich kein regelmäßiges Sechseck. Das liegt daran, dass das Bild verzerrt wurde. Um es zu entzerren, drehen wir erst das Bild um den Winkel $\phi$, so dass die Verzerrungsachse in Richtung y-Achse zeigt. Dann verzerren wir das Bild in Richtung y-Achse um den Faktor $\alpha$. Die einzelnen Punkte sollten dann möglichst auf einem Kreis mit Radius $r$ liegen. Dazu sollte der Abstand aller der Punkte zum Ursprung etwa $r$ sein.\\
 
-Um ein möglichst gutes Ergebnis zu erhalten, machen wir einen Fit über die freien Parameter $\phi, \alpha, r$, um die folgende Funktion zu minimieren:
+Um ein möglichst gutes Ergebnis zu erhalten, machen wir eine Anpassung über die freien Parameter $\phi, \alpha, r$, um die folgende Funktion zu minimieren:
 \begin{align*}
 f(\phi,\alpha,r) &= \sum\limits_{n = 1}^6 \left(\left|
 \begin{pmatrix}
@@ -71,68 +82,84 @@ y_n
   \right| - r\right)^2
 \end{align*}.
 Die rechte Matrix dreht das Polygon und die linke verzerrt die y-Achse. Danach wird von der Norm des Vektors $r$ abgezogen und das Quadrat dieser Abweichung aufsummiert. Somit soll sichergestellt werden, dass alle Punkte am Ende näherungsweise auf einem Kreis liegen. Dabei muss beachtet werden, dass das Original in einer Richtung gestaucht wurde. Somit muss $\alpha > 1$ (um die Stauchung rückgängig zu machen) gelten.\\
-Der Fit (siehe Tab.\ref{tab:fit}, Abb. \ref{fig:fit1}, Abb. \ref{fig:fit2}) ergab: $\phi = 91,7^\circ \pm 0,9^\circ, \alpha = 1,6 \pm 0,2, r = 0,4\si{\nano\metre} \pm 0,02\si{\nano\metre}$.\\ 
+Die Anpassung (siehe Tab.\ref{tab:fit}, Abb. \ref{fig:fit1}, Abb. \ref{fig:fit2}) ergibt: $\phi = 91,7^\circ \pm 2^\circ$, $\alpha = 1,64 \pm 0,06$, $r = (0,403 \pm 0,008)\si{\nano\metre}$.\\ 
 
-\begin{table}
-\centering
-\caption{Punkte nach der Entzerrung}
-\begin{tabular}{ccc}
-\toprule
-n & x/nm & y/nm\\
-\midrule
-1&	-0,40836&	0,101854\\
-2&	-0,305142&	-0,281216\\
-3& 0,0929292&	-0,399014\\
-4&	0,368084&	-0,116354\\
-5&	0,284858&	0,265753\\
-6&	-0,103218&	0,38307\\
-\bottomrule
-\end{tabular}
-\label{tab:fit}
-\end{table}
+Wie man in Abb. \ref{fig:fit2} erkennt, liegen die Punkte jetzt fast auf einem Kreis, sie sind nur etwas verschoben. In Tab. \ref{tab:res} sind die gemessenen Kantenlängen und Innenwinkel aufgetragen. Durch Mittelung (Fehler über Standartabweichung) ergibt sich $l = (0,410 \pm 0,004)$ nm und $\varphi = 120^\circ \pm 3^\circ$. Dass der Wert für $\varphi = 120^\circ$ beträgt, liegt nicht an einer genauen Messung, sondern daran, dass jedes Sechseck eine Innenwinkelsumme von $720^\circ$ hat. Demzufolge ist nur der Fehler ausschlaggebend. Bei $\Delta\varphi=3^\circ$ kann man davon ausgehen, dass es sich um gleichseitige Sechsecke handelt und somit Graphit eine Gitterstruktur aus regelmäßigen Sechsecken hat. Es ist zu beachten, dass die berechnete Längen aufgrund der Verzerrung nicht den tatsächlichen Abständen entsprechen müssen sondern lediglich zeigen sollen, dass das Gitter bei senkrechter Betrachtung die erwartete Struktur aufweist.
 
-\begin{figure}
-\centering
-\includegraphics[scale=0.3]{data/graphit/out_rotate_old.png}
-\caption{Nach Drehung um Winkel $\phi = 91,7^\circ$}
-\label{fig:fit1}
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{data/graphit_kilian/out_rotate_old.eps}
+    \subcaption{Nach Drehung um Winkel $\phi=91,7^\circ$}
+    \label{fig:fit1}
+  \end{subfigure}%
+  \begin{subfigure}{0.5\textwidth}
+    \centering
+    \includegraphics[width=1\textwidth]{data/graphit_kilian/out_rotate.eps}
+    \subcaption{Nach Drehung und Entzerrung}
+    \label{fig:fit2}
+  \end{subfigure}
+  \caption{Geometrische Transformation von Gitter}
 \end{figure}
 
-\begin{figure}
-\centering
-\includegraphics[scale=0.3]{data/graphit/out_rotate.png}
-\caption{Nach Drehung und Entzerrung}
-\label{fig:fit2}
-\end{figure}
-
-Wie man in Abb. \ref{fig:fit2} erkennt, liegen die Punkte jetzt fast auf einem Kreis, sie sind nur etwas verschoben. In Tab. \ref{tab:res} sind die gemessenen Kantenlängen und Innenwinkel aufgetragen. Durch Mittelung (Fehler über Standartabweichung) ergibt sich $l = 0,40 \pm 0,01$ und $\phi = 120^\circ \pm 2,3^\circ$. Dass der Wert für $\phi = 120^\circ$ beträgt, liegt nicht an einer genauen Messung, sondern daran, dass jedes Sechseck eine Innenwinkelsumme von $720^\circ$ hat. Demzufolge ist nur der Fehler ausschlaggebend. Bei $\Delta\phi=2,3^\circ$ kann man davon ausgehen, dass es sich um gleichseitige Sechsecke handelt und somit Graphit eine Gitterstruktur aus regelmäßigen Sechsecken hat.\\
-
-\begin{table}
-\centering
-\caption{Punkte nach der Entzerrung}
-\begin{tabular}{>{$}c<{$}cc}
-\toprule
-n & l/nm & $\phi/^\circ$\\
-\midrule
-1 \to 2 & 0,397 & 117,583\\
-2 \to 3 & 0,415 & 121,565\\
-3 \to 4 & 0,394 & 117,745\\
-4 \to 5 & 0,391 & 123,483\\
-5 \to 6 & 0,405 & 119,108\\
-6 \to 1 & 0,415 & 120,516\\
-\bottomrule
-\end{tabular}
-\label{tab:res}
+\begin{table}[h]
+  \centering
+  \begin{subtable}[h]{0.5\textwidth}
+    \centering
+    \begin{tabular}{ccc}
+      \toprule
+      n & x/nm & y/nm\\
+      \midrule
+      1&	-0,41&	0,101\\
+      2&	-0,31&	-0,28\\
+      3& 0,09&	-0,40\\
+      4&	0,36&	-0,12\\
+      5&	0,28&	0,27\\
+      6&	-0,10&	0,38\\
+      \bottomrule
+    \end{tabular}
+    \subcaption{Koordinaten, $\Delta x=$0,01 nm, $\Delta y=$0,03 nm }
+    \label{tab:fit}
+  \end{subtable}%
+  \begin{subtable}[h]{0.5\textwidth}
+    \centering
+    \begin{tabular}{>{$}c<{$}cc}
+      \toprule
+      n & l/nm & $\varphi/^\circ$\\
+      \midrule
+      1 \to 2 & 0,39$\pm$0,04 & 118$\pm$7\\
+      2 \to 3 & 0,415$\pm$0,006 & 122$\pm$7\\
+      3 \to 4 & 0,39$\pm$0,04 & 118$\pm$7\\
+      4 \to 5 & 0,39$\pm$0,04 & 123$\pm$8\\
+      5 \to 6 & 0,405$\pm$0,006 & 119$\pm$7\\
+      6 \to 1 & 0,41$\pm$0,04 & 121$\pm$7\\
+      \bottomrule
+    \end{tabular}
+    \subcaption{Abstände und Innenwinkel}
+    \label{tab:res}
+  \end{subtable}
+  \caption{Gittergrößen nach Entzerrung}
 \end{table}
 
-Um die Atomabstände $a$ von Graphit zu bestimmen, muss beachtet werden, dass die weißen Punkte nur die Atome darstellen, die direkt über einem anderem sind. Drei benachbarte Atome in einem Sechseck bilden ein gleichschenkliges Dreieck mit der Basis $l$ und den Atomabständen $a$ als Schenkel (siehe Abb. \ref{fig:triangle}). Der Winkel an der Spitze beträgt $120^\circ$. Damit ergibt sich
+Um die Atomabstände $a$ von Graphit zu bestimmen, werden mehrere Sechsecke in Abbildung \ref{fig:edit} vermessen. Das Ergebnis ist in Abbildung \ref{fig:measurement} zu sehen. Die mit ImageJ gemessenen Abstände sind in Tabelle \ref{tab:measurement} zu finden. Für die gemessenen Strecken wird ein Fehler von $\Delta l=0,02$ nm angenommen. Der mittlere gemessene Abstand entspricht somit $l=(0,311 \pm 0,004)$ nm. 
+Nun muss beachtet werden, dass die weißen Punkte nur die Atome darstellen, die direkt über einem anderem sind. Drei benachbarte Atome in einem Sechseck bilden ein gleichschenkliges Dreieck mit der Basis $l$ und den Atomabständen $a$ als Schenkel (siehe Abb. \ref{fig:triangle}). Der Winkel an der Spitze beträgt $120^\circ$. Damit ergibt sich
 \begin{align*}
 a\cdot\sin{\frac{120^\circ}{2}} &= \frac{l}{2}\\
-a &= \frac{l}{\sqrt{3}}\\
-  &= 0,231 \pm 0,006
-\end{align*}. Der Abstand der Atome beträgt also $a = 0,231\si{\nano\metre} \pm 0,006\si{\nano\metre}$.
+\rightarrow a &= \frac{l}{\sqrt{3}}\\
+  &= (0,179 \pm 0,002) \ \mathrm{nm}.
+\end{align*} Der berechnete Abstand der Atome beträgt also $a = (0,179 \pm 0,002) \ \si{\nano\metre}$. Der Literaturwert liegt bei $l=0,142$ nm (siehe \cite{graphit}). Diese Abweichung ist für das betrachten einer verkippten Aufnahme nicht verwunderlich. Nichtsdestotrotz konnte die atomare Gitterstruktur von Graphit eindeutig bestätigt werden.
 
-\begin{figure}
+\newpage
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{data/graphit_kilian/measurement_final.png}
+  \caption{gemessene Abstände in Graphitstruktur}
+  \label{fig:measurement}
+\end{figure}
+
+\begin{figure}[h]
 \centering
 \input{triangle}
 \caption{Zwei Sechsecke in unterschiedlichen Ebenen}
@@ -141,19 +168,19 @@ a &= \frac{l}{\sqrt{3}}\\
 
 
 \subsection{Gold}
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[scale=1]{data/gold/raw.png}
-\caption{Grobe Goldstruktur (Seitenlänge 100nm)}
+\caption{Grobe Goldstruktur (Seitenlänge 100 nm)}
 \label{fig:gold}
 \end{figure}
-In Abb. \ref{fig:gold} ist eine Aufnahme mit der Seitenlänge 100nm (CCM-Methode) dargestellt.  Da der linke Teil deutlich heller ist, ist er höher als der rechte. Wir denken also, dass die Aufnahme an einer Kante entstanden ist. Im Vergleich zu Graphit wirkt die Aufnahme verschwommen und es bilden sich wolkenartige Strukturen. Dies liegt daran, dass die Ladungsdichte in Gold deutlich homogener verteilt ist als in Graphit. Demzufolge war es uns auch nicht möglich eine Aufnahme mit atomarer Auflösung herzustellen. Um die atomare Oberfläche von Gold zu betrachten, bräuchte man eine andere Methode, wie z.B. ein Rasterkraftmikroskop.
+In Abb. \ref{fig:gold} ist eine Aufnahme mit der Seitenlänge 100 nm (CCM-Methode) dargestellt.  Da der linke Teil deutlich heller ist, ist er höher als der rechte. Wir denken also, dass die Aufnahme an einer Kante entstanden ist. Im Vergleich zu Graphit wirkt die Aufnahme verschwommen und es bilden sich wolkenartige Strukturen. Dies liegt daran, dass die Ladungsdichte in Gold deutlich homogener verteilt ist als in Graphit. Demzufolge war es uns auch nicht möglich eine Aufnahme mit atomarer Auflösung herzustellen. Um die atomare Oberfläche von Gold zu betrachten, bräuchte man eine andere Methode, wie z.B. ein Rasterkraftmikroskop.
 
 \subsection{TaS$_2$}
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[scale=1]{data/tas2/tas2.png}
-\caption{Grobe TaS$_2$-Struktur (Seitenlänge 84,7nm)}
+\caption{Grobe TaS$_2$-Struktur (Seitenlänge 84,7 nm)}
 \label{fig:tas2}
 \end{figure}
-In Abb. \ref{fig:tas2} ist eine Aufnahme mit der Seitenlänge 84,7nm (CCM-Methode) dargestellt. Auch hier kann man grobe Strukturen erkennen, die höher liegen als andere. Eine Abbildung mit atomarer Auflösung aufzunehmen war leider nicht möglich. Demzufolge konnten wir auch keine Ladungsdichtewellen erkennen. 
+In Abb. \ref{fig:tas2} ist eine Aufnahme mit der Seitenlänge 84,7 nm (CCM-Methode) dargestellt. Auch hier kann man grobe Strukturen erkennen, die höher liegen als andere. Eine Abbildung mit atomarer Auflösung aufzunehmen war leider nicht möglich. Demzufolge konnten wir auch keine Ladungsdichtewellen erkennen. 

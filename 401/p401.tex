@@ -1,0 +1,66 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}   %for german letters ä,ö...
+\usepackage[ngerman]{babel}   %german settings
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz,pgfplots}
+\usetikzlibrary{patterns}
+\usepackage[justification=centering]{caption}
+\usepackage[left=3cm,right=3cm,top=2cm,bottom=3cm]{geometry}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage[outdir=./]{epstopdf}
+\usepackage{subcaption}
+\usepackage{placeins}
+\usepackage{esdiff}
+
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\newcommand{\degre}{\ensuremath{^\circ}}
+
+\usetikzlibrary{patterns}
+\sisetup{locale = DE}
+
+\newcommand{\upd}[1]{^\mathrm{#1}}
+\newcommand{\ind}[1]{_\mathrm{#1}}
+\newcommand{\RM}[1]{\MakeUppercase{\romannumeral #1}}
+
+
+\usepackage[backend=bibtex8,sorting=none]{biblatex}
+\addbibresource{refs.bib}
+
+\begin{document}
+\setlength{\parindent}{0em}   %Einrücken verhindern
+\title{Physikalisches Praktikum \RM{4}\\Versuch 401\\<3<3<fried3}
+\author{Kilian Bönisch \ \ \ \qquad s6kiboen@uni-bonn.de \qquad 2897138\\
+  Friedrich Hübner \qquad s6frhueb@uni-bonn.de \qquad 2897111}
+\date{13.11.17}
+
+\maketitle
+
+\newpage
+
+\thispagestyle{empty}
+
+\tableofcontents
+
+\newpage
+
+\input{einleitung.tex}
+
+\input{theorie_kilian.tex}
+\input{durchfuehrung_kilian.tex}
+\input{auswertung_kilian.tex}
+
+\input{theorie_friedrich.tex}
+\input{durchfuehrung_friedrich.tex}
+\input{auswertung_friedrich.tex}
+
+\input{fazit.tex}
+
+\FloatBarrier
+\printbibliography
+
+\newpage
+\end{document}

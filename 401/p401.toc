@@ -7,7 +7,12 @@
 \contentsline {subsection}{\numberline {3.1}Beobachtung der Aufspaltung}{4}
 \contentsline {subsubsection}{\numberline {3.1.1}Transversale Konfiguration}{4}
 \contentsline {subsubsection}{\numberline {3.1.2}Longitudinale Konfiguration}{4}
-\contentsline {section}{\numberline {4}Frank-Hertz-Versuch}{8}
-\contentsline {section}{\numberline {5}Theoretische Grundlagen}{8}
-\contentsline {section}{\numberline {6}Durchf\IeC {\"u}hrung}{8}
-\contentsline {section}{\numberline {7}Fazit}{8}
+\contentsline {subsection}{\numberline {3.2}Messung des Zeeman-Effektes}{8}
+\contentsline {subsubsection}{\numberline {3.2.1}Kalibrierung}{8}
+\contentsline {subsubsection}{\numberline {3.2.2}Messwerte}{8}
+\contentsline {subsubsection}{\numberline {3.2.3}Bestimmung der Peaks}{8}
+\contentsline {section}{\numberline {4}Frank-Hertz-Versuch}{16}
+\contentsline {section}{\numberline {5}Theoretische Grundlagen}{16}
+\contentsline {section}{\numberline {6}Durchf\IeC {\"u}hrung}{16}
+\contentsline {section}{\numberline {7}Fazit}{16}
+\contentsline {section}{\numberline {8}Anhang}{16}

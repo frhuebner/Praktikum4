@@ -10,12 +10,89 @@ set xlabel "Pixel"
 set ylabel "I/%"
 set key right top
 
+set output "out_6_0_raw.png"
+plot \
+ "6A.txt" using 1:2 title "I(p)" with lines lt rgb "black",\
+ 
+set output "out_6_3_raw.png"
+plot \
+ "6_3A.txt" using 1:2 title "I(p)" with lines lt rgb "black",\
+ 
+set output "out_6_6_raw.png"
+plot \
+ "6_6A.txt" using 1:2 title "I(p)" with lines lt rgb "black",\
+ 
+set output "out_6_9_raw.png"
+plot \
+ "6_9A.txt" using 1:2 title "I(p)" with lines lt rgb "black",\
+ 
+set output "out_7_2_raw.png"
+plot \
+ "7_2A.txt" using 1:2 title "I(p)" with lines lt rgb "black",\
+ 
+set output "out_7_5_raw.png"
+plot \
+ "7_5A.txt" using 1:2 title "I(p)" with lines lt rgb "black",\
+ 
+set output "out_7_8_raw.png"
+plot \
+ "7_8A.txt" using 1:2 title "I(p)" with lines lt rgb "black",\
+ 
 set output "out_8_1_raw.png"
-
 plot \
  "8_1A.txt" using 1:2 title "I(p)" with lines lt rgb "black",\
+ 
+set output "out_8_4_raw.png"
+plot \
+ "8_4A.txt" using 1:2 title "I(p)" with lines lt rgb "black",\
+ 
+set output "out_8_5_raw.png"
+plot \
+ "8_5A.txt" using 1:2 title "I(p)" with lines lt rgb "black",\
+ 
 
-set output "out_8_1.png"
+set output "out_6_0.png"
+plot\
+ "6_0.dat" using 1:2 title "I(p)" pointtype 1 lt rgb "black",\
+ "6_0.dat" using 1:13 title "Fit" with lines lt rgb "red"
+set output "out_6_3.png"
+plot\
+ "6_3.dat" using 1:2 title "I(p)" pointtype 1 lt rgb "black",\
+ "6_3.dat" using 1:13 title "Fit" with lines lt rgb "red"
+ set output "out_6_6.png"
+plot\
+ "6_6.dat" using 1:2 title "I(p)" pointtype 1 lt rgb "black",\
+ "6_6.dat" using 1:13 title "Fit" with lines lt rgb "red"
+ set output "out_6_9.png"
+plot\
+ "6_9.dat" using 1:2 title "I(p)" pointtype 1 lt rgb "black",\
+ "6_9.dat" using 1:13 title "Fit" with lines lt rgb "red"
+ set output "out_7_2.png"
+plot\
+ "7_2.dat" using 1:2 title "I(p)" pointtype 1 lt rgb "black",\
+ "7_2.dat" using 1:13 title "Fit" with lines lt rgb "red"
+ set output "out_7_5.png"
+plot\
+ "7_5.dat" using 1:2 title "I(p)" pointtype 1 lt rgb "black",\
+ "7_5.dat" using 1:13 title "Fit" with lines lt rgb "red"
+ set output "out_7_8.png"
+plot\
+ "7_8.dat" using 1:2 title "I(p)" pointtype 1 lt rgb "black",\
+ "7_8.dat" using 1:13 title "Fit" with lines lt rgb "red"
+ set output "out_8_1.png"
+plot\
+ "8_1.dat" using 1:2 title "I(p)" pointtype 1 lt rgb "black",\
+ "8_1.dat" using 1:13 title "Fit" with lines lt rgb "red"
+ set output "out_8_4.png"
+plot\
+ "8_4.dat" using 1:2 title "I(p)" pointtype 1 lt rgb "black",\
+ "8_4.dat" using 1:13 title "Fit" with lines lt rgb "red"
+ set output "out_8_5.png"
+plot\
+ "8_5.dat" using 1:2 title "I(p)" pointtype 1 lt rgb "black",\
+ "8_5.dat" using 1:13 title "Fit" with lines lt rgb "red"
+
+
 #datafile = "fit8_1.txt"
 
 
@@ -40,7 +117,5 @@ set output "out_8_1.png"
 #}
 #eval su
 #set samples 10000
-plot\
- "8_1.dat" using 1:2 title "I({/Symbol g})" pointtype 1 lt rgb "black",\
- "8_1.dat" using 1:3 title "I({/Symbol g})" with lines lt rgb "red",\
+
  #f(x) lt rgb "black"

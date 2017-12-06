@@ -28,7 +28,7 @@ set output "out_kalibrierung_edit.png"
 
 plot \
  "kalibrierung_edit.txt" using 1:2 title "vorher" lt rgb "red",\
- q(x,a1,b1,c1) lt rgb "red",\
+ q(x,a1,b1,c1) notitle lt rgb "red",\
  "kalibrierung_2_edit.txt" using 1:2 title "nachher" lt rgb "blue",\
- q(x,a2,b2,c2) lt rgb "blue",\
- q(x,(a1+a2)/2,(b1+b2)/2,(c1+c2)/2) lt rgb "black"
+ q(x,a2,b2,c2) notitle lt rgb "blue",\
+ q(x,(a1+a2)/2,(b1+b2)/2,(c1+c2)/2) title "gemittelter Fit" lt rgb "black"

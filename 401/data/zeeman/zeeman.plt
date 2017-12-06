@@ -9,8 +9,6 @@ set xlabel "B/T"
 set ylabel "{/Symbol D}E/J"
 set key right bottom
 
-set output "out_kalibrierung.png"
-
 
 l(x,a,b) = a*x + b
 a1=9.274

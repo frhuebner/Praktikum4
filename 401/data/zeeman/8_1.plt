@@ -6,9 +6,13 @@ set pointsize 3
 set decimalsign ','
 
 #set title "Hg-Lampe"
-set xlabel "Pixel"
+set xlabel "{/Symbol a}"
 set ylabel "I/%"
 set key right top
+
+set output "out_0_0_raw.png"
+plot \
+ "ohnebfeld.txt" using 1:2 title "I(p)" with lines lt rgb "black",\
 
 set output "out_6_0_raw.png"
 plot \

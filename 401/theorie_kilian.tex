@@ -1,69 +1,52 @@
-\section{Theoretische Grundlagen}
-\subsection{Zeemann-Effekt}
-Beim Zeemann-Effekt wird die Aufspaltung der Energieniveaus in Atomen durch Anlegen eines Magnetfeldes beobachtet. In unserem Experiment beobachten wir Übergänge von Elektronen im Cadmium-Atom. Die für uns wichtige Größe ist dabei der Gesamtdrehimpuls, der sich aus Bahndrehimpuls und Spin zusammensetzt, $\vec{J}=\vec{L}+\vec{S}$. Einen Zustand mit Drehimpulsquantenzahl $l$ (notiert als S,P,D,...), Spinquantenzahl $s$ und Gesamtdrehimpulsquantenzahl $j$ schreiben wir mit der spektroskopischen Notation als
-\begin{align*}
-  ^{2s+1}l_j.
-\end{align*}
-Das Atom soll sich nun in einem homogenen Magnetfeld $B$ entlang der $z$-Achse befinden (Quantisierungsachse). Dadurch wird die vorherige Entartung der Energieniveaus in der $J_z$ Quantenzahl $m_j$ aufgehoben (siehe Abb. \ref{fig:level}). In Abhängigkeit der alten Energie $E_0$ ist die neue Energie dann
-\begin{align*}
-  E=E_0-\frac{\mu_B}{\hbar}\left( m_j+2m_s\right).
-\end{align*}
-In diesem Experiment werden Übergänge 
-\begin{align*}
-  ^1P_1 \ \rightarrow \ ^1D_2
-\end{align*}
-untersucht, es gilt also $m_s=0$. Dies entspricht dem Übergang eines Valenzelektrons. Die Übergänge können durch die Änderung der Quantenzahl $m_j$ für den Gesamtdrehimpuls entlang der Quantisierungsachse charaktersiert werden. In erster Ordnung sind nur Übergänge mit $\Delta m_j=0, \ 1, \ -1$ erlaubt, die Polarisation des ausgesandten Lichtes ist dabei jeweils $\pi$, $\sigma ^+$ und $\sigma^-$.
+\subsection{Theoretische Grundlagen}
+Mit dem Franck-Hertz-Versuch kann auf die Energieabstände in den untersuchten Atomen geschlossen werden. Der Aufbau ist in Abbildung \ref{fig:frank} zu sehen. Durch die Heizspannung $U_\mathrm{H}$ werden Elektronen aus der Glühkathode gelöst. Diese werden dann durch die Beschleunigungsspannung $U_\mathrm{B}$ in Richtung des Gitters beschleunigt. Auf dem Weg zum Gitter können sie mit Atomen elastisch und inelastisch stoßen. Wenn die Elektronen am Gitter noch schnell genug sind, um die Gegenspannung $U_\mathrm{G}$ zu überwinden können sie die Anode erreichen und so zum Strom $I_\mathrm{A}$ beitragen. Im Folgendem wird vereinfacht davon ausgegangen, dass für die Atome nur zwei Energiezustände mit Energiedifferenz $\Delta E$ möglich sind. Ein erstes Minimum des Anodenstroms erhält man dann, wenn die Elektronen die kinetische Enrgie $\Delta E$ haben und so die Atome anregen können (inelastischer Stoß). Das zweite Minimum folgt, wenn die Elektronen nach einem Stoß wieder schnell genug werden können um erneut inelastisch zu stoßen. Insgesamt folgt so eine periodische Abfolge von Minima und Maxima des Anodenstroms. Da aus $U_\mathrm{B}$ die Energie, die ein Elektron pro Durchlauf aufnimmt, berechnet werden kann, kann man aus der Periodizität der $I_\mathrm{A}$-$U_\mathrm{B}$-Kennlinie auf die Anregungsenergie $\Delta E$ schließen.
 
 \begin{figure}[h]
   \centering
   \begin{tikzpicture}
-    \draw (0,0)--(6,0);
-    \draw (1,0)--(2,1);
-    \draw (1,0)--(2,-1);
-    \draw (1.5,0.5)--(6,0.5);
-    \draw (2,1)--(6,1);
-    \draw (1.5,-0.5)--(6,-0.5);
-    \draw (2,-1)--(6,-1);
-    \draw (-0.5,0) node {$^1D_2$};
-    \draw (6.5,1.5) node {$m_j$};
-    \draw (6.5,1) node {2};
-    \draw (6.5,0.5) node {1};
-    \draw (6.5,0) node {0};
-    \draw (6.5,-0.5) node {-1};
-    \draw (6.5,-1) node {-2};
-
-    \draw (0,-3)--(6,-3);
-    \draw (1,-3)--(1.5,-2.5);
-    \draw (1,-3)--(1.5,-3.5);
-    \draw (1.5,-2.5)--(6,-2.5);
-    \draw (1.5,-3.5)--(6,-3.5);
-    \draw (-0.5,-3) node {$^1P_1$};
-    \draw (6.5,-2.5) node {1};
-    \draw (6.5,-3) node {0};
-    \draw (6.5,-3.5) node {-1};
-
-    \draw[->] (2.2,0)--(2.2,-2.5);
-    \draw[->] (2.4,-0.5)--(2.4,-3);
-    \draw[->] (2.6,-1)--(2.6,-3.5);
-
-    \draw[->] (3.7,0.5)--(3.7,-2.5);
-    \draw[->] (3.9,0)--(3.9,-3);
-    \draw[->] (4.1,-0.5)--(4.1,-3.5);
-
-    \draw[->] (5.2,1)--(5.2,-2.5);
-    \draw[->] (5.4,0.5)--(5.4,-3);
-    \draw[->] (5.6,0)--(5.6,-3.5);
-    
-    \draw (-0.5,-4.5) node {Polarisation};
-    \draw (2.4,-4.5) node {$\sigma^-$};
-    \draw (3.9,-4.5) node {$\pi$};
-    \draw (5.4,-4.5) node {$\sigma^+$};
+    \draw (0,5)--(6,5);
+    \draw (0,2)--(6,2);
+    \draw (0,5) arc (90:270:1.5);
+    \draw (6,2) arc (-90:90:1.5);
+    \draw [dotted, thick] (4,2)--(4,5);
+    \draw (4,5.5) node {Gitter};
+    \draw (7,2.5)--(7,4.5);
+    \draw (7,5.5) node {Anode};
+    \draw [spring] (-1,2.5)--(-1,4.5);
+    \draw [only marks, samples=100, mark size=0.75, mark=*,domain=-0.3:4] plot(\x,{3.5+0.45*rand*3});
+    \draw [->] (-0.8,3.5)--(-0.4,3.5);
+    \draw (-0.6,3.7) node {e$^-$};
+    \draw (-1,4.5)--(-2,4.5);
+    \draw (-2,4.5)--(-2,3.7);
+    \draw (-1,2.5)--(-2,2.5);
+    \draw (-2,2.5)--(-2,3.3);
+    \draw (-2.1,3.3)--(-1.9,3.3);
+    \draw (-2.2,3.7)--(-1.8,3.7);
+    \draw (-2.8,3.5) node {$U_\mathrm{H}$};
+    \draw (-2.3,3.2) node {-};
+    \draw (-2.3,3.8) node {+};
+    \draw (-1.5,2.5)--(-1.5,1.5)--(1,1.5);
+    \draw (1.6,1.5)--(4,1.5)--(4,2);
+    \draw (4,1.5)--(5,1.5);
+    \draw (5.6,1.5)--(7,1.5);
+    \draw (7.25,1.5) circle (0.25);
+    \draw [->] (7,1.25)--(7.5,1.75);
+    \draw (7.25,0.8) node {$I_\mathrm{A}$};
+    \draw (7.5,1.5)--(8,1.5)--(8,3.5)--(7,3.5);
+    \draw (5,1.3)--(5,1.7);
+    \draw (5.6,1.4)--(5.6,1.6);
+    \draw (5.3,0.8) node {$U_\mathrm{G}$};
+    \draw (4.8,1.3) node {+};
+    \draw (5.8,1.3) node {-};
+    \draw (1.6,1.3)--(1.6,1.7);
+    \draw (1,1.4)--(1,1.6);
+    \draw (1.3,0.8) node {$U_\mathrm{B}$};
+    \draw (0.8,1.3) node {-};
+    \draw (1.8,1.3) node {+};
+    \draw (-1,5.5) node {Glühkathode};
+    \draw [->] (-0.8+6,3.5)--(-0.4+6,3.5);
+    \draw (-0.6+6,3.7) node {e$^-$};
   \end{tikzpicture}
-  \caption{Ausgewählte Übergänge in Cadmium}
-  \label{fig:level}
-\end{figure}  
-
-Bei den betrachteten Übergängen ändert sich die Energie des $\pi$-polarisierten Lichtes also nicht mit dem Magnetfeld (wegen $m_s=0$). Bei dem $\sigma^{\pm}$ Übergängen ändert sich mit dem Magnetfeld die Energie der Photonen um
-\begin{align*}
-  \Delta E=\mp \mu_B B.
-\end{align*}
+  \caption{Gasentladungsröhre mit Quecksilber}
+  \label{fig:frank}
+\end{figure}

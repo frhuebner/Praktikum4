@@ -12,8 +12,12 @@ set key right top
 
 set output "out_0_0_raw.png"
 plot \
- "ohnebfeld.txt" using 1:2 title "I(p)" with lines lt rgb "black",\
+ "ohnebfeld.txt" using 1:2 title "I({/Symbol a})" with lines lt rgb "black",\
 
+set xlabel "p"
+set ylabel "I/%"
+set key right top
+ 
 set output "out_6_0_raw.png"
 plot \
  "6A.txt" using 1:2 title "I(p)" with lines lt rgb "black",\

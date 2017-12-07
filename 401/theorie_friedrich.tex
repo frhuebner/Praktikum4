@@ -75,14 +75,15 @@ Um die Energieverschiebung aus Gleichung $\ref{eq:de}$ zu messen wird ein Fabry-
 \begin{align*}
   2d\sqrt{n^2-\sin^2(\alpha)}=k\lambda
 \end{align*}
-mit $k \in \mathbb{Z}$ gilt. Bei einer Reflektivität $r$ einer einzelnen Oberfläche des Etalons ist das Auflösungsvermögen gegeben durch
+mit $k \in \mathbb{Z}$ gilt. Bei einer Reflektivität $r$ einer einzelnen Oberfläche des Etalons ist das Auflösungsvermögen gegeben durch \cite{fabryperotaufloes}
 \begin{align*}
-  \frac{\lambda}{\Delta \lambda}=\frac{2 \pi n d}{(1-r)\lambda}.
+  A = \frac{\lambda}{\Delta \lambda}=\frac{2 n d \pi r}{(1-r^2)\lambda}.
 \end{align*}
 Ferner ist die Finesse, definiert durch das Verhältnis aus freiem Spektralbereich $\Delta \lambda$ und Halbwertsbreite $\delta \lambda$, gegeben durch
 \begin{align*}
-  \mathcal{F}=\frac{\Delta \lambda}{\delta \lambda}=\frac{\pi r}{1-r^2}.
+  F=\frac{\Delta \lambda}{\delta \lambda}=\frac{\pi r}{1-r^2}.
 \end{align*} 
+
 
 \begin{figure}[h]
   \centering
@@ -110,3 +111,18 @@ Ferner ist die Finesse, definiert durch das Verhältnis aus freiem Spektralberei
   \caption{Strahlengang im Fabry-Pérot-Etalon}
   \label{fig:fabry}
 \end{figure}
+
+\subsubsection{Dopplerverbreiterung}
+Durch die thermische Bewegung der Atome kommt es zur Dopplerverschiebung der Wellenlänge des emittierten Lichtes. Bewegt sich das Atom mit der Geschwindigkeit $v$ auf den Empfänger zu und emittiert ein Photon der Wellenlänge $\lambda$, so misst dieser die Wellenlänge 
+\begin{align*}
+  \lambda'=\lambda \cdot \left(  1+ \frac{v}{c} \right),
+\end{align*} 
+wobei $c$ die Lichtgeschwindigkeit ist. Nimmt man an, dass es sich bei dem Gas um ein ideales Gas handelt, gilt für die Geschwindigkeit $v$ jedes Atoms (mit Masse $m$ und Boltzmann-Konstante $k_\mathrm{B}$)
+\begin{align*}
+  \frac{1}{2} m\ind{K} v^2=\frac{3}{2} k_\mathrm{B} T.
+\end{align*}
+Durch die Dopplerverschiebung schwankt die Wellenlänge also im Bereich
+\begin{align}
+  \sigma[\lambda]\ind{Doppler}=\frac{\lambda}{c}\sqrt{\frac{3k\ind{B}T}{m\ind{K}}}.
+  \label{equ:doppler}
+\end{align}

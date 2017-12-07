@@ -1,8 +1,8 @@
 \newpage
 
-\section{Auswertung}
-\subsection{Beobachtung der Aufspaltung}
-\subsubsection{Transversale Konfiguration}
+\subsection{Auswertung}
+\subsubsection{Beobachtung der Aufspaltung}
+\paragraph{Konfiguration}
 \begin{figure}
 \centering
 \includegraphics[scale=0.1]{data/bilder_okular/bild_1_edit.jpg}
@@ -32,7 +32,7 @@ Stellt man einen Polarisationsfilter vor das Okular, so verschwinden unter dem W
 \end{figure}
 Bei einem Strom von $\si{(1,8\pm 0,1)\ampere}$ kann man die Linien gerade noch trennen.
 
-\subsubsection{Longitudinale Konfiguration}
+\paragraph{Longitudinale Konfiguration}
 \begin{figure}
 \centering
 \includegraphics[scale=0.1]{data/bilder_okular/bild_5_edit.jpg}
@@ -61,8 +61,8 @@ Stellt man ein $\lambda/4$-Plättchen und einen Polarisationsfilter vor das Okul
 \end{figure}
 Bei einem Strom von $\si{(1,1\pm 0,1)\ampere}$ kann man die Linien gerade noch trennen.
 
-\subsection{Messung des Zeeman-Effektes}
-\subsubsection{Kalibrierung}
+\subsubsection{Messung des Zeeman-Effektes}
+\paragraph{Kalibrierung}
 \begin{figure}
 \centering
 \includegraphics[scale=0.3]{data/zeeman/out_kalibrierung.png}
@@ -88,7 +88,7 @@ B &= a\cdot I^2 + b \cdot I + c\\
 \Delta B &= \sqrt{(I^2\Delta a)^2 + (I \Delta b)^2 + \Delta c^2 + ((2aI+b)\Delta I)^2}
 \end{align*}
 
-\subsubsection{Messwerte}
+\paragraph{Messwerte}
 Die Aufspaltung konnte man mit der CCD-Kamera ab etwa $6\si{\ampere}$ beobachten (siehe Abb. \ref{fig:raw}). Wir erhöhten danach den Strom in $0,3\si{\ampere}$-Schritten. Die Stromquelle erhöhte allerdings nach $8,5\si{\ampere}$ den Strom nicht weiter, so dass wir nur Daten aus dem Bereich $6-8,5\si{\ampere}$ haben.
 \begin{figure}
 \centering
@@ -138,7 +138,7 @@ Die Aufspaltung konnte man mit der CCD-Kamera ab etwa $6\si{\ampere}$ beobachten
 \label{fig:raw}
 \end{figure}
 
-\subsubsection{Bestimmung der Peaks}
+\paragraph{Bestimmung der Peaks}
 Leider hat sich das mittlere Maximum nicht weit genug aufgespalten, so dass man die innere Linie auch sehen konnte. Wir verwenden deswegen zur Auswertung den zweitinnersten Ring. Wir betrachten demzufolge nur den Auschnitt, in dem sich die innersten beiden Ringe befinden. In dem Ausschnitt befinden sich also 10 Peaks (siehe Abb. \ref{fig:raw_fit}). An diese Peaks werden nur 10 überlagerte Gaussfunktionen gefittet ($I(p) = a\cdot \exp\left(-\frac{(p-b)^2}{2\cdot s^2}\right)$).
 
 
@@ -277,16 +277,16 @@ Der Literaturwert lautet: $9,274 \cdot 10^{-24} \si{\joule/\tesla}$\cite{wiki_ko
 \mu\ind{B} &= (9,1 \pm 0,6) \cdot 10^{-24} \si{\joule/\tesla}
 \end{align*}
 
-\subsection{Weitergehende Überlegungen}
-\subsubsection{Auflösungsvermögen und Finesse}
-\paragraph{Theorie}
+\subsubsection{Weitergehende Überlegungen}
+\paragraph{Auflösungsvermögen und Finesse}
+\subparagraph{Theorie}
 Der theoretische Wert des Auflösungsvermögens und der Finesse ist gegeben durch ($\lambda_0 =643,8 \si{\nano\meter}$):
 \begin{align*}
 A &= \frac{2\pi n d r}{\lambda_0 (1-r^2)} = 1,74\cdot 10^5\\
 F &= \frac{A \lambda_0}{2 n d} = 9,6229 
 \end{align*}
 
-\paragraph{Transversale Richtung}
+\subparagraph{Transversale Richtung}
 Aus den gemessenen Strömen in transversaler Richtung ergibt sich:
 \begin{align*}
 \Delta \lambda &= \frac{\lambda_0^2}{2n\cdot d} = 3,56 \cdot 10^{-11} \si{\meter}\\
@@ -299,7 +299,7 @@ A&= \frac{2 n d}{F \lambda_0} = 2,2\cdot 10^5 \pm 0,5 \cdot 10^5
 
 Dabei wurde das Magnetfeld bestimmt, in dem in beiden Kalibrierungskurven der Wert des Magnetfeldes bei $I = 1,8 \si{\ampere}$ abgelesen wurde. Als Wert wurde dann der Mittelwert beider Werte genommen $B = \frac{B_1+B_2}{2} \pm B = \frac{|B_1-B_2|}{2}$.\\
 
-\paragraph{Longitudinale Richtung}
+\subparagraph{Longitudinale Richtung}
 In longitudinaler Richtung ergibt sich analog:
 \begin{align*}
 \Delta \lambda &= \frac{\lambda_0^2}{2n\cdot d} = 3,56 \cdot 10^{-11} \si{\meter}\\
@@ -311,12 +311,12 @@ A&= \frac{2 n d}{F \lambda_0} = 1,5\cdot 10^5 \pm 0,3 \cdot 10^5
 \end{align*}
 Der einzige Unterschied ist, dass sich $\delta \lambda$ aus der doppelten Energieverschiebung ergibt. Das liegt daran, dass in longitudinaler Richtung keine $\pi$-Komponente gibt und man demzufolge den Abstand der beiden $\sigma$-Linien nehmen muss, der doppelt so groß ist wie der Abstand zur $\pi$-Linie. Die theoretischen Werte liegen bei beiden Messungen im Rahmen der Messfehler.\\
 
-\paragraph{CCD-Kamera}
+\subparagraph{CCD-Kamera}
 Mit der CCD-Kamera wurde ein Bild ohne Magnetfeld aufgenommen (Abb. \ref{fig:ohneb}).\\
-An dem rechten Peak in der Mitte wird nun sowohl die halbe Halbwertsbreite $(0,13 \pm 0,02)^\circ$  als auch die Position des Peaks $\alpha_{1} = (0,24\pm 0,01)^\circ$ bestimmt. Multipliziert man die halbe Halbwertsbreite mit $\sqrt{2\ln 2}$ so erhält man die Standartabweichung: $\delta \alpha = 0,11 \pm 0,02$. Weiterhin wird die Position des nächsten Peaks bestimmt zu: $\alpha_2 = (0,93\pm 0,01)^\circ$.\\
+An dem rechten Peak in der Mitte wird nun die halbe Halbwertsbreite $(0,13 \pm 0,02)^\circ$  als auch die Position des Peaks $\alpha_{1} = (0,24\pm 0,01)^\circ$ bestimmt. Multipliziert man die halbe Halbwertsbreite mit $\sqrt{2\ln 2}$ so erhält man die Standartabweichung: $\delta \alpha = 0,11 \pm 0,02$. Weiterhin wird die Position des nächsten Peaks bestimmt zu: $\alpha_2 = (0,93\pm 0,01)^\circ$.\\
 \begin{figure}
 \centering
-\includegraphics[scale=0.5]{data/zeeman/out_0_0_raw.png}
+\includegraphics[scale=0.25]{data/zeeman/out_0_0_raw.png}
 \caption{Interferenzmuster ohne Magnetfeld}
 \label{fig:ohneb}
 \end{figure}
@@ -329,7 +329,7 @@ F = \frac{\Delta \lambda}{\delta \lambda} &= \frac{2d}{2d}\frac{\sqrt{n^2-\sin^2
 \end{align*}
 Dieser Wert ist etwas zu groß, aber trotzdem in der gleichen Größenordnung. Wir vermuten, dass der Unterschied möglicherweise dadurch gegeben ist, dass wir die Peaks nicht über einen Fit bestimmt haben, sondern einfach abgelesen haben. Da die Kurve ein Überlagerung verschiedener Gausskurven ist, werden die Werte leicht verschoben.
 
-\subsubsection{Dopplerverbreiterung}
+\paragraph{Dopplerverbreiterung}
 Die Dopplerverbreiterung ergibt sich durch ($m = 112,4\si{\atomicmassunit}$ \cite{wiki_cd},$ T = 1000\si{\kelvin}$):
 \begin{align*}
 \delta \lambda\ind{Doppler} &= \frac{\lambda}{c}\sqrt{\frac{3k\ind{B}T}{m}}\\

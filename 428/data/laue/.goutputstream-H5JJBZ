@@ -1,0 +1,82 @@
+#include<iostream>
+#include<math.h>
+#include<vector>
+#include<map>
+#include<algorithm>
+
+using namespace std;
+
+int millermax = 10;
+
+double abso(double a){
+	if(a<0) return -a;
+	return a; 
+}
+
+vector<vector<double> > xs;
+
+
+double dofind(double l, bool print){
+	double sumdiff=0;
+	for(int i=0;i<87;i++){
+		vector<double> x = xs[i];
+		x[2] = sqrt(x[0]*x[0] + x[1]*x[1] + l*l)-l;
+		if(i==35){
+			cout << "\t" << x[0] << "\t" << x[1] << "\t" << x[2] << endl;
+		}
+		map<double, int> orig;
+		for(int j=0;j<3;j++){
+			x[j] = abso(x[j]);
+			orig[x[j]] = j;
+		}
+		sort(x.begin(),x.end());
+		double mindiff = 1000;
+		vector<int> minh(3);
+		vector<int> h(3);
+		for(h[0] = 0;h[0]<millermax;h[0]+=2){
+			for(h[1] = h[0];h[1]<millermax;h[1]+=2){
+				for(h[2] = h[1];h[2]<millermax;h[2]+=2){
+					double diff = pow((x[0]/x[1]-(h[0]+0.0)/h[1])/(x[0]/x[1]+(h[0]+0.0)/h[1]),2) + pow((x[1]/x[2]-(h[1]+0.0)/h[2])/(x[1]/x[2]+(h[1]+0.0)/h[2]),2) + pow((x[0]/x[2]-(h[0]+0.0)/h[2])/(x[0]/x[2]+(h[0]+0.0)/h[2]),2);
+					if(h[0] == 0){
+						double x_ = sqrt(x[1]*x[1] + l*l)-l;
+						diff = pow((x[0]/x_-(h[0]+0.0)/h[1])/(x[0]/x_+(h[0]+0.0)/h[1]),2) + pow((x_/x[2]-(h[1]+0.0)/h[2])/(x_/x[2]+(h[1]+0.0)/h[2]),2) + pow((x[0]/x[2]-(h[0]+0.0)/h[2])/(x[0]/x[2]+(h[0]+0.0)/h[2]),2);
+					}
+					if(diff < mindiff){
+						mindiff = diff;
+						minh = h;
+					}
+					if(i==35){
+						cout << "\t" << minh[0] << "\t" << minh[1] << "\t" << minh[2] << endl;
+					}	
+				}	
+			}
+		}
+		if(i==35){
+			cout << "\t" << minh[0] << "\t" << minh[1] << "\t" << minh[2] << endl;
+		}
+		sumdiff += mindiff;
+		if(print){
+			cout << (i+1) << "\t" << minh[orig[x[0]]] << "\t" << minh[orig[x[1]]] << "\t" << minh[orig[x[2]]] << "\t" << mindiff << endl;
+		}
+	}
+	return sumdiff;
+}
+
+int main(){
+	string line;
+	cin >> line >> line >> line;
+	for(int i=0;i<87;i++){
+		vector<double> x(3);
+		for(int i=0;i<3;i++){
+			cin >> x[i];
+		}
+		xs.push_back(x);
+	}
+	double best = 10000000;
+	for(double l = 0;l<=20;l+=0.1){
+		double d = dofind(l,false);
+		cout << l << "\t" << d << endl;
+		if(best > d) best = d;
+	}
+	//dofind(10,true);
+}

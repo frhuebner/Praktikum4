@@ -1,0 +1,70 @@
+#include<iostream>
+#include<math.h>
+#include<vector>
+#include<map>
+#include<algorithm>
+
+using namespace std;
+
+vector<double> operator*(double a, vector<double> v){
+	for(int i=0;i<v.size();i++){
+		v[i]*=a;
+	}
+	return v;
+}
+
+vector<double> operator-(vector<double> v, vector<double> w){
+	for(int i=0;i<v.size();i++){
+		v[i]-=w[i];
+	}
+	return v;
+}
+
+double operator*(vector<double> v, vector<double> w){
+	double sum = 0;
+	for(int i=0;i<v.size();i++){
+		sum += v[i]*w[i];
+	}
+	return sum;
+}
+
+int millermax = 8;
+
+double abso(double a){
+	if(a<0) return -a;
+	return a; 
+}
+
+vector<vector<double> > xs;
+
+
+double dofind(double l0, bool print){
+	for(int l=1;l<=millermax;h++){
+		for(int k=-millermax+(l%2);k<=millermax;k+=2){
+			for(int h=-millermax+(l%2);h<=millermax;l+=2){
+				if(k*k+h*h==l*l) continue;
+				double alpha = (2*l*l0)/(k*k+h*h-l*l);
+				
+			}
+		}
+	}
+}
+
+int main(){
+	string line;
+	cin >> line >> line >> line;
+	for(int i=0;i<87;i++){
+		vector<double> x(3);
+		for(int i=0;i<3;i++){
+			cin >> x[i];
+		}
+		xs.push_back(x);
+	}
+	/*double best = 10000000;
+	for(double l = 0;l<=20;l+=0.1){
+		double d = dofind(l,false);
+		cout << l << "\t" << d << endl;
+		if(best > d) best = d;
+	}*/
+	dofind(15,true);
+}

@@ -1,0 +1,62 @@
+#include<iostream>
+#include<math.h>
+#include<vector>
+#include<map>
+#include<algorithm>
+
+using namespace std;
+
+int millermax = 11;
+
+double abso(double a){
+	if(a<0) return -a;
+	return a; 
+}
+
+vector<vector<double> > xs;
+
+
+void dofind(double l, bool print){
+	for(int i=0;i<87;i++){
+		vector<double> x = xs[i];
+		x[2] = sqrt(x[0]*x[0] + x[1]*x[1] + l*l)-l 
+		map<double, int> orig;
+		for(int i=0;i<3;i++){
+			x[i] = abso(x[i]);
+			orig[x[i]] = i;
+		}
+		sort(x.begin(),x.end());
+		double mindiff = 1000;
+		vector<double> minh(3);
+		vector<double> h(3);
+		for(h[0] = 0;h[0]<millermax;h[0]+=2){
+			for(h[1] = h[0];h[1]<millermax;h[1]+=2){
+				for(h[2] = h[1];h[2]<millermax;h[2]+=2){
+					double diff = pow((x[0]/x[1]-h[0]/h[1])/(x[0]/x[1]+h[0]/h[1]),2) + pow((x[1]/x[2]-h[1]/h[2])/(x[1]/x[2]+h[1]/h[2]),2) + pow((x[0]/x[2]-h[0]/h[2])/(x[0]/x[2]+h[0]/h[2]),2);
+					if(diff < mindiff){
+						mindiff = diff;
+						minh = h;
+					}
+				}	
+			}
+		}
+		if(print){
+			cout << (i+1) << "\t" << minh[orig[x[0]]] << "\t" << minh[orig[x[1]]] << "\t" << minh[orig[x[2]]] << "\t" << mindiff << endl;
+		}
+	}
+}
+
+int main(){
+	string line;
+	cin >> line >> line >> line;
+	for(int i=0;i<87;i++){
+		vector<double> x(3);
+		for(int i=0;i<3;i++){
+			cin >> x[i];
+		}
+		xs.push_back(x);
+	}
+	for(double l = 0.9;l<=1.6;l+=0.1){
+		dofind(l);
+	}
+}

@@ -1,0 +1,39 @@
+#include<iostream>
+#include<math.h>
+
+using namespace std;
+
+int millermax = 3;
+
+double abso(double a){
+	if(a<0) return -a;
+	return a; 
+}
+
+int main(){
+	string line;
+	cin >> line >> line >> line;
+	for(int i=0;i<87;i++){
+		double xy,xz,yz;
+		cin >> xy >> xz >> yz;
+		xy = abso(xy);
+		xz = abso(xz);
+		yz = abso(yz);
+		double mindiff = 1000;
+		double minh, mink, minl;
+		for(double h = 1;h<millermax;h++){
+			for(double k = 1;k<millermax;k++){
+				for(double l = 1;l<millermax;l++){
+					double diff = (xy - h/k)*(xy - h/k) + (xz - h/l)*(xz - h/l) + (yz - k/l)*(yz - k/l);
+					if(diff < mindiff){
+						mindiff = diff;
+						minh = h;
+						mink = k;
+						minl = l;
+					}
+				}	
+			}
+		}
+		cout << (i+1) << "\t" << minh << "\t" << mink << "\t" << minl << endl;
+	}
+}

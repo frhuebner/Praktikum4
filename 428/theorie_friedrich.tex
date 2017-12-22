@@ -44,19 +44,20 @@ wobei $\alpha, \beta$ zwei reelle Zahlen sind.
 
 Nun muss man nur noch $l$ bestimmen. Dies bekommt man aus der Bedingung, dass $\Delta\vec{k} = \vec{k}' -\vec{k}$:
 \begin{align*}
-\vec{k} &= -k\vec{e}\ind{z} & \text{nach Abb. \ref{fig:laue_th}}\\
+\vec{k} &= -|\vec{k}|\vec{e}\ind{z} & \text{nach Abb. \ref{fig:laue_th}}\\
 \Delta\vec{k} &= h\vec{b}_1 + k\vec{b}_2 + l\vec{b}_3 = \frac{2\pi}{a_0} (h, k, l)\\
-\vec{k}' &= \vec{k} + \Delta\vec{k} = -k (0,0,1) + \frac{2\pi}{a_0} (h,k,l)\\
+\vec{k}' &= \vec{k} + \Delta\vec{k} = -|\vec{k}| (0,0,1) + \frac{2\pi}{a_0} (h,k,l)\\
 \vec{k}' &= \frac{1}{\beta} (x\ind{Q},y\ind{Q},-L) &\Rightarrow \alpha = \beta \frac{2\pi}{a_0}\\
-\frac{-L}{\beta} = k\ind{z}' &= -k +\frac{\alpha l}{\beta} = -k + \frac{z\ind{Q}}{\beta} & z\ind{Q} := \alpha l\\
-z\ind{Q} &= k\beta - L\\
+\frac{-L}{\beta} = |\vec{k}|\ind{z}' &= -|\vec{k}| +\frac{\alpha l}{\beta} = -|\vec{k}| + \frac{z\ind{Q}}{\beta} & z\ind{Q} := \alpha l\\
+z\ind{Q} &= |\vec{k}|\beta - L\\
 \end{align*}
 
 Da man elastischer Streuung ausgeht, gilt $|\vec{k}| = |\vec{k}'|$: 
-\begin{align*}
-k\beta &= |\beta\vec{k}'| = \sqrt{(x\ind{Q}, y\ind{Q},-L)^2} = \sqrt{x\ind{Q}^2 + y\ind{Q}^2 + L^2}\\
-z\ind{Q} &= k\beta - L = \sqrt{x\ind{Q}^2 + y\ind{Q}^2 + L^2} - L
-\end{align*}
+\begin{align}
+|\vec{k}|\beta &= |\beta\vec{k}'| = \sqrt{(x\ind{Q}, y\ind{Q},-L)^2} = \sqrt{x\ind{Q}^2 + y\ind{Q}^2 + L^2} \nonumber\\
+z\ind{Q} &= |\vec{k}|\beta - L = \sqrt{x\ind{Q}^2 + y\ind{Q}^2 + L^2} - L
+\label{eq:zq}
+\end{align}
 
 Nun ersetzt man noch $(x\ind{Q}, y\ind{Q}, z\ind{Q}) = \alpha (h,k,l)$ und erhält:
 \begin{align*}
@@ -72,4 +73,13 @@ Durch umstellen kommt man zu der Formel:
 \begin{align}
 \alpha &= \cfrac{2lL}{h^2 + k^2 - l^2}
 \label{eq:alpha}
-\end{align} 
+\end{align}
+
+Diese Formel werden wir später für die Auswertung verwenden. Da wir einen Kristall betrachten (NaCl), der aus unterschiedlichen Atomen besteht, entstehen nach \cite{ld} nur Reflexe, wenn  die Indizes (h,k,l) alle entweder gerade oder ungerade sind.\\
+
+Weiterhin kann man auch noch den Netzebenenabstand $d$, den Glanzwinkel $\theta$ und die Wellenlänge $\lambda$ bestimmen\cite{ld}:
+\begin{align}
+\tan{\theta} &= \frac{z\ind{Q}}{\sqrt{x\ind{Q}^2+y\ind{Q}^2}}\label{eq:theta}\\
+\lambda &= 2\sin{\theta} \frac{a_0}{\sqrt{h^2+k^2+l^2}}\label{eq:lambda}\\
+d &= \frac{a_0}{\sqrt{h^2+k^2+l^2}}\label{eq:d}
+\end{align}

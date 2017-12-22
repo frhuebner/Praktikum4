@@ -21,27 +21,12 @@ Mithilfe des Lineals konnten wir die Pixel in die eigentlichen Abstände umrechn
 x\ind{Q} &= x - x_0\\
 y\ind{Q} &= y - y_0
 \end{align*}
-Die Bestimmung der Millerindizes erfolgt anders als im Praktikumsheft beschrieben:
-Da für die Millerindizes gilt $(h,k,l) \sim (x\ind{Q},y\ind{Q},z\ind{Q})$, kann man ansetzen:
-\begin{align*}
-(x\ind{Q},y\ind{Q},z\ind{Q}) &= \alpha (h,k,l) & \alpha \in \mathbb{R}^+\\
-\end{align*}
-
-Das kann man in Gl. P428.3 aus dem Praktikumsheft einsetzen und erhält:
-\begin{align}
-z\ind{Q} &= \sqrt{x\ind{Q}^2 + y\ind{Q}^2 + L^2} - L\\
-(z\ind{Q}+L)^2 &= x\ind{Q}^2 + y\ind{Q}^2 + L^2\\
-(z\ind{Q}+L)^2 &= x\ind{Q}^2 + y\ind{Q}^2 + L^2\\
-z\ind{Q}^2+2z\ind{Q}L &= x\ind{Q}^2 + y\ind{Q}^2\\
-\alpha^2 l^2+2\alpha l L &= \alpha^2 h^2 + \alpha^2 k^2\\
-\alpha l^2+2 l L &= \alpha h^2 + \alpha k^2\\
-\alpha &= \cfrac{2lL}{h^2 + k^2 - l^2}
-\label{eq:alpha}
-\end{align}  
+Der Fehler ist $\Delta x\ind{Q}, \Delta y\ind{Q} = \si{2,06 \milli\meter}$.\\
+Die Bestimmung der Millerindizes erfolgt anders als im Praktikumsheft beschrieben. Unsere Auswertung basiert auf Gl. \ref{eq:alpha}. Daraus kann man sich aus einer gegebenen Menge $(h,k,l)$ $\alpha$ berechnen und damit auch $x\ind{Q},y\ind{Q},z\ind{Q}$.\\ 
 
 Um nun die Millerindizes den Reflexen zuzuordnen, iterieren wir über die Millerindizes\footnote{Dazu beginnen wir mit $l=1$ und inkrementieren $l$ immer um 1 bis zu einer oberen Grenze $a \in \mathbb{N}$. Die Indizes $h$ und $k$ laufen dann jeweils im Bereich $-a \leq h,k \leq a$ und sind entweder gerade oder ungerade, je nachdem welche Parität $l$ besitzt. Da im  Praktikumsheft $z\ind{Q} > 0$ ist (siehe Gl. P428.3) und $l > 0$, muss $\alpha > 0$ sein}. Zu jedem Trippel an Indizes berechnen wir $\alpha$. Ist $\alpha < 0$ so verwerfen wir das Trippel. Ansonsten kann man sich aus $\alpha$ die zu erwartende Position des Reflexes berechnen ($x\ind{Q}\upd{theo} = \alpha h$, $y\ind{Q}\upd{theo} = \alpha k$). Wir weisen dem Reflex, der sich am nächsten am berechnetem Punkt befindet, die entsprechenden Millerindizes zu. Ist der Punkt mehrmals am nächsten an einem berechneten Punkt, so werden im die Indizes zugewiesen, bei denen der Abstand am geringsten ist.\\
 
-Das wichtigste bei dieser Methode ist, dass man die obere Schranke $a$ für $h,k,l$ richtig wählt. Wählt man sie zu klein, so werden nur wenige Reflexe zugewiesen. Wählt man sie hingegen zu groß, dann gibt es in der Umgebung eines Reflexes viele mögliche Trippel die in Betracht kommen. Aufgrund des unvermeidlichen Fehlers von $x\ind{Q}, y\ind{Q}$ (Gaußsche Fehlerfortpflanzung ergibt $\Delta x\ind{Q}, \Delta y\ind{Q} = \si{2,06 \milli\meter}$), ist die Chance groß einem Reflex die falschen Indizes zuzuweisen.
+Das wichtigste bei dieser Methode ist, dass man die obere Schranke $a$ für $h,k,l$ richtig wählt. Wählt man sie zu klein, so werden nur wenige Reflexe zugewiesen. Wählt man sie hingegen zu groß, dann gibt es in der Umgebung eines Reflexes viele mögliche Trippel die in Betracht kommen. Aufgrund des unvermeidlichen Fehlers von $x\ind{Q}, y\ind{Q}$, ist die Chance groß einem Reflex die falschen Indizes zuzuweisen.\\
 
 \begin{figure}
 \centering

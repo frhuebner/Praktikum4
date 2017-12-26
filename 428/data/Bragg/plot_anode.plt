@@ -30,4 +30,4 @@ set xlabel '{/Symbol b}'
 set ylabel 'R/Hz'
 set xrange [10:18]
 set output 'anode.eps'
-p f(x) title 'Regr.', 'anode.txt' u 1:2 title 'Messwerte'
+p f(x) title 'Regr.', 'anode.txt' u 1:2:(0.05):(0.05) w xyerrorbars title 'Messwerte'

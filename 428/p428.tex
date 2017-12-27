@@ -14,6 +14,7 @@
 \usepackage{booktabs}
 \usepackage[outdir=./]{epstopdf}
 \usepackage{lscape}
+\usepackage[section]{placeins}
 
 \sisetup{locale = DE}
 
@@ -43,6 +44,10 @@
 
 \newpage
 
+\tableofcontents
+
+\newpage
+
 \input{einleitung.tex}
 
 \input{theorie_kilian.tex}
@@ -56,9 +61,8 @@
 \input{auswertung_kilian.tex}
 \input{auswertung_friedrich.tex}
 \input{fazit.tex}
-\input{anhang.tex}
-
 \newpage
+\input{anhang.tex}
 \printbibliography
 
 \end{document}

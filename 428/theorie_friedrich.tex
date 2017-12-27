@@ -1,17 +1,18 @@
 \subsection{Laue-Aufnahme}
 \begin{figure}
 \centering
-\includegraphics[scale=0.5]{data/laue/th_laue.png}
-\caption{Konstruktion des reziproken Gittervekors \cite{praktikumsheft}}
+\includegraphics[scale=0.482]{data/laue/th_laue.png}
+\caption{Konstruktion des reziproken Gittervektors \cite{praktikumsheft}}
 \label{fig:laue_th}
 \end{figure}
-Mit der Laue-Aufnahme kann die Struktur von Kristallgittern untersucht werden. In Abb. \ref{fig:laue_th} ist die Situation bei der Laue-Aufnahme dargestellt (Wir verwenden das Koordinatensystem, so wie es in der Abb. \ref{fig:laue_th} angegeben ist). Röntgenstrahlung fällt von links parallel zur z-Achse auf den Kristall ein. Es wird an den Gitterpunkten gestreut. Geht man von einem kubischem Gitter, dessen Achsen in x-,y- und z-Richtung verlaufen, aus, dann kann man jeden Vektor $\vec{R}$ von einem Gitterpunkt zu einem anderen eindeutig darstellen durch ($a_0$ ist der Abstand zweier Gitterpunkte):
+Mit der Laue-Aufnahme kann die Struktur von Kristallgittern untersucht werden. In Abb. \ref{fig:laue_th} ist die Situation bei der Laue-Aufnahme dargestellt (Wir verwenden das Koordinatensystem so wie es in der Abb. \ref{fig:laue_th} angegeben ist). Röntgenstrahlung fällt von links parallel zur z-Achse auf den Kristall ein. Sie wird an den Gitterpunkten gestreut. Geht man von einem kubischen Gitter aus, dessen Achsen in x-,y- und z-Richtung verlaufen, dann kann man jeden Vektor $\vec{R}$ von einem Gitterpunkt zu einem anderen eindeutig darstellen durch
 \begin{align*}
 \vec{R} &= n_1\vec{a}_1 + n_2\vec{a}_2 + n_3\vec{a}_3 & n_1,n_2,n_3 \in \mathbb{Z}\\
 	\vec{a}_1 &= a_0\vec{e}_x\\
 	\vec{a}_2 &= a_0\vec{e}_y\\
-	\vec{a}_3 &= a_0\vec{e}_z\\ 
+	\vec{a}_3 &= a_0\vec{e}_z,
 \end{align*}
+$a_0$ ist dabei der Abstand zweier Gitterpunkte.
 
 Weiterhin sind die reziproken Gittervektoren im Falle eines kubischen Gitters definiert durch:
 \begin{align*}
@@ -19,7 +20,7 @@ Weiterhin sind die reziproken Gittervektoren im Falle eines kubischen Gitters de
 \vec{b}_i &= \frac{2\pi}{a_0} \vec{e}_i
 \end{align*}
 
-Fällt Röngtenstrahlung in Richtung des Wellenvektors $\vec{k}$ auf den Kristall ein und wird in Richtung $\vec{k}'$ gestreut (siehe Abb. \ref{fig:laue_bed}) so ergibt sich ein Gangunterschied zwischen der Streuung an verschiedenen Streuzentren. 
+Fällt Röngtenstrahlung in Richtung des Wellenvektors $\vec{k}$ auf den Kristall und wird in Richtung $\vec{k}'$ gestreut (siehe Abb. \ref{fig:laue_bed}) ergibt sich ein Gangunterschied zwischen der Streuung an verschiedenen Streuzentren. 
 
 \begin{figure}[h]
 \centering
@@ -53,7 +54,7 @@ und somit für $z\ind{Q} := \alpha l$
 z\ind{Q} &= |\vec{k}|\beta - L.
 \end{align*}
 
-Da man elastischer Streuung ausgeht, gilt $|\vec{k}| = |\vec{k}'|$: 
+Da man von elastischer Streuung ausgeht, gilt $|\vec{k}| = |\vec{k}'|$: 
 \begin{align}
 |\vec{k}|\beta &= |\beta\vec{k}'| = \sqrt{x\ind{Q}^2 + y\ind{Q}^2 + L^2} \nonumber\\
 z\ind{Q} &= |\vec{k}|\beta - L = \sqrt{x\ind{Q}^2 + y\ind{Q}^2 + L^2} - L
@@ -68,7 +69,7 @@ Nun ersetzt man noch $(x\ind{Q}, y\ind{Q}, z\ind{Q}) = \alpha (h,k,l)$ und erhä
 
 Diese Formel werden wir später für die Auswertung verwenden. Da wir einen Kristall betrachten (NaCl), der aus unterschiedlichen Atomen besteht, entstehen nach \cite{ld} nur Reflexe, wenn  die Indizes (h,k,l) alle entweder gerade oder ungerade sind.\\
 
-Weiterhin kann man auch noch den Netzebenenabstand $d$, den Glanzwinkel $\theta$ und die Wellenlänge $\lambda$ bestimmen\cite{ld}:
+Weiterhin kann man auch noch den Netzebenenabstand $d$, den Glanzwinkel $\theta$ und die Wellenlänge $\lambda$ bestimmen \cite{ld}:
 \begin{align}
 \tan{\theta} &= \frac{z\ind{Q}}{\sqrt{x\ind{Q}^2+y\ind{Q}^2}}\label{eq:theta}\\
 \lambda &= 2\sin{\theta} \frac{a_0}{\sqrt{h^2+k^2+l^2}}\label{eq:lambda}\\

@@ -1,5 +1,5 @@
 \subsection{Lebensdauermessung}
-Der Aufbau zur Lebensdauermessung ist in Abbildung \ref{fig:lebensdauer_aufbau} zu sehen. Fliegt ein Myon durch den ersten und in den zweiten Szintillationszähler löst es zwei Signale aus die zur Koinzidenz führen. Dies ist dann der Startimpuls der die Zeitmessung startet. Die Zeitmessung geschieht dabei durch das Zählen von Impulsen eines \SI{20}{\mega\hertz}-Oszillators. Zerfällt das Myon in dem zweiten Zähler löst es den Stopimpuls für die Zeitmessung aus. Damit das Startsignal nicht gleichzeitig auch das Stopsignal ist wird das Startsignal mit einem Verzögerungskabel verzögert. Fliegt ein Myon durch den zweiten Zähler ohne zu zerfallen wird kein Stopsignal ausgelöst.
+Der Aufbau zur Lebensdauermessung ist in Abbildung \ref{fig:lebensdauer_aufbau} zu sehen. Fliegt ein Myon durch den ersten und in den zweiten Szintillationszähler löst es zwei Signale aus die zur Koinzidenz führen. Dies ist dann der Startimpuls, der die Zeitmessung startet. Die Zeitmessung geschieht dabei durch das Zählen von Impulsen eines \SI{20}{\mega\hertz}-Oszillators. Damit das Startsignal nicht gleichzeitig auch das Stopsignal ist, wird das Startsignal mit einem Verzögerungskabel um etwa \SI{100}{\nano\second} verzögert. Zerfällt das Myon innerhalb von \SI{10}{\micro\second} in dem zweiten Zähler löst es den Stopimpuls für die Zeitmessung aus. Das Ereigniss wird dann von einem Zählwerk registriert. Das Zählwerk besteht dabei aus zehn Sichtzählern die jeweils einen Bereich von \SI{1}{\micro\second} abdecken. Kommt nach \SI{10}{\micro\second} kein Stopsignal wird die Zeitmessung zurückgesetzt und kein Ereignis registriert. 
 
 \begin{figure}[h]
   \centering
@@ -39,3 +39,50 @@ Der Aufbau zur Lebensdauermessung ist in Abbildung \ref{fig:lebensdauer_aufbau} 
   \caption{Versuchsaufbau zur Bestimmung der Lebensdauer von Myonen}
   \label{fig:lebensdauer_aufbau}
 \end{figure}
+
+Zur Vorbereitung der Messung müssen zunächst die Diskriminatoren und Koinzidenzen eingestellt werden. Dazu werden die Signale $D_1$, $D_2$ und $K$ auf dem Oszilloskop betrachtet. Die Dauer der Ausgangspulse der Diskriminatoren wird nun so eingestellt, dass es zur Überlappung, also zur Koinzidenz, kommt (siehe Abbildung \ref{fig:signal_oszi}). Der eingestellte Wert für alle drei Pulse ist $\Delta t \approx \SI{25}{\nano\second}$.
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \node at (0,0) {\includegraphics[width=0.5\textwidth]{./data/signal_oszi.png}};
+    \draw (-4.5,3.2) node {$D_1$};
+    \draw (-4.5,0) node {$D_2$};
+    \draw (-4.5,-2.4) node {$K$};
+    \draw [<->] (2.6,2) -- (2.6,1);
+    \draw (2.1,1.5) node {\SI{0.5}{\volt}};
+    \draw [<->] (2.8,1.2) -- (3.8,1.2);
+    \draw (3.3,1.5) node {\SI{25}{\nano\second}};
+  \end{tikzpicture}
+  \caption{Koinzidenz auf Oszilloskop. Oszillationen in Rechteckpulsen von $D_2$ und $K$ werden durch das Oszilloskop verursacht.}
+  \label{fig:signal_oszi}
+\end{figure}
+
+Zur Einstellung der Schwellenspannungen von $D_1$ und $D_2$ wird jeweils eine Schwellenspannung variiert während die andere konstant gelassen wird. In einem Monitorkreis werden beide Schwellen auf das Minimum \SI[separate-uncertainty = true]{40.2(1)}{\milli\volt} gestellt. Dieser dient zur Normierung der aus dem ersten Kreis erhaltenen Zählraten. Dann werden für beide Zähler die normierten Koinzidenz- und Diskriminatorraten in Abhängigkeit der Schwellenspannung aufgetragen (Abbildung \ref{fig:schwelle_lebensdauer}). Die optimale Schwellenspannung liegt jeweils bei dem Sattelpunkt. Aufgrund der hohen statistischen Schwankungen ist eine genaue Bestimmung nicht möglich. Es wird abgeschätzt
+\begin{align*}
+  \Delta U_1&=-\SI{120}{\milli\volt}\\
+  \Delta U_2&=-\SI{70}{\milli\volt}.
+\end{align*} 
+
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}[h]{0.5\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{data/schwelle_1_koinzidenz.eps}
+  \end{subfigure}%
+  \begin{subfigure}[h]{0.5\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{data/schwelle_1_zaehler.eps}
+  \end{subfigure}
+  \begin{subfigure}[h]{0.5\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{data/schwelle_2_koinzidenz.eps}
+  \end{subfigure}%
+  \begin{subfigure}[h]{0.5\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{data/schwelle_2_zaehler.eps}
+  \end{subfigure}
+  \caption{Aufgenommene Schwellenkurven für Lebensdauermessung. Fehler auf Spannungen von \SI{0.1}{\milli\volt} werden vernachlässigt.}
+  \label{fig:schwelle_lebensdauer}
+\end{figure} 
+Die Schwellenspannungen werden eingestellt und die Langzeitmessung mit dem Aufbau aus Abbildung \ref{fig:lebensdauer_aufbau} wird gestartet.

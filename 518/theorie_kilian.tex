@@ -2,7 +2,7 @@
 Als primäre kosmische Strahlung bezeichnet man die Strahlung, die unmittelbar aus dem All auf die obersten Atmosphärenschichten trifft. Diese Strahlung besteht zu \SI{79}{\percent} aus freien Protonen, ca. \SI{15}{\percent} Heliumkernen und zu einem kleinen Teil aus schweren Atomkernen und Elektronen\cite{Agashe:2014kda}. Die Herkunft der Teilchen ist weitgehend unbekannt. Dies liegt zum einen daran, dass niedrigenergetische Teilchen auf ihrem Weg stark abgelenkt werden können und so isotrop auf die Atmosphäre treffen, also keine bestimmte Richtung haben. Zum anderen gibt es dieses Problem bei hochenergetischen Teilchen zwar nicht, diese sind aber dafür äußerst selten, weshalb es schwer ist, ausreichend Messdaten zu erfassen.  Das spiegelt sich auch im Spektrum der primären kosmischen Strahlung wieder (Abb. \ref{fig:energiespektrum}), bei dem auffällt, dass es sehr breit ist und so z.B. Energien vom LHC im Bereich von \si{\tera\electronvolt} deutlich übertroffen werden. Die Teilchenflussdichte zeigt eine Proportionalität zu $E^{-\lambda}$, nimmt also stark ab.
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.5\textwidth]{Fotos/energiespektrum.png}
+  \includegraphics[width=0.5\textwidth]{data/energiespektrum.png}
   \caption{Energiespektrum der primären kosmischen Strahlung, aus \cite{Bietenholz:2013fta}}
   \label{fig:energiespektrum}
 \end{figure}  
@@ -65,7 +65,7 @@ Nicht-relativistisch könnten die Myonen die Erdoberfläche kaum erreichen bevor
   \end{subfigure}%
   \begin{subfigure}[h]{0.5\textwidth}
     \centering
-  \includegraphics[width=\textwidth]{Fotos/verteilung_sekundaer.png}
+  \includegraphics[width=\textwidth]{data/verteilung_sekundaer.png}
   \subcaption{Teilchenzahl in Abhängigkeit der Höhe, aus \cite{Agashe:2014kda}}
   \label{fig:fluss}
   \end{subfigure}
@@ -132,7 +132,7 @@ Für die Geschwindigkeit wird die mittlere Geschwindigkeit von $v\approx 99,4 c$
        \draw (\x/0.3-2/0.3,0)--(\x/0.3-2/0.3,-0.1) node [below] {$\x$};
     }
     \foreach \x in {0.25,0.5,0.75,1}{
-       \draw (-0.5,\x*5)--(-0.6,\x*5) node [left] {$\x$};
+       \draw (-0.5,\x*5)--(-0.6,\x*5) node [left] {$\SI{\x}{}$};
     }
      \end{tikzpicture}
   \caption{Energieverlust eines Myons in Polystyrol}

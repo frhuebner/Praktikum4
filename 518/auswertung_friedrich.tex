@@ -102,7 +102,14 @@ Der Fit ergibt: $a = (7,7 \pm 0,9)\cdot 10^3$ und $b = 80 \pm 570$. In Abb. \ref
 In Abb. \ref{fig:winkel_ges} wurde die ($a \cdot \cos^2{\phi} + b$)-Funktion in die Daten eingetragen. Hier kann man erkennen, dass der  $\cos^2{\phi}$-Fit eine gute Näherung für große $\phi$ ist. Für kleine $\phi$ weichen die Daten z.T. aus den Fehlergrenzen ab, bzw. liegen nur knapp in den Fehlergrenzen. Diese Abweichungen lassen sich nicht einfach durch Statistik erklären, da diese Fehler im Bereich von $\sqrt{N} \leq 100$ sind. Somit müssen entweder weitere Fehlerquellen im Messsystem sein oder eine $\cos^2{\phi}$-Verteilung eignet sich nicht zur Beschreibung der Winkelverteilung für kleine $\phi$.\\
 
 Geht man davon aus, dass die Verteilung symmetrisch für $\phi$ und $-\phi$ sein soll, so kann man als Maß für den Fehler die Differenz zwischen Koinzidenzen bei gegenüberliegenden Winkeln nehmen. Die größte Abweichung gibt es bei $\phi = -15^\circ,15^\circ$. Sie beträgt: $8357
- - 5491 = 2866$, also mehr als doppelt so viel wie die Zufallskoinzidenzen. Mit diesem Fehler würden alle Punkte im Fehlerbereich liegen. Somit ist eine $\cos^2{\phi}$-Verteilung auch in diesem Bereich realistisch. Man kann also die Winkelverteilung durch eine $\cos^2{\phi}$-Verteilung annähern, allerdings gibt es für kleine $\phi$ starke Schwankungen.
+ - 5491 = 2866$, also mehr als doppelt so viel wie die Zufallskoinzidenzen. Mit diesem Fehler würden alle Punkte im Fehlerbereich liegen. Somit ist eine $\cos^2{\phi}$-Verteilung auch in diesem Bereich realistisch. Man kann also die Winkelverteilung durch eine $\cos^2{\phi}$-Verteilung annähern, allerdings gibt es für kleine $\phi$ starke Schwankungen.\\
+ 
+\subsection{Zufallskoinzidenzen}
+Im Detektor Z25 gab es $N = 74678$ Koinzidenzen\footnote{Wir wissen nicht wie viele Koinzidenzen in nur zwei Detektoren gab. Die Zahl der Ereignisse in Z25 ist aber definitiv eine obere Schranke dazu. Eine untere Schranke sind z.B. die Dreierkoinzidenzen in Z14-Z25-Z2: $7928$}. Die Messdauer war $t = 1126731 \si{\second}$. Damit ergibt sich nach \ref{equ:random_space} und \ref{equ:random_time}:\\
+\begin{align*}
+N_{\text{raum}} &= 7 \cdot 10^{-9}\\
+N_{\text{zeit}} &= 5 \cdot 10^{-17}
+\end{align*}  
  
 \subsection{Auswertung der Energieverteilung}
 
@@ -128,4 +135,14 @@ In Abb. \ref{fig:mca_raw} sind die gemessenen Werte abgebildet. Bei ganz kleinen
 \[A\exp{\left(-\frac{1}{2}((x-b)/l + e^{-(x-b)/l)}\right)}\] als auch eine Gaussverteilung gefittet
 
 \[B\exp{\left(-\frac{1}{2}((x-c)/d)^2 \right)}\]
- (siehe Abb. \ref{fig:mca}). Das Ergebnis der Fits lautet
+ (siehe Abb. \ref{fig:mca}). Das Ergebnis der Fits ist
+ \begin{align}
+ A &= 89 \pm 0,7\\
+ b &= 333 \pm 1\\
+ l &= 83,2  \pm 0,8\\
+ B &= 51,4 \pm 0,5\\
+ c &= 380 \pm 1\\
+ d &= 138 \pm 1
+ \end{align}
+ 
+In Abb. \ref{fig:mca} kann man erkennen, dass die Landauverteilung deutlich besser die Messwerte annähert, als die Gaussverteilung. Nur bei großen Energien weicht die Landauverteilung von der Messung ab. Der lange Ausläufer der Landauverteilung existiert nicht, die Daten zeigen hier eher ein gaussförmiges Verhalten. Das liegt daran, dass die Landauverteilung nur eine gute Näherung für dünne Schichten ist, während die Gaussverteilung dicke Schichten beschreibt. Die verwendeten Detektoren haben eine Ausdehnung und können daher nicht vollständig durch eine Landauverteilung beschrieben werden. Deswegen hat die Verteilung keinen langen Schwanz.

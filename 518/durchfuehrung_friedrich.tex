@@ -1,6 +1,18 @@
 \subsection{Winkelverteilung}
+
+Im ersten Versuchsteil wird die Winkelverteilung der Höhenstrahlung gemessen. Dazu werden 24 Detektoren (Z1-Z24) kreisförmig angeordnet und ein zusätzlicher Detektor (Z25) in die Mitte des Kreises gestellt (siehe Abb. \ref{fig:winkel_skizze}). Jeder Detektor ist mit einem Diskriminator verbunden, der ab einer bestimmten Schwelle einen Puls abgibt (Längen der Pulse: Oben: 30ns, Unten: 50ns, Z25: 100ns).
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.9]{img/winkel_skizze.png}
+\caption{Anordnung der Detektoren\cite{praktikumsheft}}
+\label{fig:winkel_skizze}
+\end{figure}
+
+Geben gleichzeitig drei Detektoren, die auf einer Linie liegen ein Signal, so wird diese Koinzidenz als Teilchendurchgang identifiziert. Man zählt nun über einen bestimmten Zeitraum die Anzahl der Koinzidenzen aus allen Richtungen und erhält somit die Verteilung der Höhenstrahlung.
+
 \subsubsection{Schwellenkurve}
-Bevor man die Winkelverteilung messen kann, muss zuerst die optimale Schwelle für den Diskriminator D12 bestimmt werden. Dazu wird die Schwelle des Diskrimators von -50 bis -250 \si{\milli\volt} in 10 \si{\milli\volt} Schritten verändert und jeweils für 2520 \si{\second} die Anzahl der Koinzidenzen von D12 mit D23, D24, D1 oder D2 gemessen. Dies wird über ein LabVIEW-Programm automatisiert (siehe Abb. \ref{fig:prog_all}).\\
+Bevor man die Winkelverteilung messen kann, muss zuerst die optimale Schwelle für den Diskriminator D12 bestimmt werden. Die Schwellen der anderen Diskrimatoren sind schon eingestellt. Dazu wird die Schwelle des Diskrimators von -50 bis -250 \si{\milli\volt} in 10 \si{\milli\volt} Schritten verändert und jeweils für 2520 \si{\second} die Anzahl der Koinzidenzen von D12 mit D23, D24, D1 oder D2 gemessen. Dies wird über ein LabVIEW-Programm automatisiert (siehe Abb. \ref{fig:prog_all}).\\
 
 \begin{figure}
 \centering
@@ -28,3 +40,23 @@ Zum Schluss des Programmes werden alle Arrays zusammengefasst und in eine Datei 
 \caption{Hauptprogramm}
 \label{fig:prog_prog}
 \end{figure}
+
+\subsubsection{Zufallskoinzidenzen}
+Zusätzlich zur eigentlichen Messung wird versucht die Häufigkeit von Zufallskoinzidenzen zu messen. Dies geschieht auf 2 Arten.
+\begin{itemize}
+	\item Räumliche Zufallskoinzidenzen: Die Koinzidenzen von Detektor Z11, Z14 und Z25 werden gezählt. Solche Koinzidenzen werden z.B. verursacht von Teilchen, die nur in 2 Detektoren ein Signal auslösen, aber zufällig ein weiteres Signal in dem letzten Detektor erzeugt wird. Geht man von einem Teilchen aus, dass z.B. durch Z11 und Z25 geflogen ist, dann wird eine zufällige Koinzidenz erkannt, wenn 50ns davor oder danach ein Signal aus Z14 kommt. Die erwartete Rate beträgt also bei insgesamt N Ereignisse und einer Messdauer $t$ etwa: 
+\begin{align}
+N_{\text{raum}} = \frac{100\si{\nano\second}}{t} \cdot N
+\label{equ:random_space}
+\end{align}
+
+	\item Zeitliche Zufallskoinzidenzen: Die Signale von Z2, Z14 und Z25 werden so verzögert, dass ein Teilchen keine Koinzidenz mehr erzeugen kann. Die Koinzidenzen, die dann gemessen werden, entsprechen 3 zufälligen Signalen in den Detektoren. Für eine Koinzidenz muss nun nicht nur ein Ereignis zufällig $50\si{\nano \second}$ vor oder $100 \si{\nano \second}$ nach dem Z25 Signal passiert sein, sondern auch noch ein weiteres Signal $30\si{\nano \second}$ vorher oder $50\si{\nano \second}$ danach. Die Rate beträgt also etwa:
+	\begin{align}
+N_{\text{zeit}} = \frac{150\si{\nano\second}}{t} \cdot N \cdot \frac{80\si{\nano\second}}{t} \cdot N = \frac{12000 \si{\nano\second}^2}{t^2}N^2
+\label{equ:random_time}
+\end{align}
+
+\end{itemize}
+
+\subsubsection{Pulshöhenspektrum}
+Weiterhin wird auch noch die Energieverteilung der Teilchen in Z12 gemessen. Der Aufbau ist dabei so ähnlich wie bei der Messung der Schwellenkurve. Wieder zählen nur Ereignisse, die eine Koinzidenz aus D12 und D23, D24, D1 oder D2 darstellen. Kommt es zu einer solchen Koinzidenz wird das Signal in Z12 an einen MCA weitergeleitet, der die Ereignisse nach der Energie sortiert.

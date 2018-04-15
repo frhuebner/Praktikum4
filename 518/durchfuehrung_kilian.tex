@@ -18,7 +18,7 @@ Der Aufbau zur Lebensdauermessung ist in Abbildung \ref{fig:lebensdauer_aufbau} 
     \draw (7.5,4.5) node {$K$};
     \draw (8,4.5)--(8.5,4.5);
     \draw (8.5,4.2) rectangle (9.5,4.8);
-    \draw (9,4.5) node {$\delta t$};
+    \draw (9,4.5) node {$\Delta t$};
     \draw (9.5,4.5)--(10.5,4.5);
     \draw (10.7,4.5) circle (0.2);
     \draw (11.4,4.5) node {Start};
@@ -40,7 +40,7 @@ Der Aufbau zur Lebensdauermessung ist in Abbildung \ref{fig:lebensdauer_aufbau} 
   \label{fig:lebensdauer_aufbau}
 \end{figure}
 
-Zur Vorbereitung der Messung müssen zunächst die Diskriminatoren und Koinzidenzen eingestellt werden. Dazu werden die Signale $D_1$, $D_2$ und $K$ auf dem Oszilloskop betrachtet. Die Dauer der Ausgangspulse der Diskriminatoren wird nun so eingestellt, dass es zur Überlappung, also zur Koinzidenz, kommt (siehe Abbildung \ref{fig:signal_oszi}). Der eingestellte Wert für alle drei Pulse ist $\Delta t \approx \SI{25}{\nano\second}$.
+Zur Vorbereitung der Messung müssen zunächst die Diskriminatoren und Koinzidenzen eingestellt werden. Dazu werden die Signale $D_1$, $D_2$ und $K$ auf dem Oszilloskop betrachtet. Die Dauer der Ausgangspulse der Diskriminatoren wird nun so eingestellt, dass es zur Überlappung, also zur Koinzidenz, kommt (siehe Abbildung \ref{fig:signal_oszi}). Der eingestellte Wert für alle drei Pulse ist $\delta t \approx \SI{25}{\nano\second}$.
 
 \begin{figure}[h]
   \centering
@@ -64,8 +64,8 @@ Zur Einstellung der Schwellenspannungen von $D_1$ und $D_2$ wird jeweils eine Sc
 \end{align*} 
 Die optimale Schwellenspannung liegt jeweils bei dem Sattelpunkt. Aufgrund der hohen statistischen Schwankungen ist eine genaue Bestimmung nicht möglich. Es wird abgeschätzt
 \begin{align*}
-  \Delta U_1&=-\SI{120}{\milli\volt}\\
-  \Delta U_2&=-\SI{70}{\milli\volt}.
+  \delta U_1&=-\SI{120}{\milli\volt}\\
+  \delta U_2&=-\SI{70}{\milli\volt}.
 \end{align*} 
 Die Schwellenspannungen werden eingestellt und die Langzeitmessung mit dem Aufbau aus Abbildung \ref{fig:lebensdauer_aufbau} wird gestartet.
 
@@ -89,6 +89,6 @@ Die Schwellenspannungen werden eingestellt und die Langzeitmessung mit dem Aufba
     \centering
     \includegraphics[width=\textwidth]{data/schwelle_2_zaehler.eps}
   \end{subfigure}
-  \caption{Aufgenommene Schwellenkurven für Lebensdauermessung. Fehler auf Spannungen von \SI{0.1}{\milli\volt} werden vernachlässigt.}
+  \caption{Aufgenommene Schwellenkurven für Lebensdauermessung. Fehler von \SI{0.1}{\milli\volt} auf Spannungen werden vernachlässigt.}
   \label{fig:schwelle_lebensdauer}
 \end{figure} 

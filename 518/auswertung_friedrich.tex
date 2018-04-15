@@ -103,3 +103,29 @@ In Abb. \ref{fig:winkel_ges} wurde die ($a \cdot \cos^2{\phi} + b$)-Funktion in 
 
 Geht man davon aus, dass die Verteilung symmetrisch für $\phi$ und $-\phi$ sein soll, so kann man als Maß für den Fehler die Differenz zwischen Koinzidenzen bei gegenüberliegenden Winkeln nehmen. Die größte Abweichung gibt es bei $\phi = -15^\circ,15^\circ$. Sie beträgt: $8357
  - 5491 = 2866$, also mehr als doppelt so viel wie die Zufallskoinzidenzen. Mit diesem Fehler würden alle Punkte im Fehlerbereich liegen. Somit ist eine $\cos^2{\phi}$-Verteilung auch in diesem Bereich realistisch. Man kann also die Winkelverteilung durch eine $\cos^2{\phi}$-Verteilung annähern, allerdings gibt es für kleine $\phi$ starke Schwankungen.
+ 
+\subsection{Auswertung der Energieverteilung}
+
+Die Daten für diese Auswertung erhielten wir von den Tutoren, da sowohl wir als auch die Tutoren das Starten des Programmes vergessen hatten.\\
+
+\begin{figure}
+\centering
+\includegraphics[width=0.75\linewidth]{data/friedrich/mca_raw.png}
+\caption{Messwerte der Energieverteilung}
+\label{fig:mca_raw}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.75\linewidth]{data/friedrich/mca.png}
+\caption{Fits an die Energieverteilung}
+\label{fig:mca}
+\end{figure}
+
+Da in der Datei nur die Anzahl der Energieereignisse je Bin steht, aber nicht, wie groß die Bins sind oder wie groß der Offset ist, wird mit dimensionslosen Größen gearbeitet. Das ist für die Auswertung auch nicht relevant, da es nur um die qualitative Energieverteilung geht.  
+
+In Abb. \ref{fig:mca_raw} sind die gemessenen Werte abgebildet. Bei ganz kleinen Energien werden viele Ereignisse festgestellt (etwa in den ersten 20 Bins). Es wird sich dabei vermutlich um Untergrund handeln, der gerade so nicht von der Schwelle des Diskriminators abgeschnitten wurde. Deswegen nehmen wir die ersten 20 Bins aus der Auswertung heraus. An die Daten wird jetzt sowohl eine Landauverteilung
+\[A\exp{\left(-\frac{1}{2}((x-b)/l + e^{-(x-b)/l)}\right)}\] als auch eine Gaussverteilung gefittet
+
+\[B\exp{\left(-\frac{1}{2}((x-c)/d)^2 \right)}\]
+ (siehe Abb. \ref{fig:mca}). Das Ergebnis der Fits lautet

@@ -10,10 +10,10 @@ set decimalsign ','
 
 
 set ylabel "Koinzidenz/D25"
-set xlabel "U_S/mV"
+set xlabel "-U_S/mV"
 set key right top
 
 
 
 set output "schwelle.png"
-plot "schwelle.txt" using 1:6:(($5)/($4)*sqrt(1/($4)+1/($5))) with yerror notitle lt rgb "black"
+plot "schwelle.txt" using (-$1):6:(($5)/($4)*sqrt(1/($4)+1/($5))) with yerror notitle lt rgb "black"

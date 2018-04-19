@@ -1,0 +1,88 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}   %for german letters ä,ö...
+\usepackage[ngerman]{babel}   %german settings
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz,pgfplots}
+\usetikzlibrary{patterns}
+\usepackage[justification=centering]{caption}
+\usepackage[left=3cm,right=3cm,top=2cm,bottom=3cm]{geometry}
+\usepackage[tight-spacing=true]{siunitx}
+\usepackage{booktabs}
+\usepackage[outdir=./]{epstopdf}
+\usepackage{subcaption}
+\usepackage{placeins}
+\usepackage{esdiff}
+
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows,decorations.pathmorphing}
+\newcommand{\degre}{\ensuremath{^\circ}}
+
+\usetikzlibrary{patterns}
+\tikzstyle{spring}=[thick,decorate,decoration={zigzag,pre length=0.3cm,post length=0.3cm,segment length=6}]
+
+\sisetup{locale = DE}
+
+\newcommand{\upd}[1]{^\mathrm{#1}}
+\newcommand{\ind}[1]{_\mathrm{#1}}
+\newcommand{\RM}[1]{\MakeUppercase{\romannumeral #1}}
+
+
+\usepackage[backend=bibtex8,sorting=none]{biblatex}
+\addbibresource{refs.bib}
+
+\begin{document}
+\setlength{\parindent}{0em}   %Einrücken verhindern
+\title{Physikalisches Praktikum \RM{5}\\Versuch 523\\$\beta$-Spektrometer}
+\author{Kilian Bönisch \ \ \ \qquad s6kiboen@uni-bonn.de \qquad 2897138\\
+  Friedrich Hübner \qquad s6frhueb@uni-bonn.de \qquad 2897111}
+\date{23.04.18}
+
+\maketitle
+\thispagestyle{empty}
+
+\newpage
+
+\thispagestyle{empty}
+
+\tableofcontents
+
+\newpage
+
+\section{Einleitung}
+
+\input{einleitung.tex}
+
+\section{Theoretische Grundlagen}
+
+\input{theorie_kilian.tex}
+
+\section{Durchführung}
+
+\input{durchfuehrung_friedrich.tex}
+
+\input{durchfuehrung_kilian.tex}
+
+\section{Auswertung}
+
+\input{auswertung_friedrich.tex}
+
+\input{auswertung_kilian.tex}
+
+\section{Fazit}
+
+\input{fazit.tex}
+
+\FloatBarrier
+
+\newpage
+
+\printbibliography
+
+\newpage
+
+\section{Anhang}
+\input{anhang.tex}
+
+\end{document}

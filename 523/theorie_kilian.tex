@@ -1,0 +1,52 @@
+\subsection{$\beta$-Zerfall}
+Nuklide mit Neutronenüberschuß können über den $\beta^-$-Zerfall Neutronen zu Protonen umwandeln
+\begin{align*}
+  n \rightarrow p + e^- + \bar{\nu}_e.
+\end{align*}
+Dieser Prozess kann nicht nur an Nukliden sondern auch am freien Neutron nachgewiesen werden. Somit ist das Neutron nicht stabil und hat eine Lebensdauer von etwa 15 Minuten.
+Der Analoge Prozess für Nuklide mit Protonenüberschuß ist der $\beta^+$-Zerfall
+\begin{align*}
+  p \rightarrow n + e^+ + \nu_e.
+\end{align*}
+Dieser Prozess ist für freie Protonen allerdings nicht möglich, da dafür die Ruhemasse nicht ausreicht. 
+Ein weiterer Prozess, der ähnlich zum $\beta^+$-Zerfall ist, ist der Elektroneneinfang. Bei diesem zerfällt ebenfalls ein Proton im Nuklid zu einem Neutron. Es entsteht allerdings kein Positron, sondern ein Elektron aus der Schale wird vernichtet. Neben dem entstandenen Neutron bleibt ein Elektron-Neutrino zurück.
+
+\subsection{Fermitheorie des $\beta$-Zerfalls}    
+Die Zerfallsrate beim $\beta$-Zerfall kann mit Fermis goldener Regel berechnet werden. Diese besagt, dass für die Übergangsrate von Zustand $i$ zu Zustand $f$
+\begin{align*}
+  \mathrm{d}\Gamma_{i \rightarrow f}=\frac{2\pi}{\hbar}| M_{fi} |^2 \mathrm{d} \rho
+\end{align*}
+gilt. $\hbar$ ist dabei das reduzierte plancksche Wirkungsquantum, $M_{fi}$ das Matrixelement des Wechselwirkungsoperators und $\rho$ die Phasenraumdichte des Endzustands. Ohne das genaue Matrixelement zu kennen kann über die Berechnung der Phasenraumdichte bereits die grobe Form des Spektrums für den Zerfall bestimmt werden. Nimmt man an, dass Elektron und Neutrino nach dem Zerfall den Zustand eines freien Teilchens in einem Volumen $V$ annehmen folgt, dass der Impuls jeweils nach 
+\begin{align*}
+  P_i=\frac{\pi}{V^{1/3}}\hbar n_i
+\end{align*}
+mit $n_i \in \mathbb{Z}$ quantisiert sein muss. Es ist darauf zu achten, dass positive und negative Quantenzahlen in diesem Fall lediglich das Vorzeichen der Wellenfunktion ändern und somit keine neuen Zustände bringen. Genähert lässt sich, unter Beachtung von Viererimpulserhaltung, die Phasenraumdichte berechnen:
+
+\begin{align*}
+  \rho&= \frac{1}{2}\int\int \int \mathrm{d}^3n_\mathrm{k} \mathrm{d}^3n_\mathrm{e}  \mathrm{d}^3n_\nu \delta (E_i-E_f) \delta (\vec{p}_\mathrm{k}+\vec{p}_e+\vec{p}_\nu)\\
+  &=\frac{V^3}{2(\pi \hbar)^9} \int \int \int \mathrm{d}^3p_\mathrm{k}   \mathrm{d}^3p_\mathrm{e}  \mathrm{d}^3p_\nu\delta (E_0-E_e-p_\nu c) \delta (\vec{p}_\mathrm{k}+\vec{p}_e+\vec{p}_\nu)\\
+  &=\frac{V^3}{2(\pi \hbar)^9}  \int \int  \mathrm{d}^3p_\mathrm{e} \mathrm{d}^3p_\nu \delta (E_0-E_e-p_\nu c)\\
+  &= \frac{8 \pi^2 V^3}{(\pi \hbar)^9} \int \int \mathrm{d}p_e \mathrm{d}p_\nu p_e^2 p_\nu^2\delta (E_0-E_e-p_\nu c)\\
+  &=\frac{8 \pi^2 V^3}{c^3 (\pi \hbar)^9} \int \mathrm{d}p_e p_e^2 (E_0-E_e)^2
+\end{align*}
+Somit folgt sofort für die Übergangsrate
+\begin{align*}
+  \diff{\Gamma_{i \rightarrow f}}{p_e}=\frac{16 V^3}{\hbar^{10} \pi^6 c^3}|M_{fi}|^2  p_e^2 (E_0-E_e)^2.
+\end{align*}
+Der Term aus der Berechnung der Phasenraumdichte enthält bereits die charakteristische Form des SPektrums. Bei $Z$-fach geladenen Kernen unterscheiden sich $\beta^-$- und $\beta^+$-Zerfall noch um einen Faktor $F(p_e,Z)$ durch die Coulombanziehung bzw. Abstoßung. Somit gilt dann insgesamt 
+\begin{align*}
+  \diff{\Gamma_{i \rightarrow f}}{p_e} \propto p_e^2(E_0-E_e)^2 F_\pm(p_e,Z).
+\end{align*}
+Über die Energie ausgedrückt erhält man
+\begin{align*}
+  \diff{\Gamma_{i \rightarrow f}}{E_e} \propto p_eE_e(E_0-E_e)^2 F_\pm(p_e,Z).
+\end{align*}
+Experimentell ist das Ziel, anhand des $\beta$-Zerfalls die Energie $E_0$ des Übergangs zu ermitteln. Dies geschieht über die Verwendung des Kurieplots. Dazu wird 
+\begin{align*}
+  \sqrt{\frac{\dot{N}}{p_eE_eF_\pm(p_e,Z)}} \propto E_0-E_e
+\end{align*}
+als Funktion der Elektronenenergie aufgetragen. $\dot{N}$ ist dabei die Zählrate bei der jeweiligen Energie.
+
+\subsection{Innere Konversion und Augereffekt}
+Neben dem $\beta$-Zerfall gibt es noch weitere Prozesse, durch die ein Atom Elektronen emittiert. Ein Beispiel ist die innere Konversion. Bei der inneren Konversion wechselt ein Atomkern von einem angeregten zu einem niederenergetischerem Zustand. Anstelle der Emission von $\gamma$-Quanten wird allerdings ein Elektron aus dem Atom herausgelöst. Die Energie des Elektrons ist dann die Differenz von der Energiedifferenz des Kernzustandes vorher und nacher und der ursprünglichen Bindungsenergie des Elektrons. Die zurückbleibende Lücke in der Elektronenhülle kann dann unter anderem durch Elektronen aus höheren Schalen aufgefüllt werden, wobei Röntgenstrahlung emittiert wird.\\ \\
+Eine weitere Möglichkeit die Lücke aufzufüllen stellt der Augereffekt dar. Bei diesem wird die Energie des Nachrückenden Elektrons nicht in Form von Röntgenstrahlung abgegeben, sondern an ein anderes Elektron übetragen, welches dadurch das Atom verlässt. Das emittierte Elektron wird auch Augerelektron genannt.

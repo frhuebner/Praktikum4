@@ -129,20 +129,22 @@ Die Daten für diese Auswertung erhielten wir von den Tutoren, da sowohl wir als
 \label{fig:mca}
 \end{figure}
 
-Da in der Datei nur die Anzahl der Energieereignisse je Bin steht, aber nicht, wie groß die Bins sind oder wie groß der Offset ist, wird mit dimensionslosen Größen gearbeitet. Das ist für die Auswertung auch nicht relevant, da es nur um die qualitative Energieverteilung geht.  
+In der Datei steht nur die Anzahl der Energieereignisse je Bin steht, aber nicht, wie groß ein Bin ist. Aus der Konfigurationsdatei wurde geschlossen, dass ein Bin 8keV groß ist ('calfact=8' und 'calunit=keV'). Das ist für die Auswertung auch nicht relevant, da es nur um die qualitative Energieverteilung geht.  
 
-In Abb. \ref{fig:mca_raw} sind die gemessenen Werte abgebildet. Bei ganz kleinen Energien werden viele Ereignisse festgestellt (etwa in den ersten 20 Bins). Es wird sich dabei vermutlich um Untergrund handeln, der gerade so nicht von der Schwelle des Diskriminators abgeschnitten wurde. Deswegen nehmen wir die ersten 20 Bins aus der Auswertung heraus. An die Daten wird jetzt sowohl eine Landauverteilung
+In Abb. \ref{fig:mca_raw} sind die gemessenen Werte abgebildet. Bei ganz kleinen Energien werden viele Ereignisse festgestellt (etwa in den ersten 20 Bins). Es wird sich dabei vermutlich um Untergrund handeln, der die Schwelle des Diskriminators überschnitten hat. Deswegen nehmen wir die ersten 20 Bins aus der Auswertung heraus. An die Daten wird jetzt sowohl eine Landauverteilung
 \[A\exp{\left(-\frac{1}{2}((x-b)/l + e^{-(x-b)/l)}\right)}\] als auch eine Gaussverteilung gefittet
 
 \[B\exp{\left(-\frac{1}{2}((x-c)/d)^2 \right)}\]
  (siehe Abb. \ref{fig:mca}). Das Ergebnis der Fits ist
  \begin{align}
  A &= 89 \pm 0,7\\
- b &= 333 \pm 1\\
- l &= 83,2  \pm 0,8\\
+ b &= (2,664 \pm 0,008)\si{\mega\eV}\\
+ l &= (0,665  \pm 0,006)\si{\mega\eV}\\
  B &= 51,4 \pm 0,5\\
- c &= 380 \pm 1\\
- d &= 138 \pm 1
+ c &= (3,04\pm 0,01)\si{\mega\eV}\\
+ d &=( 1,10 \pm 0,01) \si{\mega\eV}
  \end{align}
  
-In Abb. \ref{fig:mca} kann man erkennen, dass die Landauverteilung deutlich besser die Messwerte annähert, als die Gaussverteilung. Nur bei großen Energien weicht die Landauverteilung von der Messung ab. Der lange Ausläufer der Landauverteilung existiert nicht, die Daten zeigen hier eher ein gaussförmiges Verhalten. Das liegt daran, dass die Landauverteilung nur eine gute Näherung für dünne Schichten ist, während die Gaussverteilung dicke Schichten beschreibt. Die verwendeten Detektoren haben eine Ausdehnung und können daher nicht vollständig durch eine Landauverteilung beschrieben werden. Deswegen hat die Verteilung keinen langen Schwanz.
+In Abb. \ref{fig:mca} kann man erkennen, dass die Landauverteilung deutlich besser die Messwerte annähert, als die Gaussverteilung. Nur bei großen Energien weicht die Landauverteilung von der Messung ab. Der lange Ausläufer der Landauverteilung existiert nicht, die Daten zeigen hier eher ein gaussförmiges Verhalten. Das liegt daran, dass die Landauverteilung nur eine gute Näherung für dünne Schichten ist, während die Gaussverteilung dicke Schichten beschreibt. Die verwendeten Detektoren haben eine Ausdehnung und können daher nicht vollständig durch eine Landauverteilung beschrieben werden. Deswegen hat die Verteilung keinen langen Schwanz.\\
+
+Das Maximum der Landauverteilung liegt bei $b \approx 2,7\si{\mega\eV}$. Das ist in grober Übereinstimmung mit Abb. \ref{fig:landau}, wo das Maximum bei etwa $2,4\si{\mega\eV}$ ist. Die gemessene Energie ist also etwas größer als die theoretisch berechnete. Dabei ist aber zu beachten, dass es bei der theoretischen Berechnung viele unbekannte Größen gab, die nur abgeschätzt wurden. Die Differenz zwischen Theorie und Experiment ist also nicht unerwartet.

@@ -28,23 +28,23 @@ set decimalsign ','
 
 
 set ylabel "Koinzidenzen"
-set xlabel "E"
+set xlabel "E/MeV"
 set key right top
 
 set output "mca_raw.png"
-plot "mca.txt" using ($0):1 notitle lt rgb "black"
+plot "mca.txt" using ($0*8.0/1000.0):1 notitle lt rgb "black"
 
 f(x) = a*exp(-((x-b)/l+exp(-(x-b)/l))/2)
-b = 250
-l = 1000.0/8.0
-fit f(x) "mca.txt" using (($0>20) ? $0: 1/0):1 via a,b,l
+b = 250*8.0/1000.0
+l = 1
+fit f(x) "mca.txt" using (($0>20) ? ($0*8.0/1000.0): 1/0):1 via a,b,l
 
-d = 250
-e = 1000.0/8.0
+d = 250*8.0/1000
+e = 1
 g(x) = c*exp(-(x-d)**2/2/e**2)
-fit g(x) "mca.txt" using (($0>20) ? $0: 1/0):1 via c,d,e
+fit g(x) "mca.txt" using (($0>20) ? ($0*8.0/1000.0): 1/0):1 via c,d,e
 
 set output "mca.png"
-plot "mca.txt" using (($0>20) ? $0: 1/0):1 notitle lt rgb "black",\
+plot "mca.txt" using (($0>20) ? $0*8.0/1000.0: 1/0):1 notitle lt rgb "black",\
 	f(x) title "Landau" lw 2 lt rgb "black",\
 	g(x) title "Gauss" lw 2 lt rgb "red"

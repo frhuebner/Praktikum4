@@ -45,15 +45,15 @@ Zum Schluss des Programmes werden alle Arrays zusammengefasst und in eine Datei 
 \subsubsection{Zufallskoinzidenzen}
 Zusätzlich zur eigentlichen Messung wird versucht die Häufigkeit von Zufallskoinzidenzen zu messen. Dies geschieht auf 2 Arten.
 \begin{itemize}
-	\item Räumliche Zufallskoinzidenzen: Die Koinzidenzen von Detektor Z11, Z14 und Z25 werden gezählt. Solche Koinzidenzen werden z.B. verursacht von Teilchen, die nur in 2 Detektoren ein Signal auslösen, aber zufällig ein weiteres Signal in dem letzten Detektor erzeugt wird. Geht man von einem Teilchen aus, dass z.B. durch Z11 und Z25 geflogen ist, dann wird eine zufällige Koinzidenz erkannt, wenn 50ns davor oder danach ein Signal aus Z14 kommt. Die erwartete Rate beträgt also bei insgesamt N Ereignisse und einer Messdauer $t$ etwa: 
+	\item Räumliche Zufallskoinzidenzen: Die Koinzidenzen von Detektor Z11, Z14 und Z25 werden gezählt. Solche Koinzidenzen werden z.B. verursacht von Teilchen, die nur in 2 Detektoren ein Signal auslösen, aber zufällig ein weiteres Signal in dem letzten Detektor erzeugt wird. Geht man von einem Teilchen aus, dass z.B. durch Z11 und Z25 geflogen ist, dann wird eine zufällige Koinzidenz erkannt, wenn 50ns davor oder danach ein Signal aus Z14 kommt. Die erwartete Anzahl beträgt also bei insgesamt N Ereignisse und einer Messdauer $t$ etwa: 
 \begin{align}
-N_{\text{raum}} = \frac{100\si{\nano\second}}{t} \cdot N
+N_{\text{raum}} = N \cdot \frac{100\si{\nano\second}}{t} \cdot N = \frac{100\si{\nano\second}}{t} \cdot N^2 
 \label{equ:random_space}
 \end{align}
 
 	\item Zeitliche Zufallskoinzidenzen: Die Signale von Z2, Z14 und Z25 werden so verzögert, dass ein Teilchen keine Koinzidenz mehr erzeugen kann. Die Koinzidenzen, die dann gemessen werden, entsprechen 3 zufälligen Signalen in den Detektoren. Für eine Koinzidenz muss nun nicht nur ein Ereignis zufällig $50\si{\nano \second}$ vor oder $100 \si{\nano \second}$ nach dem Z25 Signal passiert sein, sondern auch noch ein weiteres Signal $30\si{\nano \second}$ vorher oder $50\si{\nano \second}$ danach. Die Rate beträgt also etwa:
 	\begin{align}
-N_{\text{zeit}} = \frac{150\si{\nano\second}}{t} \cdot N \cdot \frac{80\si{\nano\second}}{t} \cdot N = \frac{12000 \si{\nano\second}^2}{t^2}N^2
+N_{\text{zeit}} = N \cdot \frac{150\si{\nano\second}}{t} \cdot N \cdot \frac{80\si{\nano\second}}{t} \cdot N = \frac{12000 \si{\nano\second}^2}{t^2}N^3
 \label{equ:random_time}
 \end{align}
 

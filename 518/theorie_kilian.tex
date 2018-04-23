@@ -20,6 +20,8 @@ Myonen\cite{pdg} haben eine Masse von etwa \SI{106}{\mega\electronvolt} und eine
   \mu^+ &\rightarrow e^++ \nu_e +\bar{\nu}_\mu\\
   \mu^- &\rightarrow e^-+ \bar{\nu}_e +\nu_\mu.
 \end{align*}
+Im Vakuum sind die Lebenszeiten von Myon und Antimyon gleich. In Materie allerdings können Myonen mit Kernen myonische Atome bilden. Durch Elektroneneinfang kann schließlich das Myon unter Emission eines Myon-Neutrinos und Umwandlung eines Protons zu einem Neutron absorbiert werden. Dadurch verkürzt sich die Lebensdauer des Myons. Dieser Effekt spielt bei Materialien aus Atomen mit großer Ladungszahl $Z$ eine größere Rolle, da die Zerfallsrate über diesen Kanal mit $Z^4$ skaliert \cite{myonkanal}. 
+
 Nicht-relativistisch könnten die Myonen die Erdoberfläche kaum erreichen bevor sie zerfallen. Durch die hohe Geschwindigkeit spielt die Zeitdilatation aber eine Rolle und sie können die Erdoberfläche erreichen. In Abbildung \ref{fig:fluss} sind die Teilchenflüsse in Abhängigkeit der atmosphärischen Tiefe zu sehen. Neutrinos sind aufgrund ihrer geringen Wechselwirkung schwer nachzuweisen und somit sind die Myonen ein guter Kandidat zur Untersuchung der Höhenstrahlung.   
 
 \begin{figure}[h]
@@ -73,7 +75,7 @@ Nicht-relativistisch könnten die Myonen die Erdoberfläche kaum erreichen bevor
 \end{figure}
 
 \subsection{Winkelverteilung kosmischer Myonen}
-Auf der Atmosphäre ist die Winkelverteilung der Myonen annähernd isotrop. Die Myonen, die auf der Erdoberfläche detektiert werden können, mussten allerdings zuvor in der Atmosphäre eine Strecke, deren Länge Winkelabhängig ist, durchlaufen. Somit folgt, dass eine um den Zenit symmetrische Winkelverteilung mit Maximum im Zenit entsteht. Nach \cite{winkelverteilung} kann die Zahl der Myonen als Funktion des Azimutalwinkels $\phi$ durch eine $\cos^2(\phi)$-Verteilung beschrieben werden.
+Auf der Atmosphäre ist die Winkelverteilung der Myonen annähernd isotrop. Die Myonen, die auf der Erdoberfläche detektiert werden können, mussten allerdings zuvor in der Atmosphäre eine Strecke, deren Länge Winkelabhängig ist, durchlaufen. Somit folgt, dass eine um den Zenit symmetrische Winkelverteilung mit Maximum im Zenit entsteht. Nach \cite{winkelverteilung} kann die Zahl der Myonen als Funktion des Azimutalwinkels $\varphi$ durch eine $\cos^2(\varphi)$-Verteilung beschrieben werden.
 
 \subsection{Energieverlust von Teilchen in Materie}
 Geladene Teilchen verlieren beim Durchgang von Materie Energie. Dies geschieht durch die Anregung und Ionisation von Elektronen aus Atomen in der Materie. Die mittlere abgegebene Energie pro Längeneinheit kann durch die Bethe-Formel beschrieben werden\cite{sigmund2014particle}
@@ -85,7 +87,7 @@ $m_e$ und $c$ sind dabei die Elektronenmasse und die Lichtgeschwindigkeit. Die K
 \begin{align*}
   K=\frac{e^4}{4\pi \epsilon_0^2m_ec^2}.
 \end{align*}
-Der einzigen Parameter des einfallenden Teilchens die einfließen sind die Ladungszahl $z$ und die Geschwindigkeit $v$ über
+Die einzigen Parameter des einfallenden Teilchens die einfließen sind die Ladungszahl $z$ und die Geschwindigkeit $v$ über
 \begin{align*}
   \beta&=v/c\\
   \gamma&=1/\sqrt{1-\beta^2}.
@@ -143,7 +145,7 @@ Für die Geschwindigkeit wird die mittlere Geschwindigkeit von $v\approx 99,4 c$
 \end{figure}
 
 \subsection{Szintillationszähler}
-Ein Szintillator weißt ionisierende Teilchen über den im vorherigen Abschnitt beschriebenen Energieverlust nach. Die Teilchen regen die Atome im Szintillationsmaterial an. Nach einer mittleren Anregungsdauer fällt das Atom zurück in den Grundzustand und emittiert dabei ein Photon der entsprechenden Wellenlänge. Dieses Photon kann nun auch wieder weitere Atome anregen und es kommt zu einer Art Random-Walk. Um diesen zu unterbrechen wird das Szintillationsmaterial schwach mit wellenlängenverschiebenden Molekülen dotiert. Trifft ein Photon auf ein solches wird das Licht zu langwelligerem Licht umgewandelt. Dieses kann nicht vom Szintillator absorbiert werden und kann somit über einen Lichtleiter zu einer Photodiode gelangen. Diese erzeugt eine messbare elektrische Spannung. Der Prozess ist in Abbildung \ref{fig:szintillator} schematisch skizziert.
+Ein Szintillator weist ionisierende Teilchen über den im vorherigen Abschnitt beschriebenen Energieverlust nach. Die Teilchen regen die Atome im Szintillationsmaterial an. Nach einer mittleren Anregungsdauer fällt das Atom zurück in den Grundzustand und emittiert dabei ein Photon der entsprechenden Wellenlänge. Dieses Photon kann nun auch wieder weitere Atome anregen und es kommt zu einer Art Random-Walk. Um diesen zu unterbrechen wird das Szintillationsmaterial schwach mit wellenlängenverschiebenden Molekülen dotiert. Trifft ein Photon auf ein solches, wird das Licht zu langwelligerem Licht umgewandelt. Dieses kann nicht vom Szintillator absorbiert werden und kann somit über einen Lichtleiter zu einer Photodiode gelangen. Diese erzeugt eine messbare elektrische Spannung. Der Prozess ist in Abbildung \ref{fig:szintillator} schematisch skizziert.
 
 \begin{figure}[h]
   \centering
@@ -205,14 +207,14 @@ Ein Szintillator weißt ionisierende Teilchen über den im vorherigen Abschnitt 
     \draw [->] (9.8,0.6)--(10.2,1);
     \draw (10.5,0.8) node {$U$};
   \end{tikzpicture}
-  \caption{Signalerzeugung in Szintillator}
+  \caption{Signalerzeugung im Szintillator}
   \label{fig:szintillator}
 \end{figure} 
 
 \newpage
 
 \subsection{Diskriminator und Koinzidenzmodul}
-Für die Zählung der Myonen aus der kosmischen Strahlung werden die analogen Signale der Szintillatoren in digitale Signale umgewandelt. Dazu werden Diskriminatoren verwendet. Gibt der Szintillator ein Signal über der einstellbaren Schwellenspannung $\delta U$ an den Diskriminator gibt dieser eine logische 1 in Form eines Rechteckpulses aus. Die Dauer $\delta t$ dieses Rechteckpulses ist ebenfalls einstellbar. Bei zu kleinem $\delta t$ kann ein einzelner Puls doppelt gezählt werden. Bei zu großem $\delta t$ hingegen kann ein Puls eines neuen Myons übersehen werden. Beide Fälle sowie der optimale Fall sind in Abbildung \ref{fig:diskriminator} zu sehen.
+Für die Zählung der Myonen aus der kosmischen Strahlung werden die analogen Signale der Szintillatoren in digitale Signale umgewandelt. Dazu werden Diskriminatoren verwendet. Gibt der Szintillator ein Signal über der einstellbaren Schwellenspannung $\delta U$ an den Diskriminator gibt, dieser eine logische 1 in Form eines Rechteckpulses aus. Die Dauer $\delta t$ dieses Rechteckpulses ist ebenfalls einstellbar. Bei zu kleinem $\delta t$ kann ein einzelner Puls doppelt gezählt werden. Bei zu großem $\delta t$ hingegen kann ein Puls eines neuen Myons übersehen werden. Beide Fälle sowie der optimale Fall sind in Abbildung \ref{fig:diskriminator} zu sehen.
 
 \begin{figure}[h]
   \centering

@@ -1,5 +1,5 @@
-\subsection{Bestimmung der Lebensdauer}
-Für beide Zähler werden die normierten Koinzidenz- und Diskriminatorraten in Abhängigkeit der Schwellenspannung aufgetragen (Abbildung \ref{fig:schwelle_lebensdauer}). Da die Zahl der Zählungen poissonverteilt ist wird als Fehler für alle $N_i$ jeweils die Wurzel genommen. Mit Gaußscher Fehlerfortpflanzung folgt somit für den Fehler der Raten 
+\subsection{Auswertung}
+Für beide Zähler werden die normierten Koinzidenz- und Diskriminatorraten in Abhängigkeit der Schwellenspannung aufgetragen (Abbildung \ref{fig:schwelle_lebensdauer}). Da die Zahl der Zählungen poissonverteilt ist, wird als Fehler für alle $N_i$ jeweils die Wurzel genommen. Mit Gaußscher Fehlerfortpflanzung folgt somit für den Fehler der Raten 
 \begin{align*}
   \Delta \frac{N_i}{N_j}=\frac{\sqrt{(\Delta N_i)^2+(\Delta N_j)^2N_i^2/N_j^2}}{N_j}.
 \end{align*} 
@@ -31,7 +31,9 @@ Die optimale Schwellenspannung liegt jeweils bei dem Sattelpunkt. Aufgrund der h
   \label{fig:schwelle_lebensdauer}
 \end{figure} 
 
-Für die Bestimmung der Lebensdauer sind zwei Fehler relevant. Zum einen der statistische Fehler durch die Poissonverteilung der Zählwerte und zum anderen die Zahl der Zufallsereignisse. Die Zahl der Zufallsereignisse trägt für jedes der zehn Zählintervalle gleich bei, da keine zeitliche Korrelation besteht. Somit wird bei der Auftragung der Zählereignisse gegen die Zeit die Form
+\FloatBarrier
+
+Für die Bestimmung der Lebensdauer sind zwei Fehler relevant. Zum einen der statistische Fehler durch die Poissonverteilung der Zählwerte und zum anderen die Zahl der Zufallsereignisse. Die Zahl der Zufallsereignisse trägt zu jedem der zehn Zählintervalle gleich bei, da keine zeitliche Korrelation besteht. Somit wird bei der Auftragung der Zählereignisse gegen die Zeit die Form
 
 \begin{align}
   N(t)=A e^{-t/\tau}+B
@@ -48,7 +50,7 @@ Diese Abschätzung kann durch Anpassung der Funktion (\ref{eq:fit_lebensdauer}) 
   \tau&=\SI[separate-uncertainty = true]{2.2(1)}{\micro\second}\\
   B&=9 \pm 7.
 \end{align*}
-Da es zehn Sichtzähler gibt gilt im Idealfall $N_z=10B$. Dies stimmt auch grob, allerdings ist der Fehler von $B$ aufgrund der geringen Zählraten fast so groß wie $B$ selbst. Die Lebensdauer von Myonen wurde zu $\tau = \SI[separate-uncertainty = true]{2.2(1)}{\micro\second}$ bestimmt. Dieser Wert stimmt innerhalb der Fehlergrenzen mit dem Literaturwert von etwa \SI{2.197}{\micro\second}\cite{pdg} überein. Die Auftragung der Daten sowie die Anpassungskurve sind in Abbildung \ref{fig:lebensdauer} zu sehen. Die Daten befinden sich in Tabelle \ref{tab:sichtzaehler}.
+Da es zehn Sichtzähler gibt, gilt im Idealfall $N_z=10B$. Dies stimmt auch grob, allerdings ist der Fehler von $B$ aufgrund der geringen Zählraten fast so groß wie $B$ selbst. Die Lebensdauer von Myonen wurde zu $\tau = \SI[separate-uncertainty = true]{2.2(1)}{\micro\second}$ bestimmt. Dieser Wert stimmt innerhalb der Fehlergrenzen mit dem Literaturwert von etwa \SI{2.197}{\micro\second}\cite{pdg} überein. Die Auftragung der Daten sowie die Anpassungskurve sind in Abbildung \ref{fig:lebensdauer} zu sehen. Die Daten befinden sich in Tabelle \ref{tab:sichtzaehler}. An der graphischen Auftragung ist zu erkennen, dass die beschriebene kürzere Lebensdauer von Myonen gegenüber Antimyonen in diesem Fall im Rahmen der Fehler vernachlässigbar ist, da keine Überlagerung von zwei Exponentialkurven erkennbar ist.
 
 \begin{figure}[h]
   \centering

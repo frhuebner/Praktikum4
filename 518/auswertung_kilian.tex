@@ -1,9 +1,5 @@
 \subsection{Auswertung}
-Für beide Zähler werden die normierten Koinzidenz- und Diskriminatorraten in Abhängigkeit der Schwellenspannung aufgetragen (Abbildung \ref{fig:schwelle_lebensdauer}). Da die Zahl der Zählungen poissonverteilt ist, wird als Fehler für alle $N_i$ jeweils die Wurzel genommen. Mit Gaußscher Fehlerfortpflanzung folgt somit für den Fehler der Raten 
-\begin{align*}
-  \Delta \frac{N_i}{N_j}=\frac{\sqrt{(\Delta N_i)^2+(\Delta N_j)^2N_i^2/N_j^2}}{N_j}.
-\end{align*} 
-Die optimale Schwellenspannung liegt jeweils bei dem Sattelpunkt. Aufgrund der hohen statistischen Schwankungen ist eine genaue Bestimmung nicht möglich. Es wird abgeschätzt
+Für beide Zähler werden die normierten Koinzidenz- und Diskriminatorraten in Abhängigkeit der Schwellenspannung aufgetragen (Abbildung \ref{fig:schwelle_lebensdauer}). Die optimale Schwellenspannung liegt jeweils bei dem Sattelpunkt. Aufgrund der hohen statistischen Schwankungen ist eine genaue Bestimmung nicht möglich. Es wird abgeschätzt
 \begin{align*}
   \delta U_1&=-\SI{120}{\milli\volt}\\
   \delta U_2&=-\SI{70}{\milli\volt}.
@@ -27,7 +23,7 @@ Die optimale Schwellenspannung liegt jeweils bei dem Sattelpunkt. Aufgrund der h
     \centering
     \includegraphics[width=\textwidth]{data/schwelle_2_zaehler.eps}
   \end{subfigure}
-  \caption{Aufgenommene Schwellenkurven für Lebensdauermessung. Fehler von \SI{0.1}{\milli\volt} auf Spannungen werden vernachlässigt.}
+  \caption{Aufgenommene Schwellenkurven für die Lebensdauermessung. Fehler von \SI{0.1}{\milli\volt} auf Spannungen werden vernachlässigt. Fehler über Gleichung (\ref{eq:error}) ermittelt.}
   \label{fig:schwelle_lebensdauer}
 \end{figure} 
 

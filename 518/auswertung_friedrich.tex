@@ -1,18 +1,18 @@
 \subsection{Auswertung der Schwellenkurve}
-In Tabelle \ref{tab:schwelle} (Anhang) ist die Anzahl der Ereignisse in den Detektoren in Abhängigkeit der Schwellenspannung $U_S$ aufgeführt. 
+In Tabelle \ref{tab:schwelle} (Anhang) ist die Anzahl der Ereignisse in den Detektoren in Abhängigkeit der Schwellenspannung $U_S$ aufgeführt. \\
 
-Die Koinzidenzen wurden auf die Anzahl der Ereignisse in D25 normiert, um Schwankungen in der Höhenstrahlung auszugleichen. In Abb. \ref{fig:schwelle} ist dies über der Schwellenspannung aufgetragen. Die optimale Schwellenspannung liegt nun bei dem Wendepunkt der Kurve. Leider kann man keinen Wendepunkt erkennen, da die Daten stark streuen. Bei etwa $U_S = (-140 \pm 10)\si{\milli \volt}$ kann man aber einen leichten Knick ausmachen. Deswegen haben wir beschlossen, die Schwellenspannung auf 140\si{\milli \volt} zu setzen.
+Die Koinzidenzen wurden auf die Anzahl der Ereignisse in D25 normiert, um Schwankungen in der Höhenstrahlung auszugleichen. In Abbildung \ref{fig:schwelle} ist dies über der Schwellenspannung aufgetragen. Die optimale Schwellenspannung liegt nun bei dem Wendepunkt der Kurve. Leider kann kein Wendepunkt erkannt werden, da die Daten stark streuen. Bei etwa $U_S = (-140 \pm 10)\si{\milli \volt}$ kann aber ein leichter Knick erkannt werden. Deswegen wird beschlossen, die Schwellenspannung auf 140\si{\milli \volt} zu setzen.
 
 \begin{figure}
 \centering
 \includegraphics[width=0.75\linewidth]{data/friedrich/schwelle.png}
-\caption{Koinzidenzen/D25 über der Schwellenspannung $U_S$}
+\caption{Koinzidenzen/D25 über der Schwellenspannung $U_S$. Fehler mit Gleichung (\ref{eq:error}) ermittelt.}
 \label{fig:schwelle}
 \end{figure}
 
 \subsection{Auswertung der Winkelmessung}
-In Tabelle \ref{tab:winkel} (Anhang) ist das Ergebnis der Winkelmessung eingetragen. Die Messung dauerte 1126731 \si{\second}. Dabei gab es 0 zeitliche Zufallskoinzidenzen und 1239 räumliche Zufallskoinzidenzen. Die zeitlichen Zufallskoinzidenzen sind also vernachlässigbar. Da man keine weiteren Informationen darüber hat, ob die räumlichen Zufalls-Koinzidenzen die Zahl der gemessenen Teilchen erhöht oder verringert, wird für alle Messwerte ein Fehlerintervall von $\pm 1239$ Koinzidenzen angenommen. Da man die anderen Fehler auf die Anzahl der Koinzidenzen (in den Detektoren und der Elektronik) nicht abschätzen kann, ist dies auch der einzige Fehler, der in die Auswertung einfließt\footnote{Der rein statistische Fehler ist bei $N$ Ereignisse etwa $\sqrt{N} \leq 100$, also deutlich kleiner als 1239}. Als Fehler für den Winkel wird $\Delta \varphi = 7,5^\circ$ angenommen, da die Detektoren jeweils einen Winkelbereich von $15^\circ$ abdecken.\\ 
-In Abb. \ref{fig:winkel} ist die Anzahl der Koinzidenzen über $\varphi$ dargestellt.
+In Tabelle \ref{tab:winkel} (Anhang) ist das Ergebnis der Winkelmessung eingetragen. Die Messung dauerte \SI{1126731}{\second}. Dabei gab es 0 zeitliche Zufallskoinzidenzen und 1239 räumliche Zufallskoinzidenzen. Die zeitlichen Zufallskoinzidenzen sind also vernachlässigbar. Da es keine weiteren Informationen darüber gibt, ob die räumlichen Zufallskoinzidenzen die Zahl der gemessenen Teilchen erhöht oder verringert, wird für alle Messwerte ein Fehlerintervall von $\pm 1239$ Koinzidenzen angenommen. Da die anderen Fehler auf die Anzahl der Koinzidenzen (in den Detektoren und der Elektronik) nicht abgeschätzt werden können, ist dies auch der einzige Fehler, der in die Auswertung einfließt\footnote{Der rein statistische Fehler ist bei $N$ Ereignissen etwa $\sqrt{N} \leq 100$, also deutlich kleiner als 1239}. Als Fehler für den Winkel wird $\Delta \varphi = 7,5^\circ$ angenommen, da die Detektoren jeweils einen Winkelbereich von $15^\circ$ abdecken.\\ 
+In Abbildung \ref{fig:winkel} ist die Anzahl der Koinzidenzen über $\varphi$ dargestellt.
 
 \begin{figure}
 \centering
@@ -21,7 +21,7 @@ In Abb. \ref{fig:winkel} ist die Anzahl der Koinzidenzen über $\varphi$ dargest
 \label{fig:winkel}
 \end{figure}
 
-Die Verteilung ist (etwa innerhalb der Fehlergrenzen) symmetrisch. Nur der Wert für $-45^\circ$ beträgt 37 (roter Kreis), während der Wert für $45^\circ$ 4444 beträgt. Da diese Abweichung ein vielfaches des angenommenen Fehlers ist und der Wert 37 auch im Vergleich zu den benachbarten Werten deutlich kleiner ist, wird angenommen, dass dieser Wert durch eine fehlerhafte Messapparatur zustande kommt. Er wird also als grober Fehler gewertet und wird für die weitere Auswertung nicht beachtet.\\
+Die Verteilung ist (etwa innerhalb der Fehlergrenzen) symmetrisch. Nur der Wert für $-45^\circ$ beträgt 37 (roter Kreis), während der Wert für $45^\circ$ 4444 beträgt. Da diese Abweichung ein Vielfaches des angenommenen Fehlers ist und der Wert 37 auch im Vergleich zu den benachbarten Werten deutlich kleiner ist, wird angenommen, dass dieser Wert durch eine fehlerhafte Messapparatur zustande kommt. Er wird also als grober Fehler gewertet und für die weitere Auswertung nicht beachtet.\\
 
 Es wird jetzt getestet, ob die Winkelverteilung durch eine $\cos^2{\varphi}$ beschrieben werden kann. Dazu werden die Koinzidenzen über $\cos^2{\varphi}$ aufgetragen und ein linearer Fit $a\cdot x + b$ (mittels Gnuplot) durchgeführt. \\
 
@@ -39,25 +39,25 @@ Es wird jetzt getestet, ob die Winkelverteilung durch eine $\cos^2{\varphi}$ bes
 \label{fig:winkel_ges}
 \end{figure}
 
-Der Fit ergibt: $a = (7,7 \pm 0,9)\cdot 10^3$ und $b = 80 \pm 570$. In Abb. \ref{fig:winkel_cos} ist zu erkennen, dass die Daten auch etwa auf dieser Fitgerade liegen. Ein linearer Fit ist also berechtigt. Der Achsenabschnitt $b$ kann im Rahmen des Fehlers 0 sein. In diesem Experiment kann man also nicht feststellen, ob es einen Offset auf der $\cos^2{\varphi}$-Verteilung gibt.\\
+Der Fit ergibt: $a = (7,7 \pm 0,9)\cdot 10^3$ und $b = 80 \pm 570$. In Abbildung \ref{fig:winkel_cos} ist zu erkennen, dass die Daten auch etwa auf dieser Fitgerade liegen. Ein linearer Fit ist also berechtigt. Der Achsenabschnitt $b$ kann im Rahmen des Fehlers 0 sein. In diesem Experiment kann also nicht festgestellt werden, ob es einen Offset auf der $\cos^2{\varphi}$-Verteilung gibt.\\
 
-In Abb. \ref{fig:winkel_ges} wurde die ($a \cdot \cos^2{\varphi} + b$)-Funktion in die Daten eingetragen. Hier kann man erkennen, dass der  $\cos^2{\varphi}$-Fit eine gute Näherung für große $\varphi$ ist. Für kleine $\varphi$ weichen die Daten z.T. aus den Fehlergrenzen ab, bzw. liegen nur knapp in den Fehlergrenzen. Diese Abweichungen lassen sich nicht einfach durch Statistik erklären, da diese Fehler im Bereich von $\sqrt{N} \leq 100$ sind. Somit müssen entweder weitere Fehlerquellen im Messsystem sein oder eine $\cos^2{\varphi}$-Verteilung eignet sich nicht zur Beschreibung der Winkelverteilung für kleine $\varphi$.\\
+In Abbildung \ref{fig:winkel_ges} wurde die ($a \cdot \cos^2{\varphi} + b$)-Funktion in die Daten eingetragen. Hier ist ersichtlich, dass der  $\cos^2{\varphi}$-Fit eine gute Näherung für große $\varphi$ ist. Für kleine $\varphi$ weichen die Daten z.T. aus den Fehlergrenzen ab, bzw. liegen nur knapp in den Fehlergrenzen. Diese Abweichungen lassen sich nicht einfach durch Statistik erklären, da diese Fehler im Bereich von $\sqrt{N} \leq 100$ sind. Somit müssen entweder weitere Fehlerquellen im Messsystem sein oder eine $\cos^2{\varphi}$-Verteilung eignet sich nicht zur Beschreibung der Winkelverteilung für kleine $\varphi$.\\
 
-Geht man davon aus, dass die Verteilung symmetrisch für $\varphi$ und $-\varphi$ sein soll, so kann man als Maß für den Fehler die Differenz zwischen Koinzidenzen bei gegenüberliegenden Winkeln nehmen. Die größte Abweichung gibt es bei $\varphi = -15^\circ,15^\circ$. Sie beträgt: $8357
- - 5491 = 2866$, also mehr als doppelt so viel wie die Zufallskoinzidenzen. Mit diesem Fehler würden alle Punkte im Fehlerbereich liegen. Somit ist eine $\cos^2{\varphi}$-Verteilung auch in diesem Bereich realistisch. Man kann also die Winkelverteilung durch eine $\cos^2{\varphi}$-Verteilung annähern, allerdings gibt es für kleine $\varphi$ starke Schwankungen.\\
+Unter der Annahme, dass die Verteilung symmetrisch für $\varphi$ und $-\varphi$ sein soll, kann als Maß für den Fehler die Differenz zwischen Koinzidenzen bei gegenüberliegenden Winkeln verwendet werden. Die größte Abweichung gibt es bei $\varphi = -15^\circ,15^\circ$. Sie beträgt: $8357
+ - 5491 = 2866$, also mehr als doppelt so viel wie die Zufallskoinzidenzen. Mit diesem Fehler würden alle Punkte im Fehlerbereich liegen. Somit ist eine $\cos^2{\varphi}$-Verteilung auch in diesem Bereich realistisch. Die Winkelverteilung kann also durch eine $\cos^2{\varphi}$-Verteilung beschrieben werden, allerdings gibt es für kleine $\varphi$ starke Schwankungen.\\
  
 \subsection{Zufallskoinzidenzen}
-Im Detektor Z25 gab es $N = 74678$ Koinzidenzen\footnote{Wir wissen nicht wie viele Koinzidenzen es in nur zwei Detektoren gab. Die Zahl der Ereignisse in Z25 ist aber definitiv eine obere Schranke dazu. Eine untere Schranke sind z.B. die Dreierkoinzidenzen in Z14-Z25-Z2: $7928$}. Die Messdauer war $t = \SI{1126731}{\second}$. Damit ergibt sich nach \ref{equ:random_space} und \ref{equ:random_time}:\\
+Im Detektor Z25 gab es $N = 74678$ Koinzidenzen\footnote{Es ist nicht bekannt, wie viele Koinzidenzen es in nur zwei Detektoren gab. Die Zahl der Ereignisse in Z25 ist aber definitiv eine obere Schranke dazu. Eine untere Schranke sind z.B. die Dreierkoinzidenzen in Z14-Z25-Z2: $7928$}. Die Messdauer war $t = \SI{1126731}{\second}$. Damit ergibt sich nach (\ref{equ:random_space}) und (\ref{equ:random_time}):\\
 \begin{align*}
 N_{\text{raum}} &= 5 \cdot 10^{-4}\\
 N_{\text{zeit}} &= 4 \cdot 10^{-12}
 \end{align*}
 
-Die Anzahl der zeitlichen Zufallskoinzidenzen sollte also etwa das $10^{-6}$ fache der räumlichen Koinzidenzen sein. Da $10^{-6} \cdot 1239 \approx 1 \cdot 10^{-3} \ll 1$ erwartet man keine zeitlichen Zufallskoinzidenzen. Ansonsten ist der theoretische im Vergleich zum experimentelle Wert der räumlichen Zufallskoinzidenzen um 7 Größenordnung kleiner. Diesen Unterschied können wir nicht erklären.  
+Die Anzahl der zeitlichen Zufallskoinzidenzen sollte also etwa das $10^{-6}$ fache der räumlichen Koinzidenzen sein. Da $10^{-6} \cdot 1239 \approx 1 \cdot 10^{-3} \ll 1$ werden keine zeitlichen Zufallskoinzidenzen erwartet. Ansonsten ist der theoretische im Vergleich zum experimentellen Wert der räumlichen Zufallskoinzidenzen um sieben Größenordnungen kleiner. Diesen Unterschied kann nicht erklärt werden.  
  
 \subsection{Auswertung der Energieverteilung}
 
-Die Daten für diese Auswertung erhielten wir von den Tutoren, da sowohl wir als auch die Tutoren das Starten des Programmes vergessen hatten.\\
+Die Daten für diese Auswertung stammen von den Tutoren, da das Starten des Programmes vergessen wurde.\\
 
 \begin{figure}
 \centering
@@ -75,11 +75,11 @@ Die Daten für diese Auswertung erhielten wir von den Tutoren, da sowohl wir als
 
 In der Datei steht nur die Anzahl der Energieereignisse je Bin, aber nicht, wie groß ein Bin ist. Aus der Konfigurationsdatei wurde geschlossen, dass ein Bin 8keV groß ist ('calfact=8' und 'calunit=keV'). Das ist für die Auswertung auch nicht relevant, da es nur um die qualitative Energieverteilung geht.  
 
-In Abb. \ref{fig:mca_raw} sind die gemessenen Werte abgebildet. Bei ganz kleinen Energien werden viele Ereignisse festgestellt (etwa in den ersten 20 Bins). Es wird sich dabei vermutlich um Untergrund handeln, der die Schwelle des Diskriminators überschnitten hat. Deswegen nehmen wir die ersten 20 Bins aus der Auswertung heraus. An die Daten wird jetzt sowohl eine Landauverteilung
-\[A\exp{\left(-\frac{1}{2}((x-b)/l + e^{-(x-b)/l)}\right)}\] als auch eine Gaussverteilung gefittet
+In Abbildung \ref{fig:mca_raw} sind die gemessenen Werte abgebildet. Bei ganz kleinen Energien werden viele Ereignisse festgestellt (etwa in den ersten 20 Bins). Es wird sich dabei vermutlich um Untergrund handeln, der die Schwelle des Diskriminators überschnitten hat. Deswegen werden die ersten 20 Bins aus der Auswertung herausgenommen. An die Daten wird jetzt sowohl eine Landauverteilung
+\[A\exp{\left(-\frac{1}{2}((x-b)/l + e^{-(x-b)/l)}\right)}\] als auch eine Gaußverteilung
 
 \[B\exp{\left(-\frac{1}{2}((x-c)/d)^2 \right)}\]
- (siehe Abb. \ref{fig:mca}). Das Ergebnis der Fits ist
+ gefittet (siehe Abbildung \ref{fig:mca}). Das Ergebnis der Fits ist
  \begin{align}
  A &= 89 \pm 0,7\\
  b &= (2,664 \pm 0,008)\si{\mega\eV}\\
@@ -89,6 +89,6 @@ In Abb. \ref{fig:mca_raw} sind die gemessenen Werte abgebildet. Bei ganz kleinen
  d &=( 1,10 \pm 0,01) \si{\mega\eV}
  \end{align}
  
-In Abb. \ref{fig:mca} kann man erkennen, dass die Landauverteilung deutlich besser die Messwerte annähert, als die Gaussverteilung. Nur bei großen Energien weicht die Landauverteilung von der Messung ab. Der lange Ausläufer der Landauverteilung existiert nicht, die Daten zeigen hier eher ein gaussförmiges Verhalten. Das liegt daran, dass die Landauverteilung nur eine gute Näherung für dünne Schichten ist, während die Gaussverteilung dicke Schichten beschreibt. Die verwendeten Detektoren haben eine Ausdehnung und können daher nicht vollständig durch eine Landauverteilung beschrieben werden. Deswegen hat die Verteilung keinen langen Schwanz.\\
+In Abbildung \ref{fig:mca} ist zu sehen, dass die Landauverteilung deutlich besser die Messwerte annähert, als die Gaußverteilung. Nur bei großen Energien weicht die Landauverteilung von der Messung ab. Der lange Ausläufer der Landauverteilung existiert nicht, die Daten zeigen hier eher ein gaußförmiges Verhalten. Das liegt daran, dass die Landauverteilung nur eine gute Näherung für dünne Schichten ist, während die Gaußverteilung dicke Schichten beschreibt. Die verwendeten Detektoren haben eine Ausdehnung und können daher nicht vollständig durch eine Landauverteilung beschrieben werden. Deswegen hat die Verteilung keinen langen Schwanz.\\
 
-Das Maximum der Landauverteilung liegt bei $b \approx \SI{2.7}{\mega\eV}$. Das ist in grober Übereinstimmung mit Abb. \ref{fig:landau}, wo das Maximum bei etwa $\SI{2.4}{\mega\eV}$ ist. Die gemessene Energie ist also etwas größer als die theoretisch berechnete. Dabei ist aber zu beachten, dass es bei der theoretischen Berechnung viele unbekannte Größen gab, die nur abgeschätzt wurden. Die Differenz zwischen Theorie und Experiment ist also nicht unerwartet.
+Das Maximum der Landauverteilung liegt bei $b \approx \SI{2.7}{\mega\eV}$. Das ist in grober Übereinstimmung mit Abbildung \ref{fig:landau}, wo das Maximum bei etwa $\SI{2.4}{\mega\eV}$ ist. Die gemessene Energie ist also etwas größer als die theoretisch berechnete. Dabei ist aber zu beachten, dass es bei der theoretischen Berechnung viele unbekannte Größen gab, die nur abgeschätzt wurden. Die Differenz zwischen Theorie und Experiment ist also nicht unerwartet.

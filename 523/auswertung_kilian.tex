@@ -11,18 +11,19 @@ Von allen gemessenen Spannungen wird dieser Wert abgezogen.
 
 \subsection{Kalibration des Spektrometers}
 An das aufgenommene Emissionspektrum von Barium in der Feinmessung wird eine Überlagerung aus zwei Gaußkurven mit zusätzlichem Offset
-\begin{align*}
+\begin{align}
   N(U)=A_0+A_1\exp \left(-\frac{(U-\mu_1)^2}{\sigma_1^2}\right) +A_2\exp\left(-\frac{(U-\mu_2)^2}{\sigma_2^2} \right)
-\end{align*}
+\label{eq:gauss}
+\end{align}
 angepasst. Das Ergebnis ist
 \begin{align*}
   A_0&=11\pm 2\\
   A_1&=157\pm 11\\
   A_2&=55\pm 6\\
   \mu_1&=153,52 \pm 0,05\\
-  \mu_1&=157,6 \pm 0,1\\
+  \mu_2&=157,6 \pm 0,1\\
   \sigma_1&=0,9 \pm 0,1\\
-  \sigma_1&=0,7 \pm 0,2.
+  \sigma_2&=0,7 \pm 0,2.
 \end{align*}
 Die graphische Auftragung ist in Abbildung \ref{fig:ba_fein} zu sehen.
 \begin{figure}[h]
@@ -66,3 +67,47 @@ Die Funktion sowie die Daten sind in Abbildung \ref{fig:kal} zu sehen.
   \caption{Kalibrationskurve für Zusammenhang von Hallspannung und Elektronenimpuls}
   \label{fig:kal}
 \end{figure}
+
+\subsection{Bestimmung des Auflösungsvermögens}
+Das Auflösungsvermögen wird für beide Einstellungen (4\% und 1\% Transmission) und beide Emissionlinien bestimmt. Für die Grobmessung wird wieder die Funktion aus Gleichung (\ref{eq:gauss}) angepasst. Die Parameter sind
+\begin{align*}
+  A_0&=5\pm 2\\
+  A_1&=175\pm 14\\
+  A_2&=79\pm 11\\
+  \mu_1&=153,9 \pm 0,1\\
+  \mu_2&=157,8 \pm 0,2\\
+  \sigma_1&=0,38 \pm 0,06\\
+  \sigma_2&=0,6 \pm 0,2.
+\end{align*}
+Die Funktion ist in Abbildung \ref{fig:ba_grob} zu sehen.
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.7\textwidth]{data/Ba_grob.eps}
+  \caption{Aufgezeichnetes Emissionsspektrum von Barium in Grobmessung}
+  \label{fig:ba_grob}
+\end{figure}
+
+Das Auflösungsvermögen ist definiert als
+\begin{align*}
+  R=\frac{\delta\eta}{\eta}=\frac{\delta U}{U},
+\end{align*}
+wobei $\delta\eta$ für den Abstand zu $\eta$ steht, bei dem die aufgenommene Zahl der Teilchen sich halbiert. Da Impulse und Spannung zueinander proportional sind ist keine Umrechnung von Impulsen und Spannungen notwendig. Mit den angepassten Gaußkurven gilt also 
+\begin{align*}
+  R=\frac{\sqrt{\log(2)} \sigma}{\mu}.
+\end{align*}
+Die berechneten Auflösungsvermögen sind in Tabelle \ref{tab:aufloesung} zu sehen.
+
+\begin{table}[h]
+    \centering
+    \caption{Auflösungsvermögen von Spektrometer}
+    \label{tab:aufloesung}
+    \begin{tabular}{c | c c}
+      \toprule
+       & 1\% Transmission & 4\% Transmission \\
+      \midrule
+      K-Linie & $0,0049 \pm 0,0005$ & $0,0021 \pm 0,0003$\\
+      L-Linie & $0,004 \pm 0,001$ & $0,003 \pm 0,001$\\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+

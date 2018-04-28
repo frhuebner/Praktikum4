@@ -17,6 +17,10 @@ fit f(x) 'Ba_fein.txt' u (($1)-4.4):(($2)-30.5):(0.1):(sqrt(($2)-30.5)) xyerror 
 set output 'Ba_fein.eps'
 plot 'Ba_fein.txt' u (($1)-4.4):(($2)-30.5):(0.1):(sqrt(($2)-30.5)) w xyerrorbars t 'Messwerte', f(x) t 'angepasste Funktion'
 
+set xrange [145:175]
+fit f(x) 'Ba_grob.txt' u (($1)-4.4):(($2)-12.2):(0.1):(sqrt(($2)-12.2)) xyerror via a0,a1,a2,s1,s2,m1,m2
+set output 'Ba_grob.eps'
+plot 'Ba_grob.txt' u (($1)-4.4):(($2)-12.2):(0.1):(sqrt(($2)-12.2)) w xyerrorbars t 'Messwerte', f(x) t 'angepasste Funktion'
 
 set xlabel 'U'
 set ylabel '{/Symbol h}'

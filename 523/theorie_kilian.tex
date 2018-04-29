@@ -33,7 +33,7 @@ Somit folgt sofort für die Übergangsrate
 \begin{align*}
   \diff{\Gamma_{i \rightarrow f}}{p_e}=\frac{16 V^3}{\hbar^{10} \pi^6 c^3}|M_{fi}|^2  p_e^2 (E_0-E_e)^2.
 \end{align*}
-Der Term aus der Berechnung der Phasenraumdichte enthält bereits die charakteristische Form des SPektrums. Bei $Z$-fach geladenen Kernen unterscheiden sich $\beta^-$- und $\beta^+$-Zerfall noch um einen Faktor $F(p_e,Z)$ durch die Coulombanziehung bzw. Abstoßung. Somit gilt dann insgesamt 
+Der Term aus der Berechnung der Phasenraumdichte enthält bereits die charakteristische Form des Spektrums. Bei $Z$-fach geladenen Kernen unterscheiden sich $\beta^-$- und $\beta^+$-Zerfall noch um einen Faktor $F(p_e,Z)$ durch die Coulombanziehung bzw. Abstoßung. Somit gilt dann insgesamt 
 \begin{align*}
   \diff{\Gamma_{i \rightarrow f}}{p_e} \propto p_e^2(E_0-E_e)^2 F_\pm(p_e,Z).
 \end{align*}
@@ -52,11 +52,7 @@ Neben dem $\beta$-Zerfall gibt es noch weitere Prozesse, durch die ein Atom Elek
 Eine weitere Möglichkeit die Lücke aufzufüllen stellt der Augereffekt dar. Bei diesem wird die Energie des Nachrückenden Elektrons nicht in Form von Röntgenstrahlung abgegeben, sondern an ein anderes Elektron übetragen, welches dadurch das Atom verlässt. Das emittierte Elektron wird auch Augerelektron genannt.
 
 \subsection{Magnetspektrometer}
-Geladene Teilchen erfahren in einem Magnetfeld durch die Lorentzkraft eine Ablenkung senkrecht zu dem Magnetfeld und der Geschwindigkeit. Dieser Effekt lässt sich nutzen, um den Impuls der Teilchen zu bestimmen. Der einfachste Aufbau dafür ist das Halbkreispektrometer (Abbildung \ref{fig:halbkreis}). In dem konstanten Magnetfeld durchläuft das Elektron eine Kreisbahn mit Radius $r=\frac{p}{qB}$, wobei $p$ der (relativistische) Impuls und $q$ die Ladung des Teilchens ist. Bei fest verbautem Teilchendetektor können also durch Variation des Magnetfeldes $B$ die Zählraten für feste Impulse bestimmt werden. Praktisch besteht ein Problem darin, dass die Teilchen nicht alle exakt senkrecht in das Spektrometer fliegen. Somit kommen Teilchen mit dem richtigen Impuls teilweise nicht zum Detektor, während Teilchen mit falschem Impuls den Detektor durch ein schiefes Eintreten trotzdem erreichen können. Dieser Effekt lässt sich mit dem $\sqrt{2}\pi$-Spektrometer verringern. Der Ansatz dabei ist, dass Teilchen die leicht von der Sollbahn abweichen eine Rücktreibende Kraft erfahren. Dadurch führen sie in erster Näherung dann eine Oszillation um die Sollbahn durch. Die Oszillation setzt sich aus einer Oszillation in der $z$-Richtung und einer senkrecht zur Geschwindigkeit und zur $z$-Richtung zusammen. Nach dem Durchlaufen von $\sqrt{2}\pi$ der Kreisbahn befinden sich die Teilchen dann unabhängig von der (kleinen) anfänglichen Abweichung zur Sollbahn wieder auf der Sollbahn. Der Detektor wird im $\sqrt{2}\pi$-Spektrometer also schon nach diesem Winkel platziert. Die rücktreibende Kraft wird durch ein $r$-abhängiges Magnetfeld 
-\begin{align*}
-  B_z(r)=B_0\sqrt{\frac{r}{r_0}}
-\end{align*}
-mit dem Sollradius $r_0$ erreicht. Da die Rotation des Magnetfeldes verschwinden muss folgt daraus auch direkt die Komponente Senkrecht zu Geschwindigkeit und $z$-Achse.
+Geladene Teilchen erfahren in einem Magnetfeld durch die Lorentzkraft eine Ablenkung senkrecht zu dem Magnetfeld und der Geschwindigkeit. Dieser Effekt lässt sich nutzen, um den Impuls der Teilchen zu bestimmen. Der einfachste Aufbau dafür ist das Halbkreispektrometer (Abbildung \ref{fig:halbkreis}). In dem konstanten Magnetfeld durchläuft das Elektron eine Kreisbahn mit Radius $r=\frac{p}{qB}$, wobei $p$ der (relativistische) Impuls und $q$ die Ladung des Teilchens ist. Bei fest verbautem Teilchendetektor können also durch Variation des Magnetfeldes $B$ die Zählraten für feste Impulse bestimmt werden.
 \begin{figure}[h]
   \centering
   \begin{tikzpicture}
@@ -75,3 +71,9 @@ mit dem Sollradius $r_0$ erreicht. Da die Rotation des Magnetfeldes verschwinden
   \caption{Elektron in Halbkreisspektrometer}
   \label{fig:halbkreis}
 \end{figure}
+
+Praktisch besteht ein Problem darin, dass die Teilchen nicht alle exakt senkrecht in das Spektrometer fliegen. Somit kommen Teilchen mit dem richtigen Impuls teilweise nicht zum Detektor, während Teilchen mit falschem Impuls den Detektor durch ein schiefes Eintreten trotzdem erreichen können. Dieser Effekt lässt sich mit dem $\sqrt{2}\pi$-Spektrometer verringern. Der Ansatz dabei ist, dass Teilchen die leicht von der Sollbahn abweichen eine Rücktreibende Kraft erfahren. Dadurch führen sie in erster Näherung dann eine Oszillation um die Sollbahn durch. Die Oszillation setzt sich aus einer Oszillation in der $z$-Richtung und einer senkrecht zur Geschwindigkeit und zur $z$-Richtung zusammen. Nach dem Durchlaufen von $\sqrt{2}\pi$ der Kreisbahn befinden sich die Teilchen dann unabhängig von der (kleinen) anfänglichen Abweichung zur Sollbahn wieder auf der Sollbahn. Der Detektor wird im $\sqrt{2}\pi$-Spektrometer also schon nach diesem Winkel platziert. Die rücktreibende Kraft wird durch ein $r$-abhängiges Magnetfeld 
+\begin{align*}
+  B_z(r)=B_0\sqrt{\frac{r}{r_0}}
+\end{align*}
+mit dem Sollradius $r_0$ erreicht. Da die Rotation des Magnetfeldes verschwinden muss folgt daraus auch direkt die Komponente Senkrecht zu Geschwindigkeit und $z$-Achse.

@@ -13,16 +13,22 @@ s2=1
 m1=154
 m2=158
 
-fit f(x) 'Ba_fein.txt' u (($1)-4.4):(($2)-30.5):(0.1):(sqrt(($2)-30.5)) xyerror via a0,a1,a2,s1,s2,m1,m2
+fit f(x) 'Ba_fein.txt' u (($1)-7.03):(($2)-30.5):(0.1):(sqrt(($2)-30.5)) xyerror via a0,a1,a2,s1,s2,m1,m2
 set output 'Ba_fein.eps'
-plot 'Ba_fein.txt' u (($1)-4.4):(($2)-30.5):(0.1):(sqrt(($2)-30.5)) w xyerrorbars t 'Messwerte', f(x) t 'angepasste Funktion'
+plot 'Ba_fein.txt' u (($1)-7.03):(($2)-30.5):(0.1):(sqrt(($2)-30.5)) w xyerrorbars t 'Messwerte', f(x) t 'angepasste Funktion'
 
+set xrange [145:175]
+fit f(x) 'Ba_grob.txt' u (($1)-7.03):(($2)-12.2):(0.1):(sqrt(($2)-12.2)) xyerror via a0,a1,a2,s1,s2,m1,m2
+set output 'Ba_grob.eps'
+plot 'Ba_grob.txt' u (($1)-7.03):(($2)-12.2):(0.1):(sqrt(($2)-12.2)) w xyerrorbars t 'Messwerte', f(x) t 'angepasste Funktion'
 
 set xlabel 'U'
 set ylabel '{/Symbol h}'
 
+unset xrange
 f(x)=a*x+b
 a=1
 fit f(x) 'kal.txt' u 2:1 via a,b
+set xrange [-8:175]
 set output 'kal.eps'
 plot 'kal.txt' u 2:1:3 w xerrorbars t 'Messwerte', f(x) t 'angepasste Funktion'

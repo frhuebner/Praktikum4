@@ -50,3 +50,28 @@ als Funktion der Elektronenenergie aufgetragen. $\dot{N}$ ist dabei die Zählrat
 \subsection{Innere Konversion und Augereffekt}
 Neben dem $\beta$-Zerfall gibt es noch weitere Prozesse, durch die ein Atom Elektronen emittiert. Ein Beispiel ist die innere Konversion. Bei der inneren Konversion wechselt ein Atomkern von einem angeregten zu einem niederenergetischerem Zustand. Anstelle der Emission von $\gamma$-Quanten wird allerdings ein Elektron aus dem Atom herausgelöst. Die Energie des Elektrons ist dann die Differenz von der Energiedifferenz des Kernzustandes vorher und nacher und der ursprünglichen Bindungsenergie des Elektrons. Die zurückbleibende Lücke in der Elektronenhülle kann dann unter anderem durch Elektronen aus höheren Schalen aufgefüllt werden, wobei Röntgenstrahlung emittiert wird.\\ \\
 Eine weitere Möglichkeit die Lücke aufzufüllen stellt der Augereffekt dar. Bei diesem wird die Energie des Nachrückenden Elektrons nicht in Form von Röntgenstrahlung abgegeben, sondern an ein anderes Elektron übetragen, welches dadurch das Atom verlässt. Das emittierte Elektron wird auch Augerelektron genannt.
+
+\subsection{Magnetspektrometer}
+Geladene Teilchen erfahren in einem Magnetfeld durch die Lorentzkraft eine Ablenkung senkrecht zu dem Magnetfeld und der Geschwindigkeit. Dieser Effekt lässt sich nutzen, um den Impuls der Teilchen zu bestimmen. Der einfachste Aufbau dafür ist das Halbkreispektrometer (Abbildung \ref{fig:halbkreis}). In dem konstanten Magnetfeld durchläuft das Elektron eine Kreisbahn mit Radius $r=\frac{p}{qB}$, wobei $p$ der (relativistische) Impuls und $q$ die Ladung des Teilchens ist. Bei fest verbautem Teilchendetektor können also durch Variation des Magnetfeldes $B$ die Zählraten für feste Impulse bestimmt werden. Praktisch besteht ein Problem darin, dass die Teilchen nicht alle exakt senkrecht in das Spektrometer fliegen. Somit kommen Teilchen mit dem richtigen Impuls teilweise nicht zum Detektor, während Teilchen mit falschem Impuls den Detektor durch ein schiefes Eintreten trotzdem erreichen können. Dieser Effekt lässt sich mit dem $\sqrt{2}\pi$-Spektrometer verringern. Der Ansatz dabei ist, dass Teilchen die leicht von der Sollbahn abweichen eine Rücktreibende Kraft erfahren. Dadurch führen sie in erster Näherung dann eine Oszillation um die Sollbahn durch. Die Oszillation setzt sich aus einer Oszillation in der $z$-Richtung und einer senkrecht zur Geschwindigkeit und zur $z$-Richtung zusammen. Nach dem Durchlaufen von $\sqrt{2}\pi$ der Kreisbahn befinden sich die Teilchen dann unabhängig von der (kleinen) anfänglichen Abweichung zur Sollbahn wieder auf der Sollbahn. Der Detektor wird im $\sqrt{2}\pi$-Spektrometer also schon nach diesem Winkel platziert. Die rücktreibende Kraft wird durch ein $r$-abhängiges Magnetfeld 
+\begin{align*}
+  B_z(r)=B_0\sqrt{\frac{r}{r_0}}
+\end{align*}
+mit dem Sollradius $r_0$ erreicht. Da die Rotation des Magnetfeldes verschwinden muss folgt daraus auch direkt die Komponente Senkrecht zu Geschwindigkeit und $z$-Achse.
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \draw (0,0)--(0.9,0);
+    \draw (1.1,0)--(4,0);
+    \draw (4,-0.1) rectangle (4.5,0.1);
+    \draw (4.25,-0.3) node {Detektor};
+    \draw (4.5,0)--(5,0);
+    \draw [->] (1,-1)--(1,0);
+    \draw (1.2,-1.2) node {$e^-$};
+    \draw [->] (1,0) arc (180:10:1.625);
+    \draw (0,2) circle (0.2);
+    \draw [fill=black](0,2) circle (0.03);
+    \draw (0.5,2) node {$B\vec{e}_z$};
+  \end{tikzpicture}
+  \caption{Elektron in Halbkreisspektrometer}
+  \label{fig:halbkreis}
+\end{figure}

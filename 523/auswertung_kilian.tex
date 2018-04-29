@@ -1,12 +1,12 @@
 \subsection{Bestimmung der Offsetspannung}
-Aus den gemessenen Spannungen $U_i$ bei ausgeschaltetem Magnetstrom lässt sich die Offsetspannung über
+Aus den gemessenen Spannungen bei ausgeschaltetem Magnetstrom lässt sich die Offsetspannung über
 \begin{align*}
-  \delta U=\frac{1}{5}\sum_i (U_{i,+}-U_{i,-})
+  \delta U=\frac{1}{2}\sum_i (U_++U_-) \pm \frac{\Delta U}{\sqrt{2}}
 \end{align*}
-berechnen. Mit dem Fehler von $0,1$ auf jede einzelne Messung folgt mit gaußscher Fehlerfortpflanzung
+berechnen. Für jede der fünf Messungen wird $\delta U_i$ berechnet (siehe Tabelle \ref{tab:offsetspannung}). Der Mittelwert der Offsetspannung und der dazugehörige statistische Fehler berechnen sich zu $\overline{\delta U}=7,03$ und $\Delta \overline{\delta U}_\mathrm{stat}=0,06$. Kombiniert mit dem systematischen Fehler für jede Messung folgt 
 \begin{align*}
-  \delta U=4.40\pm 0.03.
-\end{align*}
+  \overline{\delta U}=7,03 \pm 0,09.
+\end{align*} 
 Von allen gemessenen Spannungen wird dieser Wert abgezogen.
 
 \subsection{Kalibration des Spektrometers}
@@ -20,8 +20,8 @@ angepasst. Das Ergebnis ist
   A_0&=11\pm 2\\
   A_1&=157\pm 11\\
   A_2&=55\pm 6\\
-  \mu_1&=153,52 \pm 0,05\\
-  \mu_2&=157,6 \pm 0,1\\
+  \mu_1&=150,89 \pm 0,05\\
+  \mu_2&=154,9 \pm 0,1\\
   \sigma_1&=0,9 \pm 0,1\\
   \sigma_2&=0,7 \pm 0,2.
 \end{align*}
@@ -57,7 +57,7 @@ Unter Hinzunahme des Datenpunktes $U=0 \pm 0,1$, $\eta=0$ wird die Kalibrationsg
 \end{align*}
 angepasst. Die Parameter sind
 \begin{align*}
-  a&=0,0130 \pm 0,0001\\
+  a&=0,0132 \pm 0,0001\\
   b&=0,00 \pm 0,01.
 \end{align*}
 Die Funktion sowie die Daten sind in Abbildung \ref{fig:kal} zu sehen.
@@ -71,11 +71,11 @@ Die Funktion sowie die Daten sind in Abbildung \ref{fig:kal} zu sehen.
 \subsection{Bestimmung des Auflösungsvermögens}
 Das Auflösungsvermögen wird für beide Einstellungen (4\% und 1\% Transmission) und beide Emissionlinien bestimmt. Für die Grobmessung wird wieder die Funktion aus Gleichung (\ref{eq:gauss}) angepasst. Die Parameter sind
 \begin{align*}
-  A_0&=5\pm 2\\
-  A_1&=175\pm 14\\
-  A_2&=79\pm 11\\
-  \mu_1&=153,9 \pm 0,1\\
-  \mu_2&=157,8 \pm 0,2\\
+  A_0&=5\pm 3\\
+  A_1&=175\pm 15\\
+  A_2&=79\pm 12\\
+  \mu_1&=151,3 \pm 0,1\\
+  \mu_2&=155,2 \pm 0,2\\
   \sigma_1&=0,38 \pm 0,06\\
   \sigma_2&=0,6 \pm 0,2.
 \end{align*}
@@ -103,10 +103,10 @@ Die berechneten Auflösungsvermögen sind in Tabelle \ref{tab:aufloesung} zu seh
     \label{tab:aufloesung}
     \begin{tabular}{c | c c}
       \toprule
-       & 1\% Transmission & 4\% Transmission \\
+       $R/ \%$ & 1\% Transmission & 4\% Transmission \\
       \midrule
-      K-Linie & $0,0049 \pm 0,0005$ & $0,0021 \pm 0,0003$\\
-      L-Linie & $0,004 \pm 0,001$ & $0,003 \pm 0,001$\\
+      K-Linie & $6,43 \pm 0,06$ & $4,17 \pm 0,03$\\
+      L-Linie & $5,6 \pm 0,1$ & $5,2 \pm 0,1$\\
       \bottomrule
     \end{tabular}
   \end{table}

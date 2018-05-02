@@ -42,10 +42,19 @@ Der Term aus der Berechnung der Phasenraumdichte enthält bereits die charakteri
   \diff{\Gamma_{i \rightarrow f}}{E_e} \propto p_eE_e(E_0-E_e)^2 F_\pm(p_e,Z).
 \end{align*}
 Experimentell ist das Ziel, anhand des $\beta$-Zerfalls die Energie $E_0$ des Übergangs zu ermitteln. Dies geschieht über die Verwendung des Kurieplots. Dazu wird 
-\begin{align*}
+\begin{align}
   \sqrt{\frac{\dot{N}}{p_eE_eF_\pm(p_e,Z)}} \propto E_0-E_e
-\end{align*}
-als Funktion der Elektronenenergie aufgetragen. $\dot{N}$ ist dabei die Zählrate bei der jeweiligen Energie.
+  \label{equ:kurie}
+\end{align}
+als Funktion der Elektronenenergie aufgetragen. $\dot{N}$ ist dabei die Zählrate bei der jeweiligen Energie.\\
+
+Die Fermifunktion kann nach \cite{fermi} durch folgende Funktion beschrieben werden ($\beta = \frac{v}{c}$, $Z$ Ladung des Restkernes):
+
+\begin{align}
+F_\pm(p_e,Z) &= \cfrac{2\pi\eta_Z}{1-e^{-2\pi\eta_Z}} & \eta_Z = \mp \cfrac{Z\cdot \alpha}{\beta}
+\label{equ:fermi}
+\end{align}
+
 
 \subsection{Innere Konversion und Augereffekt}
 Neben dem $\beta$-Zerfall gibt es noch weitere Prozesse, durch die ein Atom Elektronen emittiert. Ein Beispiel ist die innere Konversion. Bei der inneren Konversion wechselt ein Atomkern von einem angeregten zu einem niederenergetischerem Zustand. Anstelle der Emission von $\gamma$-Quanten wird allerdings ein Elektron aus dem Atom herausgelöst. Die Energie des Elektrons ist dann die Differenz von der Energiedifferenz des Kernzustandes vorher und nacher und der ursprünglichen Bindungsenergie des Elektrons. Die zurückbleibende Lücke in der Elektronenhülle kann dann unter anderem durch Elektronen aus höheren Schalen aufgefüllt werden, wobei Röntgenstrahlung emittiert wird.\\ \\

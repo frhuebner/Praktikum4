@@ -3,7 +3,7 @@ Nuklide mit Neutronenüberschuß können über den $\beta^-$-Zerfall Neutronen z
 \begin{align*}
   n \rightarrow p + e^- + \bar{\nu}_e.
 \end{align*}
-Dieser Prozess kann nicht nur an Nukliden sondern auch am freien Neutron nachgewiesen werden. Somit ist das Neutron nicht stabil und hat eine Lebensdauer von etwa 15 Minuten.
+Dieser Prozess kann nicht nur an Nukliden sondern auch am freien Neutron nachgewiesen werden. Somit ist das Neutron nicht stabil und hat eine Lebensdauer von etwa 15 Minuten\cite{Agashe:2014kda}.
 Der Analoge Prozess für Nuklide mit Protonenüberschuß ist der $\beta^+$-Zerfall
 \begin{align*}
   p \rightarrow n + e^+ + \nu_e.
@@ -16,24 +16,24 @@ Die Zerfallsrate beim $\beta$-Zerfall kann mit Fermis goldener Regel berechnet w
 \begin{align*}
   \mathrm{d}\Gamma_{i \rightarrow f}=\frac{2\pi}{\hbar}| M_{fi} |^2 \mathrm{d} \rho
 \end{align*}
-gilt. $\hbar$ ist dabei das reduzierte plancksche Wirkungsquantum, $M_{fi}$ das Matrixelement des Wechselwirkungsoperators und $\rho$ die Phasenraumdichte des Endzustands. Ohne das genaue Matrixelement zu kennen kann über die Berechnung der Phasenraumdichte bereits die grobe Form des Spektrums für den Zerfall bestimmt werden. Nimmt man an, dass Elektron und Neutrino nach dem Zerfall den Zustand eines freien Teilchens in einem Volumen $V$ annehmen folgt, dass der Impuls jeweils nach 
+gilt\cite{Zhang:2016nxa}. $\hbar$ ist dabei das reduzierte plancksche Wirkungsquantum, $M_{fi}$ das Matrixelement des Wechselwirkungsoperators und $\rho$ die Phasenraumdichte des Endzustands. Ohne das genaue Matrixelement zu kennen kann über die Berechnung der Phasenraumdichte bereits die grobe Form des Spektrums für den Zerfall bestimmt werden. Nimmt man an, dass Elektron und Neutrino nach dem Zerfall den Zustand eines freien Teilchens in einem Volumen $V$ annehmen folgt, dass der Impuls jeweils nach 
 \begin{align*}
   P_i=\frac{\pi}{V^{1/3}}\hbar n_i
 \end{align*}
-mit $n_i \in \mathbb{Z}$ quantisiert sein muss. Es ist darauf zu achten, dass positive und negative Quantenzahlen in diesem Fall lediglich das Vorzeichen der Wellenfunktion ändern und somit keine neuen Zustände bringen. Genähert lässt sich, unter Beachtung von Viererimpulserhaltung, die Phasenraumdichte berechnen:
+mit $n_i \in \mathbb{Z}$ quantisiert sein muss. Es ist darauf zu achten, dass positive und negative Quantenzahlen in diesem Fall lediglich das Vorzeichen der Wellenfunktion ändern und somit keine neuen Zustände bringen. Genähert lässt sich, unter Beachtung von Viererimpulserhaltung und Vernachlässigung der Neutrinomasse, die Phasenraumdichte berechnen:
 
 \begin{align*}
-  \rho&= \frac{1}{2}\int\int \int \mathrm{d}^3n_\mathrm{k} \mathrm{d}^3n_\mathrm{e}  \mathrm{d}^3n_\nu \delta (E_i-E_f) \delta (\vec{p}_\mathrm{k}+\vec{p}_e+\vec{p}_\nu)\\
-  &=\frac{V^3}{2(\pi \hbar)^9} \int \int \int \mathrm{d}^3p_\mathrm{k}   \mathrm{d}^3p_\mathrm{e}  \mathrm{d}^3p_\nu\delta (E_0-E_e-p_\nu c) \delta (\vec{p}_\mathrm{k}+\vec{p}_e+\vec{p}_\nu)\\
-  &=\frac{V^3}{2(\pi \hbar)^9}  \int \int  \mathrm{d}^3p_\mathrm{e} \mathrm{d}^3p_\nu \delta (E_0-E_e-p_\nu c)\\
-  &= \frac{8 \pi^2 V^3}{(\pi \hbar)^9} \int \int \mathrm{d}p_e \mathrm{d}p_\nu p_e^2 p_\nu^2\delta (E_0-E_e-p_\nu c)\\
-  &=\frac{8 \pi^2 V^3}{c^3 (\pi \hbar)^9} \int \mathrm{d}p_e p_e^2 (E_0-E_e)^2
+  \rho&= \frac{1}{8^3}\int\int \int \mathrm{d}^3n_\mathrm{k} \mathrm{d}^3n_\mathrm{e}  \mathrm{d}^3n_\nu \delta (E_i-E_f) \delta (\vec{p}_\mathrm{k}+\vec{p}_e+\vec{p}_\nu)\\
+  &=\frac{V^3}{2\cdot 8^3(\pi \hbar)^9} \int \int \int \mathrm{d}^3p_\mathrm{k}   \mathrm{d}^3p_\mathrm{e}  \mathrm{d}^3p_\nu\delta (E_0-E_e-p_\nu c) \delta (\vec{p}_\mathrm{k}+\vec{p}_e+\vec{p}_\nu)\\
+  &=\frac{V^3}{2\cdot 8^3(\pi \hbar)^9}  \int \int  \mathrm{d}^3p_\mathrm{e} \mathrm{d}^3p_\nu \delta (E_0-E_e-p_\nu c)\\
+  &= \frac{ \pi^2 V^3}{64(\pi \hbar)^9} \int \int \mathrm{d}p_e \mathrm{d}p_\nu p_e^2 p_\nu^2\delta (E_0-E_e-p_\nu c)\\
+  &=\frac{ \pi^2 V^3}{64c^3 (\pi \hbar)^9} \int \mathrm{d}p_e p_e^2 (E_0-E_e)^2
 \end{align*}
-Somit folgt sofort für die Übergangsrate
+$E_0$ ist dabei die beim Kernübergang freiwerdende Energie. Somit folgt sofort für die Übergangsrate
 \begin{align*}
-  \diff{\Gamma_{i \rightarrow f}}{p_e}=\frac{16 V^3}{\hbar^{10} \pi^6 c^3}|M_{fi}|^2  p_e^2 (E_0-E_e)^2.
+  \diff{\Gamma_{i \rightarrow f}}{p_e}=\frac{ V^3}{4\hbar^{10} \pi^6 c^3}|M_{fi}|^2  p_e^2 (E_0-E_e)^2.
 \end{align*}
-Der Term aus der Berechnung der Phasenraumdichte enthält bereits die charakteristische Form des Spektrums. Bei $Z$-fach geladenen Kernen unterscheiden sich $\beta^-$- und $\beta^+$-Zerfall noch um einen Faktor $F(p_e,Z)$ durch die Coulombanziehung bzw. Abstoßung. Somit gilt dann insgesamt 
+Der Term aus der Berechnung der Phasenraumdichte enthält bereits die charakteristische Form des Spektrums. Bei $Z$-fach geladenen Kernen unterscheiden sich $\beta^-$- und $\beta^+$-Zerfall noch um einen Faktor $F(p_e,Z)$ (Fermifunktion) durch die Coulombanziehung bzw. Abstoßung. Somit gilt dann insgesamt 
 \begin{align*}
   \diff{\Gamma_{i \rightarrow f}}{p_e} \propto p_e^2(E_0-E_e)^2 F_\pm(p_e,Z).
 \end{align*}
@@ -46,9 +46,14 @@ Experimentell ist das Ziel, anhand des $\beta$-Zerfalls die Energie $E_0$ des Ü
   \sqrt{\frac{\dot{N}}{p_eE_eF_\pm(p_e,Z)}} \propto E_0-E_e
   \label{equ:kurie}
 \end{align}
-als Funktion der Elektronenenergie aufgetragen. $\dot{N}$ ist dabei die Zählrate bei der jeweiligen Energie.\\
+als Funktion der Elektronenenergie aufgetragen. $\dot{N}$ ist dabei die Zählrate bei der jeweiligen Energie. Da in diesem Versuch nur die Proportionalität wichtig ist, ist es nützlich Impulse und Energien in dimensionslosen Einheiten zu verwenden. Diese werden über die Lichtgeschwindigkeit $c$ und die Elektronenmasse $m_e$ über
+\begin{align*}
+  \eta&=\frac{p}{m_ec}\\
+  \epsilon&=\frac{E}{m_ec^2}
+\end{align*}
+definiert.\\
 
-Die Fermifunktion kann nach \cite{fermi} durch folgende Funktion beschrieben werden ($\beta = \frac{v}{c}$, $Z$ Ladung des Restkernes):
+Die Fermifunktion kann nach \cite{fermi} durch folgende Funktion beschrieben werden ($\beta = \frac{\eta}{\epsilon}$, $Z$ Ladung des Restkernes):
 
 \begin{align}
 F_\pm(p_e,Z) &= \cfrac{2\pi\eta_Z}{1-e^{-2\pi\eta_Z}} & \eta_Z = \mp \cfrac{Z\cdot \alpha}{\beta}
@@ -57,7 +62,7 @@ F_\pm(p_e,Z) &= \cfrac{2\pi\eta_Z}{1-e^{-2\pi\eta_Z}} & \eta_Z = \mp \cfrac{Z\cd
 
 
 \subsection{Innere Konversion und Augereffekt}
-Neben dem $\beta$-Zerfall gibt es noch weitere Prozesse, durch die ein Atom Elektronen emittiert. Ein Beispiel ist die innere Konversion. Bei der inneren Konversion wechselt ein Atomkern von einem angeregten zu einem niederenergetischerem Zustand. Anstelle der Emission von $\gamma$-Quanten wird allerdings ein Elektron aus dem Atom herausgelöst. Die Energie des Elektrons ist dann die Differenz von der Energiedifferenz des Kernzustandes vorher und nacher und der ursprünglichen Bindungsenergie des Elektrons. Die zurückbleibende Lücke in der Elektronenhülle kann dann unter anderem durch Elektronen aus höheren Schalen aufgefüllt werden, wobei Röntgenstrahlung emittiert wird.\\ \\
+Neben dem $\beta$-Zerfall gibt es noch weitere Prozesse, durch die ein Atom Elektronen emittiert. Ein Beispiel ist die innere Konversion. Bei der inneren Konversion wechselt ein Atomkern von einem angeregten zu einem niederenergetischerem Zustand. Anstelle der Emission von $\gamma$-Quanten wird allerdings ein Elektron aus dem Atom herausgelöst. Die Energie des Elektrons ist dann die Differenz von der Energiedifferenz des Kernzustandes vorher und nacher und der ursprünglichen Bindungsenergie des Elektrons. Die diskreten Emissionslinien werden im Versuch zur Kalibration des Aufbaus genutzt. Die zurückbleibende Lücke in der Elektronenhülle kann dann unter anderem durch Elektronen aus höheren Schalen aufgefüllt werden, wobei Röntgenstrahlung emittiert wird.\\ \\
 Eine weitere Möglichkeit die Lücke aufzufüllen stellt der Augereffekt dar. Bei diesem wird die Energie des Nachrückenden Elektrons nicht in Form von Röntgenstrahlung abgegeben, sondern an ein anderes Elektron übetragen, welches dadurch das Atom verlässt. Das emittierte Elektron wird auch Augerelektron genannt.
 
 \subsection{Magnetspektrometer}
@@ -81,7 +86,7 @@ Geladene Teilchen erfahren in einem Magnetfeld durch die Lorentzkraft eine Ablen
   \label{fig:halbkreis}
 \end{figure}
 
-Praktisch besteht ein Problem darin, dass die Teilchen nicht alle exakt senkrecht in das Spektrometer fliegen. Somit kommen Teilchen mit dem richtigen Impuls teilweise nicht zum Detektor, während Teilchen mit falschem Impuls den Detektor durch ein schiefes Eintreten trotzdem erreichen können. Dieser Effekt lässt sich mit dem $\sqrt{2}\pi$-Spektrometer verringern. Der Ansatz dabei ist, dass Teilchen die leicht von der Sollbahn abweichen eine Rücktreibende Kraft erfahren. Dadurch führen sie in erster Näherung dann eine Oszillation um die Sollbahn durch. Die Oszillation setzt sich aus einer Oszillation in der $z$-Richtung und einer senkrecht zur Geschwindigkeit und zur $z$-Richtung zusammen. Nach dem Durchlaufen von $\sqrt{2}\pi$ der Kreisbahn befinden sich die Teilchen dann unabhängig von der (kleinen) anfänglichen Abweichung zur Sollbahn wieder auf der Sollbahn. Der Detektor wird im $\sqrt{2}\pi$-Spektrometer also schon nach diesem Winkel platziert. Die rücktreibende Kraft wird durch ein $r$-abhängiges Magnetfeld 
+Praktisch besteht ein Problem darin, dass die Teilchen nicht alle exakt senkrecht in das Spektrometer fliegen. Somit kommen Teilchen mit dem richtigen Impuls teilweise nicht zum Detektor, während Teilchen mit falschem Impuls den Detektor durch ein schiefes Eintreten trotzdem erreichen können. Dieser Effekt lässt sich mit dem $\sqrt{2}\pi$-Spektrometer (siehe \cite{MAHLEIN1967229}) verringern. Der Ansatz dabei ist, dass Teilchen die leicht von der Sollbahn abweichen eine Rücktreibende Kraft erfahren. Dadurch führen sie in erster Näherung dann eine Oszillation um die Sollbahn durch. Die Oszillation setzt sich aus einer Oszillation in der $z$-Richtung und einer senkrecht zur Geschwindigkeit und zur $z$-Richtung zusammen. Nach dem Durchlaufen von $\sqrt{2}\pi$ der Kreisbahn befinden sich die Teilchen dann unabhängig von der (kleinen) anfänglichen Abweichung zur Sollbahn wieder auf der Sollbahn. Der Detektor wird im $\sqrt{2}\pi$-Spektrometer also schon nach diesem Winkel platziert. Die rücktreibende Kraft wird durch ein $r$-abhängiges Magnetfeld 
 \begin{align*}
   B_z(r)=B_0\sqrt{\frac{r}{r_0}}
 \end{align*}

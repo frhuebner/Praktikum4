@@ -1,6 +1,6 @@
 \subsection{Untergrundmessung}
 
-Die Untergrundmessung ergab $259\pm 16$ Ereignisse\footcite{Der Fehler beträgt $\sqrt{N}$} in \SI{200}{\second}. Das entspricht $N_U = 52 \pm 3$ Untergrundereignissen in \SI{40}{\second}.
+Die Untergrundmessung ergab $259\pm 16$ Ereignisse\footnote{Der Fehler beträgt $\sqrt{N}$} in \SI{200}{\second}. Das entspricht $N_U = 52 \pm 3$ Untergrundereignissen in \SI{40}{\second}.
  
 
 \subsection{Thalliumprobe}
@@ -37,4 +37,84 @@ $U_B/\si{\volt}$ & N\\
 \label{tab:tl}
 \end{table}
 
-In Tab. \ref{tab:tl} sind die gemessenen Zahlen in Abhängigkeit vom Magnetfeld eingetragen. Daraus wird nun $\eta = a\cdot (U_B - \overline{\delta U})$ und $N' = \frac{N - N_U}{U_B - \overline{\delta U}} \sim \dot{N}$ berechnet. Bei letzterem wurde noch durch $U_B - \overline{\delta U}$ geteilt, da aufgrund der Dispersion des Spektrometers der Messwert proportional zum Impuls  der Teilchen ist: $p \sim \eta \sim U_B - \overline{\delta U}$. Aus diesen Werten kann man dann  
+In Tab. \ref{tab:tl} sind die gemessenen Zahlen in Abhängigkeit vom Magnetfeld eingetragen. Daraus wird nun $\eta = a\cdot (U_B - \overline{\delta U})$ und $N' = \frac{N - N_U}{U_B - \overline{\delta U}} \sim \dot{N}$ berechnet (Werte kleiner als 0 wurden auf 0 gesetzt.). Bei letzterem wurde noch durch $U_B - \overline{\delta U}$ geteilt, da aufgrund der Dispersion des Spektrometers der Messwert proportional zum Impuls  der Teilchen ist: $p \sim \eta \sim U_B - \overline{\delta U}$. Aus diesen Werten kann man dann $\varepsilon = \sqrt{1 + \eta^2}$ und $\beta = \frac{\eta}{\varepsilon}$ berechnen. Nun ist nach Gl. \ref{equ:kurie}:
+\begin{align*}
+Y = \sqrt{\frac{N'}{\eta\varepsilon F_{-}(\eta,82)}}
+\end{align*}
+Für die Fermifunktion wird $F_{-}(\eta,82)$ eingesetzt, da es sich um einen $\beta^-$-Zerfall handelt und der Restkern (Blei) die Ladungszahl 82 besitzt. Die Fehler werden über Gaussche Fehlerfortpflanzung berechnet.\\
+
+\begin{figure}
+\centering
+\includegraphics[width=0.75\linewidth]{data/ti.png}
+\caption{Kurieplot für Thallium}
+\label{fig:tl}
+\end{figure}
+
+In Abb. \ref{fig:tl} ist der Kurieplot abgebildet. Es wurde ein linearer Fit $Y = m \epsilon + n$ in dem linearem Bereich $1,35 < \varepsilon < 2,3$ durchgeführt. Dieser ergab:
+\begin{align*}
+m &= -\si{(0,6\pm 0,02) \sqrt{\volt}}\\
+n &= \si{(1,38 \pm 0,04) \sqrt{\volt}}
+\end{align*}
+
+Damit ergibt sich $\varepsilon_0 = -\frac{n}{m} = 2,3 \pm 0,1$. Das entspricht einer kinetischen Energie von:
+\begin{align*}
+E_{Tl} = (\varepsilon_0 - 1)\cdot m_e = \si{(0,67 \pm 0,05)\mega\eV}
+\end{align*}
+
+Der Literaturwert \cite{tlenergy} liegt bei $\SI{0,76}{\mega\eV}$. Dieser Wert liegt nah an dem Ergebnis unserer Messung, aber außerhalb des Fehlerintervalls. Da auch der Wert für Natrium kleiner als der Literaturwert ist, vermuten wir, dass es sich um einen systematischen Fehler handelt, z.B., dass der nur einmal gemessene Untergrund $N_U$ zu hoch war. Dadurch werden die Y-Werte kleiner, was die Kurve nach unten verschiebt und somit eine kleinere Maximalenergie gemessen wird.  
+
+\subsection{Natriumprobe}
+\begin{table}
+\centering
+\caption{Gemessene Ereignisse der Natriumprobe}
+\begin{tabular}{cc}
+\toprule
+$U_B/\si{\volt}$ & N\\
+\midrule
+4,9&	41\\
+-4&	46\\
+-12,1&	42\\
+-20,2&	73\\
+-28,1&	88\\
+-36,2&	90\\
+-44&	171\\
+-52,1&	199\\
+-60,2&	232\\
+-68&	246\\
+-76&	218\\
+-84&	161\\
+-92,2&	160\\
+-100,2&	119\\
+-108,1&	70\\
+-116&	64\\
+-124&	60\\
+-131,9&	44\\
+-140,1&	66\\
+-148,1&	41\\
+-155,8&	54\\
+\bottomrule
+\end{tabular}
+\label{tab:tl}
+\end{table}
+
+Es wird nun $Y$ analog wie bei der Thalliumprobe berechnet. Für die Fermifunktion verwendet man nun $F_+(\eta, 10)$, da der $\beta^+$-Zerfall zu einem Neonkern führt (Kernladungszahl 10).
+
+\begin{figure}
+\centering
+\includegraphics[width=0.75\linewidth]{data/na.png}
+\caption{Kurieplot für Natrium}
+\label{fig:na}
+\end{figure}
+
+In Abb. \ref{fig:na} ist der Kurieplot abgebildet. Es wurde ein linearer Fit $Y = m \epsilon + n$ in dem linearem Bereich $1,2 < \varepsilon < 2$ durchgeführt. Dieser ergab:
+\begin{align*}
+m &= -\si{(2,7\pm 0,2) \sqrt{\volt}}\\
+n &= \si{(5,3 \pm 0,2) \sqrt{\volt}}
+\end{align*}
+
+Damit ergibt sich $\varepsilon_0 = -\frac{n}{m} = 2 \pm 0,1$. Das entspricht einer kinetischen Energie von:
+\begin{align*}
+E_{Tl} = (\varepsilon_0 - 1)\cdot m_e = \si{(0,51 \pm 0,05)\mega\eV}
+\end{align*}
+
+Dieser Wert stimmt im Rahmen des Fehlers mit dem Literaturwert\cite{naenergy} von $\SI{0,545}{\mega\eV}$ überein.

@@ -9,7 +9,7 @@ set pointsize 3
 set decimalsign ','
 
 
-set ylabel "Y"
+set ylabel "Y/V^{0.5}"
 set xlabel "{/Symbol e}"
 set key right top
 

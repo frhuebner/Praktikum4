@@ -49,4 +49,28 @@ a &= (41,5 \pm 0,2) \si{\nano\second}^{-1}\\
 b &= (1,42 \pm 0,01) \cdot 10^{3}\\
 \end{align*}
 
-Das bedeutet, dass \SI{16}{\nano\second} 41,5 Bins entsprechen. 
+Das bedeutet, dass \SI{16}{\nano\second} 41,5 Bins entsprechen.
+
+\subsection{Bestimmung der Lebensdauer}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{data/uebernacht.png}
+\caption{Ergebnis der Lebensdauermessung}
+\label{fig:halflife}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{data/uebernacht2.png}
+\caption{Exponentieller Fit an die Lebensdauermessung}
+\label{fig:halflife2}
+\end{figure}
+
+In Abb. \ref{fig:halflife} sind die gemessenen Ereignisse über den Bins aufgetragen. An diesen Daten wird nun im fallendem Bereich ($n \geq 1750$) ein exponentieller Fit durchgeführt $b\cdot e^{-c\cdot (n-1750)}$ (siehe Abb. \ref{fig:halflife2}). Der Fit ergibt:
+\begin{align*}
+b &= (14,41 \pm 0,02) \cdot 10^3\\
+c &= (2,87 \pm 0,002) \cdot 10^{-3} \mathrel{\widehat{=}} (119,2 \pm 0,7)\cdot 10^{-3} \si{\nano\second}^{-1}\\
+\end{align*}
+
+Daraus folgt, dass die Halbwertszeit $T_{1/2} = \frac{\ln{2}}{c} = (5,81 \pm 0,03) \si{\nano\second}$

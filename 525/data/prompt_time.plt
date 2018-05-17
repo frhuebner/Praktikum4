@@ -17,6 +17,8 @@ set key right top
 set output "prompt.png"
 plot "prompt001.txt" u 1:2:(sqrt($2)) w yerrorbars notitle lt rgb "black" 
 
+set samples 1000
+
 set output "prompt2.png"
 plot "prompt001.txt" u ($1>1200 && $1<6000?$1:1/0):2 notitle lt rgb "black",\
 	gauss(5443,19.6718,72.19296756,x) title "Regr." lw 2 lt rgb "red",\

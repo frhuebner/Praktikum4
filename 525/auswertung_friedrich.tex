@@ -1,13 +1,13 @@
 \subsection{Auswertung der Promptkurve}
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.7\linewidth]{data/prompt.png}
 \caption{Gemessene Promptkurve}
 \label{fig:prompt}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.7\linewidth]{data/prompt2.png}
 \caption{Promptkurve mit Fits}
@@ -16,9 +16,10 @@
 
 In Abb. \ref{fig:prompt} ist die gemessene Promptkurve zu sehen. An die einzelnen Peaks wird nun jeweils eine Gausskurve \[f(x) = a\exp{\left(-\frac{(x-n)^2}{2\sigma^2}\right)}\]mit Fityk gefittet. Das Ergebnis ist in Tab. \ref{tab:prompt} aufgelistet und in Abb. \ref{fig:prompt2} mit den Daten abgebildet.
 
-\begin{table}
+\begin{table}[h]
 \centering
 \caption{Fitergebnisse für die Gausskurven}
+\label{tab:prompt}
 \begin{tabular}{cccc}
 \toprule
 Peak Nr. & a & n & $\sigma$\\
@@ -36,7 +37,7 @@ Peak Nr. & a & n & $\sigma$\\
 
 Der Abstand der Peaks entspricht jeweils \SI{16}{\nano\second}. Um zu bestimmen, wie vielen Bins diese \SI{16}{\nano\second} entsprechen wird die Position des Peaks über der Peaknummer multipliziert mit \SI{16}{\nano\second} aufgetragen (siehe Abb. \ref{fig:prompt_time}). Als Fehler der Peakpositionen wird die Standartabweichung $\sigma$ angenommen.  
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.7\linewidth]{data/prompt_time.png}
 \caption{Positionen der Peaks über der Zeit}
@@ -53,14 +54,14 @@ Das bedeutet, dass \SI{16}{\nano\second} 41,5 Bins entsprechen.
 
 \subsection{Bestimmung der Lebensdauer}
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.7\linewidth]{data/uebernacht.png}
 \caption{Ergebnis der Lebensdauermessung}
 \label{fig:halflife}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.7\linewidth]{data/uebernacht2.png}
 \caption{Exponentieller Fit an die Lebensdauermessung}

@@ -18,7 +18,7 @@ In Abb. \ref{fig:prompt} ist die gemessene Promptkurve zu sehen. An die einzelne
 
 \begin{table}
 \centering
-\caption{Fitergebnisse für die Gausskurven}
+\caption{Fitergebnisse für die Gausskurven\footnote{Die Fehler der Fitparameter sind nicht relevant, da später $\sigma$ als Fehler verwendet wird.}}
 \begin{tabular}{cccc}
 \toprule
 Peak Nr. & a & n & $\sigma$\\
@@ -73,4 +73,4 @@ b &= (14,41 \pm 0,02) \cdot 10^3\\
 c &= (2,87 \pm 0,002) \cdot 10^{-3} \mathrel{\widehat{=}} (119,2 \pm 0,7)\cdot 10^{-3} \si{\nano\second}^{-1}\\
 \end{align*}
 
-Daraus folgt, dass die Halbwertszeit $T_{1/2} = \frac{\ln{2}}{c} = (5,81 \pm 0,03) \si{\nano\second}$
+Daraus folgt, dass die Halbwertszeit $T_{1/2} = \frac{\ln{2}}{c} = (5,81 \pm 0,03) \si{\nano\second}$ ist. Der Literaturwert liegt bei \SI{6,28}{\nano\second} \cite{cs133}. Der gemessene Wert liegt also in der Nähe des eigentlichen Wertes, allerdings um etwa 15 Standartabweichungen entfernt. Woher diese Diskrepanz kommt, können wir nicht erklären. Die kleinen Fehler kommen vorallem von den kleinen Fitfehlern. In den Abbildungen \ref{fig:prompt_time} und \ref{fig:halflife2} kann man aber auch erkennen, dass die Fits sehr genau sind. Demzufolge sollten diese auch kleine Fehler haben. Wir gehen deswegen davon aus, dass die Abweichung nicht durch die Auswertung zu erklären sind, sondern durch den Versuchsaufbau. Dies müsste durch einen Effekt geschehen, der den Abfall der Exponentialfunktion größer macht, also kleinere Zeiten häufiger auftreten als größere. Wir vermuten, dass das durch zufällige Ereignisse entsteht. Tritt ein zufälliges Ereignis vor dem Stopsignal auf (aber auch innerhalb der Koinzidenz der beiden Slow-Signale), so wird dieses Signal als Stopsignal interpretiert und somit eine kleinere Zeit gemessen. Dieser Effekt ist natürlich bei höheren Zeitabständen größer, da die Wahrscheinlichkeit für ein zufälliges Ereignis zwischen Start- und Stopsignal dann größer ist. Somit verschiebt sich die Kurve zu kleineren Energien und es ergibt sich eine Exponentialfunktion mit stärkerem Abfall und kleinerer Halbwertszeit. 

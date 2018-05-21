@@ -14,11 +14,11 @@
 \label{fig:prompt2}
 \end{figure}
 
-In Abb. \ref{fig:prompt} ist die gemessene Promptkurve zu sehen. An die einzelnen Peaks wird nun jeweils eine Gausskurve \[f(x) = a\exp{\left(-\frac{(x-n)^2}{2\sigma^2}\right)}\]mit Fityk gefittet. Das Ergebnis ist in Tab. \ref{tab:prompt} aufgelistet und in Abb. \ref{fig:prompt2} mit den Daten abgebildet.
+In Abb. \ref{fig:prompt} ist die gemessene Promptkurve zu sehen. An die einzelnen Peaks wird nun jeweils eine Gausskurve \[f(x) = a\exp{\left(-\frac{(x-n)^2}{2\sigma^2}\right)}\]mit Fityk gefittet\footnote{Die Fehler der Fitparameter sind nicht relevant, da später $\sigma$ als Fehler verwendet wird.}. Das Ergebnis ist in Tab. \ref{tab:prompt} aufgelistet und in Abb. \ref{fig:prompt2} mit den Daten abgebildet.
 
 \begin{table}
 \centering
-\caption{Fitergebnisse für die Gausskurven\footnote{Die Fehler der Fitparameter sind nicht relevant, da später $\sigma$ als Fehler verwendet wird.}}
+\caption{Fitergebnisse für die Gausskurven}
 \begin{tabular}{cccc}
 \toprule
 Peak Nr. & a & n & $\sigma$\\
@@ -32,6 +32,7 @@ Peak Nr. & a & n & $\sigma$\\
 0&	11,25&	1436&	51,81\\
 \bottomrule
 \end{tabular}
+\label{tab:prompt}
 \end{table}
 
 Der Abstand der Peaks entspricht jeweils \SI{16}{\nano\second}. Um zu bestimmen, wie vielen Bins diese \SI{16}{\nano\second} entsprechen wird die Position des Peaks über der Peaknummer multipliziert mit \SI{16}{\nano\second} aufgetragen (siehe Abb. \ref{fig:prompt_time}). Als Fehler der Peakpositionen wird die Standartabweichung $\sigma$ angenommen.  

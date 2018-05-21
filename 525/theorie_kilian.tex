@@ -1,10 +1,11 @@
 \subsection{Wechselwirkung ionisierender Strahlung mit Materie}
-In dem Versuch ist die Wechselwirkung von $\gamma$-Quanten mit Materie relevant.
+In dem Versuch werden Übergänge in den beobachteten Stoffen über die Wechselwirkung emittierter $\gamma$-Quanten mit Materie nachgewiesen. Das Grundprinzip ist dabei, dass die Energie des Photons zunächst auf Elektronen übertragen wird und diese dann die Energie an das Detektormaterial abgeben. Im folgenden werden drei mögliche Wechselwirkungen skizziert.
 \subsubsection{Compton-Effekt} 
 Beim Compton-Effekt streut ein Photon an einem Teilchen (siehe Abbildung \ref{fig:compton}). Dabei wird ein gewisser Impuls vom Photon auf das Teilchen übertragen. Abhängig von Ablenkwinkel $\phi$ des gestreuten Photons lässt sich aus der (Vierer-)Impulserhaltung die Wellenlänge des gestreuten Photons zu
-\begin{align*}
+\begin{align}
   \lambda-\lambda_0=\frac{h}{mc}(1-\cos \phi)
-\end{align*} 
+  \label{eq:compton}
+\end{align} 
 berechnen. $h$ und $c$ sind dabei das Plancksche Wirkungsquantum und die Lichtgeschwindigkeit. $m$ ist die Masse des Teilchens. Der Ausdruck für die Wellenlängenverschiebung gilt in dem Bezugssystem, in dem das Teilchen zunächst ruht.
 \begin{figure}[h]
   \centering
@@ -27,17 +28,16 @@ berechnen. $h$ und $c$ sind dabei das Plancksche Wirkungsquantum und die Lichtge
 Beim Photoeffekt wird die Energie eines einfallenden Photons von einem Hüllenelektron eines Atoms absorbiert. Dadurch wird das Elektron ionisiert. Die kinetische Energie des Elektrons entspricht dann der ursprünglichen Energie des Photons abzüglich der Bindungsenergie des Elektrons.
 
 \subsubsection{Paarbildung}
-Bei der Paarbildung erzeugt ein energiereiches Photon ein Elektron-Positron-Paar. Die überschüssige Energie geht dabei in die kinetische Energie der erzeugten Teilchen. Ein Photon alleine kann noch nicht die Paarbildung auslösen. Es ist die Anwesenheit eines Atomkerns, eines Elektrons oder eines weiteren energiereichen Photons notwendig. 
+Bei der Paarbildung erzeugt ein energiereiches Photon ein Elektron-Positron-Paar. Die überschüssige Energie geht dabei in die kinetische Energie der erzeugten Teilchen. Ein Photon alleine kann noch nicht die Paarbildung auslösen. Es ist die Anwesenheit eines Atomkerns, eines Elektrons oder eines weiteren energiereichen Photons notwendig. Das Photon muss für die Paarbildung mindestens eine Energie haben, die der doppelten Ruhenergie des Elektrons entspricht (Energieerhaltung).
 
 \subsection{Szintillationszähler}
 Ein Szintillator weist ionisierende Teilchen nach. Die Teilchen regen die Atome im Szintillationsmaterial an. Nach einer mittleren Anregungsdauer fällt das Atom zurück in den Grundzustand und emittiert dabei ein Photon der entsprechenden Wellenlänge. Dieses Photon kann nun auch wieder weitere Atome anregen und es kommt zu einer Art Random-Walk. Um diesen zu unterbrechen, wird das Szintillationsmaterial schwach mit wellenlängenverschiebenden Molekülen dotiert. Trifft ein Photon auf ein solches, wird das Licht zu langwelligerem Licht umgewandelt. Dieses kann nicht vom Szintillator absorbiert werden und somit über einen Lichtleiter zu einer Photodiode gelangen. Diese erzeugt eine messbare elektrische Spannung. Der Prozess ist in Abbildung \ref{fig:szintillator} schematisch skizziert.
-
 \begin{figure}[h]
   \centering
   \begin{tikzpicture}[photon1/.style={decorate,decoration={snake, segment length=1mm, amplitude=0.5mm, post length=0.5mm}},photon2/.style={decorate,decoration={snake, segment length=3mm, amplitude=0.5mm, post length=0.5mm}}]
     \draw (0,0) rectangle (4,3);
     \draw [->] (-0.5,2.5)--(1.5,-0.5);
-    \draw (-0.8,2.5) node {$\mu^{\pm}$};
+    \draw (-0.8,2.5) node {$e^-$};
     \draw (1,1.5) circle (0.9);
     \draw (1,1.5) circle (0.5);
     \draw [fill=black] (1,1.5) circle (0.1);
@@ -92,28 +92,49 @@ Ein Szintillator weist ionisierende Teilchen nach. Die Teilchen regen die Atome 
     \draw [->] (9.8,0.6)--(10.2,1);
     \draw (10.5,0.8) node {$U$};
   \end{tikzpicture}
-  \caption{Signalerzeugung im Szintillator}
+  \caption{Beispiel für Signalerzeugung im Szintillator durch Elektron}
   \label{fig:szintillator}
 \end{figure}
 
-\subsection{Diskriminator und Koinzidenzmodul}
-Für die Zählung der Myonen aus der kosmischen Strahlung werden die analogen Signale der Szintillatoren in digitale Signale umgewandelt. Dazu werden Diskriminatoren verwendet. Gibt der Szintillator ein Signal über der einstellbaren Schwellenspannung $\delta U$ an den Diskriminator, gibt dieser eine logische 1 in Form eines Rechteckpulses aus. Die Dauer $\delta t$ dieses Rechteckpulses ist ebenfalls einstellbar. Bei zu kleinem $\delta t$ kann ein einzelner Puls doppelt gezählt werden. Bei zu großem $\delta t$ hingegen kann ein Puls eines neuen Myons übersehen werden. Beide Fälle sowie der optimale Fall sind in Abbildung \ref{fig:diskriminator} zu sehen.
+In diesem Versuch werden die Szintillationsdetektoren mit Hochspannung betrieben. Dadurch wird eine hohe Zeitauflösung bei Abgriff der Spannung an der Anode (Fast-Signal) erreicht. Durch die hohe Verstärkung des Signals im Photomultiplier ist die gemessene Spannung aber nicht mehr direkt proportional zu der ursprünglichen Photonenenergie und die Energieauflösung verschlechtert sich. Für Energiemessungen wird deshalb vor der Anode schon an einer der Dynoden die Spannung abgegriffen (Slow-Signal).
 
+\subsection{Signalform}
+Das Spektrum bei Einfall von monoenergetischen Photonen setzt sich aus einem kontinuierlichen und einem diskreten Teil zusammen. Der kontinuierliche Teil entsteht durch den Compton-Effekt. Nach Gleichung (\ref{eq:compton}) entsteht also ein kontinuierliches Spektrum bis zu der Maximalenergie bei Rückwärtsstreuung (an der so genannten Compton-Kante). Oberhalb dieser Energie entsteht eine (bis auf Verbreiterung durch Dopplerverschiebung) diskrete Linie durch die komplette Deposition der Photonenenergie in dem Detektor durch den Photoeffekt. Reicht die Photonenenergie für die Paarerzeugung aus entsteht zusätzlich ein Peak bei der Elektronenenergie. Dieser entsteht durch die auf die Paarerzeugung folgende Annihilation wodurch zwei Quanten mit einer Energie von jeweils etwa \SI{511}{\kilo\electronvolt} emittiert werden. Die Linie wird deshalb auch \SI{511}{\kilo\electronvolt}-Linie genannt. \\
+
+Beim Einfall von Photonen verschiedener Energien überlagern sich die monoenergetischen Spektren.
+
+\subsection{Einkanalanalysator und Koinzidenzmodul}
+Für die Zählung der mit dem Detektor gemessenen Ereignisse werden die analogen Signale der Szintillatoren in digitale Signale umgewandelt. Dazu wird ein Einkanalanalysator (SCA) verwendet. Gibt der Szintillator ein Signal innerhalb eines einstellbaren Spannungsintervalls an den SCA, gibt dieser eine logische 1 in Form eines Rechteckpulses aus. Die Dauer dieses Rechteckpulses ist ebenfalls einstellbar.\\
+
+Für die Lebensdauermessung ist man interessiert daran, ob zwei Ereignisse gleichzeitig (bzw. schnell hintereinander) passiert sind. Dazu werden Diskriminatoren genutzt, die einem logischen UND entsprechen.
+
+\subsection{Vielkanalanalysator}
+Für die Aufnahme von Energiepspektren wird ein Vielkanalanalysator (MCA) verwendet. Dieser hat zwei Eingänge, einen (logischen) Gate-Eingang und einen analogen Eingang. Liegt auf dem Gate-Eingang eine logische eins an wird der Zählstand des dem analogen Signal entsprechenden Kanal um eins erhöht. Zwischen Signalhöhe und dem entsprechenden Kanal besteht ein linearer Zusammenhang. 
+
+\subsection{Zeit-Pulshöhen-Konverter}
+Mit Hilfe des Zeit-Pulshöhen-Konverters (TAC) kann ein Zeitabstand zwischen zwei logischen Signalen in ein analoges Signal mit Signalstärke proportional zu dem Zeitabstand um. Die zwei logischen Eingänge des TAC entsprechen den Eingängen für das Start- und das Stop-Signal für die Zeitmessung. 
+
+\subsection{Constant-Fraction-Diskriminator}
+Für die Lebensdauermessung müssen die analogen Signale des Szintillationsdetektors mit einem Constant-Fraction-Diskriminator (CFD) in logische Signale für den TAC umgewandelt werden. Würde man dazu einen SCA wählen, wäre bei gleicher Signalform die Zeit der Auslösung abhängig von der Verstärkung des analogen Signals und der ursprünglichen Signalstärke. Um dies zu vermeiden gibt der CFD immer dann ein logisches Signal aus, wenn ein bestimmter Anteil $c$ (Constant Fraction) der Signalamplitude erreicht wird. Die Zeit der Auslösung ist somit nur Abhängig von der Signalform und unabhängig von der Skalierung des Signals. \\
+
+In dem CFD wird das Eingangssignal ein zwei Teile gesplittet. Der eine Teil wird um eine Zeit, kleiner als die Anstiegszeit des Signals (die also schon vorher grob bekannt sein muss), verzögert. Der andere Teil des Signals wird mit $1/c$ skaliert und invertiert. Anschließend werden die beiden Signale addiert. Beim ersten Nulldurchgang des resultierenden Signals wird das logische Signal ausgegeben.
+
+\subsection{Zerfallsschemata von $^{133}$Ba und $^{22}$Na}
 \begin{figure}[h]
   \centering
-  \begin{tikzpicture}
-    \draw [->] (0,0)--(0,4.5) node [left] {$U$};
-    \draw [->] (0,0)--(10.5,0) node [right] {$t$};
-    \draw[domain=0:10,smooth,variable=\x,samples=200] plot ({\x},{3*exp(-2*(\x-1)^2)+3.5*exp(-0.5*(\x-1-4)^2)+4*exp(-40*(\x-2-7)^2)+4*exp(-40*(\x-2-7.5)^2)});
-    \draw [dashed] (0,0)--(0.698,0)--(0.698,2.5)--(1.698,2.5)--(1.698,0)--(4.18,0)--(4.18,2.5)--(5.18,2.5)--(5.18,0);
-    \draw [dashed] (5.18,2.5)--(6.18,2.5)--(6.18,0)--(8.892,0)--(8.892,2.5)--(9.892,2.5)--(9.892,0);
-    \draw [<->] (11.5,2.5)--(12,2.5) node [right] {$1$};
-    \draw [<->] (11.5,0)--(12,0) node [right] {$0$};
-  \end{tikzpicture}
-  \caption{Beispiel für Diskriminatoraus- und -eingang}
-  \label{fig:diskriminator}
-\end{figure}
+  \begin{subfigure}[h]{0.5\textwidth}
+    \centering
+    \includegraphics[width=0.9\textwidth]{data/ba_scheme.png}
+  \end{subfigure}%
+  \begin{subfigure}[h]{0.5\textwidth}
+    \centering
+    \includegraphics[width=0.7\textwidth]{data/na_scheme.png}
+  \end{subfigure}
+  \caption{Zerfallschemata von $^{133}$Ba und $11{22}$Na aus \cite{praktikumsheft}}
+  \label{fig:scheme}
+\end{figure}   
+Das Zerfallschema von $^{133}$Ba ist in Abbildung \ref{fig:scheme} zu sehen. Über Elektroneneinfang zerfällt es zunächst in einen angeregten Zustand von $^{133}$Ba. Dieser kann dann durch $\gamma$-Übergänge über verschiedenen niedrigere Zustände bis zum Grundzustand zerfallen. Die Übergangsenergien reichen dabei nicht für die Paarproduktion aus. Es wird also keine \SI{511}{\kilo\electronvolt}-Linie im Spektrum erwartet. \\
 
-Die Schwellenspannung ist so einzustellen, dass wenige Signale durch den Untergrund und viele Signale durch die Myonen ausgelöst werden. Die Einstellung wird so vorgenommen, dass bei der Auftragung von Zählrate gegen Schwellenspannung ein Sattelpunkt erreicht wird. \\ \\
-Um messen zu können, ob Myonen durch mehrere Detektoren hintereinander geflogen sind, werden Koinzidenz-Module verwendet. Diese entsprechen einfach einem logischen UND. An dem Modul kann lediglich die Dauer des Ausgangspulses eingestellt werden. Die Dauer der Eingangssignale der Koinzidenz sollte so eingestellt sein, dass sie überlappen können und so eine Koinzidenz auslösen können.
- 
+In dem Versuch wird die Lebensdauer des ersten angeregten Zustandes mit einer Energie von \SI{81}{\kilo\electronvolt} über dem Grundzustand gemessen. Das Startsignal für die Zeitmessung gibt dabei das $\gamma_8$-Photon, welches die Bevölkerung des relevanten Zustandes signalisiert. Das Stopsignal gibt dann ein $\gamma_3$-Photon, welches die Entvölkerung signalisiert. \\
+
+$^{22}$Na zerfällt über Elektroneneinfang zu dem Grundzustand oder dem angeregten Zustand von $^{22}$Ne. Über einen hochenergetischen $\gamma$-Zerfall kann der angeregte Zustand in den Grundzustand zerfallen. Die Energie des $\gamma$-Quants reicht dabei für die Paarproduktion aus und der \SI{511}{\kilo\electronvolt}-Peak wird im Spektrum erwartet.

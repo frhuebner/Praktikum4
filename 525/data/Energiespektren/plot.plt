@@ -25,13 +25,13 @@ set xrange [6734:8132]
 fit f(x) 'na_kal_links.txt' u 1:2:(sqrt(($2))) yerr via a,m,s
 unset xrange
 set output 'na_kal_links.eps'
-p 'na_kal_links.txt' u 1:2:(sqrt(($2))) w yerrorbars title 'Messwerte', f(x) title 'Regr.' 
+p 'na_kal_links.txt' u 1:2:(sqrt(($2))) w yerrorbars title 'Messwerte' lt rgb "black", f(x) title 'Regr.' lt rgb "red" 
 
 set xrange [5782:7182]
 fit f(x) 'na_kal_rechts.txt' u 1:2:(sqrt(($2))) yerr via a,m,s
 unset xrange
 set output 'na_kal_rechts.eps'
-p 'na_kal_rechts.txt' u 1:2:(sqrt(($2))) w yerrorbars title 'Messwerte', f(x) title 'Regr.'
+p 'na_kal_rechts.txt' u 1:2:(sqrt(($2))) w yerrorbars title 'Messwerte' lt rgb "black", f(x) title 'Regr.' lt rgb "red"
 
 
 g(x)=a+b*x+a1*exp(-(x-m1)**2/(2*s1**2))+a2*exp(-(x-m2)**2/(2*s2**2))+a3*exp(-(x-m3)**2/(2*s3**2))+a4*exp(-(x-m4)**2/(2*s4**2))+a5*exp(-(x-m5)**2/(2*s5**2))+a6*exp(-(x-m6)**2/(2*s6**2))+a7*exp(-(x-m7)**2/(2*s7**2))
@@ -64,7 +64,7 @@ set xrange [1000:8000]
 fit g(x) 'links_ba_cfd_kal.txt' u 1:2:(sqrt(($2))) yerr via a,b,a1,a2,a3,a4,a5,a6,a7,m1,m2,m3,m4,m5,m6,m7,s1,s2,s3,s4,s5,s6,s7
 unset xrange
 set output 'links_ba_cfd_kal.eps'
-p 'links_ba_cfd_kal.txt' u 1:2:(sqrt(($2))) w yerrorbars title 'Messwerte', g(x) title 'Regr.'
+p 'links_ba_cfd_kal.txt' u 1:2:(sqrt(($2))) w yerrorbars title 'Messwerte' lt rgb "black", g(x) title 'Regr.' lt rgb "red"
 
 a=120
 b=-0.02
@@ -94,4 +94,4 @@ set xrange [1000:5827]
 fit g(x) 'rechts_ba_cfd_kal.txt' u 1:2:(sqrt(($2))) yerr via a,b,a1,a2,a3,a4,a5,a6,a7,m1,m2,m3,m4,m5,m6,m7,s1,s2,s3,s4,s5,s6,s7
 unset xrange
 set output 'rechts_ba_cfd_kal.eps'
-p 'rechts_ba_cfd_kal.txt' u 1:2:(sqrt(($2))) w yerrorbars title 'Messwerte', g(x) title 'Regr.'
+p 'rechts_ba_cfd_kal.txt' u 1:2:(sqrt(($2))) w yerrorbars title 'Messwerte' lt rgb "black", g(x) title 'Regr.' lt rgb "red"

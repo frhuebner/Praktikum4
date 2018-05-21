@@ -1,11 +1,11 @@
 \subsection{Auswertung der Promptkurve}
 
-\begin{figure}
-\centering
-\includegraphics[width=0.7\linewidth]{data/prompt.png}
-\caption{Gemessene Promptkurve}
-\label{fig:prompt}
-\end{figure}
+%\begin{figure}
+%\centering
+%\includegraphics[width=0.7\linewidth]{data/prompt.png}
+%\caption{Gemessene Promptkurve}
+%\label{fig:prompt}
+%\end{figure}
 
 \begin{figure}
 \centering
@@ -14,7 +14,7 @@
 \label{fig:prompt2}
 \end{figure}
 
-In Abb. \ref{fig:prompt} ist die gemessene Promptkurve zu sehen. An die einzelnen Peaks wird nun jeweils eine Gausskurve \[f(x) = a\exp{\left(-\frac{(x-n)^2}{2\sigma^2}\right)}\]mit Fityk gefittet\footnote{Die Fehler der Fitparameter sind nicht relevant, da später $\sigma$ als Fehler verwendet wird.}. Das Ergebnis ist in Tab. \ref{tab:prompt} aufgelistet und in Abb. \ref{fig:prompt2} mit den Daten abgebildet.
+In Abbildung \ref{fig:prompt2} ist die gemessene Promptkurve zu sehen. An die einzelnen Peaks wird nun jeweils eine Gausskurve \[f(x) = a\exp{\left(-\frac{(x-n)^2}{2\sigma^2}\right)}\]mit Fityk gefittet\footnote{Die Fehler der Fitparameter sind nicht relevant, da später $\sigma$ als Fehler verwendet wird.}. Das Ergebnis ist in Tabelle \ref{tab:prompt} aufgelistet.
 
 \begin{table}
 \centering
@@ -35,7 +35,7 @@ Peak Nr. & a & n & $\sigma$\\
 \label{tab:prompt}
 \end{table}
 
-Der Abstand der Peaks entspricht jeweils \SI{16}{\nano\second}. Um zu bestimmen, wie vielen Bins diese \SI{16}{\nano\second} entsprechen wird die Position des Peaks über der Peaknummer multipliziert mit \SI{16}{\nano\second} aufgetragen (siehe Abb. \ref{fig:prompt_time}). Als Fehler der Peakpositionen wird die Standartabweichung $\sigma$ angenommen.  
+Der Abstand der Peaks entspricht jeweils \SI{16}{\nano\second}. Um zu bestimmen, wie vielen Bins diese \SI{16}{\nano\second} entsprechen wird die Position des Peaks über der Peaknummer multipliziert mit \SI{16}{\nano\second} aufgetragen (siehe Abbildung \ref{fig:prompt_time}). Als Fehler der Peakpositionen wird die Standartabweichung $\sigma$ angenommen.  
 
 \begin{figure}
 \centering

@@ -28,7 +28,7 @@ berechnen. $h$ und $c$ sind dabei das Plancksche Wirkungsquantum und die Lichtge
 Beim Photoeffekt wird die Energie eines einfallenden Photons von einem Hüllenelektron eines Atoms absorbiert. Dadurch wird das Elektron ionisiert. Die kinetische Energie des Elektrons entspricht dann der ursprünglichen Energie des Photons abzüglich der Bindungsenergie des Elektrons.
 
 \subsubsection{Paarbildung}
-Bei der Paarbildung erzeugt ein energiereiches Photon ein Elektron-Positron-Paar. Die überschüssige Energie geht dabei in die kinetische Energie der erzeugten Teilchen. Ein Photon alleine kann noch nicht die Paarbildung auslösen. Es ist die Anwesenheit eines Atomkerns, eines Elektrons oder eines weiteren energiereichen Photons notwendig. Das Photon muss für die Paarbildung mindestens eine Energie haben, die der doppelten Ruhenergie des Elektrons entspricht (Energieerhaltung).
+Bei der Paarbildung erzeugt ein energiereiches Photon ein Elektron-Positron-Paar. Die überschüssige Energie geht dabei in die kinetische Energie der erzeugten Teilchen. Ein Photon alleine kann noch nicht die Paarbildung auslösen. Es ist die Anwesenheit eines Atomkerns, eines Elektrons oder eines weiteren energiereichen Photons notwendig. Das Photon muss für die Paarbildung mindestens eine Energie haben, die der doppelten Ruheenergie des Elektrons entspricht (Energieerhaltung).
 
 \subsection{Szintillationszähler}
 Ein Szintillator weist ionisierende Teilchen nach. Die Teilchen regen die Atome im Szintillationsmaterial an. Nach einer mittleren Anregungsdauer fällt das Atom zurück in den Grundzustand und emittiert dabei ein Photon der entsprechenden Wellenlänge. Dieses Photon kann nun auch wieder weitere Atome anregen und es kommt zu einer Art Random-Walk. Um diesen zu unterbrechen, wird das Szintillationsmaterial schwach mit wellenlängenverschiebenden Molekülen dotiert. Trifft ein Photon auf ein solches, wird das Licht zu langwelligerem Licht umgewandelt. Dieses kann nicht vom Szintillator absorbiert werden und somit über einen Lichtleiter zu einer Photodiode gelangen. Diese erzeugt eine messbare elektrische Spannung. Der Prozess ist in Abbildung \ref{fig:szintillator} schematisch skizziert.
@@ -106,18 +106,18 @@ Beim Einfall von Photonen verschiedener Energien überlagern sich die monoenerge
 \subsection{Einkanalanalysator und Koinzidenzmodul}
 Für die Zählung der mit dem Detektor gemessenen Ereignisse werden die analogen Signale der Szintillatoren in digitale Signale umgewandelt. Dazu wird ein Einkanalanalysator (SCA) verwendet. Gibt der Szintillator ein Signal innerhalb eines einstellbaren Spannungsintervalls an den SCA, gibt dieser eine logische 1 in Form eines Rechteckpulses aus. Die Dauer dieses Rechteckpulses ist ebenfalls einstellbar.\\
 
-Für die Lebensdauermessung ist man interessiert daran, ob zwei Ereignisse gleichzeitig (bzw. schnell hintereinander) passiert sind. Dazu werden Diskriminatoren genutzt, die einem logischen UND entsprechen.
+Für die Lebensdauermessung ist man daran interessiert, ob zwei Ereignisse gleichzeitig (bzw. schnell hintereinander) passiert sind. Dazu werden Diskriminatoren genutzt, die einem logischen UND entsprechen.
 
 \subsection{Vielkanalanalysator}
 Für die Aufnahme von Energiepspektren wird ein Vielkanalanalysator (MCA) verwendet. Dieser hat zwei Eingänge, einen (logischen) Gate-Eingang und einen analogen Eingang. Liegt auf dem Gate-Eingang eine logische eins an wird der Zählstand des dem analogen Signal entsprechenden Kanal um eins erhöht. Zwischen Signalhöhe und dem entsprechenden Kanal besteht ein linearer Zusammenhang. 
 
 \subsection{Zeit-Pulshöhen-Konverter}
-Mit Hilfe des Zeit-Pulshöhen-Konverters (TAC) kann ein Zeitabstand zwischen zwei logischen Signalen in ein analoges Signal mit Signalstärke proportional zu dem Zeitabstand um. Die zwei logischen Eingänge des TAC entsprechen den Eingängen für das Start- und das Stop-Signal für die Zeitmessung. 
+Mit Hilfe des Zeit-Pulshöhen-Konverters (TAC) kann ein Zeitabstand zwischen zwei logischen Signalen in ein analoges Signal mit Signalstärke proportional zu dem Zeitabstand umgewandelt werden. Die zwei logischen Eingänge des TAC entsprechen den Eingängen für das Start- und das Stop-Signal für die Zeitmessung. 
 
 \subsection{Constant-Fraction-Diskriminator}
 Für die Lebensdauermessung müssen die analogen Signale des Szintillationsdetektors mit einem Constant-Fraction-Diskriminator (CFD) in logische Signale für den TAC umgewandelt werden. Würde man dazu einen SCA wählen, wäre bei gleicher Signalform die Zeit der Auslösung abhängig von der Verstärkung des analogen Signals und der ursprünglichen Signalstärke. Um dies zu vermeiden gibt der CFD immer dann ein logisches Signal aus, wenn ein bestimmter Anteil $c$ (Constant Fraction) der Signalamplitude erreicht wird. Die Zeit der Auslösung ist somit nur Abhängig von der Signalform und unabhängig von der Skalierung des Signals. \\
 
-In dem CFD wird das Eingangssignal ein zwei Teile gesplittet. Der eine Teil wird um eine Zeit, kleiner als die Anstiegszeit des Signals (die also schon vorher grob bekannt sein muss), verzögert. Der andere Teil des Signals wird mit $1/c$ skaliert und invertiert. Anschließend werden die beiden Signale addiert. Beim ersten Nulldurchgang des resultierenden Signals wird das logische Signal ausgegeben.
+In dem CFD wird das Eingangssignal in zwei Teile gesplittet. Der eine Teil wird um eine Zeit, kleiner als die Anstiegszeit des Signals (die also schon vorher grob bekannt sein muss), verzögert. Der andere Teil des Signals wird mit $1/c$ skaliert und invertiert. Anschließend werden die beiden Signale addiert. Beim ersten Nulldurchgang des resultierenden Signals wird das logische Signal ausgegeben.
 
 \subsection{Zerfallsschemata von $^{133}$Ba und $^{22}$Na}
 \begin{figure}[h]
@@ -133,7 +133,7 @@ In dem CFD wird das Eingangssignal ein zwei Teile gesplittet. Der eine Teil wird
   \caption{Zerfallschemata von $^{133}$Ba und $11{22}$Na aus \cite{praktikumsheft}}
   \label{fig:scheme}
 \end{figure}   
-Das Zerfallschema von $^{133}$Ba ist in Abbildung \ref{fig:scheme} zu sehen. Über Elektroneneinfang zerfällt es zunächst in einen angeregten Zustand von $^{133}$Ba. Dieser kann dann durch $\gamma$-Übergänge über verschiedenen niedrigere Zustände bis zum Grundzustand zerfallen. Die Übergangsenergien reichen dabei nicht für die Paarproduktion aus. Es wird also keine \SI{511}{\kilo\electronvolt}-Linie im Spektrum erwartet. \\
+Das Zerfallschema von $^{133}$Ba ist in Abbildung \ref{fig:scheme} zu sehen. Über Elektroneneinfang zerfällt es zunächst in einen angeregten Zustand von $^{133}$Ba. Dieser kann dann durch $\gamma$-Übergänge über verschiedene niedrigere Zustände bis zum Grundzustand zerfallen. Die Übergangsenergien reichen dabei nicht für die Paarproduktion aus. Es wird also keine \SI{511}{\kilo\electronvolt}-Linie im Spektrum erwartet. \\
 
 In dem Versuch wird die Lebensdauer des ersten angeregten Zustandes mit einer Energie von \SI{81}{\kilo\electronvolt} über dem Grundzustand gemessen. Das Startsignal für die Zeitmessung gibt dabei das $\gamma_8$-Photon, welches die Bevölkerung des relevanten Zustandes signalisiert. Das Stopsignal gibt dann ein $\gamma_3$-Photon, welches die Entvölkerung signalisiert. \\
 

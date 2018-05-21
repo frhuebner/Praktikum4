@@ -101,7 +101,7 @@ Das Signal des Hauptverstärkers wird mit einem Signalteiler geteilt. Ein Ausgan
   \label{fig:verstaerkung_auf_3-4v}
 \end{figure}
 
-Nun wird die Verzögerung so eingestellt, dass beide Signale in etwa synchron sind. Außerdem wird mit dem GDG die Breite des SCA-Pulses so eingestellt, dass das analoge Signal innerhalb des Pulses liegt (Abbildung \ref{fig:zeitliche_breite_sca_und_analog}).
+Nun wird die Verzögerung so eingestellt, dass beide Signale in synchron sind. Außerdem wird mit dem GDG die Breite des SCA-Pulses so eingestellt, dass das analoge Signal innerhalb des Pulses liegt (Abbildung \ref{fig:zeitliche_breite_sca_und_analog}).
 
 \begin{figure}[h]
   \centering
@@ -164,7 +164,7 @@ Sämtliche bisherigen Schritte werden für den zweiten Detektor wiederholt. Die 
   \label{fig:slow_koinzidenz}
 \end{figure}
 
-Die Auflösungszeit, welche angibt, wie viel Zeit zwischen zwei Ereignissen vergehen muss, damit sie als getrennt erkannt werden, ist durch die Dauer der SCA-Signale gegeben. In Abbildung \ref{fig:slow_koinzidenz} lässt sich die Auflösungszeit zu etwa \SI{0.55}{\micro\second} ablesen. 
+Die Auflösungszeit, die angibt, wie viel Zeit zwischen zwei Ereignissen vergehen muss, damit sie als getrennt erkannt werden, ist durch die Dauer der SCA-Signale gegeben. In Abbildung \ref{fig:slow_koinzidenz} lässt sich die Auflösungszeit zu etwa \SI{0.55}{\micro\second} ablesen. 
 \subsection{Einstellung des Fast-Koinzidenzkreises}
 Dyodensignal und Anodensignal werden durch die Betrachtung auf dem Oszilloskop verglichen. Da das invertierte Fast-Signal abgegriffen wird, hat es eine andere Polariät als das Slow-Signal. Es ist zu sehen, dass das Fast-Signal deutlich schneller ansteigt (Abbildung \ref{fig:slow_fast}).
 \begin{figure}[h]
@@ -227,7 +227,7 @@ Start- und Stop-Signal werden zeitlich so verzögert, dass das Stop-Signal etwa 
   \label{fig:zeitabstand_fast}
 \end{figure}
 
-Nun muss noch die zeitliche Koinzidenz von den beiden Kreisen eingestellt werden. Dazu werden das Koinzidenzsignal vom Slow-Kreis und das Signal des TAC auf dem Oszilloskop beobachtet. Mit Hilfe des GDG werden die Signale synchronisiert (Abbildung \ref{fig:fast_und_slow}). \newpage
+Nun muss noch die zeitliche Koinzidenz der beiden Kreise eingestellt werden. Dazu werden das Koinzidenzsignal vom Slow-Kreis und das Signal des TAC auf dem Oszilloskop beobachtet. Mit Hilfe des GDG werden die Signale synchronisiert (Abbildung \ref{fig:fast_und_slow}). \newpage
 \begin{figure}[h]
   \centering
   \begin{tikzpicture}
@@ -284,7 +284,7 @@ Nun muss noch die zeitliche Koinzidenz von den beiden Kreisen eingestellt werden
 \end{figure}
 
 \subsection{Zeitkalibration}
-Für die Auswertung muss der funktionale Zusammenhang von dem TAC-Signal (bzw. dem dazugehörigen Kanal des MCA) und der entsprechenden Zeit bestimmt werden. Dazu wird mit dem MCA das Spektrum der \SI{511}{\kilo\electronvolt} Linie aufgenommen. Durch das schrittweise Zuschalten einer \SI{16}{\nano\second} Verzögerung entstehen sieben Promptkurven im Spektrum deren Abstand jeweils \SI{16}{\nano\second} entspricht. 
+Für die Auswertung muss der funktionale Zusammenhang von dem TAC-Signal (bzw. dem dazugehörigen Kanal des MCA) und der entsprechenden Zeit bestimmt werden. Dazu wird mit dem MCA das Spektrum der \SI{511}{\kilo\electronvolt} Linie aufgenommen. Durch das schrittweise Zuschalten einer \SI{16}{\nano\second} Verzögerung entstehen sieben Promptkurven im Spektrum, deren Abstand jeweils \SI{16}{\nano\second} entspricht. 
 
 \subsection{Lebensdauermessung}
 Erneut werden mit dem MCA die Spektren von $^{22}$Na und Cs aufgenommen. Das SCA-Fenster der Detektoren wird nun für den besseren (schlechteren) Detektor auf die relevante bevölkernde (entvölkernde) Linie von Cs eingestellt. Nach erneuter Überprüfung der Koinzidenz der beiden Messkreise auf dem Oszilloskop kann die eigentliche Lebensdauermessung gestartet werden. 

@@ -1,17 +1,18 @@
 set terminal postscript eps enhanced size 3in,3in
 set samples 1000
+set key bottom
 
-set xlabel 'E/keV'
-set ylabel 'n'
+set ylabel 'E/keV'
+set xlabel 'n'
 
 set output 'energiekal_links.eps'
 
 h(x)=a*x+b
-fit h(x) 'energiekal_links.txt' u 1:2:3 yerr via a,b
-p 'energiekal_links.txt' u 1:2:3 w yerrorbars title 'Messwerte', h(x) title 'Regr.'
+fit h(x) 'energiekal_links.txt' u 2:1:3:(0.5) xyerr via a,b
+p 'energiekal_links.txt' u 2:1:3:(0.5) w xyerrorbars title 'Messwerte', h(x) title 'Regr.'
 
 set output 'energiekal_rechts.eps'
 
 h(x)=a*x+b
-fit h(x) 'energiekal_rechts.txt' u 1:2:3 yerr via a,b
-p 'energiekal_rechts.txt' u 1:2:3 w yerrorbars title 'Messwerte', h(x) title 'Regr.'
+fit h(x) 'energiekal_rechts.txt' u 2:1:3:(0.5) xyerr via a,b
+p 'energiekal_rechts.txt' u 2:1:3:(0.5) w xyerrorbars title 'Messwerte', h(x) title 'Regr.'

@@ -1,0 +1,50 @@
+REPORT-FILE from 05/29/2018 11:54:59.125 - 03:55:52.140  written 05/30/2018 11:48:33
+REALTIME: 57653.580   
+TOTALSUM: 4529448     
+ROISUM: 4529448     
+MAXVAL: 11010       
+LIVETIME: 57600.000   
+cmline0=05/29/2018 11:54:59.125 - 03:55:52.140 
+range=8192
+prena=2
+mcsmode=4
+roimin=0
+roimax=8192
+rtpreset=43200.000   
+ltpreset=57600.000   
+evpreset=0           
+swpreset=1           
+rampmode=0
+rampstart=1024
+rampstep=1
+rampbin=1
+ramplen=1024
+qdacuse=0
+qdac=2048
+dac1use=0
+dac1val=0
+impsel=f
+thrstart=1716
+thr1=1716
+thr2=1716
+thrclk=2015
+diguse=8
+digval=0
+cycles=128
+sequences=1
+mempart=0
+dwelltime=3
+dwellunit=0
+syncout=909
+histlen=0
+autoinc=0 
+;datname=C:\Dokumente und Einstellungen\admin\Desktop\alpha102\untergrund_langzeit.mcd
+savedata=0
+fmt=txt
+smoothpts=5 
+caluse=0 
+caloff=0.000000
+calfact=1.000000
+calfact2=0
+calfact3=0
+calunit=keV

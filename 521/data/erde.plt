@@ -12,12 +12,15 @@ set ylabel "N"
 set xlabel "n
 set key right top
 
+set output "untergrund.png"
+plot "raw_erde.txt" u "bin":"untergrund":"dunter" w yerrorbars notitle lt rgb "black",\
+
 #f(x) = a*x
 #a=100
 #b=1
 #fit f(x) "si_gauge.txt" using "energy":"b":"s" yerrors via a
 
-set output "noise_untergrund.png"
-plot "noise_untergrund_out.txt" notitle lt rgb "black",\
+set output "erde.png"
+plot "raw_erde.txt" u "bin":"cerdem":"dcerde" w yerrorbars notitle lt rgb "black",\
 #	f(x) title "Regr." lt rgb "black"
 	

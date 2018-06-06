@@ -9,6 +9,27 @@ set pointsize 3
 set decimalsign ','
 
 set ylabel "N"
+set xlabel "n"
+set key right top
+
+set output "si_cs_raw.png"
+plot "raw_si.txt" using "bin":"cs":"dcs" with yerrorbars notitle lt rgb "black"
+set output "si_co_raw.png"
+plot "raw_si.txt" using "bin":"co":"dco" with yerrorbars notitle lt rgb "black"
+set output "si_eu_raw.png"
+plot "raw_si.txt" using "bin":"eu":"deu" with yerrorbars notitle lt rgb "black"
+set output "si_unter.png"
+plot "raw_si.txt" using "bin":"untergrund":"dunter" with yerrorbars notitle lt rgb "black"
+
+set output "si_cs.png"
+plot "raw_si.txt" using "bin":"ccs":"dccs" with yerrorbars notitle lt rgb "black"
+set output "si_co.png"
+plot "raw_si.txt" using "bin":"cco":"dcco" with yerrorbars notitle lt rgb "black"
+set output "si_eu.png"
+plot "raw_si.txt" using "bin":"ceu":"dceu" with yerrorbars notitle lt rgb "black"
+
+
+set ylabel "N"
 set xlabel "E/keV"
 set key right top
 

@@ -9,6 +9,26 @@ set pointsize 3
 set decimalsign ','
 
 set ylabel "N"
+set xlabel "n"
+set key right top
+
+set output "ge_cs_raw.png"
+plot "raw_ge.txt" using "bin":"cs":"dcs" with yerrorbars notitle lt rgb "black"
+set output "ge_co_raw.png"
+plot "raw_ge.txt" using "bin":"co":"dco" with yerrorbars notitle lt rgb "black"
+set output "ge_eu_raw.png"
+plot "raw_ge.txt" using "bin":"eu":"deu" with yerrorbars notitle lt rgb "black"
+set output "ge_unter.png"
+plot "raw_ge.txt" using "bin":"untergrund":"dunter" with yerrorbars notitle lt rgb "black"
+
+set output "ge_cs.png"
+plot "raw_ge.txt" using "bin":"ccs":"dccs" with yerrorbars notitle lt rgb "black"
+set output "ge_co.png"
+plot "raw_ge.txt" using "bin":"cco":"dcco" with yerrorbars notitle lt rgb "black"
+set output "ge_eu.png"
+plot "raw_ge.txt" using "bin":"ceu":"dceu" with yerrorbars notitle lt rgb "black"
+
+set ylabel "N"
 set xlabel "E/keV"
 set key right top
 

@@ -15,12 +15,9 @@ set key right top
 set output "untergrund.png"
 plot "raw_erde.txt" u "bin":"untergrund":"dunter" w yerrorbars notitle lt rgb "black",\
 
-#f(x) = a*x
-#a=100
-#b=1
-#fit f(x) "si_gauge.txt" using "energy":"b":"s" yerrors via a
+set output "erde_raw.png"
+plot "raw_erde.txt" u "bin":"erde":"derde" w yerrorbars notitle lt rgb "black",\
 
 set output "erde.png"
 plot "raw_erde.txt" u "bin":"cerdem":"dcerde" w yerrorbars notitle lt rgb "black",\
-#	f(x) title "Regr." lt rgb "black"
 	

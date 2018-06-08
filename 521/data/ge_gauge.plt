@@ -40,4 +40,19 @@ fit f(x) "ge_gauge.txt" using "energy":"b":"s" yerrors via a
 set output "ge_gauge.png"
 plot "ge_gauge.txt" using "energy":"b":"s" with yerrorbars notitle lt rgb "black",\
 	f(x) title "Regr." lt rgb "black"
-	
+
+f(x) = a*x+b
+a=1
+b=1
+fit f(x) "ge_peaks.txt" using "energy":((($1)>3?column("fwhm/kev")**2:1/0)):(column("fwhm/kev")*2*column("dfwhm/kev")) yerrors via a,b
+
+set ylabel "{/Symbol D}E^2/keV^2"
+set xlabel "E/keV"	
+set output "ge_intrinsic.png"
+plot "ge_peaks.txt" using "energy":((($1)>3?column("fwhm/kev")**2:1/0)):(column("fwhm/kev")*2*column("dfwhm/kev")) with yerrorbars notitle lt rgb "black",\
+	f(x) title "Regr." lt rgb "black"
+
+set ylabel "rel.Int(ex)/rel.Int(th)"
+set xlabel "E/keV"	
+set output "ge_relint.png"
+plot "ge_peaks.txt" using "energy":"vrelint":"dvrelint" with yerrorbars notitle lt rgb "black",\

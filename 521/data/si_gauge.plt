@@ -29,9 +29,9 @@ set output "si_eu.png"
 plot "raw_si.txt" using "bin":"ceu":"dceu" with yerrorbars notitle lt rgb "black"
 
 
-set ylabel "N"
+set ylabel "n"
 set xlabel "E/keV"
-set key right top
+set key right bottom
 
 f(x) = a*x
 a=100

@@ -28,7 +28,7 @@ plot "raw_ge.txt" using "bin":"cco":"dcco" with yerrorbars notitle lt rgb "black
 set output "ge_eu.png"
 plot "raw_ge.txt" using "bin":"ceu":"dceu" with yerrorbars notitle lt rgb "black"
 
-set ylabel "N"
+set ylabel "n"
 set xlabel "E/keV"
 set key right top
 

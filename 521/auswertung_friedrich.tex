@@ -1,34 +1,38 @@
-Fehler werden über Gaussche Fehlerfortpflanzung berechnet.
+Während der gesamten Auswertung werden die Fehler über die Gaussche Fehlerfortpflanzung berechnet.
 
 \subsection{Szintillationsdetektor}
-\begin{figure}
+Die aufgenommenen Spektren ($N$ ist die Zahl der Ereignisse und $n$ die Kanalnummer) im Anhang werden um den Untergrund korrigiert (Werte kleiner null werden auf null gesetzt) und sind in Abbildung \ref{fig:si_cs} - \ref{fig:si_eu} abgebildet. 
+
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.7\linewidth]{data/si_cs.png}
 \caption{Szintillator Cs korrigiert}
 \label{fig:si_cs}
 \end{figure}
 
-\begin{figure}
+\newpage
+
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.7\linewidth]{data/si_co.png}
 \caption{Szintillator Co korrigiert}
 \label{fig:si_co}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[!h]
 \centering
 \includegraphics[width=0.7\linewidth]{data/si_eu.png}
 \caption{Szintillator Eu korrigiert}
 \label{fig:si_eu}
 \end{figure}
 
-Die aufgenommenen Spektren im Anhang werden um den Untergrund korrigiert (Werte kleiner 0 werden auf 0 gesetzt) und sind in Abbildung \ref{fig:si_cs} - \ref{fig:si_eu} abgebildet. Als Fehler wird $\sqrt{N}$ angenommen. An die stärksten Linien der 3 Spektren werden nun Gausskurven gefittet\[f(x) = a\exp{\left(-4\ln{2}\frac{(x-b)^2}{\text{FWHM}^2}\right)}\]. Das Ergebnis ist in Tabelle \ref{tab:si} abgebildet (die Halbwertsbreite wurde schon auf keV umgerechnet).
+Begründet durch die Poissonverteilung wird als Fehler $\sqrt{N}$ angenommen. An die stärksten Linien der drei Spektren werden nun Gaußkurven \[N(n) = a\exp{\left(-4\ln{2}\frac{(n-\mu)^2}{\text{FWHM}^2}\right)}\] angepasst. Das Ergebnis ist in Tabelle \ref{tab:si} abgebildet (die Halbwertsbreite wurde schon auf keV umgerechnet).
 
-\begin{table}
+\begin{table}[h]
 \caption{Fitergebnisse an den Spektren des Szintillators}
 \begin{tabular}{cccccccccc}
 \toprule
-Peak Nr. & Element & Energie/\si{keV}& $a$ & $\Delta a$ & $b$ & $\Delta b$ & FWHM/\si{keV} & $\Delta \text{FWHM}/\si{keV}$\\
+Peak Nr. & Element & Energie/\si{keV}& $a$ & $\Delta a$ & $\mu$ & $\Delta \mu$ & FWHM/\si{keV} & $\Delta \text{FWHM}/\si{keV}$\\
 \midrule 
 1	&	Cs	&	661,66	&	37781	&	933	&	1193	&	0,9	&	57	&	3\\
 2	&	Co	&	1332,5	&	2586	&	90	&	2068	&	1,9	&	82	&	5\\
@@ -41,10 +45,11 @@ Peak Nr. & Element & Energie/\si{keV}& $a$ & $\Delta a$ & $b$ & $\Delta b$ & FWH
 \label{tab:si}
 \end{table}
 
-Um den Linien die Energie zuzuordnen wurde zuerst der Cäsiumpeak bestimmt. Für Cäsium war uns nur eine Linie (\SI{662}{keV}) vorgegeben. Leider gibt es 2 verschiedene Peaks im Spektrum. Um zu bestimmen, welcher der beiden Peaks der richtige ist, haben wir jeweils den Umrechnungsfaktor Kanal $\leftrightarrow$ Energie abgeschätzt und dann die Energien der restlichen Peaks bestimmt. Bei dem linken Peak gab es eine deutlich bessere Übereinstimmung, so dass wir davon ausgehen, dass dieser Peak der \SI{662}{keV} ist.\\
-Um den Umrechnungsfaktor Kanal $\leftrightarrow$ Energie zu bestimmen, tragen wir die Kanalnummer über der Energie der Peaks auf und führen einen linearen Fit \[f(x) = C\ind{Si}\cdot x\] durch (siehe Abbildung \ref{fig:si_gauge}). Als Fehler der Kanalnummer nehmen wir die Standartweichung der Gausskurve an. Der Fit ergibt: $C\ind{Si} = \si{(1,77\pm 0,09)\,Kanal/keV}$
+Um den Linien die jeweilige Energie zuzuordnen wird zuerst der Cäsiumpeak identifiziert. Für Cäsium ist nur eine Linie bei (\SI{662}{keV}) vorgegeben. Leider gibt es 2 verschiedene Peaks im Spektrum. Um zu bestimmen, welcher der beiden Peaks der richtige ist, wird jeweils der Umrechnungsfaktor Kanal $\leftrightarrow$ Energie abgeschätzt und dann die Energie der restlichen Peaks bestimmt. Bei dem linken Peak gibt es eine deutlich bessere Übereinstimmung, so dass davon ausgegangen wird, dass dieser Peak der \SI{662}{keV}-Peak ist.\\
 
-\begin{figure}
+Um den Umrechnungsfaktor Kanal $\leftrightarrow$ Energie zu bestimmen, wird die Kanalnummer über der Energie der Peaks aufgetragen und eine lineare Anpassung \[n(E) = C\ind{Si}\cdot E\] durchgeführt (siehe Abbildung \ref{fig:si_gauge}). Als Fehler der Kanalnummer wird die Standardabweichung der Gaußkurve verwendet. Die Anpassung ergibt $C\ind{Si} = \si{(1,77\pm 0,09)\,Kanal/keV}$.
+
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.7\linewidth]{data/si_gauge.png}
 \caption{Szintillator Kalibrierung}
@@ -52,39 +57,64 @@ Um den Umrechnungsfaktor Kanal $\leftrightarrow$ Energie zu bestimmen, tragen wi
 \end{figure}
 
 \subsubsection*{Peak-to-Total}
-Die gesamte Anzahl der untergrundkorrigierten Ereignisse beträgt für Cäsium: $N\ind{total}\upd{Cs} = 17152004 \pm 4141$ und für Cobalt: $N\ind{total}\upd{Co} = 3482320\pm 1866$ (Als Fehler wurde wieder $\sqrt{N}$ angenommen). 
-Um die Anzahl der Ereignisse in den Peaks unabhängig vom Kontinuum abzuschätzen, berechnen wir die Fläche unter der jeweiligen Gausskurve \[N\ind{Peak} = a\cdot\sqrt{2\pi}\cdot \sigma\], wobei $\sigma$ die Standartabweichung der Gausskurve ist.
-Damit ergibt sich für den Cs-Peak: $\text{PtT}\upd{Cs} = \cfrac{N\ind{Peak}\upd{Cs}}{N\ind{total}\upd{Cs}} = 0,237\pm 0,007$ und die beiden Cobaltpeaks (diese werden nach Praktikumsanleitung zusammenaddiert): $\text{PtT}\upd{Co} = 0,198\pm 0,007$.
+Die gesamte Anzahl der untergrundkorrigierten Ereignisse beträgt für Cäsium $N\ind{total}\upd{Cs} = 17152004 \pm 4141$ und für Cobalt $N\ind{total}\upd{Co} = 3482320\pm 1866$ (als Fehler wird wieder $\sqrt{N}$ angenommen). Um die Anzahl der Ereignisse in den Peaks unabhängig vom Kontinuum abzuschätzen, wird die Fläche
+\begin{align}
+N\ind{Peak} = a\cdot\sqrt{2\pi}\cdot \sigma 
+\label{eq:npeak}
+\end{align}
+ unter der jeweiligen Gaußkurve berechnet, wobei $\sigma$ die Standardabweichung der Gaußkurve ist.
+Damit ergibt sich für den Cs-Peak
+\begin{align*} 
+\text{PtT}\upd{Cs} = \cfrac{N\ind{Peak}\upd{Cs}}{N\ind{total}\upd{Cs}} = 0,237\pm 0,007 
+\end{align*}
+
+und die beiden Cobaltpeaks (diese werden nach Praktikumsanleitung zusammenaddiert)
+\begin{align*}
+ \text{PtT}\upd{Co} = 0,198\pm 0,007.
+\end{align*}
+
+\subsubsection*{Absolute Peakeffizienz}
+Die absolute Peakeffizienz wird anhand des Spektrums der Cs-Quelle bestimmt. Die Zahl der Ereignisse innerhalb des Peaks wird wieder über Gleichung \ref{eq:npeak} berechnet. Es folgt $N_\mathrm{Peak}=(4,1 \pm 0,2)10^6$. Mit dem in \cite{praktikumsheft} angegebenen Durchmesser von $d=\SI{76.2}{\milli\metre}$ oder $d=\SI{48}{\milli\metre}$ folgt mit der berechneten Aktivität und Gleichung \ref{eq:ntot}\footnote{Es wurde über eine Zeit von $t=\SI{617.967}{\second}$ gemessen.} eine absolute Peakeffizienz von
+\begin{align*}
+  P&=(9 \pm 2)\% \ \ \ \mathrm{oder}\\
+  P&=(22 \pm 5)\%
+\end{align*}
 
 \subsection{Halbleiter-Detektor}
-\begin{figure}
+Die Auswertung des Halbleiterdetektors geschieht analog zur Auswertung des Szintillators. In den Abbildungen \ref{fig:ge_cs} - \ref{fig:ge_eu} sind die gemessenen Spektren der Proben abgebildet. 
+
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.7\linewidth]{data/ge_cs.png}
 \caption{Halbleiter Cs korrigiert}
 \label{fig:ge_cs}
 \end{figure}
 
-\begin{figure}
+\newpage
+
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.7\linewidth]{data/ge_co.png}
 \caption{Halbleiter Co korrigiert}
 \label{fig:ge_co}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[!h]
 \centering
 \includegraphics[width=0.7\linewidth]{data/ge_eu.png}
 \caption{Halbleiter Eu korrigiert}
 \label{fig:ge_eu}
 \end{figure}
 
-Die Auswertung des Halbleiterdetektors geschieht analog zur Auswertung des Szintillators. In den Abbildungen \ref{fig:ge_cs} - \ref{fig:ge_eu} sind die gemessenen Spektren der Proben abgebildet. Wieder werden Gausskurven an die Peaks gefittet (siehe Tabelle \ref{tab:ge}). Die Zuordnung des Cäsiumpeaks ist bei diesem Detektor einfacher, weil sich nur ein Peak im Bereich befindet. Vergleicht die Form des Spektrums in der Umgebung des Peaks, so kann man erkennen, dass es sich um den gleichen Peak wie beim Szintillator handelt.\\
+Wieder werden Gaußkurven an die Peaks angepasst (siehe Tabelle \ref{tab:ge}). Die Zuordnung des Cäsiumpeaks ist bei diesem Detektor einfacher, weil sich nur ein Peak im Bereich befindet. Vergleicht die Form des Spektrums in der Umgebung des Peaks, so kann man erkennen, dass es sich um den gleichen Peak wie beim Szintillator handelt.\\
 
-\begin{table}
+\newpage
+
+\begin{table}[h]
 \caption{Fitergebnisse an den Spektren des Halbleiterdetektor}
 \begin{tabular}{cccccccccc}
 \toprule
-Peak Nr. & Element & Energie/\si{keV}& $a$ & $\Delta a$ & $b$ & $\Delta b$ & FWHM/\si{keV} & $\Delta \text{FWHM}/\si{keV}$\\
+Peak Nr. & Element & Energie/\si{keV}& $a$ & $\Delta a$ & $\mu$ & $\Delta \mu$ & FWHM/\si{keV} & $\Delta \text{FWHM}/\si{keV}$\\
 \midrule 
 1	&	Cs	&	661,66	&	32170	&	796	&	3316,9	&	0,1	&	1,68	&	0,03\\
 2	&	Co	&	1173,2	&	1596	&	77	&	5899,8	&	0,2	&	2,06	&	0,06\\
@@ -104,7 +134,7 @@ Peak Nr. & Element & Energie/\si{keV}& $a$ & $\Delta a$ & $b$ & $\Delta b$ & FWH
 
 Nachdem man den Peaks die Energien zugeordnet hat, wird wieder zur Kalibration der Kanal über der Energie aufgetragen (siehe Abbildung \ref{fig:ge_gauge}). Ein linearer Fit ergibt: $C\ind{Ge} = \si{(5,025\pm 0,004)\,Kanal/keV}$
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.7\linewidth]{data/ge_gauge.png}
 \caption{Halbleiter Kalibrierung}
@@ -112,11 +142,12 @@ Nachdem man den Peaks die Energien zugeordnet hat, wird wieder zur Kalibration d
 \end{figure}
 
 \subsubsection*{Intrinsische Halbwertsbreite}
-Die Halbwertsbreite eines Peaks ist laut Praktikumsheft \cite{praktikumsheft} gegeben durch:
+Die Halbwertsbreite eines Peaks ist laut dem Praktikumsheft \cite{praktikumsheft} gegeben durch
 \begin{align*}
-\Delta E^2 = c \cdot E + \Delta E\ind{e}^2
+\Delta E^2 = c \cdot E + \Delta E\ind{e}^2,
 \end{align*}
-Dieser Zusammenhang wird überprüft, indem die Quadrate der Halbwertsbreiten der Eu-Linien über der Energie aufgetragen werden (siehe Abbildung \ref{fig:ge_intrinsic}). Man kann erkennen, dass die Werte gut auf einer Geraden liegen. Ein linearer Fit ergibt: $c = \si{(2,5 \pm 0,1)\cdot 10^{-3}\,keV}$ und $\Delta E\ind{e}^2 = \si{(2,13 \pm 0,03)\,keV^2}$. Damit folgt, dass der elektronische Anteil der Halbwertsbreite $\Delta E\ind{e} = \si{(1,46 \pm 0,01)\,keV}$ ist.
+wobei $c$ konstant ist und $E_e$ ein konstanter Beitrag zur Halbwertsbreite durch die Elektronik ist.
+Dieser Zusammenhang wird überprüft, indem die Quadrate der Halbwertsbreiten der Eu-Linien über der Energie aufgetragen werden (siehe Abbildung \ref{fig:ge_intrinsic}). Man kann erkennen, dass die Werte gut auf einer Geraden liegen. Eine lineare Anpassung ergibt $c = \si{(2,5 \pm 0,1)\cdot 10^{-3}\,keV}$ und $\Delta E\ind{e}^2 = \si{(2,13 \pm 0,03)\,keV^2}$. Damit folgt, dass der elektronische Anteil der Halbwertsbreite $\Delta E\ind{e} = \si{(1,46 \pm 0,01)\,keV}$ ist.
 
 \begin{figure}
 \centering
@@ -127,40 +158,48 @@ Dieser Zusammenhang wird überprüft, indem die Quadrate der Halbwertsbreiten de
 
 
 \subsubsection*{Peak-to-Total}
-Die gesamte Anzahl der untergrundkorrigierten Ereignisse beträgt für Cäsium: $N\ind{total}\upd{Cs} = 1762931 \pm 1328$ und für Cobalt: $N\ind{total}\upd{Co} = 304614\pm 552$.\\
-Damit ergibt sich für den Cs-Peak: $\text{PtT}\upd{Cs} = 0.163\pm 0,005$ und die beiden Cobaltpeaks: $\text{PtT}\upd{Co} = 0.103\pm 0,004$. Das PtT-Verhältnis ist also für den Halbleiter kleiner als für den Szintillator.
+Die gesamte Anzahl der untergrundkorrigierten Ereignisse beträgt für Cäsium $N\ind{total}\upd{Cs} = 1762931 \pm 1328$ und für Cobalt $N\ind{total}\upd{Co} = 304614\pm 552$.\\
+Damit ergibt sich für den Cs-Peak $\text{PtT}\upd{Cs} = 0.163\pm 0,005$ und die beiden Cobaltpeaks $\text{PtT}\upd{Co} = 0.103\pm 0,004$. Das PtT-Verhältnis ist also für den Halbleiter kleiner als für den Szintillator.
+
+\subsubsection*{Absolute Peakeffizienz}
+Die absolute Peakeffizienz wird anhand des Spektrums der Cs-Quelle bestimmt. Die Zahl der Ereignisse innerhalb des Peaks wird wieder über Gleichung \ref{eq:npeak} berechnet. Es folgt $N_\mathrm{Peak}=(2,9 \pm 0,1)10^5$. Mit dem in \cite{praktikumsheft} angegebenen Durchmesser von $d=\SI{55.7}{\milli\metre}$ folgt mit der berechneten Aktivität und Gleichung \ref{eq:ntot}\footnote{Es wurde über eine Zeit von $t=\SI{625.070}{\second}$ gemessen.} eine absolute Peakeffizienz von
+\begin{align*}
+  P=(2,8 \pm 0,4)\%.
+\end{align*}
 
 \subsubsection*{Relative Effizienz als Funktion der Gammaenergie}
-Um die relative Effizienz des Detektors zu bestimmen, wird das Verhältnis aus der Amplitude der Gausskurve an einem Eu-Peak mit der Amplitude des \SI{1408}{keV}-Peaks gebildet. Dieses wird mit 1000 multipliziert und dann durch den angegebenen Wert im Praktikumsheft \cite{praktikumsheft}(Tabelle P521.6.1.) geteilt. Die Werte werden über der Energie aufgetragen (siehe Abbildung \ref{fig:ge_relint}).
+Um die relative Effizienz des Detektors zu bestimmen, wird das Verhältnis aus der Amplitude der Gausskurve an einem Eu-Peak mit der Amplitude des \SI{1408}{keV}-Peaks gebildet. Dieses wird mit 1000 multipliziert und dann durch den angegebenen Wert im Praktikumsheft \cite{praktikumsheft} (Tabelle P521.6.1.) geteilt. Die Werte werden über der Energie aufgetragen (siehe Abbildung \ref{fig:ge_relint}). \\
 
-\begin{figure}
+Wäre der Detektor in allen Energiebereichen gleich effizient, so lägen alle Werte auf einer Höhe. Die Effizienz fällt aber bei kleinen Energien ab und ist danach in etwa konstant. Das bedeutet, dass der Detektor effizienter bei kleinen Energien ist, während er bei großen Energien gleichmäßig effizient ist.
+
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.7\linewidth]{data/ge_relint.png}
 \caption{Halbleiter relative Effizienz}
 \label{fig:ge_relint}
 \end{figure}
 
-Wäre der Detektor in allen Energiebereichen gleich effizient, so lägen alle Werte auf einer Höhe. Die Effizienz fällt aber bei kleinen Energien ab und ist danach in etwa konstant. Das bedeutet, dass der Detektor effizienter bei kleinen Energien ist, während er bei großen Energien gleichmäßig effizient ist.
+\newpage
 
 \subsection{Bodenprobe}
-Von Langzeitmessung der Bodenprobe (siehe Anhang) wird der Untergrund abgezogen(Abbildung \ref{fig:erde}). Werte kleiner als 0 wurden dabei nicht auf 0 gesetzt, um erkennen zu können, ob die Bodenprobe abschirmend wirkt. Als Fehler wird $\sqrt{N}$ oder $1$ angenommen, wenn die Zahl kleiner gleich 0 ist.
+Von dem Spektrum der Langzeitmessung der Bodenprobe (siehe Anhang) wird der Untergrund abgezogen (Abbildung \ref{fig:erde}). Werte kleiner als null werden dabei nicht auf null gesetzt, um erkennen zu können, ob die Bodenprobe abschirmend wirkt. Als Fehler wird $\sqrt{N}$ oder $1$ angenommen, wenn die Zahl kleiner gleich null ist.
 
-\begin{figure}
+\begin{figure}[!h]
 \centering
 \includegraphics[width=0.7\linewidth]{data/erde.png}
 \caption{Bodenprobe Untergrundkorrigiert}
 \label{fig:erde}
 \end{figure}
 
-Man kann erkennen, dass bei kleinen Energien die negativen Werte betragsmäßig größer sind. Daraus kann man schließen, dass ohne Bodenprobe weniger Untergrundteilchen den Detektor erreicht haben, also die Bodenprobe den Untergrund abgeschirmt hat. Weiterhin kann man in dem Spektrum nur eine Linie erkennen (ansonsten gibt es nur einzelne Punkte, die vom Kontinuum abweichen; diese können prinzipiell rein statistischer Natur sein). Da diese Linie allerdings auch negative Werte aufweist, die betragsmäßig genauso groß sind, gehen wir davon aus, dass diese Linie die gleiche Linie wie im Untergrundspektrum ist. Das kann man bestätigen, in dem man die Rohdaten betrachtet. In beiden Spektren ist der Peak etwa gleich hoch und somit keine Linie der Probe, sondern des Untergrundes. Somit enthält unsere Bodenprobe keine sichtbaren Gammalinien.\\
+Man kann erkennen, dass bei kleinen Energien die negativen Werte betragsmäßig größer sind. Daraus kann man schließen, dass ohne Bodenprobe weniger Untergrundteilchen den Detektor erreicht haben, also die Bodenprobe den Untergrund abgeschirmt hat. Weiterhin kann man in dem Spektrum nur eine Linie erkennen (ansonsten gibt es nur einzelne Punkte, die vom Kontinuum abweichen; diese können prinzipiell rein statistischer Natur sein). Da diese Linie allerdings auch negative Werte aufweist, die betragsmäßig genauso groß sind, gehen wir davon aus, dass diese Linie die gleiche Linie wie im Untergrundspektrum ist. Das kann man bestätigen, in dem man die Rohdaten betrachtet. In beiden Spektren ist der Peak etwa gleich hoch und somit keine Linie der Probe, sondern des Untergrundes. Somit enthält die Bodenprobe keine sichtbaren Gammalinien.\\
 
-Aufgrund dessen wurde das Spektrum des Untergrundes untersucht. Dazu werden wie zuvor an die deutlichsten Peaks und an den Cäsiumpeak Gausskurven gefittet. Die Kanalnummber $b$ wird über $C\ind{Ge}$ in eine Energie umgerechnet. Diese werden mithilfe von \cite{lara} Nukliden zugeordnet. Es konnten mehrere Linien der Uran-Actinium-Reihe gefunden werden ($^{227}$Ac, $^{223}$Ra, $^{227}$Th) und eine Linie der Uran-Radium-Reihe ($^{226}$Ra). Die $^{40}$K-Linie ist nicht Teil einer Zerfallsreihe sondern ist Teil des natürlich in der Umwelt vorkommenden Kaliums. Deswegen ist es auch Teil des Untergrundes. Das Nuklid $^{137}$Cs stammt von der Reaktorkatastrophe in Tschernobyl. Die Höhe des Peaks ist aber mit $(1,6 \pm 0,3) \cdot 10^3$ Ereignissen vergleichsweise klein (z.B. Kalium: $(19 \pm 3)\cdot 10^3$). Somit ist die Belastung mit Cäsium vergleichsweise gering.
+Aufgrund dessen wird das Spektrum des Untergrundes untersucht. Dazu werden wie zuvor an die deutlichsten Peaks und an den Cäsiumpeak Gaußkurven gefittet. Die Kanalnummber $\mu$ wird über $C\ind{Ge}$ in eine Energie umgerechnet. Diese werden mithilfe von \cite{lara} Nukliden zugeordnet. Es konnten mehrere Linien der Uran-Actinium-Reihe gefunden werden ($^{227}$Ac, $^{223}$Ra, $^{227}$Th) und eine Linie der Uran-Radium-Reihe ($^{226}$Ra). Die $^{40}$K-Linie ist nicht Teil einer Zerfallsreihe sondern ist Teil des natürlich in der Umwelt vorkommenden Kaliums. Deswegen ist es auch Teil des Untergrundes. Das Nuklid $^{137}$Cs stammt von der Reaktorkatastrophe in Tschernobyl. Die Höhe des Peaks ist aber mit $(1,6 \pm 0,3) \cdot 10^3$ Ereignissen vergleichsweise klein (der Kalium-Peak hat z.B. eine Höhe von $(19 \pm 3)\cdot 10^3$). Somit ist die Belastung mit Cäsium vergleichsweise gering.
 
-\begin{table}
+\begin{table}[h]
 \caption{Fitergebnisse an das Untergrundspektrum}
 \begin{tabular}{ccccccccccc}
 \toprule
-Peak Nr. & $a$ & $\Delta a$ & $b$ & $\Delta b$ & FWHM/\si{keV} & $\Delta \text{FWHM}/\si{keV}$& E/\si{keV}& $\Delta\text{E}/\si{keV}$ & Nuklid & Zerfallsreihe\\
+Peak Nr. & $a$ & $\Delta a$ & $\mu$ & $\Delta \mu$ & FWHM/\si{keV} & $\Delta \text{FWHM}/\si{keV}$& E/\si{keV}& $\Delta\text{E}/\si{keV}$ & Nuklid & Zerfallsreihe\\
 \midrule 
 1	&	4564	&	4155	&	356,7	&	1,7	&	1,9	&	2,0	&	71,0	&	0,3	&	$^{227}$Ac, $^{223}$Ra\\
 2	&	8227	&	3456	&	1184,0	&	1,0	&	2,4	&	1,1	&	235,6	&	0,5	&	$^{227}$Ac\\

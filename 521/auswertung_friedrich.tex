@@ -1,7 +1,7 @@
-Während der gesamten Auswertung werden die Fehler über die Gaussche Fehlerfortpflanzung berechnet.
+Während der gesamten Auswertung werden die Fehler über die Gaußsche Fehlerfortpflanzung berechnet. Sämtliche unbearbeitete Spektren befinden sich im Anhang. 
 
 \subsection{Szintillationsdetektor}
-Die aufgenommenen Spektren ($N$ ist die Zahl der Ereignisse und $n$ die Kanalnummer) im Anhang werden um den Untergrund korrigiert (Werte kleiner null werden auf null gesetzt) und sind in Abbildung \ref{fig:si_cs} - \ref{fig:si_eu} abgebildet. 
+Die aufgenommenen Spektren ($N$ ist die Zahl der Ereignisse und $n$ die Kanalnummer) werden um den Untergrund korrigiert (Werte kleiner null werden auf null gesetzt) und sind in Abbildung \ref{fig:si_cs} - \ref{fig:si_eu} abgebildet. 
 
 \begin{figure}[h]
 \centering
@@ -38,7 +38,7 @@ Die aufgenommenen Spektren ($N$ ist die Zahl der Ereignisse und $n$ die Kanalnum
 \label{fig:si_eu}
 \end{figure}
 
-Begründet durch die Poissonverteilung wird als Fehler $\sqrt{N}$ angenommen. An die stärksten Linien der drei Spektren werden nun Gaußkurven \[N(n) = a\exp{\left(-4\ln{2}\frac{(n-\mu)^2}{\text{FWHM}^2}\right)}\] angepasst. Das Ergebnis ist in Tabelle \ref{tab:si} abgebildet (die Halbwertsbreite wurde schon auf keV umgerechnet).
+Begründet durch die Poissonverteilung wird als Fehler $\sqrt{N}$ angenommen. An die stärksten Linien der drei Spektren werden nun Gaußkurven \[N(n) = a\exp{\left(-4\ln{2}\frac{(n-\mu)^2}{\text{FWHM}^2}\right)}\] angepasst. Das Ergebnis ist in Tabelle \ref{tab:si} abgebildet (die Halbwertsbreite wurde schon auf keV umgerechnet). Die jeweiligen Peaks sind in den Abbildungen durch Nummern gekennzeichnet.
 
 \begin{table}[h]
 \caption{Fitergebnisse an den Spektren des Szintillators}
@@ -86,10 +86,9 @@ und die beiden Cobaltpeaks (diese werden nach Praktikumsanleitung zusammenaddier
 \end{align*}
 
 \subsubsection*{Absolute Peakeffizienz}
-Die absolute Peakeffizienz wird anhand des Spektrums der Cs-Quelle bestimmt. Die Zahl der Ereignisse innerhalb des Peaks wird wieder über Gleichung \ref{eq:npeak} berechnet. Es folgt $N_\mathrm{Peak}=(4,1 \pm 0,2)10^6$. Mit dem in \cite{praktikumsheft} angegebenen Durchmesser von $d=\SI{76.2}{\milli\metre}$ oder $d=\SI{48}{\milli\metre}$ folgt mit der berechneten Aktivität und Gleichung \ref{eq:ntot}\footnote{Es wurde über eine Zeit von $t=\SI{617.967}{\second}$ gemessen.} eine absolute Peakeffizienz von
+Die absolute Peakeffizienz wird anhand des Spektrums der Cs-Quelle bestimmt. Die Zahl der Ereignisse innerhalb des Peaks wird wieder über Gleichung \ref{eq:npeak} berechnet. Es folgt $N_\mathrm{Peak}=(4,1 \pm 0,2)10^6$. Mit dem in \cite{praktikumsheft} angegebenen Durchmesser von $d=\SI{76.2}{\milli\metre}$ folgt mit der berechneten Aktivität und Gleichung \ref{eq:ntot}\footnote{Es wurde über eine Zeit von $t=\SI{617.967}{\second}$ gemessen.} eine absolute Peakeffizienz von
 \begin{align*}
-  P&=(9 \pm 2)\% \ \ \ \mathrm{oder}\\
-  P&=(22 \pm 5)\%
+  P&=(9 \pm 2)\%
 \end{align*}
 
 \subsection{Halbleiter-Detektor}
@@ -134,7 +133,7 @@ Die Auswertung des Halbleiterdetektors geschieht analog zur Auswertung des Szint
 \label{fig:ge_eu}
 \end{figure}
 
-Wieder werden Gaußkurven an die Peaks angepasst (siehe Tabelle \ref{tab:ge}). Die Zuordnung des Cäsiumpeaks ist bei diesem Detektor einfacher, weil sich nur ein Peak im Bereich befindet. Vergleicht die Form des Spektrums in der Umgebung des Peaks, so kann man erkennen, dass es sich um den gleichen Peak wie beim Szintillator handelt.\\
+Wieder werden Gaußkurven an die Peaks angepasst (siehe Tabelle \ref{tab:ge}). Die jeweiligen Nummern der Peaks sind erneut in den Abbildungen zu sehen. Die Zuordnung des Cäsiumpeaks ist bei diesem Detektor einfacher, weil sich nur ein Peak im Bereich befindet. Vergleicht man die Form des Spektrums in der Umgebung des Peaks, so kann man erkennen, dass es sich um den gleichen Peak wie beim Szintillator handelt.\\
 
 \newpage
 
@@ -160,7 +159,7 @@ Peak Nr. & Element & Energie/\si{keV}& $a$ & $\Delta a$ & $\mu$ & $\Delta \mu$ &
 \label{tab:ge}
 \end{table}
 
-Nachdem man den Peaks die Energien zugeordnet hat, wird wieder zur Kalibration der Kanal über der Energie aufgetragen (siehe Abbildung \ref{fig:ge_gauge}). Ein linearer Fit ergibt $C\ind{Ge} = \si{(5,025\pm 0,004)\,Kanal/keV}$
+Nachdem man den Peaks die Energien zugeordnet hat, wird wieder zur Kalibration der Kanal über der Energie aufgetragen (siehe Abbildung \ref{fig:ge_gauge}). Ein linearer Fit ergibt $C\ind{Ge} = \si{(5,025\pm 0,004)\,Kanal/keV}$.
 
 \begin{figure}[h]
 \centering
@@ -221,7 +220,7 @@ Von dem Spektrum der Langzeitmessung der Bodenprobe (siehe Anhang) wird der Unte
 
 Man kann erkennen, dass bei kleinen Energien die negativen Werte betragsmäßig größer sind. Daraus kann man schließen, dass ohne Bodenprobe weniger Untergrundteilchen den Detektor erreicht haben, also die Bodenprobe den Untergrund abgeschirmt hat. Weiterhin kann man in dem Spektrum nur eine Linie erkennen (ansonsten gibt es nur einzelne Punkte, die vom Kontinuum abweichen; diese können prinzipiell rein statistischer Natur sein). Da diese Linie allerdings auch negative Werte aufweist, die betragsmäßig genauso groß sind, gehen wir davon aus, dass diese Linie die gleiche Linie wie im Untergrundspektrum ist. Das kann man bestätigen, in dem man die Rohdaten betrachtet. In beiden Spektren ist der Peak etwa gleich hoch und somit keine Linie der Probe, sondern des Untergrundes. Somit enthält die Bodenprobe keine sichtbaren Gammalinien.\\
 
-Aufgrund dessen wird das Spektrum des Untergrundes untersucht (siehe Abbildung \ref{fig:unter}). Dazu werden wie zuvor an die deutlichsten Peaks und an den Cäsiumpeak Gaußkurven gefittet. Die Kanalnummber $\mu$ wird über $C\ind{Ge}$ in eine Energie umgerechnet. Diese werden mithilfe von \cite{lara} Nukliden zugeordnet. Es konnten mehrere Linien der Uran-Actinium-Reihe gefunden werden ($^{227}$Ac, $^{223}$Ra, $^{227}$Th) und eine Linie der Uran-Radium-Reihe ($^{226}$Ra). Die $^{40}$K-Linie ist nicht Teil einer Zerfallsreihe sondern ist Teil des natürlich in der Umwelt vorkommenden Kaliums. Deswegen ist es auch Teil des Untergrundes. Das Nuklid $^{137}$Cs stammt von der Reaktorkatastrophe in Tschernobyl. Die Höhe des Peaks ist aber mit $(1,6 \pm 0,3) \cdot 10^3$ Ereignissen vergleichsweise klein (der Kalium-Peak hat z.B. eine Höhe von $(19 \pm 3)\cdot 10^3$). Somit ist die Belastung mit Cäsium vergleichsweise gering.
+Aufgrund dessen wird das Spektrum des Untergrundes untersucht (siehe Abbildung \ref{fig:unter}). Dazu werden wie zuvor an die deutlichsten Peaks und an den Cäsiumpeak Gaußkurven gefittet. Die Kanalnummer $\mu$ wird über $C\ind{Ge}$ in eine Energie umgerechnet. Diese werden mithilfe von \cite{lara} Nukliden zugeordnet. Es konnten mehrere Linien der Uran-Actinium-Reihe gefunden werden ($^{227}$Ac, $^{223}$Ra, $^{227}$Th) und eine Linie der Uran-Radium-Reihe ($^{226}$Ra). Die $^{40}$K-Linie ist nicht Teil einer Zerfallsreihe sondern ist Teil des natürlich in der Umwelt vorkommenden Kaliums. Deswegen ist es auch Teil des Untergrundes. Das Nuklid $^{137}$Cs stammt von der Reaktorkatastrophe in Tschernobyl. Die Höhe des Peaks ist aber mit $(1,6 \pm 0,3) \cdot 10^3$ Ereignissen vergleichsweise klein (der Kalium-Peak hat z.B. eine Höhe von $(19 \pm 3)\cdot 10^3$). Somit ist die Belastung mit Cäsium vergleichsweise gering.
 
 \begin{figure}[!h]
 \centering

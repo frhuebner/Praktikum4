@@ -1,7 +1,7 @@
 %!PS-Adobe-2.0 EPSF-2.0
 %%Title: 1.eps
-%%Creator: gnuplot 5.2 patchlevel 2
-%%CreationDate: Tue Sep  4 17:08:16 2018
+%%Creator: gnuplot 5.2 patchlevel 0
+%%CreationDate: Wed Sep 05 09:09:55 2018
 %%DocumentFonts: (atend)
 %%BoundingBox: 50 50 266 266
 %%EndComments
@@ -429,6 +429,49 @@ Level1 {Level1PatternFill} {Level2PatternFill} ifelse
 dup length dict begin {1 index /FID eq {pop pop} {def} ifelse} forall
 currentdict end definefont pop
 %
+%
+% Encoding for Windows-1252 (Western European)
+%
+/reencodeCP1252 {
+dup dup findfont dup length dict begin
+{ 1 index /FID ne { def }{ pop pop } ifelse } forall
+currentdict /CharStrings known {
+	CharStrings /Idieresis known {
+		/Encoding CP1252Encoding def } if
+} if
+currentdict end definefont
+} def
+/CP1252Encoding [
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/space/exclam/quotedbl/numbersign/dollar/percent/ampersand/quoteright
+/parenleft/parenright/asterisk/plus/comma/minus/period/slash
+/zero/one/two/three/four/five/six/seven/eight/nine/colon/semicolon
+/less/equal/greater/question/at/A/B/C/D/E/F/G/H/I/J/K/L/M/N
+/O/P/Q/R/S/T/U/V/W/X/Y/Z/bracketleft/backslash/bracketright
+/asciicircum/underscore/quoteleft/a/b/c/d/e/f/g/h/i/j/k/l/m
+/n/o/p/q/r/s/t/u/v/w/x/y/z/braceleft/bar/braceright/asciitilde
+/.notdef/Euro/.notdef/quotesinglbase/florin/quotedblbase/ellipsis/dagger
+/daggerdbl/circumflex/perthousand/Scaron/guilsinglleft/OE/.notdef/Zcaron
+/.notdef/.notdef/quoteleft/quoteright/quotedblleft/quotedblright
+/bullet/endash/emdash/tilde/trademark/scaron/guilsinglright/oe/.notdef
+/zcaron/Ydieresis/space/exclamdown/cent/sterling/currency/yen/brokenbar
+/section/dieresis/copyright/ordfeminine/guillemotleft/logicalnot
+/hyphen/registered/macron/degree/plusminus/twosuperior/threesuperior
+/acute/mu/paragraph/periodcentered/cedilla/onesuperior/ordmasculine
+/guillemotright/onequarter/onehalf/threequarters/questiondown
+/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/AE/Ccedilla
+/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex
+/Idieresis/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis
+/multiply/Oslash/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute
+/Thorn/germandbls/agrave/aacute/acircumflex/atilde/adieresis
+/aring/ae/ccedilla/egrave/eacute/ecircumflex/edieresis/igrave
+/iacute/icircumflex/idieresis/eth/ntilde/ograve/oacute/ocircumflex
+/otilde/odieresis/divide/oslash/ugrave/uacute/ucircumflex/udieresis
+/yacute/thorn/ydieresis
+] def
 /Metrics {ExtendTextBox Gswidth} def
 /Lwidth {currentpoint stroke M 0 vshift R Metrics} def
 /Rwidth {currentpoint stroke M dup stringwidth pop neg vshift R Metrics} def
@@ -469,6 +512,7 @@ currentdict end definefont pop
   Blacktext {gsave 0 setgray MFshow grestore} {MFshow} ifelse } bind def
 /XYsave    { [( ) 1 2 true false 3 ()] } bind def
 /XYrestore { [( ) 1 2 true false 4 ()] } bind def
+/Helvetica reencodeCP1252 def
 Level1 SuppressPDFMark or 
 {} {
 /SDict 10 dict def
@@ -478,10 +522,10 @@ systemdict /pdfmark known not {
 SDict begin [
   /Title (1.eps)
   /Subject (gnuplot plot)
-  /Creator (gnuplot 5.2 patchlevel 2)
+  /Creator (gnuplot 5.2 patchlevel 0)
 %  /Producer (gnuplot)
 %  /Keywords ()
-  /CreationDate (Tue Sep  4 17:08:16 2018)
+  /CreationDate (Wed Sep 05 09:09:55 2018)
   /DOCINFO pdfmark
 end
 } ifelse
@@ -8927,7 +8971,7 @@ LTb
 % Begin plot #2
 1.000 UL
 LTb
-0.00 0.62 0.45 C 714 281 M
+0.00 0.62 0.45 C 714 280 M
 3 0 V
 3 0 V
 4 0 V
@@ -9023,7 +9067,7 @@ LTb
 3 0 V
 4 0 V
 3 0 V
-3 0 V
+3 1 V
 3 0 V
 3 0 V
 3 0 V
@@ -9032,129 +9076,112 @@ LTb
 3 2 V
 3 4 V
 3 5 V
-3 10 V
+stroke 1032 294 M
+3 9 V
 3 14 V
-3 21 V
+3 22 V
 3 31 V
 3 44 V
 3 62 V
 3 83 V
 3 109 V
-4 139 V
+4 138 V
 3 172 V
 3 206 V
 3 240 V
 3 270 V
 3 295 V
-3 310 V
+3 311 V
 3 315 V
-3 305 V
+3 306 V
 3 284 V
-3 247 V
+3 248 V
 3 202 V
-3 145 V
-3 86 V
-3 23 V
-3 -35 V
+3 147 V
+3 85 V
+3 24 V
+3 -37 V
 3 -90 V
-3 -135 V
-4 -172 V
+3 -137 V
+4 -173 V
 3 -199 V
-3 -214 V
-3 -222 V
+3 -216 V
+3 -224 V
 3 -223 V
 3 -216 V
 3 -206 V
 3 -193 V
 3 -178 V
-3 -163 V
+3 -162 V
 3 -147 V
-3 -133 V
-3 -119 V
-3 -107 V
+3 -132 V
+3 -118 V
+3 -106 V
 3 -95 V
-3 -85 V
-3 -76 V
+3 -84 V
+3 -75 V
 3 -67 V
 4 -60 V
-3 -54 V
+3 -53 V
 3 -48 V
 3 -42 V
 3 -38 V
-3 -34 V
+3 -33 V
 3 -30 V
 3 -27 V
-3 -23 V
-3 -22 V
-3 -19 V
+3 -24 V
+3 -21 V
+3 -20 V
 3 -16 V
 3 -16 V
 3 -13 V
 3 -12 V
-3 -10 V
-3 -10 V
-3 -8 V
+3 -11 V
+3 -9 V
+3 -9 V
 4 -8 V
-3 -7 V
+3 -6 V
+3 -6 V
 3 -6 V
 3 -5 V
-3 -5 V
 3 -4 V
 3 -4 V
 3 -3 V
 3 -3 V
 3 -3 V
 3 -2 V
+3 -3 V
 3 -2 V
-3 -2 V
-3 -2 V
-3 -1 V
 3 -1 V
 3 -2 V
 3 -1 V
 3 -1 V
-4 -1 V
-3 0 V
+3 -2 V
 3 -1 V
-3 -1 V
-3 0 V
-3 -1 V
-3 0 V
-3 0 V
-3 -1 V
-3 0 V
-3 0 V
-3 0 V
-3 -1 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
 4 0 V
+3 -1 V
+3 -1 V
+3 0 V
+3 -1 V
+3 0 V
+3 -1 V
+3 0 V
+3 -1 V
+3 0 V
+3 0 V
 3 -1 V
 3 0 V
 3 0 V
 3 0 V
 3 0 V
 3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
+3 -1 V
 4 0 V
 3 0 V
 3 0 V
 3 0 V
 3 0 V
-3 0 V
+stroke 1350 281 M
 3 0 V
 3 0 V
 3 0 V
@@ -9176,44 +9203,7 @@ LTb
 3 0 V
 3 0 V
 3 0 V
-3 0 V
-stroke 1475 281 M
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-4 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-4 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
+3 -1 V
 3 0 V
 3 0 V
 3 0 V
@@ -9278,6 +9268,7 @@ stroke 1475 281 M
 3 0 V
 3 0 V
 3 0 V
+3 0 V
 4 0 V
 3 0 V
 3 0 V
@@ -9295,7 +9286,7 @@ stroke 1475 281 M
 3 0 V
 3 0 V
 3 0 V
-3 0 V
+stroke 1667 280 M
 3 0 V
 4 0 V
 3 0 V
@@ -9400,80 +9391,7 @@ stroke 1475 281 M
 3 0 V
 3 0 V
 3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-4 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-4 0 V
-3 0 V
-stroke 2236 281 M
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-4 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-4 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
+stroke 1985 280 M
 3 0 V
 3 0 V
 3 0 V
@@ -9578,6 +9496,7 @@ stroke 2236 281 M
 3 0 V
 3 0 V
 3 0 V
+stroke 2303 280 M
 3 0 V
 3 0 V
 3 0 V
@@ -9677,122 +9596,12 @@ stroke 2236 281 M
 3 0 V
 3 0 V
 3 0 V
-stroke 2996 281 M
 3 0 V
 3 0 V
 3 0 V
 3 0 V
 3 0 V
-4 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-4 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-4 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-4 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-4 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-4 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
-3 0 V
+stroke 2620 280 M
 4 0 V
 3 0 V
 3 0 V
@@ -9897,6 +9706,7 @@ stroke 2996 281 M
 3 0 V
 3 0 V
 3 0 V
+stroke 2938 280 M
 3 0 V
 3 0 V
 3 0 V
@@ -9927,7 +9737,246 @@ stroke 2996 281 M
 3 0 V
 3 0 V
 3 0 V
-stroke 3757 281 M
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+4 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+4 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+4 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+4 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+stroke 3256 280 M
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+4 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+4 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+4 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+4 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+4 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+4 0 V
+stroke 3574 280 M
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+4 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+4 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+4 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
+3 0 V
 3 0 V
 3 0 V
 3 0 V

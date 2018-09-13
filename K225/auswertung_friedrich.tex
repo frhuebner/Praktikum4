@@ -41,6 +41,17 @@ peak & $t/\si{\nano\second}$ & $t$/bin $\pm 50$/bin\\
 
 In table \ref{tab:prompt} the positions of the peaks are given in bins (We estimated the error to $50$ bins). To find the conversation factor we did a linear fit $a\cdot x + b$ as seen in figure \ref{fig:prompt_fit}. One can see that the points fit perfectly onto that line. However for the first three values there is a small offset. We believe this offset is caused by the nano second delay. We therefore neglected the three leftmost values for fitting. The fit results in $a = (151 \pm 0.3)$ bin/ns and $b = (854 \pm 10)$ bin. This means that $\si{1 \nano\second}$ equals $151$ bins.
 
+\subsection{Time constant of heating system}
+
+To find the time constant of the heating system the heating was set to the lowest level and for 20 minutes every \SI{30}{\second} the temperature was measured ($\Delta T\ind{thermometer} = 0.1 \si{\kelvin}$). The result is given in figure \ref{fig:heatcurve}. Then a exponential fit $B - A \cdot e^{-t/\tau\ind{heat}}$ was executed on that data which resulted in $A = (29.9 \pm 0.2) \si{\kelvin}, B = (55.3\pm 0.1) \si{\celsius}$ and the time constant $\tau\ind{heat} = \si{(245 \pm 4) \second}$. To make sure that the temperature has stabilised within $\Delta T\ind{stabilisation} = 1 \si{\kelvin}$ we decided to wait 10 minutes before starting a measurement at a new temperature (for the indium measurement we changed the temperature by about $10 \si{\kelvin}$). The expected deviation of the temperature is then $\Delta T = 10 \si{\kelvin} e^{-600/245} \approx 0.86 \si{\kelvin} < 1 \si{\kelvin}$. To make sure that the value is inside the error range we choose the error more generously $\Delta T = 1 \si{\kelvin}$.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{auswertung/heatcurve.png}
+\caption{Measurement to determine the time constant of the heating system}
+\label{fig:heatcurve}
+\end{figure}
+
 \subsection{Vacancy formation in Indium}
 
 The measured spectra can be found in the appendix. A function according to eq. ?? is fitted to them. The result is given in table \ref{tab:indium_raw}. 

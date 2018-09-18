@@ -1,7 +1,7 @@
 \documentclass{article}
 
 \usepackage[utf8]{inputenc}   %for german letters ä,ö...
-\usepackage[ngerman]{babel}   %german settings
+\usepackage[english]{babel}   %german settings
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{tikz,pgfplots}
@@ -22,7 +22,7 @@
 \usetikzlibrary{patterns}
 \tikzstyle{spring}=[thick,decorate,decoration={zigzag,pre length=0.3cm,post length=0.3cm,segment length=6}]
 
-\sisetup{locale = DE}
+\sisetup{locale = UK}
 
 \newcommand{\upd}[1]{^\mathrm{#1}}
 \newcommand{\ind}[1]{_\mathrm{#1}}
@@ -34,10 +34,10 @@
 
 \begin{document}
 \setlength{\parindent}{0em}   %Einrücken verhindern
-\title{Physikalisches Praktikum \RM{5}\\Versuch 523\\Nukleare Elektronik und Lebensdauermessung}
+\title{Advanced Laboratory Course\\Experiment K225\\Positron Lifetime in Metals and Insulators}
 \author{Kilian Bönisch \ \ \ \qquad s6kiboen@uni-bonn.de \qquad 2897138\\
   Friedrich Hübner \qquad s6frhueb@uni-bonn.de \qquad 2897111}
-\date{07.05.18 und 08.05.18}
+\date{05.09.18}
 
 \maketitle
 \thispagestyle{empty}
@@ -50,25 +50,27 @@
 
 \newpage
 
-\section{Einleitung}
+\section{Introduction}
 
-\input{einleitung.tex}
+\input{introduction.tex}
 
-\section{Theoretische Grundlagen}
+\section{Theoretical Background}
 
-\input{theorie_kilian.tex}
+\input{theory_kilian.tex}
 
-\section{Durchführung}
+\section{Procedure}
 
-\input{durchfuehrung_kilian.tex}
+\input{procedure_kilian.tex}
 
 \section{Evaluation}
 
-\input{auswertung_friedrich.tex}
+\input{evaluation_friedrich.tex}
+
+\newpage
 
 \section{Conclusion}
 
-\input{fazit.tex}
+\input{conclusion.tex}
 
 \FloatBarrier
 
@@ -79,6 +81,6 @@
 \newpage
 
 \section{Appendix}
-\input{anhang.tex}
+\input{appendix.tex}
 
 \end{document}

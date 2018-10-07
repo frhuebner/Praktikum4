@@ -43,3 +43,40 @@ Figure \ref{fig:karton} was taken with the same camera settings. The "Bayer Makr
 \end{figure}
 
 Using this gauge one can compute the dimensions of the MOT: $\si{(2.2 \pm 0.5) \milli\meter \times (0.86 \pm 0.02) \milli\meter}$. Unfortunately we don't have information about the size of the MOT in z-direction.
+
+\subsection{Influence of the quarter waveplate}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth]{data/l42.png}
+\caption{Influence of the first quarter waveplate}
+\label{fig:l42}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth]{data/l41.png}
+\caption{Influence of the second quarter waveplate}
+\label{fig:l41}
+\end{figure}
+
+In figures \ref{fig:l42} and \ref{fig:l41} the influence of the quarter waveplates on the power is given. The first waveplate (incoming beam) shows a clear drop of the power as the angle increases. As one rotates the quarter waveplate the outcoming light becomes more and more elliptical polarised. Since only the circular polarised part creates a force on the atoms this force becomes weaker and therefore less atoms will be stored in the trap. So the intensity goes down.
+
+The second waveplate (reflected beam) shows no sensible dependence on the angle. In theory there should not be any difference, since circular polarised light has no preferred angle and therefore all angles will yield the same result. However note that we had to create a new MOT for every measurement. We think that this the causes the variation of the power for different angles.
+
+\subsection{Loading behaviour}
+Unfortunately we weren't able to observe the loading behaviour. The tutor told us we should rather measure the detuning of the laser frequency. The pump controller had a current of $0.4 \si{\milli\ampere}$ which corresponds to approximately $0.14 \cdot 10^{-3} \si{\pascal}$.
+
+\subsection{Detuning of the laser frequency}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\textwidth]{data/oszi.png}
+\caption{Observed power and according frequency spectrum (y-axis in arbitrary units)}
+\label{fig:oszi}
+\end{figure}
+
+In figure \ref{fig:oszi} the observed power as function of the frequency (in bins) is given.
+
+The position of the maximum of power is at $(8.2 \pm 0.1) \mathrm{bin}$. The leftmost peak is at $(6.9 \pm 0.1) \mathrm{bin}$ and the rightmost at $(8.6 \pm 0.1) \mathrm{bin}$. The difference between the two peaks is then $(0.7 \pm 0.1) \mathrm{bin}$ which equals (according to our lab instructions \cite{material_tutor}) $92 \si{\mega \hertz}$. Using this one can calculate the detuning to $(0.4 \pm 0.1) \mathrm{bin} = (37 \pm 9)\si{\mega \hertz}$. 
+
